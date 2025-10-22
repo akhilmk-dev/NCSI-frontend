@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ExternalLinksList from './externalLinksList';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const externalLinks = [
     { title: "ITU", href: "#" },
@@ -45,5 +46,14 @@ const importantLinks=()=>{
         </>
     )
 }
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
+
 
 export default importantLinks;

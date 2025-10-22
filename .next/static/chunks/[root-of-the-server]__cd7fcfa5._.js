@@ -1000,6 +1000,7 @@ var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_
 {
 // pages/hierarchy.js
 __turbopack_context__.s({
+    "__N_SSP": (()=>__N_SSP),
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
@@ -1039,12 +1040,12 @@ const hierarchy = ()=>{
                     children: t('hierarchy')
                 }, void 0, false, {
                     fileName: "[project]/pages/hierarchy/index.jsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/hierarchy/index.jsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1057,12 +1058,12 @@ const hierarchy = ()=>{
                             children: t('Who Are We')
                         }, void 0, false, {
                             fileName: "[project]/pages/hierarchy/index.jsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/hierarchy/index.jsx",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1078,7 +1079,7 @@ const hierarchy = ()=>{
                                             children: "CEO Message"
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 39,
+                                            lineNumber: 40,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1086,7 +1087,7 @@ const hierarchy = ()=>{
                                             children: "Based on the highly appreciated instructions of His Majesty, Sultan of the Country, may Allah protect him, directed to all governmental institutions to make haste in boosting their performance & facilitating their services by using digital technology in the course of elevating and promoting the Sultanate up to the modern, renewed horizons of knowledge. Since the start of the third millennium, we have been living in a world of modern societies that are increasingly & greatly depending on the technology of information & communication, which are globally connected in forming wide horizons of mutual benefit. This, in its turn, increases our urgent need to improve our capabilities to accommodate, store & analyze an extensive, ample number of information in the course of reaching knowledge, which is the crown & summit of thought...."
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 43,
+                                            lineNumber: 44,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1097,12 +1098,12 @@ const hierarchy = ()=>{
                                                 children: "Read more..."
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                lineNumber: 59,
+                                                lineNumber: 60,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 58,
+                                            lineNumber: 59,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1112,18 +1113,18 @@ const hierarchy = ()=>{
                                                 children: "Decrees, Laws and Decisions"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                lineNumber: 67,
+                                                lineNumber: 68,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 66,
+                                            lineNumber: 67,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 39,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1138,48 +1139,48 @@ const hierarchy = ()=>{
                                                             children: "Royal Decree 104/2020 Amending Some Provisions of the Royal Decrees Establishing the National Centre for Statistics and Information and Promulgating its System"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 79,
+                                                            lineNumber: 80,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Royal Decree Promulgating the Statistics and Information Law"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 84,
+                                                            lineNumber: 85,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Royal Decree on Conducting the Electronic Census 2020"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 85,
+                                                            lineNumber: 86,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Royal Decree Amending Some Provisions of Royal Decree Establishing the Centre"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 86,
+                                                            lineNumber: 87,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "The executive regulation of the Statistics and Information Law."
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 87,
+                                                            lineNumber: 88,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Data quality assurance framework for the National Centre for Statistics and Information"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 88,
+                                                            lineNumber: 89,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 78,
+                                                    lineNumber: 79,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1188,21 +1189,21 @@ const hierarchy = ()=>{
                                                             children: "Royal Decree Amending the Provisions of the Electronic Census Procedure"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 95,
+                                                            lineNumber: 96,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Administrative and financial system for the electronic census project 2020"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 98,
+                                                            lineNumber: 99,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Royal Decree Promulgating the System of the Centre"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 101,
+                                                            lineNumber: 102,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1210,33 +1211,33 @@ const hierarchy = ()=>{
                                                             children: "ISSUING THE NATIONAL DATA STRATEGY"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 102,
+                                                            lineNumber: 103,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "General framework for information availability"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 105,
+                                                            lineNumber: 106,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "Royal Decree establishing NCSI"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 106,
+                                                            lineNumber: 107,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 95,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 77,
+                                            lineNumber: 78,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1246,12 +1247,12 @@ const hierarchy = ()=>{
                                                 children: "Roadmap"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                lineNumber: 112,
+                                                lineNumber: 113,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 111,
+                                            lineNumber: 112,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1263,7 +1264,7 @@ const hierarchy = ()=>{
                                                     description: "Enhancing Knowledge"
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 119,
+                                                    lineNumber: 120,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cards$2f$hoverCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1274,7 +1275,7 @@ const hierarchy = ()=>{
                                                     fullText: `To satisfy the government's need of official statistics and reliable information to be used in setting policies and programs on local, regional and international levels; taking into consideration the accelerating economic and social variables. We also seek to satisfy the needs of all authorities in acquiring data in all areas of development.`
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 125,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cards$2f$hoverCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1285,7 +1286,7 @@ const hierarchy = ()=>{
                                                     fullText: `The NCSI is committed to building strong partnerships across all ranges and sectors, both inside and outside Oman. The values and aspirations of the NSCI extends to consider all data producers and data users as real partners, and they have all the rights to participate with the centre in figure industry and take advantage of it to serve all aspects of growth and development.`
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 131,
+                                                    lineNumber: 132,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cards$2f$hoverCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1306,13 +1307,13 @@ Dissemination
 The dissemination of comprehensive information, a high degree of transparency, impartiality and objectivity are the most important determinants of the NCSI’s values ​.This makes the NCSI a center for thought and knowledge in Oman.`
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 138,
+                                                    lineNumber: 139,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 118,
+                                            lineNumber: 119,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1322,12 +1323,12 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                 children: "Organization Chart"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                lineNumber: 159,
+                                                lineNumber: 160,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 158,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1346,7 +1347,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                                 className: "w-full h-auto object-cover"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                                lineNumber: 167,
+                                                                lineNumber: 168,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1357,7 +1358,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                                         children: "Chief Executive"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/pages/hierarchy/index.jsx",
-                                                                        lineNumber: 175,
+                                                                        lineNumber: 176,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1365,24 +1366,24 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                                         children: "H.E. Dr. Khalifa bin Abdullah bin Hamad Al Barwani"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/pages/hierarchy/index.jsx",
-                                                                        lineNumber: 176,
+                                                                        lineNumber: 177,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                                lineNumber: 174,
+                                                                lineNumber: 175,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/pages/hierarchy/index.jsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 167,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 166,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1394,7 +1395,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Mr. Mohammed bin Said Al Rashdi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 187,
+                                                            lineNumber: 188,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$PersonCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1403,7 +1404,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Ms. Aisha bint Hamad Al Busaidiya"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 192,
+                                                            lineNumber: 193,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$PersonCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1412,13 +1413,13 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Mr. Ahmed bin Ali Al Hinai"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 197,
+                                                            lineNumber: 198,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 184,
+                                                    lineNumber: 185,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1429,7 +1430,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 206,
+                                                            lineNumber: 207,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$hoverTextCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1437,7 +1438,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 210,
+                                                            lineNumber: 211,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$hoverTextCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1445,13 +1446,13 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 214,
+                                                            lineNumber: 215,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 203,
+                                                    lineNumber: 204,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1462,7 +1463,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 224,
+                                                            lineNumber: 225,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$hoverTextCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1470,7 +1471,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 228,
+                                                            lineNumber: 229,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$hoverTextCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1478,13 +1479,13 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 232,
+                                                            lineNumber: 233,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 221,
+                                                    lineNumber: 222,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1495,7 +1496,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 242,
+                                                            lineNumber: 243,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$hoverTextCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1503,7 +1504,7 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 246,
+                                                            lineNumber: 247,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$hoverTextCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1511,19 +1512,19 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                             hoverTitle: "Saud Humaid Al-Ruqaisi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                                            lineNumber: 250,
+                                                            lineNumber: 251,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                                    lineNumber: 239,
+                                                    lineNumber: 240,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 163,
+                                            lineNumber: 164,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1533,40 +1534,40 @@ The dissemination of comprehensive information, a high degree of transparency, i
                                                 children: "Achievements"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/hierarchy/index.jsx",
-                                                lineNumber: 262,
+                                                lineNumber: 263,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 261,
+                                            lineNumber: 262,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$hierarchy$2f$AwardsCarousel$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                             fileName: "[project]/pages/hierarchy/index.jsx",
-                                            lineNumber: 266,
+                                            lineNumber: 267,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/pages/hierarchy/index.jsx",
-                                    lineNumber: 74,
+                                    lineNumber: 75,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/hierarchy/index.jsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/hierarchy/index.jsx",
-                        lineNumber: 34,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/hierarchy/index.jsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this)
         ]
@@ -1578,6 +1579,7 @@ _s(hierarchy, "c8X6oJMkEKMbuRB018WUofCVAmI=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
+var __N_SSP = true;
 const __TURBOPACK__default__export__ = hierarchy;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);

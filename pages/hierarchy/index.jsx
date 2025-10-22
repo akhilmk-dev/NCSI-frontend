@@ -12,6 +12,7 @@ import Image from "next/image";
 import PersonCard from "./PersonCard";
 import HoverTextCard from "./hoverTextCard";
 import AwardsCarousel from "./AwardsCarousel";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 
 
@@ -272,6 +273,16 @@ The dissemination of comprehensive information, a high degree of transparency, i
     </>
   )
 }
+
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
+
 export default hierarchy;
 
 

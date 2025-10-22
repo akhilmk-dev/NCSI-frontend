@@ -525,6 +525,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "__N_SSP": (()=>__N_SSP),
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
@@ -616,12 +617,12 @@ const importantLinks = ()=>{
                     children: t('important links')
                 }, void 0, false, {
                     fileName: "[project]/pages/importantLinks/index.jsx",
-                    lineNumber: 34,
+                    lineNumber: 35,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/importantLinks/index.jsx",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -634,25 +635,25 @@ const importantLinks = ()=>{
                             children: t('Important Links')
                         }, void 0, false, {
                             fileName: "[project]/pages/importantLinks/index.jsx",
-                            lineNumber: 38,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/importantLinks/index.jsx",
-                        lineNumber: 37,
+                        lineNumber: 38,
                         columnNumber: 36
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$importantLinks$2f$externalLinksList$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                         links: externalLinks
                     }, void 0, false, {
                         fileName: "[project]/pages/importantLinks/index.jsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 10
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/importantLinks/index.jsx",
-                lineNumber: 36,
+                lineNumber: 37,
                 columnNumber: 13
             }, this)
         ]
@@ -664,6 +665,7 @@ _s(importantLinks, "DDJmuJ6oPhWMNTeVKV6QQC6+lvE=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
+var __N_SSP = true;
 const __TURBOPACK__default__export__ = importantLinks;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);

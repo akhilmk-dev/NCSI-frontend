@@ -623,6 +623,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "__N_SSP": (()=>__N_SSP),
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
@@ -650,12 +651,12 @@ const NewsPage = ()=>{
                     children: t("Top News")
                 }, void 0, false, {
                     fileName: "[project]/pages/newsPage/index.jsx",
-                    lineNumber: 14,
+                    lineNumber: 15,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/newsPage/index.jsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -667,17 +668,17 @@ const NewsPage = ()=>{
                         children: t("Top News")
                     }, void 0, false, {
                         fileName: "[project]/pages/newsPage/index.jsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/pages/newsPage/index.jsx",
-                    lineNumber: 19,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/newsPage/index.jsx",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -693,7 +694,7 @@ const NewsPage = ()=>{
                             link: "#"
                         }, void 0, false, {
                             fileName: "[project]/pages/newsPage/index.jsx",
-                            lineNumber: 29,
+                            lineNumber: 30,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$newsPage$2f$newsCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -704,7 +705,7 @@ const NewsPage = ()=>{
                             link: "#"
                         }, void 0, false, {
                             fileName: "[project]/pages/newsPage/index.jsx",
-                            lineNumber: 37,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$newsPage$2f$newsCard$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -715,18 +716,18 @@ const NewsPage = ()=>{
                             link: "#"
                         }, void 0, false, {
                             fileName: "[project]/pages/newsPage/index.jsx",
-                            lineNumber: 44,
+                            lineNumber: 45,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/pages/newsPage/index.jsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/newsPage/index.jsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 7
             }, this)
         ]
@@ -739,6 +740,7 @@ _s(NewsPage, "c8X6oJMkEKMbuRB018WUofCVAmI=", false, function() {
     ];
 });
 _c = NewsPage;
+var __N_SSP = true;
 const __TURBOPACK__default__export__ = NewsPage;
 var _c;
 __turbopack_context__.k.register(_c, "NewsPage");

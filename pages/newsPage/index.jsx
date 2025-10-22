@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import { useRouter } from "next/router";
 import NewsCard from "./newsCard";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const NewsPage = () => {
   const { t } = useTranslation("common");
@@ -53,5 +54,13 @@ const NewsPage = () => {
     </>
   );
 };
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default NewsPage;
