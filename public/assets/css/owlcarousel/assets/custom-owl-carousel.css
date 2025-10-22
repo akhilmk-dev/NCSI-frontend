@@ -1,0 +1,69 @@
+ .carousel-wrap {
+    width: 75%;
+    margin: auto;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .owl-carousel .owl-nav{
+    overflow: hidden;
+    height: 0px;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span, 
+  .owl-theme .owl-dots .owl-dot:hover span {
+      background: #2caae1;
+  }
+
+
+  .owl-carousel .item {
+      text-align: center;
+  }
+  .owl-carousel .nav-btn{
+    height: 32px;
+    position: absolute;
+    width: 32px;
+    cursor: pointer;
+    top: 45.5% !important;
+  }
+
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled{
+    pointer-events: none;
+    opacity: 0.2;
+  }
+
+  .owl-carousel .prev-slide{
+    background: url(../../../images/icons/left-arrow.PNG) no-repeat scroll 0 0;
+    left: -45px;
+  }
+  .owl-carousel .next-slide{
+    background: url(../../../images/icons/right-arrow.PNG) no-repeat scroll 0px 0px;
+    right: -45px;
+  }
+  .owl-carousel .prev-slide:hover{
+     /*background-position: 0px -53px;*/
+  }
+  .owl-carousel .next-slide:hover{
+    /*background-position: -24px -53px;*/
+  }
+
+  span.img-text {
+    text-decoration: none;
+    outline: none;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    cursor: pointer;
+    width: 100%;
+    font-size: 23px;
+    display: block;
+    text-transform: capitalize;
+  }
+  span.img-text:hover {
+    color: #2caae1;
+  }
+  .owl-dots{
+    display: none !important;
+  }

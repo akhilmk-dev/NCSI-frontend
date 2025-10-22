@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Tungsten';
+    src: url('Tungsten-Medium.eot');
+    src: url('Tungsten-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Tungsten-Medium.woff2') format('woff2'),
+        url('Tungsten-Medium.woff') format('woff'),
+        url('Tungsten-Medium.ttf') format('truetype'),
+        url('Tungsten-Medium.svg#Tungsten-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten Book';
+    src: url('Tungsten-Book.eot');
+    src: url('Tungsten-Book.eot?#iefix') format('embedded-opentype'),
+        url('Tungsten-Book.woff2') format('woff2'),
+        url('Tungsten-Book.woff') format('woff'),
+        url('Tungsten-Book.ttf') format('truetype'),
+        url('Tungsten-Book.svg#Tungsten-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten Narrow';
+    src: url('TungstenNarrow-Medium.eot');
+    src: url('TungstenNarrow-Medium.eot?#iefix') format('embedded-opentype'),
+        url('TungstenNarrow-Medium.woff2') format('woff2'),
+        url('TungstenNarrow-Medium.woff') format('woff'),
+        url('TungstenNarrow-Medium.ttf') format('truetype'),
+        url('TungstenNarrow-Medium.svg#TungstenNarrow-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+

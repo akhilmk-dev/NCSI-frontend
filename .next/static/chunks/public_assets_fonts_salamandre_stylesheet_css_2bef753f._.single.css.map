@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/public/assets/fonts/salamandre/stylesheet.css"],"sourcesContent":["@font-face {\n    font-family: 'Ostrich Sans Inline';\n    src: url('OstrichSansInline.woff2') format('woff2'),\n        url('OstrichSansInline.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: 'Salamandre';\n    src: url('Salamandre.woff2') format('woff2'),\n        url('Salamandre.woff') format('woff');\n    font-weight: 500;\n    font-style: normal;\n}\n\n"],"names":[],"mappings":"AAAA;;;;;;;AAQA"}}]
+}

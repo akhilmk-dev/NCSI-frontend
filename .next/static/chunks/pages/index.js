@@ -1,0 +1,16 @@
+__turbopack_load_page_chunks__("/", [
+  "static/chunks/public_assets_scripts_odometer_odometer_401cba73.js",
+  "static/chunks/[root-of-the-server]__1ed71023._.js",
+  "static/chunks/node_modules_next_707d6421._.js",
+  "static/chunks/node_modules_react_1cad9b0b._.js",
+  "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+  "static/chunks/node_modules_react-dom_f14d0471._.js",
+  "static/chunks/node_modules_jquery_dist_jquery_1973bd97.js",
+  "static/chunks/node_modules_swiper_d31c8a9b._.js",
+  "static/chunks/node_modules_highcharts_highcharts_45cc589c.js",
+  "static/chunks/node_modules_axios_lib_9aa2336a._.js",
+  "static/chunks/node_modules_517ea0e3._.js",
+  "static/chunks/node_modules_swiper_1789396c._.css",
+  "static/chunks/pages_index_5771e187._.js",
+  "static/chunks/pages_index_fb9a6da8._.js"
+])

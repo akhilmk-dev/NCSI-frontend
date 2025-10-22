@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Ostrich Sans Inline';
+    src: url('OstrichSansInline.woff2') format('woff2'),
+        url('OstrichSansInline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Salamandre';
+    src: url('Salamandre.woff2') format('woff2'),
+        url('Salamandre.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+

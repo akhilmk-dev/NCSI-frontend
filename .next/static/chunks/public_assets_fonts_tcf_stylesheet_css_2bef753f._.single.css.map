@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/public/assets/fonts/tcf/stylesheet.css"],"sourcesContent":["@font-face {\n    font-family: 'Tw Cen MT';\n    src: url('TwCenMT-Bold.eot');\n    src: url('TwCenMT-Bold.eot?#iefix') format('embedded-opentype'),\n        url('TwCenMT-Bold.woff2') format('woff2'),\n        url('TwCenMT-Bold.woff') format('woff'),\n        url('TwCenMT-Bold.ttf') format('truetype');\n    font-weight: bold;\n    font-style: normal;\n    font-display: swap;\n}\n\n"],"names":[],"mappings":"AAAA"}}]
+}

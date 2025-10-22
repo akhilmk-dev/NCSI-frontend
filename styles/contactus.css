@@ -1,0 +1,48 @@
+.contact-section{
+    background-color: #f0f0f0;
+}
+
+.regFrom .form-group {
+    display: flex;
+    
+}
+.regFrom {
+    width: calc(90% - 50px);
+    margin: auto;
+}
+
+.RadCaptcha {
+    width: 100%;
+}
+
+.Work_hours h6 {
+    color: #C00;
+    font-size: 17px;
+    margin-top: 20px;
+}
+[dir="rtl"] .Work_hours h6 {
+    font-family: 'GE_SS_Medium', Arial !important;
+}
+
+.Work_hours > div {
+    color: #333;
+    padding: 0 20px;
+    font-family: 'GE_SS_Light' !important;
+    font-size: 10px;
+}
+[dir="rtl"] .Work_hours > div{
+    font-family: 'Janna LT', DroidKufiRegular !important;
+    /* font-family: "GE_SS_Medium", Arial !important; */
+}
+#map-canvas {
+    height: 140px;
+    width: 100%;
+    border: 5px solid #fff;
+}
+
+/* .control-label{
+    color: #000;
+    font-family: Gill Sans MT, Arial;
+    text-align: left !important;
+
+} */

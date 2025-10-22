@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Janna LT';
+    src: url('./JannaLT-Regular.eot');
+    src: url('./JannaLT-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./JannaLT-Regular.woff2') format('woff2'),
+        url('./JannaLT-Regular.woff') format('woff'),
+        url('./JannaLT-Regular.ttf') format('truetype'),
+        url('./JannaLT-Regular.svg#JannaLT-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Janna LTBold';
+    src: url('./JannaLT-Bold.eot');
+    src: url('./JannaLT-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./JannaLT-Bold.woff2') format('woff2'),
+        url('./JannaLT-Bold.woff') format('woff'),
+        url('./JannaLT-Bold.ttf') format('truetype'),
+        url('./JannaLT-Bold.svg#JannaLT-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Adobe Arabic';
+    src: url('./AdobeArabic-Bold.eot');
+    src: url('./AdobeArabic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./AdobeArabic-Bold.woff2') format('woff2'),
+        url('./AdobeArabic-Bold.woff') format('woff'),
+        url('./AdobeArabic-Bold.ttf') format('truetype'),
+        url('./AdobeArabic-Bold.svg#AdobeArabic-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Adobe Arabic';
+    src: url('./AdobeArabic-Regular.eot');
+    src: url('./AdobeArabic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./AdobeArabic-Regular.woff2') format('woff2'),
+        url('./AdobeArabic-Regular.woff') format('woff'),
+        url('./AdobeArabic-Regular.ttf') format('truetype'),
+        url('./AdobeArabic-Regular.svg#AdobeArabic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,28 @@
+/* [project]/public/assets/fonts/language-button/style.css [client] (css) */
+@font-face {
+  font-family: icomoon;
+  src: url("../media/icomoon.a4d9f65e.eot");
+  src: url("../media/icomoon.a4d9f65e.eot") format("embedded-opentype"), url("../media/icomoon.b31dc120.ttf") format("truetype"), url("../media/icomoon.69520f93.woff") format("woff"), url("../media/icomoon.5907c6bd.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icons-custom-"], [class*=" icons-custom-"] {
+  -webkit-font-smoothing: antialiased;
+  font-variant: normal;
+  text-rendering: auto;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  font-family: icomoon !important;
+}
+
+.icons-custom-AR:before {
+  content: "";
+}
+
+.icons-custom-EN:before {
+  content: "";
+}
+
+/*# sourceMappingURL=public_assets_fonts_language-button_style_css_2bef753f._.single.css.map*/

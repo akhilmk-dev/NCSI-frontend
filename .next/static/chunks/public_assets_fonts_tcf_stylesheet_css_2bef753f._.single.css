@@ -1,0 +1,11 @@
+/* [project]/public/assets/fonts/tcf/stylesheet.css [client] (css) */
+@font-face {
+  font-family: Tw Cen MT;
+  src: url("../media/TwCenMT-Bold.c551db8f.eot");
+  src: url("../media/TwCenMT-Bold.c551db8f.eot") format("embedded-opentype"), url("../media/TwCenMT-Bold.39a986a1.woff2") format("woff2"), url("../media/TwCenMT-Bold.1f7d8bf0.woff") format("woff"), url("../media/TwCenMT-Bold.611e4e97.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*# sourceMappingURL=public_assets_fonts_tcf_stylesheet_css_2bef753f._.single.css.map*/

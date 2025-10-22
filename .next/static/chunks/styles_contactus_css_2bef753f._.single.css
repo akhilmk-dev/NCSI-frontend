@@ -1,0 +1,46 @@
+/* [project]/styles/contactus.css [client] (css) */
+.contact-section {
+  background-color: #f0f0f0;
+}
+
+.regFrom .form-group {
+  display: flex;
+}
+
+.regFrom {
+  width: calc(90% - 50px);
+  margin: auto;
+}
+
+.RadCaptcha {
+  width: 100%;
+}
+
+.Work_hours h6 {
+  color: #c00;
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+[dir="rtl"] .Work_hours h6 {
+  font-family: GE_SS_Medium, Arial !important;
+}
+
+.Work_hours > div {
+  color: #333;
+  padding: 0 20px;
+  font-size: 10px;
+  font-family: GE_SS_Light !important;
+}
+
+[dir="rtl"] .Work_hours > div {
+  font-family: Janna LT, DroidKufiRegular !important;
+}
+
+#map-canvas {
+  border: 5px solid #fff;
+  width: 100%;
+  height: 140px;
+}
+
+/*# sourceMappingURL=styles_contactus_css_2bef753f._.single.css.map*/

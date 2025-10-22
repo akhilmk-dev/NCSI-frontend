@@ -1,0 +1,212 @@
+.ui-datepicker-header {
+  background-color: #2196f3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  height: 40px;
+  border-radius: 8px 8px 0px 0px;
+  height: 100%;
+}
+.ui-datepicker-prev span,
+.ui-datepicker-next span {
+  display: none;
+}
+.ui-datepicker-prev:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0d9";
+  font-size: 20px;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #a1a1a1;
+  margin-top: 6px;
+}
+.ui-datepicker-next:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0da";
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #a1a1a1;
+  margin-top: 6px;
+}
+.ui-datepicker-calendar th {
+  padding: 10px;
+  color: #000000;
+}
+.ui-datepicker-calendar {
+  text-align: center;
+  margin: 0 auto;
+  padding: 8px;
+}
+.ui-datepicker-title {
+  padding: 10px;
+}
+.ui-datepicker-calendar td {
+  padding: 4px 2px !important;
+}
+.ui-datepicker-calendar .ui-state-default {
+  text-decoration: none;
+  color: black;
+}
+.ui-datepicker-calendar .ui-state-active {
+  color: #ff8f2e;
+}
+.cust-cal-top {
+  background-color: #06c3b1;
+  color: white;
+  padding: 10px 15px;
+  font-size: 20px;
+}
+.cust-cal-top span {
+  font-size: 22px;
+  font-weight: 600;
+}
+.cust-cal-bottom {
+  display: flex;
+}
+.cust-cal-orange {
+  background-color: #ff8f2e;
+  /* padding:10px; */
+}
+.ui-datepicker-calendar .ui-state-default {
+  border: none !important;
+}
+.ui-datepicker .ui-widget-header {
+  border: none !important;
+  border-bottom: 1px solid #b9b9b9 !important;
+}
+.ui-datepicker {
+  border: none !important;
+  margin-top: 0px !important;
+}
+.ui-datepicker,
+.ui-datepicker .ui-widget-content,
+.ui-datepicker .ui-widget-header,
+.ui-datepicker .ui-state-default,
+.ui-datepicker .ui-state-hover {
+  background: #f2f2f2 url(/assets/images/ui-bg_flat_75_ffffff_40x100.png) 50% 50%
+    repeat-x !important;
+}
+.cust-cal-orange h3 {
+  color: white;
+  font-size: 70px;
+  margin: 0px;
+  text-align: center;
+  line-height: 1.1;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.cust-cal-orange span {
+  color: white;
+  text-align: center;
+  display: block;
+  font-weight: 600;
+  line-height: 12px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+.cust-cal-orange h4 {
+  color: white;
+  text-align: center;
+  font-size: 34px;
+  margin: 0px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cust-cal-orange .chl-div {
+  display: block;
+  margin: 0px auto;
+  border: none;
+  padding: 6px 2px;
+  background-color: white;
+  width: 90px;
+  font-size: 14px;
+  text-align: center;
+}
+.bk-wyt-arw {
+  background-color: white;
+  margin: 10px;
+  text-align: center;
+  line-height: 1.3;
+  padding: 6px;
+  font-size: 14px;
+  margin-bottom: 0px;
+  position: relative;
+  width: 98px !important;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bk-wyt-arw::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cust-cal-wrap {
+  background-color: white;
+  /* width: 360px; */
+}
+.ui-datepicker .ui-datepicker-title {
+  font-size: 14px !important;
+  line-height: 1em;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+span.ui-datepicker-month {
+  text-transform: uppercase;
+  color: gray;
+}
+span.ui-datepicker-year {
+  color: gray;
+}
+.hasDatepicker {
+  width: 100%;
+}
+.ui-datepicker {
+  width: auto !important;
+  padding: 0px !important;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+  text-align: center;
+}
+.ui-widget-header .ui-icon {
+  display: none !important;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  outline: none !important;
+  border: none !important;
+}
+.ui-datepicker table {
+  margin: 0 0 0.8em;
+}
+.highlighted-date .ui-state-default {
+  background-color: #ff8f2e !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center !important;
+  margin: 0px auto;
+  line-height: 27px;
+}
+.highlighted-text-date .ui-state-default {
+  color: #ff8f2e !important;
+  font-weight: bold !important;
+}

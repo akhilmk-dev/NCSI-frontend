@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Tw Cen MT';
+    src: url('TwCenMT-Bold.eot');
+    src: url('TwCenMT-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TwCenMT-Bold.woff2') format('woff2'),
+        url('TwCenMT-Bold.woff') format('woff'),
+        url('TwCenMT-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

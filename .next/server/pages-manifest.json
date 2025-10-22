@@ -1,0 +1,7 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/hierarchy": "pages/hierarchy.js",
+  "/importantLinks": "pages/importantLinks.js",
+  "/newsPage": "pages/newsPage.js"
+}

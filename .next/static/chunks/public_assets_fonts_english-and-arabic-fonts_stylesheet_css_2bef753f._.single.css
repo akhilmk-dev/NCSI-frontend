@@ -1,0 +1,34 @@
+/* [project]/public/assets/fonts/english-and-arabic-fonts/stylesheet.css [client] (css) */
+@font-face {
+  font-family: Janna LT;
+  src: url("../media/JannaLT-Regular.316c035c.eot");
+  src: url("../media/JannaLT-Regular.316c035c.eot") format("embedded-opentype"), url("../media/JannaLT-Regular.d5c601b8.woff2") format("woff2"), url("../media/JannaLT-Regular.a9195661.woff") format("woff"), url("../media/JannaLT-Regular.e4e0a54a.ttf") format("truetype"), url("../media/JannaLT-Regular.fbf2018a.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Janna LTBold;
+  src: url("../media/JannaLT-Bold.8f3e9104.eot");
+  src: url("../media/JannaLT-Bold.8f3e9104.eot") format("embedded-opentype"), url("../media/JannaLT-Bold.a583c4f5.woff2") format("woff2"), url("../media/JannaLT-Bold.dea51307.woff") format("woff"), url("../media/JannaLT-Bold.58f3f6eb.ttf") format("truetype"), url("../media/JannaLT-Bold.9a339206.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Adobe Arabic;
+  src: url("../media/AdobeArabic-Bold.cfcbfc3d.eot");
+  src: url("../media/AdobeArabic-Bold.cfcbfc3d.eot") format("embedded-opentype"), url("../media/AdobeArabic-Bold.50485316.woff2") format("woff2"), url("../media/AdobeArabic-Bold.6440dcad.woff") format("woff"), url("../media/AdobeArabic-Bold.d7a262f6.ttf") format("truetype"), url("../media/AdobeArabic-Bold.4e9fc667.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Adobe Arabic;
+  src: url("../media/AdobeArabic-Regular.75d0c4bb.eot");
+  src: url("../media/AdobeArabic-Regular.75d0c4bb.eot") format("embedded-opentype"), url("../media/AdobeArabic-Regular.7630b8fc.woff2") format("woff2"), url("../media/AdobeArabic-Regular.815a6e97.woff") format("woff"), url("../media/AdobeArabic-Regular.9e96f4ca.ttf") format("truetype"), url("../media/AdobeArabic-Regular.5c6b77c4.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=public_assets_fonts_english-and-arabic-fonts_stylesheet_css_2bef753f._.single.css.map*/

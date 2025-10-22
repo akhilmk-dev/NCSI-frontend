@@ -1,0 +1,396 @@
+/* [project]/styles/home.css [client] (css) */
+#particles-js {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.calendar-image {
+  text-align: center;
+  color: #fff;
+  background: url("/assets/images/calendar.png") center / contain no-repeat;
+  width: 120px;
+  height: 180px;
+  font-family: Tw Cen MT;
+  font-size: 135px;
+  font-weight: bold;
+}
+
+.calendar-image span {
+  font-size: 180px;
+  position: absolute;
+  top: -45px;
+  left: 0;
+  right: 0;
+}
+
+.PopulationBL {
+  z-index: 1;
+  margin-top: 9px;
+  padding: 0;
+  position: relative;
+}
+
+.PopulationBL span {
+  margin: 0 2px;
+}
+
+.btn-up, .btn-down {
+  height: 20px !important;
+}
+
+.day, .month, .year {
+  border: none !important;
+}
+
+.indicator-value {
+  padding-top: 17px;
+  font-size: 55px;
+  line-height: 43px;
+  display: block;
+}
+
+.indicator-sub:hover .SubTitleIndi {
+  color: #fff;
+}
+
+.indicator-sub i, .indicator-sub img {
+  color: #d3d3d3;
+  opacity: .5;
+  filter: grayscale();
+  width: 10%;
+  font-size: 24px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.indicator-sub {
+  color: #6d6e71 !important;
+}
+
+.indicator-sub:hover {
+  color: #fff !important;
+}
+
+span.SubTitleIndi {
+  color: #313131;
+  margin-bottom: 12px;
+  font-size: small;
+  font-weight: 500;
+  display: block;
+}
+
+center .slider-indicator-col {
+  width: 90%;
+}
+
+.indicators-desc span {
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.rotate-icon {
+  transition: transform .3s;
+}
+
+[dir="rtl"] .rotate-icon {
+  transform: scaleX(-1);
+}
+
+.indicator-button-next {
+  cursor: pointer;
+  opacity: .7;
+  background: #e6f2fa;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: -3em;
+  transform: translateY(-50%);
+}
+
+.indicator-button-next svg, .indicator-button-prev svg {
+  width: 19px;
+  height: 19px;
+}
+
+.indicator-button-prev {
+  cursor: pointer;
+  opacity: .7;
+  background: #e6f2fa;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: -3em;
+  transform: translateY(-50%);
+}
+
+.indicator-button-prev:hover, .indicator-button-next:hover {
+  opacity: .9;
+}
+
+.swiper-button-disabled {
+  opacity: .35;
+  pointer-events: none;
+}
+
+.pub-btn-next, .pub-btn-prev {
+  color: #c5c5c5;
+  z-index: 10;
+  cursor: pointer;
+  background-image: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 27px 44px;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  padding: 6px 0;
+  font-size: 32px;
+  position: absolute;
+  top: 50%;
+}
+
+.pub-btn-prev {
+  left: auto;
+  right: 10px;
+}
+
+.pub-btn-next {
+  left: 10px;
+  right: auto;
+}
+
+.publisher-slide-main {
+  max-height: 100%;
+}
+
+.publisher-slide-main img {
+  max-width: unset;
+  max-width: 310px;
+  max-height: 310px;
+  margin: 0;
+  padding: 0 10px;
+  max-height: unset !important;
+  width: 100% !important;
+}
+
+.hasDatepicker {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 304px;
+}
+
+.accordion {
+  margin: 1em auto;
+}
+
+.event-acc-text {
+  -webkit-line-clamp: 1;
+  color: #5f5f5f;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
+  text-decoration: none;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.event-acc-text:hover {
+  color: #5f5f5f;
+}
+
+.events-accord .title {
+  cursor: pointer;
+  color: #7a7572;
+  background: #efefef;
+  padding: 8px 4px;
+  font-weight: bold;
+}
+
+.title h5 {
+  color: inherit;
+  margin: 0;
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.title .sub-text {
+  height: 15px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: .9;
+  display: block;
+}
+
+.accinnerDateInner {
+  border-right: 2px solid gray;
+  padding: 0 3px;
+}
+
+[dir="rtl"] .accinnerDateInner {
+  border-left: 2px solid gray;
+  border-right: none;
+}
+
+.bookletWrapWrap {
+  cursor: pointer;
+  background-color: #00a79f;
+  justify-content: center;
+  align-items: center;
+  min-width: 115px;
+  max-width: 175px;
+  height: 140px;
+  display: flex;
+  position: relative;
+}
+
+.bookletWrap {
+  color: #fff;
+  text-align: center;
+  padding: 8px 8px 8px 12px;
+}
+
+img.spiralbind {
+  width: 19px;
+  position: absolute;
+  top: 3px;
+  left: -6px;
+}
+
+.chl-div {
+  color: #000;
+  text-align: center;
+  background-color: #fff;
+  width: 98px;
+  margin: 0 auto;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.clock-head, .ind-highlight-text {
+  color: #fff !important;
+}
+
+.share-modal-backdrop {
+  z-index: 9999;
+  background: #00000080;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.share-modal-content {
+  background: #fff;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 90%;
+  padding: 20px;
+  position: relative;
+}
+
+.share-close-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.share-modal {
+  border-radius: .3rem !important;
+  padding: 5px !important;
+}
+
+[dir="rtl"] #shareModal .shareButtons {
+  direction: ltr;
+}
+
+.jssocials-share {
+  margin: .3em;
+  padding: .5em .6em;
+}
+
+.jssocials-share-logo {
+  vertical-align: middle;
+  color: #fff;
+  width: 1em;
+  font-size: 1.5em;
+}
+
+.jssocials-share-twitter, .jssocials-share-twitter:hover {
+  background: #000;
+}
+
+.jssocials-share-facebook {
+  background: #3b5998;
+}
+
+.jssocials-share-facebook:hover {
+  background: #2d4373;
+}
+
+.jssocials-share-linkedin {
+  background: #007bb6;
+}
+
+.jssocials-share-linkedin:hover {
+  background: #005983;
+}
+
+.jssocials-share-email {
+  background: #3490f3;
+}
+
+.jssocials-share-email:hover {
+  background: #0e76e6;
+}
+
+.jssocials-share-whatsapp {
+  background: #29a628;
+}
+
+.jssocials-share-whatsapp:hover {
+  background: #1f7d1e;
+}
+
+@media (width <= 992px) {
+  .calendar-main {
+    padding: 0 !important;
+  }
+}
+
+@media (width <= 576px) {
+  center .slider-indicator-col {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=styles_home_css_2bef753f._.single.css.map*/

@@ -1,0 +1,71 @@
+.ncsi-arabic{
+	direction: rtl;
+	text-align: right;
+}
+.direction-rtl{
+	direction: rtl;
+}
+.ncsi-arabic .header-row-col-social{
+  direction: ltr;
+
+}
+.ncsi-arabic .text-left{
+	text-align: right !important;
+}
+.ncsi-arabic .header-middle-buttons-first-col{
+	border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.ncsi-arabic .event-date {
+    border-right: none;
+    border-left: 2px solid #b4b3b5;
+}
+.ncsi-arabic .row.population-counter-row{
+	direction: ltr;
+}
+.ncsi-arabic .row.menu-item i{
+    /*transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);*/
+}
+.ncsi-arabic .swiper-container-rtl .swiper-button-next:before {
+  content: "\e907";
+}
+.ncsi-arabic .swiper-container-rtl .swiper-button-prev:before {
+  content: "\e904";
+}
+.ncsi-arabic .swiper-button-prev,.ncsi-arabic .swiper-container-rtl .swiper-button-next,.ncsi-arabic .swiper-button-next,.ncsi-arabic .swiper-container-rtl .swiper-button-prev{
+/*transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);*/
+}
+.ncsi-arabic .row.menu-item a{
+font-size: 20px;
+}
+.ncsi-arabic .row.event-close .col-10{
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 15px;
+}
+.ncsi-arabic .event-head{
+	font-size: 20px;
+	-webkit-line-clamp: 4;
+}
+.ncsi-arabic .carousel-share{
+	margin-right: 10px;
+}
+.ncsi-arabic img.logo-image {
+     max-width: 160px; 
+    width: 160px;
+    height: 90px;
+}
+.ncsi-arabic .population-clock-content .padding-15{
+        padding: 22px 0px;
+    margin-top: -7px;
+}
+.ncsi-arabic .odometer.odometer-theme-car{
+  direction: ltr;
+}
+
