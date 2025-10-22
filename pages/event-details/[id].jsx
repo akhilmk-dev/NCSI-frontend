@@ -188,6 +188,7 @@ const EventDetails = ({ event }) => {
                           </div>
                         </div>
 
+                         {(isRTL ? eventItem.event_speaker_ar : eventItem.event_speaker_en) && (
                         <div className="col-md-6">
                           <div className="row">
                             <div className="col-md-5 col-sm-6 col-xs-6 event_lbl">
@@ -200,7 +201,9 @@ const EventDetails = ({ event }) => {
                             </div>
                           </div>
                         </div>
-
+                          )}
+                        
+                         {(isRTL ? eventItem.event_type_ar : eventItem.event_type_en) && (
                         <div className="col-md-6">
                           <div className="row">
                             <div className="col-md-5 col-sm-6 col-xs-6 event_lbl">
@@ -213,7 +216,9 @@ const EventDetails = ({ event }) => {
                             </div>
                           </div>
                         </div>
-
+                         )}
+                        
+                         {(isRTL ? eventItem.event_type_ar : eventItem.event_type_en) && (
                         <div className="col-md-6">
                           <div className="row">
                             <div className="col-md-5 col-sm-6 col-xs-6 event_lbl">
@@ -226,6 +231,9 @@ const EventDetails = ({ event }) => {
                             </div>
                           </div>
                         </div>
+                         )}
+
+                         {eventItem.event_status && (
                         <div className="col-md-6">
                           <div className="row">
                             <div className="col-md-5 col-sm-6 col-xs-6 event_lbl">
@@ -236,7 +244,10 @@ const EventDetails = ({ event }) => {
                             </div>
                           </div>
                         </div>
+                         )}
 
+
+                         {(isRTL ? eventItem.pdf_url_ar : eventItem.pdf_url) && (
                         <div className="col-md-12">
                           <div className="row">
                             <div className="col-md-3 col-sm-6 col-xs-6 event_lbl">
@@ -262,6 +273,7 @@ const EventDetails = ({ event }) => {
                             </div>
                           </div>
                         </div>
+                         )}
                       </div>
                     </div>
                     <h1 className="event_lbl_dec" style={{ marginTop: "20px" }}>

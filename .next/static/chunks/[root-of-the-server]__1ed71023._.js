@@ -509,29 +509,29 @@ function Carousel({ sliderData }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "9e5e4016c74578ec",
-                children: ".carousel-control.jsx-9e5e4016c74578ec{justify-content:center!important;align-items:center!important;display:flex!important}"
+                id: "2a432291e4ab0038",
+                children: ".carousel-control.jsx-2a432291e4ab0038{justify-content:center!important;align-items:center!important;display:flex!important}"
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 "data-interval": "false",
                 id: "slider1-9",
-                className: "jsx-9e5e4016c74578ec" + " " + "carousel slide cid-ruuXFG6DcH container-slide",
+                className: "jsx-2a432291e4ab0038" + " " + "carousel slide cid-ruuXFG6DcH container-slide",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-9e5e4016c74578ec" + " " + "full-screen",
+                    className: "jsx-2a432291e4ab0038" + " " + "full-screen",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         "data-pause": "true",
                         "data-keyboard": "false",
                         "data-ride": "carousel",
                         "data-interval": "6000",
-                        className: "jsx-9e5e4016c74578ec" + " " + "mbr-slider slide carousel",
+                        className: "jsx-2a432291e4ab0038" + " " + "mbr-slider slide carousel",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
-                                className: "jsx-9e5e4016c74578ec" + " " + "carousel-indicators",
+                                className: "jsx-2a432291e4ab0038" + " " + "carousel-indicators",
                                 children: sliderData.items?.map((_, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         "data-app-prevent-settings": "",
                                         "data-target": "#slider1-9",
                                         "data-slide-to": idx,
-                                        className: "jsx-9e5e4016c74578ec" + " " + ((idx === 0 ? "active" : "") || "")
+                                        className: "jsx-2a432291e4ab0038" + " " + ((idx === 0 ? "active" : "") || "")
                                     }, idx, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
                                         lineNumber: 62,
@@ -544,20 +544,20 @@ function Carousel({ sliderData }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 role: "listbox",
-                                className: "jsx-9e5e4016c74578ec" + " " + "carousel-inner",
+                                className: "jsx-2a432291e4ab0038" + " " + "carousel-inner",
                                 children: sliderData.items?.map((item, idx)=>{
                                     const imageUrl = isRTL ? `${baseUrl}/${item.slider_image_ar}` : `${baseUrl}/${item.slider_image}`;
                                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-9e5e4016c74578ec" + " " + `carousel-item slider-fullscreen-image ${idx === 0 ? "active" : ""}`,
+                                        className: "jsx-2a432291e4ab0038" + " " + `carousel-item slider-fullscreen-image ${idx === 0 ? "active" : ""}`,
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-9e5e4016c74578ec" + " " + "container container-slide",
+                                            className: "jsx-2a432291e4ab0038" + " " + "container container-slide",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-9e5e4016c74578ec" + " " + "image_wrapper",
+                                                className: "jsx-2a432291e4ab0038" + " " + "image_wrapper",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                         src: imageUrl,
                                                         alt: item.alt_text,
-                                                        className: "jsx-9e5e4016c74578ec"
+                                                        className: "jsx-2a432291e4ab0038"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/BannerSlider.jsx",
                                                         lineNumber: 85,
@@ -566,16 +566,16 @@ function Carousel({ sliderData }) {
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         id: idx === 0 ? "socialShare" : undefined,
                                                         onClick: ()=>shareNCSI(idx),
-                                                        className: "jsx-9e5e4016c74578ec" + " " + "carousel-share customeIconHome-share color-white"
+                                                        className: "jsx-2a432291e4ab0038" + " " + "carousel-share customeIconHome-share color-white"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/BannerSlider.jsx",
                                                         lineNumber: 86,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-9e5e4016c74578ec" + " " + "carousel-caption justify-content-center",
+                                                        className: "jsx-2a432291e4ab0038" + " " + "carousel-caption justify-content-center",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-9e5e4016c74578ec" + " " + "col-10 align-center"
+                                                            className: "jsx-2a432291e4ab0038" + " " + "col-10 align-center"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Home/BannerSlider.jsx",
                                                             lineNumber: 92,
@@ -615,18 +615,18 @@ function Carousel({ sliderData }) {
                                 role: "button",
                                 "data-slide": "prev",
                                 href: "#slider1-9",
-                                className: "jsx-9e5e4016c74578ec" + " " + "carousel-control carousel-control-prev wow fadeInLeft ",
+                                className: "jsx-2a432291e4ab0038" + " " + "carousel-control carousel-control-prev wow fadeInLeft ",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         "aria-hidden": "true",
-                                        className: "jsx-9e5e4016c74578ec" + " " + "customeIconHome-arrow-cheveron-left mbr-iconfont slider-arrow-left color-theme"
+                                        className: "jsx-2a432291e4ab0038" + " " + "customeIconHome-arrow-cheveron-left mbr-iconfont slider-arrow-left color-theme"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
                                         lineNumber: 110,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "jsx-9e5e4016c74578ec" + " " + "sr-only",
+                                        className: "jsx-2a432291e4ab0038" + " " + "sr-only",
                                         children: "Previous"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
@@ -646,18 +646,18 @@ function Carousel({ sliderData }) {
                                 role: "button",
                                 "data-slide": "next",
                                 href: "#slider1-9",
-                                className: "jsx-9e5e4016c74578ec" + " " + "carousel-control carousel-control-next slider-prev-icon wow fadeInLeft",
+                                className: "jsx-2a432291e4ab0038" + " " + "carousel-control carousel-control-next slider-prev-icon wow fadeInLeft",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         "aria-hidden": "true",
-                                        className: "jsx-9e5e4016c74578ec" + " " + "customeIconHome-arow-cheveron-right mbr-iconfont color-theme slider-arrow-right"
+                                        className: "jsx-2a432291e4ab0038" + " " + "customeIconHome-arow-cheveron-right mbr-iconfont color-theme slider-arrow-right"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
                                         lineNumber: 126,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "jsx-9e5e4016c74578ec" + " " + "sr-only",
+                                        className: "jsx-2a432291e4ab0038" + " " + "sr-only",
                                         children: "Next"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
@@ -696,13 +696,13 @@ function Carousel({ sliderData }) {
                     zIndex: 100
                 },
                 onClick: ()=>setShowModal(false),
-                className: "jsx-9e5e4016c74578ec" + " " + "modal fade show",
+                className: "jsx-2a432291e4ab0038" + " " + "modal fade show",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     role: "document",
                     onClick: (e)=>e.stopPropagation(),
-                    className: "jsx-9e5e4016c74578ec" + " " + "modal-dialog",
+                    className: "jsx-2a432291e4ab0038" + " " + "modal-dialog",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-9e5e4016c74578ec" + " " + "modal-content share-modal Mobileapp_popup",
+                        className: "jsx-2a432291e4ab0038" + " " + "modal-content share-modal Mobileapp_popup",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
@@ -712,11 +712,11 @@ function Carousel({ sliderData }) {
                                     top: '-12px',
                                     right: '-12px'
                                 },
-                                className: "jsx-9e5e4016c74578ec" + " " + "close",
+                                className: "jsx-2a432291e4ab0038" + " " + "close",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         "aria-hidden": "true",
-                                        className: "jsx-9e5e4016c74578ec",
+                                        className: "jsx-2a432291e4ab0038",
                                         children: "×"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
@@ -724,7 +724,7 @@ function Carousel({ sliderData }) {
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "jsx-9e5e4016c74578ec" + " " + "sr-only",
+                                        className: "jsx-2a432291e4ab0038" + " " + "sr-only",
                                         children: "Close"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/BannerSlider.jsx",
@@ -742,7 +742,7 @@ function Carousel({ sliderData }) {
                                     padding: "10px 5px"
                                 },
                                 id: "shareSocialHead",
-                                className: "jsx-9e5e4016c74578ec" + " " + "text-center text-bold text-16 text-[#6d6e71]",
+                                className: "jsx-2a432291e4ab0038" + " " + "text-center text-bold text-16 text-[#6d6e71]",
                                 children: t("share_to_social_media")
                             }, void 0, false, {
                                 fileName: "[project]/components/Home/BannerSlider.jsx",
@@ -751,7 +751,7 @@ function Carousel({ sliderData }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 id: "shareImage",
-                                className: "jsx-9e5e4016c74578ec" + " " + "text-center",
+                                className: "jsx-2a432291e4ab0038" + " " + "text-center",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                     src: `${baseUrl}/${isRTL ? sliderData.items[selectedSlideIndex]?.slider_image_ar : sliderData.items[selectedSlideIndex]?.slider_image}`,
                                     alt: "Slide preview",
@@ -759,7 +759,7 @@ function Carousel({ sliderData }) {
                                         maxWidth: "100%",
                                         height: "auto"
                                     },
-                                    className: "jsx-9e5e4016c74578ec"
+                                    className: "jsx-2a432291e4ab0038"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Home/BannerSlider.jsx",
                                     lineNumber: 196,
@@ -772,18 +772,18 @@ function Carousel({ sliderData }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 id: "shareButtons",
-                                className: "jsx-9e5e4016c74578ec" + " " + "jssocials text-center",
+                                className: "jsx-2a432291e4ab0038" + " " + "jssocials text-center",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-9e5e4016c74578ec" + " " + "jssocials-shares d-flex justify-content-center",
+                                    className: "jsx-2a432291e4ab0038" + " " + "jssocials-shares d-flex justify-content-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share jssocials-share-email",
+                                            className: "jsx-2a432291e4ab0038" + " " + "jssocials-share jssocials-share-email",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: `mailto:?subject=Slide Share&body=${encodedImageUrl}`,
                                                 target: "_self",
-                                                className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share-link",
+                                                className: "jsx-2a432291e4ab0038" + " " + "jssocials-share-link",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                    className: "jsx-9e5e4016c74578ec" + " " + "fa fa-at jssocials-share-logo"
+                                                    className: "jsx-2a432291e4ab0038" + " " + "fa fa-at jssocials-share-logo"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/BannerSlider.jsx",
                                                     lineNumber: 216,
@@ -807,17 +807,17 @@ function Carousel({ sliderData }) {
                                                 padding: "5px",
                                                 paddingRight: "9px"
                                             },
-                                            className: "jsx-9e5e4016c74578ec" + " " + " jssocials-share-twitter",
+                                            className: "jsx-2a432291e4ab0038" + " " + " jssocials-share-twitter",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: `https://twitter.com/share?url=${encodedImageUrl}`,
                                                 target: "_blank",
                                                 rel: "noopener noreferrer",
-                                                className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share-link",
+                                                className: "jsx-2a432291e4ab0038" + " " + "jssocials-share-link",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "jsx-9e5e4016c74578ec" + " " + "",
+                                                    className: "jsx-2a432291e4ab0038" + " " + "",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                         src: logoSrc,
-                                                        className: "jsx-9e5e4016c74578ec"
+                                                        className: "jsx-2a432291e4ab0038"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/BannerSlider.jsx",
                                                         lineNumber: 229,
@@ -839,14 +839,14 @@ function Carousel({ sliderData }) {
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share jssocials-share-facebook",
+                                            className: "jsx-2a432291e4ab0038" + " " + "jssocials-share jssocials-share-facebook",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: `https://facebook.com/sharer/sharer.php?u=${encodedImageUrl}`,
                                                 target: "_blank",
                                                 rel: "noopener noreferrer",
-                                                className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share-link",
+                                                className: "jsx-2a432291e4ab0038" + " " + "jssocials-share-link",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                    className: "jsx-9e5e4016c74578ec" + " " + "fab fa-facebook-f jssocials-share-logo"
+                                                    className: "jsx-2a432291e4ab0038" + " " + "fab fa-facebook-f jssocials-share-logo"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/BannerSlider.jsx",
                                                     lineNumber: 244,
@@ -863,14 +863,14 @@ function Carousel({ sliderData }) {
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share jssocials-share-linkedin",
+                                            className: "jsx-2a432291e4ab0038" + " " + "jssocials-share jssocials-share-linkedin",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedImageUrl}`,
                                                 target: "_blank",
                                                 rel: "noopener noreferrer",
-                                                className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share-link",
+                                                className: "jsx-2a432291e4ab0038" + " " + "jssocials-share-link",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                    className: "jsx-9e5e4016c74578ec" + " " + "fab fa-linkedin-in jssocials-share-logo"
+                                                    className: "jsx-2a432291e4ab0038" + " " + "fab fa-linkedin-in jssocials-share-logo"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/BannerSlider.jsx",
                                                     lineNumber: 255,
@@ -887,13 +887,13 @@ function Carousel({ sliderData }) {
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share jssocials-share-whatsapp",
+                                            className: "jsx-2a432291e4ab0038" + " " + "jssocials-share jssocials-share-whatsapp",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: `https://wa.me/?text=${encodedImageUrl}`,
                                                 target: "_blank",
-                                                className: "jsx-9e5e4016c74578ec" + " " + "jssocials-share-link",
+                                                className: "jsx-2a432291e4ab0038" + " " + "jssocials-share-link",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                                                    className: "jsx-9e5e4016c74578ec" + " " + "fab fa-whatsapp jssocials-share-logo"
+                                                    className: "jsx-2a432291e4ab0038" + " " + "fab fa-whatsapp jssocials-share-logo"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/BannerSlider.jsx",
                                                     lineNumber: 265,
@@ -2119,7 +2119,7 @@ const CalendarIndicator = ({ highlightDate, indicatorData, indicatorTitle, nextR
         ]
     }, void 0, true);
 };
-_s(CalendarIndicator, "/JD2IXEhas6xlaobTg0+Q/V5vWk=", false, function() {
+_s(CalendarIndicator, "bkNX43h6fM+nC8KgQWCKUZIFUVU=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"]
@@ -3580,7 +3580,7 @@ const PopulationClock = ({ populationData })=>{
         columnNumber: 5
     }, this);
 };
-_s(PopulationClock, "B5edE2P6fYnBjFXCaTyhaxtVd28=", false, function() {
+_s(PopulationClock, "IMTRlOE3CZam+ehSNfu7+j5Irqs=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]

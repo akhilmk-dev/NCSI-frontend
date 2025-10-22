@@ -502,12 +502,20 @@ img, video {
   height: 100%;
 }
 
+.h-\[180px\] {
+  height: 180px;
+}
+
 .max-h-0 {
   max-height: 0;
 }
 
 .max-h-\[1000px\] {
   max-height: 1000px;
+}
+
+.min-h-\[180px\] {
+  min-height: 180px;
 }
 
 .\!w-9 {
@@ -695,6 +703,21 @@ img, video {
   border-color: rgb(209 213 219 / var(--tw-divide-opacity));
 }
 
+.divide-gray-400 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-divide-opacity));
+}
+
+.divide-gray-600 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-divide-opacity));
+}
+
+.divide-\[\#999999\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(153 153 153 / var(--tw-divide-opacity));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -751,6 +774,16 @@ img, video {
 
 .border-white\/30 {
   border-color: #ffffff4d;
+}
+
+.border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+
+.border-\[\#999999\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(153 153 153 / var(--tw-border-opacity));
 }
 
 .\!bg-\[\#00a895\] {
@@ -950,6 +983,11 @@ img, video {
 .py-9 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .pb-2 {
@@ -1699,6 +1737,14 @@ p._breadcrumb-header {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.hover\:decoration-red-500:hover {
+  text-decoration-color: #ef4444;
+}
+
+.hover\:underline-offset-4:hover {
+  text-underline-offset: 4px;
 }
 
 .hover\:shadow-lg:hover {
@@ -15154,7 +15200,7 @@ textarea.form-control-lg {
 @font-face {
   font-family: DroidKufiRegular;
   src: url("../media/DroidKufiRegular.3886883c.eot");
-  src: url("../media/DroidKufiRegular.3886883c.eot") format("embedded-opentype"), url("../media/DroidKufiRegular.47a5ac9c.woff2") format("woff2"), url("../media/DroidKufiRegular.f9bf1d51.woff") format("woff"), url("../media/DroidKufiRegular.a7576c59.ttf") format("truetype"), url("../media/DroidKufiRegular.9d746d28.svg") format("svg");
+  src: url("../media/DroidKufiRegular.3886883c.eot") format("embedded-opentype"), url("../media/DroidKufiRegular.47a5ac9c.woff2") format("woff2"), url("../media/DroidKufiRegular.f9bf1d51.woff") format("woff"), url("../media/DroidKufiRegular.a7576c59.ttf") format("truetype"), url("../media/DroidKufiRegular.26d12a4e.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -27109,7 +27155,7 @@ span.easytree-icon {
 @font-face {
   font-family: icomoon;
   src: url("../media/icomoon.a4d9f65e.eot");
-  src: url("../media/icomoon.a4d9f65e.eot") format("embedded-opentype"), url("../media/icomoon.b31dc120.ttf") format("truetype"), url("../media/icomoon.69520f93.woff") format("woff"), url("../media/icomoon.5907c6bd.svg") format("svg");
+  src: url("../media/icomoon.a4d9f65e.eot") format("embedded-opentype"), url("../media/icomoon.b31dc120.ttf") format("truetype"), url("../media/icomoon.69520f93.woff") format("woff"), url("../media/icomoon.45aa9220.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -27137,7 +27183,7 @@ span.easytree-icon {
 @font-face {
   font-family: Janna LT;
   src: url("../media/JannaLT-Regular.316c035c.eot");
-  src: url("../media/JannaLT-Regular.316c035c.eot") format("embedded-opentype"), url("../media/JannaLT-Regular.d5c601b8.woff2") format("woff2"), url("../media/JannaLT-Regular.a9195661.woff") format("woff"), url("../media/JannaLT-Regular.e4e0a54a.ttf") format("truetype"), url("../media/JannaLT-Regular.fbf2018a.svg") format("svg");
+  src: url("../media/JannaLT-Regular.316c035c.eot") format("embedded-opentype"), url("../media/JannaLT-Regular.d5c601b8.woff2") format("woff2"), url("../media/JannaLT-Regular.a9195661.woff") format("woff"), url("../media/JannaLT-Regular.e4e0a54a.ttf") format("truetype"), url("../media/JannaLT-Regular.d2d3f0f0.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -27145,7 +27191,7 @@ span.easytree-icon {
 @font-face {
   font-family: Janna LTBold;
   src: url("../media/JannaLT-Bold.8f3e9104.eot");
-  src: url("../media/JannaLT-Bold.8f3e9104.eot") format("embedded-opentype"), url("../media/JannaLT-Bold.a583c4f5.woff2") format("woff2"), url("../media/JannaLT-Bold.dea51307.woff") format("woff"), url("../media/JannaLT-Bold.58f3f6eb.ttf") format("truetype"), url("../media/JannaLT-Bold.9a339206.svg") format("svg");
+  src: url("../media/JannaLT-Bold.8f3e9104.eot") format("embedded-opentype"), url("../media/JannaLT-Bold.a583c4f5.woff2") format("woff2"), url("../media/JannaLT-Bold.dea51307.woff") format("woff"), url("../media/JannaLT-Bold.58f3f6eb.ttf") format("truetype"), url("../media/JannaLT-Bold.c551387a.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
@@ -27153,7 +27199,7 @@ span.easytree-icon {
 @font-face {
   font-family: Adobe Arabic;
   src: url("../media/AdobeArabic-Bold.cfcbfc3d.eot");
-  src: url("../media/AdobeArabic-Bold.cfcbfc3d.eot") format("embedded-opentype"), url("../media/AdobeArabic-Bold.50485316.woff2") format("woff2"), url("../media/AdobeArabic-Bold.6440dcad.woff") format("woff"), url("../media/AdobeArabic-Bold.d7a262f6.ttf") format("truetype"), url("../media/AdobeArabic-Bold.4e9fc667.svg") format("svg");
+  src: url("../media/AdobeArabic-Bold.cfcbfc3d.eot") format("embedded-opentype"), url("../media/AdobeArabic-Bold.50485316.woff2") format("woff2"), url("../media/AdobeArabic-Bold.6440dcad.woff") format("woff"), url("../media/AdobeArabic-Bold.d7a262f6.ttf") format("truetype"), url("../media/AdobeArabic-Bold.8b4cffe3.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
@@ -27161,7 +27207,7 @@ span.easytree-icon {
 @font-face {
   font-family: Adobe Arabic;
   src: url("../media/AdobeArabic-Regular.75d0c4bb.eot");
-  src: url("../media/AdobeArabic-Regular.75d0c4bb.eot") format("embedded-opentype"), url("../media/AdobeArabic-Regular.7630b8fc.woff2") format("woff2"), url("../media/AdobeArabic-Regular.815a6e97.woff") format("woff"), url("../media/AdobeArabic-Regular.9e96f4ca.ttf") format("truetype"), url("../media/AdobeArabic-Regular.5c6b77c4.svg") format("svg");
+  src: url("../media/AdobeArabic-Regular.75d0c4bb.eot") format("embedded-opentype"), url("../media/AdobeArabic-Regular.7630b8fc.woff2") format("woff2"), url("../media/AdobeArabic-Regular.815a6e97.woff") format("woff"), url("../media/AdobeArabic-Regular.9e96f4ca.ttf") format("truetype"), url("../media/AdobeArabic-Regular.01bf71b0.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -27171,7 +27217,7 @@ span.easytree-icon {
 @font-face {
   font-family: icomoon-home;
   src: url("../media/icomoon-home.12e86b6f.eot");
-  src: url("../media/icomoon-home.12e86b6f.eot") format("embedded-opentype"), url("../media/icomoon-home.73e9b485.ttf") format("truetype"), url("../media/icomoon-home.9ba10516.woff") format("woff"), url("../media/icomoon-home.5cd4bb2b.svg") format("svg");
+  src: url("../media/icomoon-home.12e86b6f.eot") format("embedded-opentype"), url("../media/icomoon-home.73e9b485.ttf") format("truetype"), url("../media/icomoon-home.9ba10516.woff") format("woff"), url("../media/icomoon-home.2c831d0b.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -28976,7 +29022,7 @@ div[data-toggle="collapse"] {
 @font-face {
   font-family: Tungsten;
   src: url("../media/Tungsten-Medium.d731a1af.eot");
-  src: url("../media/Tungsten-Medium.d731a1af.eot") format("embedded-opentype"), url("../media/Tungsten-Medium.5ab0bc28.woff2") format("woff2"), url("../media/Tungsten-Medium.847167de.woff") format("woff"), url("../media/Tungsten-Medium.d287ac64.ttf") format("truetype"), url("../media/Tungsten-Medium.ac2c84e9.svg") format("svg");
+  src: url("../media/Tungsten-Medium.d731a1af.eot") format("embedded-opentype"), url("../media/Tungsten-Medium.5ab0bc28.woff2") format("woff2"), url("../media/Tungsten-Medium.847167de.woff") format("woff"), url("../media/Tungsten-Medium.d287ac64.ttf") format("truetype"), url("../media/Tungsten-Medium.23d07466.svg") format("svg");
   font-weight: 500;
   font-style: normal;
 }
@@ -28984,7 +29030,7 @@ div[data-toggle="collapse"] {
 @font-face {
   font-family: Tungsten Book;
   src: url("../media/Tungsten-Book.92d39428.eot");
-  src: url("../media/Tungsten-Book.92d39428.eot") format("embedded-opentype"), url("../media/Tungsten-Book.2446519c.woff2") format("woff2"), url("../media/Tungsten-Book.ffb6fed8.woff") format("woff"), url("../media/Tungsten-Book.efc741ec.ttf") format("truetype"), url("../media/Tungsten-Book.7a9bbeb9.svg") format("svg");
+  src: url("../media/Tungsten-Book.92d39428.eot") format("embedded-opentype"), url("../media/Tungsten-Book.2446519c.woff2") format("woff2"), url("../media/Tungsten-Book.ffb6fed8.woff") format("woff"), url("../media/Tungsten-Book.efc741ec.ttf") format("truetype"), url("../media/Tungsten-Book.4a1e3139.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -28992,7 +29038,7 @@ div[data-toggle="collapse"] {
 @font-face {
   font-family: Tungsten Narrow;
   src: url("../media/TungstenNarrow-Medium.e18a4e8f.eot");
-  src: url("../media/TungstenNarrow-Medium.e18a4e8f.eot") format("embedded-opentype"), url("../media/TungstenNarrow-Medium.d94936be.woff2") format("woff2"), url("../media/TungstenNarrow-Medium.428beeeb.woff") format("woff"), url("../media/TungstenNarrow-Medium.4a1a0f66.ttf") format("truetype"), url("../media/TungstenNarrow-Medium.eff2d065.svg") format("svg");
+  src: url("../media/TungstenNarrow-Medium.e18a4e8f.eot") format("embedded-opentype"), url("../media/TungstenNarrow-Medium.d94936be.woff2") format("woff2"), url("../media/TungstenNarrow-Medium.428beeeb.woff") format("woff"), url("../media/TungstenNarrow-Medium.4a1a0f66.ttf") format("truetype"), url("../media/TungstenNarrow-Medium.ea40a573.svg") format("svg");
   font-weight: 500;
   font-style: normal;
 }

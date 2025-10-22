@@ -35,13 +35,17 @@ const Header = ({ onOpenModal }) => {
          <div className="row header-row">
             <div className="col-sm-12 col-md-4 col-lg-2 text-left banner-image wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.6s">
                <a href={homeUrl}>
-                  <Image
-                     src={logoSrc}
-                     alt="Logo"
-                     width={300}
-                     height={100}
-                     className="logo-image object-contain"
-                  />
+       <Image
+          src={locale === 'ar'
+          ? '/assets/images/logo-ar.png'
+          : '/assets/images/logo.png'}
+         alt="Logo"
+         width={300}
+          height={100}
+          unoptimized
+         priority
+         className="logo-image object-contain"
+      />
                </a>
             </div>
             <div className="col-sm-12 col-md-8 col-lg-6 align-self-center header-row-col header-row-col-middle">

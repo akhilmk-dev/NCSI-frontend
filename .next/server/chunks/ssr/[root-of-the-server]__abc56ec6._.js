@@ -290,29 +290,30 @@ const Events = ({ initialEvents })=>{
                                                                                 children: [
                                                                                     "من تاريخ: ",
                                                                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$formatDate$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["formatDate"])(event.from_date, "ar-EG"),
+                                                                                    " إلى تاريخ:",
                                                                                     " ",
-                                                                                    "إلى تاريخ: ",
                                                                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$formatDate$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["formatDate"])(event.to_date, "ar-EG")
                                                                                 ]
                                                                             }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
                                                                                 children: [
                                                                                     "From Date: ",
                                                                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$formatDate$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["formatDate"])(event.from_date),
-                                                                                    " To Date: ",
+                                                                                    " To Date:",
+                                                                                    " ",
                                                                                     (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$formatDate$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["formatDate"])(event.to_date)
                                                                                 ]
                                                                             }, void 0, true)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/pages/events/index.jsx",
-                                                                            lineNumber: 96,
-                                                                            columnNumber: 27
+                                                                            lineNumber: 97,
+                                                                            columnNumber: 5
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/pages/events/index.jsx",
-                                                                        lineNumber: 95,
-                                                                        columnNumber: 25
+                                                                        lineNumber: 96,
+                                                                        columnNumber: 3
                                                                     }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                                                                    (isRTL && event.event_speaker_ar || !isRTL && event.event_speaker_en) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
                                                                         className: "_speaker",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                                             children: [
@@ -323,15 +324,15 @@ const Events = ({ initialEvents })=>{
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/pages/events/index.jsx",
-                                                                            lineNumber: 111,
-                                                                            columnNumber: 27
+                                                                            lineNumber: 116,
+                                                                            columnNumber: 7
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/pages/events/index.jsx",
-                                                                        lineNumber: 110,
-                                                                        columnNumber: 25
+                                                                        lineNumber: 115,
+                                                                        columnNumber: 5
                                                                     }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                                                                    (isRTL && event.location_ar || !isRTL && event.location_en) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
                                                                         className: "_location",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                                             children: [
@@ -342,15 +343,15 @@ const Events = ({ initialEvents })=>{
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/pages/events/index.jsx",
-                                                                            lineNumber: 119,
-                                                                            columnNumber: 27
+                                                                            lineNumber: 126,
+                                                                            columnNumber: 7
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/pages/events/index.jsx",
-                                                                        lineNumber: 118,
-                                                                        columnNumber: 25
+                                                                        lineNumber: 125,
+                                                                        columnNumber: 5
                                                                     }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                                                                    (isRTL && event.event_type_ar || !isRTL && event.event_type_en) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
                                                                         className: "_avatar",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                                             children: [
@@ -361,19 +362,19 @@ const Events = ({ initialEvents })=>{
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/pages/events/index.jsx",
-                                                                            lineNumber: 125,
-                                                                            columnNumber: 27
+                                                                            lineNumber: 137,
+                                                                            columnNumber: 7
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/pages/events/index.jsx",
-                                                                        lineNumber: 124,
-                                                                        columnNumber: 25
+                                                                        lineNumber: 136,
+                                                                        columnNumber: 5
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/pages/events/index.jsx",
                                                                 lineNumber: 94,
-                                                                columnNumber: 23
+                                                                columnNumber: 1
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
@@ -409,12 +410,12 @@ const Events = ({ initialEvents })=>{
                                         children: loading ? t("loading") : t("More")
                                     }, void 0, false, {
                                         fileName: "[project]/pages/events/index.jsx",
-                                        lineNumber: 139,
+                                        lineNumber: 153,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/pages/events/index.jsx",
-                                    lineNumber: 138,
+                                    lineNumber: 152,
                                     columnNumber: 15
                                 }, this)
                             ]

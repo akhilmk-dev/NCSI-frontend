@@ -91,43 +91,57 @@ const Events = ({ initialEvents }) => {
                           ? event.short_description_ar
                           : event.short_description_en}
                       </p>
-                      <ul className="_events-ul">
-                        <li className="_time-date">
-                          <span>
-                            {isRTL ? (
-                              <>
-                                من تاريخ: {formatDate(event.from_date, "ar-EG")}{" "}
-                                إلى تاريخ: {formatDate(event.to_date, "ar-EG")}
-                              </>
-                            ) : (
-                              <>
-                                From Date: {formatDate(event.from_date)} To
-                                Date: {formatDate(event.to_date)}
-                              </>
-                            )}
-                          </span>
-                        </li>
-                        <li className="_speaker">
-                          <span>
-                            {t("event_speaker")} :{" "}
-                            {isRTL
-                              ? event.event_speaker_ar
-                              : event.event_speaker_en}
-                          </span>
-                        </li>
-                        <li className="_location">
-                          <span>
-                            {t("event_location")} :{" "}
-                            {isRTL ? event.location_ar : event.location_en}
-                          </span>
-                        </li>
-                        <li className="_avatar">
-                          <span>
-                            {t("event_type")} :{" "}
-                            {isRTL ? event.event_type_ar : event.event_type_en}
-                          </span>
-                        </li>
-                      </ul>
+<ul className="_events-ul">
+  {/* Always show From / To Dates */}
+  <li className="_time-date">
+    <span>
+      {isRTL ? (
+        <>
+          من تاريخ: {formatDate(event.from_date, "ar-EG")} إلى تاريخ:{" "}
+          {formatDate(event.to_date, "ar-EG")}
+        </>
+      ) : (
+        <>
+          From Date: {formatDate(event.from_date)} To Date:{" "}
+          {formatDate(event.to_date)}
+        </>
+      )}
+    </span>
+  </li>
+
+  {/* Speaker — only if exists */}
+  {((isRTL && event.event_speaker_ar) ||
+    (!isRTL && event.event_speaker_en)) && (
+    <li className="_speaker">
+      <span>
+        {t("event_speaker")} :{" "}
+        {isRTL ? event.event_speaker_ar : event.event_speaker_en}
+      </span>
+    </li>
+  )}
+
+  {/* Location — only if exists */}
+  {((isRTL && event.location_ar) || (!isRTL && event.location_en)) && (
+    <li className="_location">
+      <span>
+        {t("event_location")} :{" "}
+        {isRTL ? event.location_ar : event.location_en}
+      </span>
+    </li>
+  )}
+
+  {/* Event Type — only if exists */}
+  {((isRTL && event.event_type_ar) ||
+    (!isRTL && event.event_type_en)) && (
+    <li className="_avatar">
+      <span>
+        {t("event_type")} :{" "}
+        {isRTL ? event.event_type_ar : event.event_type_en}
+      </span>
+    </li>
+  )}
+</ul>
+
                     </div>
                   </div>
                 </div>

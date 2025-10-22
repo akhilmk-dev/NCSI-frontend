@@ -232,6 +232,25 @@
 
   "no_data_found":"لا توجد بيانات",
   "Your request has been sent":"تم ارسال طلبك",
-  "Guides_and_Classifications":"الأدلة والتصانيف"
+  "Guides_and_Classifications":"الأدلة والتصانيف",
+
+
+  "ITU":"الاتحاد الدولي للاتصالات",
+  "UN_data":"مكتب احصاءات الامم المتحدة",
+  "UNESCO_Statistics_Institute":"منظمة اليونسكو",
+  "Central_Bank_of_Oman":"البنك المركزي العماني",
+  "unicef":"منظمة اليونيسف",
+  "United_Nations_Statistical_Commission":"اللجنة الإحصائية للأمم المتحدة",
+  "WHO":"منظمة الصحة العالمية",
+  "GCC_STAT":"المركز الإحصائي لدول مجلس التعاون لدول الخليج العربية",
+  "General_Authority_for_Statistics,_Kingdom_of_Saudi_Arabia":"الهيئة العامة للإحصاء _ المملكة العربية السعودية",
+  "Information_&_eGovernment_Authority__Kingdom_of_Bahrain":"هيئة المعلومات والحكومة الإلكترونية _ مملكة البحـرين",
+  "Official_data_portal_of_the_UAE_Government":"بوابة البيانات الرسمية لحكومة دولة الإمارات العربية المتحدة",
+  "Kuwait_Central_Statistical_Bureau":"الإدارة المركزية للإحصاء _ الكويت",
+  "Planning_and_Statistics_Authority_Qatar":"جهـاز التخطيــط والإحصاء _ قطر",
+  "SESRIC":"مركز الأبحاث الإحصائية والاقتصادية والاجتماعية والتدريب للدول الإسلامية",
+  "Arab_Institute_for_Training_&_Research_in_Statics":"المعهد العربي للتدريب والبحوث الاحصائية",
+  "National_Open_Data_Portal":"البوابة الوطنية للبيانات المفتوحة"
+
 
 }

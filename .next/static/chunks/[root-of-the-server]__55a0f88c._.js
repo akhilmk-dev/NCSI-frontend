@@ -468,50 +468,74 @@ function triggerUpdate(msg) {
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "__N_SSG": (()=>__N_SSG),
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/node_modules/next-i18next/dist/esm/index.js [client] (ecmascript) <module evaluation>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-i18next/dist/es/useTranslation.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/router.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+;
 ;
 ;
 const ExternalLinksList = ({ links = [] })=>{
+    _s();
+    const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"])('common');
+    const { locale } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "bg-white py-20 px-16 sm:px-24 md:px-40 lg:px-56 xl:px-72",
+        className: "bg-white  px-16 sm:px-24 md:px-40 lg:px-56 xl:px-72",
+        style: {
+            paddingTop: '7rem',
+            paddingBottom: '1rem'
+        },
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-            className: "divide-y  border-b border-gray-300 max-w-[1200px] mx-auto",
+            className: "divide-y   max-w-[1200px] mx-auto",
             children: links.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                    className: "py-0.5 divide-gray-300",
+                    className: "py-0.5 ",
+                    style: {
+                        borderColor: '#999999'
+                    },
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                         href: item.href,
                         target: "_blank",
                         rel: "noopener noreferrer",
-                        className: "text-[#666666] text-[13px] font-light hover:text-[#c00] transition-colors duration-300",
+                        className: "text-[#666666] text-[13px] hover:text-[#c00] transition-colors duration-300",
                         children: [
                             "▪ ",
-                            item.title
+                            t(item?.key)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/importantLinks/externalLinksList.jsx",
-                        lineNumber: 9,
+                        lineNumber: 17,
                         columnNumber: 13
                     }, this)
                 }, index, false, {
                     fileName: "[project]/pages/importantLinks/externalLinksList.jsx",
-                    lineNumber: 8,
-                    columnNumber: 11
+                    lineNumber: 15,
+                    columnNumber: 38
                 }, this))
         }, void 0, false, {
             fileName: "[project]/pages/importantLinks/externalLinksList.jsx",
-            lineNumber: 6,
+            lineNumber: 14,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/pages/importantLinks/externalLinksList.jsx",
-        lineNumber: 5,
+        lineNumber: 10,
         columnNumber: 5
     }, this);
 };
+_s(ExternalLinksList, "c8X6oJMkEKMbuRB018WUofCVAmI=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
 _c = ExternalLinksList;
+var __N_SSG = true;
 const __TURBOPACK__default__export__ = ExternalLinksList;
 var _c;
 __turbopack_context__.k.register(_c, "ExternalLinksList");
@@ -532,141 +556,141 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/node_modules/next-i18next/dist/esm/index.js [client] (ecmascript) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-i18next/dist/es/useTranslation.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/head.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/router.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$importantLinks$2f$externalLinksList$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/pages/importantLinks/externalLinksList.jsx [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
-const externalLinks = [
-    {
-        title: "ITU",
-        href: "#"
-    },
-    {
-        title: "UN data",
-        href: "#"
-    },
-    {
-        title: "UNESCO Statistics Institute",
-        href: "#"
-    },
-    {
-        title: "Central Bank of Oman",
-        href: "#"
-    },
-    {
-        title: "unicef",
-        href: "#"
-    },
-    {
-        title: "United Nations Statistical Commission",
-        href: "#"
-    },
-    {
-        title: "WHO",
-        href: "#"
-    },
-    {
-        title: "GCC-STAT",
-        href: "#"
-    },
-    {
-        title: "General Authority for Statistics, Kingdom of Saudi Arabia",
-        href: "#"
-    },
-    {
-        title: "Information & eGovernment Authority — Kingdom of Bahrain",
-        href: "#"
-    },
-    {
-        title: "Official data portal of the UAE Government",
-        href: "#"
-    },
-    {
-        title: "Kuwait Central Statistical Bureau",
-        href: "#"
-    },
-    {
-        title: "Planning and Statistics Authority — Qatar",
-        href: "#"
-    },
-    {
-        title: "SESRIC",
-        href: "#"
-    },
-    {
-        title: "Arab Institute for Training & Research in Statics",
-        href: "#"
-    },
-    {
-        title: "National Open Data Portal",
-        href: "#"
-    }
-];
-const importantLinks = ()=>{
+const ImportantLinks = ()=>{
     _s();
     const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"])("common");
-    const { locale } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    // Pass only translation KEYS (not translated text)
+    const externalLinks = [
+        {
+            key: "ITU",
+            href: "#"
+        },
+        {
+            key: "UN_data",
+            href: "#"
+        },
+        {
+            key: "UNESCO_Statistics_Institute",
+            href: "#"
+        },
+        {
+            key: "Central_Bank_of_Oman",
+            href: "#"
+        },
+        {
+            key: "unicef",
+            href: "#"
+        },
+        {
+            key: "United_Nations_Statistical_Commission",
+            href: "#"
+        },
+        {
+            key: "WHO",
+            href: "#"
+        },
+        {
+            key: "GCC_STAT",
+            href: "#"
+        },
+        {
+            key: "General_Authority_for_Statistics,_Kingdom_of_Saudi_Arabia",
+            href: "#"
+        },
+        {
+            key: "Information_&_eGovernment_Authority__Kingdom_of_Bahrain",
+            href: "#"
+        },
+        {
+            key: "Official_data_portal_of_the_UAE_Government",
+            href: "#"
+        },
+        {
+            key: "Kuwait_Central_Statistical_Bureau",
+            href: "#"
+        },
+        {
+            key: "Planning_and_Statistics_Authority_Qatar",
+            href: "#"
+        },
+        {
+            key: "SESRIC",
+            href: "#"
+        },
+        {
+            key: "Arab_Institute_for_Training_&_Research_in_Statics",
+            href: "#"
+        },
+        {
+            key: "National_Open_Data_Portal",
+            href: "#"
+        }
+    ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
-                    children: t('important links')
+                    children: t("important_links")
                 }, void 0, false, {
                     fileName: "[project]/pages/importantLinks/index.jsx",
-                    lineNumber: 35,
-                    columnNumber: 13
+                    lineNumber: 32,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/importantLinks/index.jsx",
-                lineNumber: 34,
-                columnNumber: 9
+                lineNumber: 31,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "events-section px-0 md:px-12 lg:px-20 bg-[#f4f4f4]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        class: "_breadcrumb",
+                        className: "_breadcrumb",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            class: "_breadcrumb-header",
-                            children: t('Important Links')
+                            className: "_breadcrumb-header",
+                            children: t("important_links")
                         }, void 0, false, {
                             fileName: "[project]/pages/importantLinks/index.jsx",
-                            lineNumber: 39,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/importantLinks/index.jsx",
-                        lineNumber: 38,
-                        columnNumber: 36
+                        lineNumber: 37,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$importantLinks$2f$externalLinksList$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                         links: externalLinks
                     }, void 0, false, {
                         fileName: "[project]/pages/importantLinks/index.jsx",
                         lineNumber: 42,
-                        columnNumber: 10
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/importantLinks/index.jsx",
-                lineNumber: 37,
-                columnNumber: 13
+                lineNumber: 35,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 };
-_s(importantLinks, "DDJmuJ6oPhWMNTeVKV6QQC6+lvE=", false, function() {
+_s(ImportantLinks, "zlIdU9EjM2llFt74AbE2KsUJXyM=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTranslation"]
     ];
 });
+_c = ImportantLinks;
 var __N_SSP = true;
-const __TURBOPACK__default__export__ = importantLinks;
+const __TURBOPACK__default__export__ = ImportantLinks;
+var _c;
+__turbopack_context__.k.register(_c, "ImportantLinks");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }

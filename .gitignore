@@ -45,3 +45,5 @@ test-results/
 # Optional: Ignore uploads or other large folders
 uploads/
 public/uploads/
+
+.next

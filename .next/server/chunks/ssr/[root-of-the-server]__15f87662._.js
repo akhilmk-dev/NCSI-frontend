@@ -351,7 +351,7 @@ const EventDetails = ({ event })=>{
                                                                                 lineNumber: 180,
                                                                                 columnNumber: 25
                                                                             }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                                            (isRTL ? eventItem.event_speaker_ar : eventItem.event_speaker_en) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                 className: "col-md-6",
                                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                     className: "row",
@@ -361,7 +361,7 @@ const EventDetails = ({ event })=>{
                                                                                             children: t("event_speaker")
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 193,
+                                                                                            lineNumber: 194,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -369,21 +369,21 @@ const EventDetails = ({ event })=>{
                                                                                             children: isRTL ? eventItem.event_speaker_ar : eventItem.event_speaker_en
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 196,
+                                                                                            lineNumber: 197,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                    lineNumber: 192,
+                                                                                    lineNumber: 193,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                lineNumber: 191,
+                                                                                lineNumber: 192,
                                                                                 columnNumber: 25
                                                                             }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                                            (isRTL ? eventItem.event_type_ar : eventItem.event_type_en) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                 className: "col-md-6",
                                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                     className: "row",
@@ -393,7 +393,7 @@ const EventDetails = ({ event })=>{
                                                                                             children: t("event_location")
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 206,
+                                                                                            lineNumber: 209,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -401,21 +401,21 @@ const EventDetails = ({ event })=>{
                                                                                             children: isRTL ? eventItem.location_ar : eventItem.location_en
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 209,
+                                                                                            lineNumber: 212,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                    lineNumber: 205,
+                                                                                    lineNumber: 208,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                lineNumber: 204,
+                                                                                lineNumber: 207,
                                                                                 columnNumber: 25
                                                                             }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                                            (isRTL ? eventItem.event_type_ar : eventItem.event_type_en) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                 className: "col-md-6",
                                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                     className: "row",
@@ -425,7 +425,7 @@ const EventDetails = ({ event })=>{
                                                                                             children: t("event_type")
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 219,
+                                                                                            lineNumber: 224,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -433,21 +433,21 @@ const EventDetails = ({ event })=>{
                                                                                             children: isRTL ? eventItem.event_type_ar : eventItem.event_type_en
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 222,
+                                                                                            lineNumber: 227,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                    lineNumber: 218,
+                                                                                    lineNumber: 223,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                lineNumber: 217,
+                                                                                lineNumber: 222,
                                                                                 columnNumber: 25
                                                                             }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                                            eventItem.event_status && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                 className: "col-md-6",
                                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                     className: "row",
@@ -457,7 +457,7 @@ const EventDetails = ({ event })=>{
                                                                                             children: t("status")
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 231,
+                                                                                            lineNumber: 239,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -465,21 +465,21 @@ const EventDetails = ({ event })=>{
                                                                                             children: eventItem.event_status ? t(eventItem.event_status) : "-"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 234,
+                                                                                            lineNumber: 242,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                    lineNumber: 230,
+                                                                                    lineNumber: 238,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                lineNumber: 229,
+                                                                                lineNumber: 237,
                                                                                 columnNumber: 25
                                                                             }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                                            (isRTL ? eventItem.pdf_url_ar : eventItem.pdf_url) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                 className: "col-md-12",
                                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                                                     className: "row",
@@ -489,7 +489,7 @@ const EventDetails = ({ event })=>{
                                                                                             children: t("attachment")
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 242,
+                                                                                            lineNumber: 253,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -508,28 +508,28 @@ const EventDetails = ({ event })=>{
                                                                                                     }
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                                    lineNumber: 256,
+                                                                                                    lineNumber: 267,
                                                                                                     columnNumber: 33
                                                                                                 }, this)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                                lineNumber: 246,
+                                                                                                lineNumber: 257,
                                                                                                 columnNumber: 31
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                            lineNumber: 245,
+                                                                                            lineNumber: 256,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                    lineNumber: 241,
+                                                                                    lineNumber: 252,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                                lineNumber: 240,
+                                                                                lineNumber: 251,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
@@ -553,12 +553,12 @@ const EventDetails = ({ event })=>{
                                                                     children: t("description")
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                                    lineNumber: 268,
+                                                                    lineNumber: 280,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 267,
+                                                                lineNumber: 279,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -570,7 +570,7 @@ const EventDetails = ({ event })=>{
                                                                 children: isRTL ? eventItem.short_description_ar : eventItem.short_description_en
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 270,
+                                                                lineNumber: 282,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
@@ -601,7 +601,7 @@ const EventDetails = ({ event })=>{
                                                     children: t('subscription')
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                    lineNumber: 286,
+                                                    lineNumber: 298,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -617,7 +617,7 @@ const EventDetails = ({ event })=>{
                                                             children: t('event_location')
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 291,
+                                                            lineNumber: 303,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -632,18 +632,18 @@ const EventDetails = ({ event })=>{
                                                                 allowFullScreen: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 303,
+                                                                lineNumber: 315,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 301,
+                                                            lineNumber: 313,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                    lineNumber: 290,
+                                                    lineNumber: 302,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -658,12 +658,12 @@ const EventDetails = ({ event })=>{
                                                                 className: "fab fa-facebook-f"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 320,
+                                                                lineNumber: 332,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 314,
+                                                            lineNumber: 326,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
@@ -675,12 +675,12 @@ const EventDetails = ({ event })=>{
                                                                 className: "fab fa-twitter"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 328,
+                                                                lineNumber: 340,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 322,
+                                                            lineNumber: 334,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
@@ -692,18 +692,18 @@ const EventDetails = ({ event })=>{
                                                                 className: "fab fa-google-plus"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 336,
+                                                                lineNumber: 348,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 330,
+                                                            lineNumber: 342,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                    lineNumber: 313,
+                                                    lineNumber: 325,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -717,7 +717,7 @@ const EventDetails = ({ event })=>{
                                                             className: "fa fa-play-circle-o"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 355,
+                                                            lineNumber: 367,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -726,18 +726,18 @@ const EventDetails = ({ event })=>{
                                                                 src: ""
                                                             }, void 0, false, {
                                                                 fileName: "[project]/pages/event-details/[id].jsx",
-                                                                lineNumber: 357,
+                                                                lineNumber: 369,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                                            lineNumber: 356,
+                                                            lineNumber: 368,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                    lineNumber: 350,
+                                                    lineNumber: 362,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -747,13 +747,13 @@ const EventDetails = ({ event })=>{
                                                     children: t('back_to_event_list')
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/event-details/[id].jsx",
-                                                    lineNumber: 361,
+                                                    lineNumber: 373,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/pages/event-details/[id].jsx",
-                                            lineNumber: 282,
+                                            lineNumber: 294,
                                             columnNumber: 15
                                         }, this)
                                     ]

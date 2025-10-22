@@ -16,14 +16,14 @@ const ExternalLinksList = ({ links = [] })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
         className: "bg-white py-20 px-16 sm:px-24 md:px-40 lg:px-56 xl:px-72",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("ul", {
-            className: "divide-y  border-b border-gray-300 max-w-[1200px] mx-auto",
+            className: "divide-y border-t border-b border-gray-300 max-w-[1200px] mx-auto",
             children: links.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
-                    className: "py-0.5 divide-gray-300",
+                    className: "py-1",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
                         href: item.href,
                         target: "_blank",
                         rel: "noopener noreferrer",
-                        className: "text-[#666666] text-[13px] font-light hover:text-[#c00] transition-colors duration-300",
+                        className: "text-[#666666] text-[13px] font-light hover:text-[#c00] hover:underline hover:underline-offset-2 decoration-[#c00] transition-colors duration-300",
                         children: [
                             "▪ ",
                             item.title
@@ -80,120 +80,124 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$next$2d$i18next$2f$serverS
 ;
 ;
 ;
-const externalLinks = [
-    {
-        title: "ITU",
-        href: "#"
-    },
-    {
-        title: "UN data",
-        href: "#"
-    },
-    {
-        title: "UNESCO Statistics Institute",
-        href: "#"
-    },
-    {
-        title: "Central Bank of Oman",
-        href: "#"
-    },
-    {
-        title: "unicef",
-        href: "#"
-    },
-    {
-        title: "United Nations Statistical Commission",
-        href: "#"
-    },
-    {
-        title: "WHO",
-        href: "#"
-    },
-    {
-        title: "GCC-STAT",
-        href: "#"
-    },
-    {
-        title: "General Authority for Statistics, Kingdom of Saudi Arabia",
-        href: "#"
-    },
-    {
-        title: "Information & eGovernment Authority — Kingdom of Bahrain",
-        href: "#"
-    },
-    {
-        title: "Official data portal of the UAE Government",
-        href: "#"
-    },
-    {
-        title: "Kuwait Central Statistical Bureau",
-        href: "#"
-    },
-    {
-        title: "Planning and Statistics Authority — Qatar",
-        href: "#"
-    },
-    {
-        title: "SESRIC",
-        href: "#"
-    },
-    {
-        title: "Arab Institute for Training & Research in Statics",
-        href: "#"
-    },
-    {
-        title: "National Open Data Portal",
-        href: "#"
-    }
-];
-const importantLinks = ()=>{
+const ImportantLinks = ()=>{
     const { t } = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$next$2d$i18next__$5b$external$5d$__$28$next$2d$i18next$2c$__cjs$29$__["useTranslation"])("common");
     const { locale } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
+    // All keys should match your JSON translation keys
+    const externalLinks = [
+        {
+            key: "ITU",
+            href: "#"
+        },
+        {
+            key: "UN_data",
+            href: "#"
+        },
+        {
+            key: "UNESCO_Statistics_Institute",
+            href: "#"
+        },
+        {
+            key: "Central_Bank_of_Oman",
+            href: "#"
+        },
+        {
+            key: "unicef",
+            href: "#"
+        },
+        {
+            key: "United_Nations_Statistical_Commission",
+            href: "#"
+        },
+        {
+            key: "WHO",
+            href: "#"
+        },
+        {
+            key: "GCC_STAT",
+            href: "#"
+        },
+        {
+            key: "General_Authority_for_Statistics,_Kingdom_of_Saudi_Arabia",
+            href: "#"
+        },
+        {
+            key: "Information_&_eGovernment_Authority__Kingdom_of_Bahrain",
+            href: "#"
+        },
+        {
+            key: "Official_data_portal_of_the_UAE_Government",
+            href: "#"
+        },
+        {
+            key: "Kuwait_Central_Statistical_Bureau",
+            href: "#"
+        },
+        {
+            key: "Planning_and_Statistics_Authority_Qatar",
+            href: "#"
+        },
+        {
+            key: "SESRIC",
+            href: "#"
+        },
+        {
+            key: "Arab_Institute_for_Training_&_Research_in_Statics",
+            href: "#"
+        },
+        {
+            key: "National_Open_Data_Portal",
+            href: "#"
+        }
+    ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("title", {
-                    children: t('important links')
+                    children: t("important_links")
                 }, void 0, false, {
                     fileName: "[project]/pages/importantLinks/index.jsx",
-                    lineNumber: 35,
-                    columnNumber: 13
+                    lineNumber: 34,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/importantLinks/index.jsx",
-                lineNumber: 34,
-                columnNumber: 9
+                lineNumber: 33,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 className: "events-section px-0 md:px-12 lg:px-20 bg-[#f4f4f4]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        class: "_breadcrumb",
+                        className: "_breadcrumb",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                            class: "_breadcrumb-header",
-                            children: t('Important Links')
+                            className: "_breadcrumb-header",
+                            children: t("important_links")
                         }, void 0, false, {
                             fileName: "[project]/pages/importantLinks/index.jsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/importantLinks/index.jsx",
-                        lineNumber: 38,
-                        columnNumber: 36
+                        lineNumber: 39,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$importantLinks$2f$externalLinksList$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        links: externalLinks
+                        links: externalLinks.map((item)=>({
+                                ...item,
+                                title: t(`${item.key}`)
+                            }))
                     }, void 0, false, {
                         fileName: "[project]/pages/importantLinks/index.jsx",
-                        lineNumber: 42,
-                        columnNumber: 10
+                        lineNumber: 44,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/importantLinks/index.jsx",
                 lineNumber: 37,
-                columnNumber: 13
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true);
@@ -207,7 +211,7 @@ async function getServerSideProps({ locale }) {
         }
     };
 }
-const __TURBOPACK__default__export__ = importantLinks;
+const __TURBOPACK__default__export__ = ImportantLinks;
 }}),
 "[project]/node_modules/next/dist/esm/server/route-modules/pages/module.compiled.js [ssr] (ecmascript)": (function(__turbopack_context__) {
 

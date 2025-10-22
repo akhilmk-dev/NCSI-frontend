@@ -233,7 +233,32 @@
 "no_data_found":"No data Found",
 "Your request has been sent":"Your request has been sent",
 "Rate_this_Item": "Rate this Item",
-"Guides_and_Classifications":"Guides and Classifications"
+"Guides_and_Classifications":"Guides and Classifications",
+
+"ITU":"ITU",
+"UN_data":"UN data",
+"UNESCO_Statistics_Institute":"UNESCO Statistics Institute",
+"Central_Bank_of_Oman":"Central Bank of Oman",
+"unicef":"unicef",
+"United_Nations_Statistical_Commission":"United Nations Statistical Commission",
+"WHO":"WHO",
+"GCC_STAT":"GCC-STAT",
+"General_Authority_for_Statistics,_Kingdom_of_Saudi_Arabia":"General Authority for Statistics, Kingdom of Saudi Arabia",
+"Information_&_eGovernment_Authority__Kingdom_of_Bahrain":"Information & eGovernment Authority __ Kingdom of Bahrain",
+"Official_data_portal_of_the_UAE_Government":"Official data portal of the UAE Government",
+"Kuwait_Central_Statistical_Bureau":"Kuwait Central Statistical Bureau",
+"Planning_and_Statistics_Authority_Qatar":"Planning and Statistics Authority _ Qatar",
+"SESRIC":"SESRIC",
+"Arab_Institute_for_Training_&_Research_in_Statics":"Arab Institute for Training & Research in Statics",
+"National_Open_Data_Portal":"National Open Data Portal"
+
+
+
+
+
+
+
+
 
 }
 

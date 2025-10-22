@@ -163,15 +163,17 @@ const Header = ({ onOpenModal })=>{
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
                             href: homeUrl,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                src: logoSrc,
+                                src: locale === 'ar' ? '/assets/images/logo-ar.png' : '/assets/images/logo.png',
                                 alt: "Logo",
                                 width: 300,
                                 height: 100,
+                                unoptimized: true,
+                                priority: true,
                                 className: "logo-image object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/components/common/Header.jsx",
                                 lineNumber: 38,
-                                columnNumber: 19
+                                columnNumber: 8
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/common/Header.jsx",
@@ -220,12 +222,12 @@ const Header = ({ onOpenModal })=>{
                                                             children: t('contact')
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/common/Header.jsx",
-                                                            lineNumber: 71,
+                                                            lineNumber: 75,
                                                             columnNumber: 34
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 70,
+                                                        lineNumber: 74,
                                                         columnNumber: 31
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -233,28 +235,28 @@ const Header = ({ onOpenModal })=>{
                                                         children: t('contact_ceo')
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 73,
+                                                        lineNumber: 77,
                                                         columnNumber: 31
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 69,
+                                                lineNumber: 73,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 68,
+                                            lineNumber: 72,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 67,
+                                        lineNumber: 71,
                                         columnNumber: 22
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/common/Header.jsx",
-                                    lineNumber: 54,
+                                    lineNumber: 58,
                                     columnNumber: 19
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -280,7 +282,7 @@ const Header = ({ onOpenModal })=>{
                                                         children: t('search')
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 84,
+                                                        lineNumber: 88,
                                                         columnNumber: 34
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -293,44 +295,44 @@ const Header = ({ onOpenModal })=>{
                                                             placeholder: t('keyword_search')
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/common/Header.jsx",
-                                                            lineNumber: 88,
+                                                            lineNumber: 92,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 87,
+                                                        lineNumber: 91,
                                                         columnNumber: 34
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 83,
+                                                lineNumber: 87,
                                                 columnNumber: 31
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 82,
+                                            lineNumber: 86,
                                             columnNumber: 28
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 81,
+                                        lineNumber: 85,
                                         columnNumber: 25
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/common/Header.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 84,
                                     columnNumber: 22
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/common/Header.jsx",
-                            lineNumber: 48,
+                            lineNumber: 52,
                             columnNumber: 16
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/common/Header.jsx",
-                        lineNumber: 47,
+                        lineNumber: 51,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -349,7 +351,7 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fas fa-wheelchair header-icons icon-accessibility bg-theme"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 117,
+                                                lineNumber: 121,
                                                 columnNumber: 25
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -361,7 +363,7 @@ const Header = ({ onOpenModal })=>{
                                                         id: "IAplus"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 124,
                                                         columnNumber: 28
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
@@ -370,7 +372,7 @@ const Header = ({ onOpenModal })=>{
                                                         id: "IAMin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 126,
                                                         columnNumber: 28
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -383,7 +385,7 @@ const Header = ({ onOpenModal })=>{
                                                                 className: "Line"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/common/Header.jsx",
-                                                                lineNumber: 124,
+                                                                lineNumber: 128,
                                                                 columnNumber: 31
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -405,58 +407,58 @@ const Header = ({ onOpenModal })=>{
                                                                                         children: "استمع"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/common/Header.jsx",
-                                                                                        lineNumber: 128,
+                                                                                        lineNumber: 132,
                                                                                         columnNumber: 111
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/common/Header.jsx",
-                                                                                    lineNumber: 128,
+                                                                                    lineNumber: 132,
                                                                                     columnNumber: 82
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/common/Header.jsx",
-                                                                                lineNumber: 128,
+                                                                                lineNumber: 132,
                                                                                 columnNumber: 40
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                                                 className: "rsbtn_right rsimg rsplay rspart SPKView"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/common/Header.jsx",
-                                                                                lineNumber: 129,
+                                                                                lineNumber: 133,
                                                                                 columnNumber: 40
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/common/Header.jsx",
-                                                                        lineNumber: 127,
+                                                                        lineNumber: 131,
                                                                         columnNumber: 37
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/common/Header.jsx",
-                                                                    lineNumber: 126,
+                                                                    lineNumber: 130,
                                                                     columnNumber: 34
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/common/Header.jsx",
-                                                                lineNumber: 125,
+                                                                lineNumber: 129,
                                                                 columnNumber: 31
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/common/Header.jsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 127,
                                                         columnNumber: 28
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 119,
+                                                lineNumber: 123,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 116,
+                                        lineNumber: 120,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -470,17 +472,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fab fa-apple header-icons icon-apple"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 138,
+                                                lineNumber: 142,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 137,
+                                            lineNumber: 141,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 136,
+                                        lineNumber: 140,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -495,17 +497,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "head-android-icon"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 144,
+                                                lineNumber: 148,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 142,
+                                            lineNumber: 146,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 141,
+                                        lineNumber: 145,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -518,17 +520,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fab fa-at header-icons icon-windows"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 149,
+                                                lineNumber: 153,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 148,
+                                            lineNumber: 152,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 147,
+                                        lineNumber: 151,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -541,17 +543,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fas fa-rss header-icons icon-rss"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 154,
+                                                lineNumber: 158,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 153,
+                                            lineNumber: 157,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 152,
+                                        lineNumber: 156,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -564,23 +566,23 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fas fa-headphones-alt header-icons icon-headphone"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 159,
+                                                lineNumber: 163,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 158,
+                                            lineNumber: 162,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 157,
+                                        lineNumber: 161,
                                         columnNumber: 22
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/common/Header.jsx",
-                                lineNumber: 115,
+                                lineNumber: 119,
                                 columnNumber: 19
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -592,12 +594,12 @@ const Header = ({ onOpenModal })=>{
                                         "data-wow-duration": "0.5s",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$common$2f$LanguageSwitcher$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 168,
+                                            lineNumber: 172,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 164,
+                                        lineNumber: 168,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -611,17 +613,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fab fa-whatsapp header-icons icon-whatsapp"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 172,
+                                                lineNumber: 176,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 171,
+                                            lineNumber: 175,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 170,
+                                        lineNumber: 174,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -638,17 +640,17 @@ const Header = ({ onOpenModal })=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 177,
+                                                lineNumber: 181,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 176,
+                                            lineNumber: 180,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 175,
+                                        lineNumber: 179,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -662,17 +664,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fa-brands fa-x-twitter header-icons icon-twitter"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 182,
+                                                lineNumber: 186,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 181,
+                                            lineNumber: 185,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 180,
+                                        lineNumber: 184,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -686,17 +688,17 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fab fa-instagram header-icons icon-instagram"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 187,
+                                                lineNumber: 191,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 186,
+                                            lineNumber: 190,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 185,
+                                        lineNumber: 189,
                                         columnNumber: 22
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -710,29 +712,29 @@ const Header = ({ onOpenModal })=>{
                                                 className: "fab fa-facebook-f header-icons icon-facebook"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/common/Header.jsx",
-                                                lineNumber: 192,
+                                                lineNumber: 196,
                                                 columnNumber: 28
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/common/Header.jsx",
-                                            lineNumber: 191,
+                                            lineNumber: 195,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/common/Header.jsx",
-                                        lineNumber: 190,
+                                        lineNumber: 194,
                                         columnNumber: 22
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/common/Header.jsx",
-                                lineNumber: 163,
+                                lineNumber: 167,
                                 columnNumber: 19
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/common/Header.jsx",
-                        lineNumber: 114,
+                        lineNumber: 118,
                         columnNumber: 16
                     }, this)
                 ]
@@ -750,12 +752,12 @@ const Header = ({ onOpenModal })=>{
                     className: "col"
                 }, void 0, false, {
                     fileName: "[project]/components/common/Header.jsx",
-                    lineNumber: 199,
+                    lineNumber: 203,
                     columnNumber: 16
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/common/Header.jsx",
-                lineNumber: 198,
+                lineNumber: 202,
                 columnNumber: 13
             }, this)
         ]
