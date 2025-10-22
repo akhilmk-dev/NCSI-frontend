@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.js"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nexport function middleware(request) {\n    const { pathname, locale } = request.nextUrl;\n    const lngCookie = request.cookies.get('lng')?.value;\n\n    // If the cookie exists and does not match the current locale in the URL\n    if (lngCookie && locale !== lngCookie) {\n      // Redirect to the same path but with the correct locale\n      const url = request.nextUrl.clone();\n      url.locale = lngCookie;\n      return NextResponse.redirect(url);\n    }\n  \n    // Otherwise, continue as normal\n    return NextResponse.next();\n  }\n  \n  export const config = {\n    matcher: [\n      '/:path*', // Match all routes, including root\n    ],\n  }; "],"names":[],"mappings":";;;;AAAA;AAAA;;AAEO,SAAS,WAAW,OAAO;IAC9B,MAAM,EAAE,QAAQ,EAAE,MAAM,EAAE,GAAG,QAAQ,OAAO;IAC5C,MAAM,YAAY,QAAQ,OAAO,CAAC,GAAG,CAAC,QAAQ;IAE9C,wEAAwE;IACxE,IAAI,aAAa,WAAW,WAAW;QACrC,wDAAwD;QACxD,MAAM,MAAM,QAAQ,OAAO,CAAC,KAAK;QACjC,IAAI,MAAM,GAAG;QACb,OAAO,6LAAA,CAAA,eAAY,CAAC,QAAQ,CAAC;IAC/B;IAEA,gCAAgC;IAChC,OAAO,6LAAA,CAAA,eAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QACP;KACD;AACH"}}]
-}

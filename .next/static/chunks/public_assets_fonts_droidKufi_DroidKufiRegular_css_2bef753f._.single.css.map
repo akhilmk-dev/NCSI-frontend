@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/public/assets/fonts/droidKufi/DroidKufiRegular.css"],"sourcesContent":["@font-face {\n    font-family: 'DroidKufiRegular';\n    src: url('./fonts/DroidKufiRegular.eot');\n    src: url('./fonts/DroidKufiRegular.eot?#iefix') format('embedded-opentype'),\n        url('./fonts/DroidKufiRegular.woff2') format('woff2'),\n        url('./fonts/DroidKufiRegular.woff') format('woff'),\n        url('./fonts/DroidKufiRegular.ttf') format('truetype'),\n        url('./fonts/DroidKufiRegular.svg#DroidKufiRegular') format('svg');\n    font-weight: normal;\n    font-style: normal;\n}\n"],"names":[],"mappings":"AAAA"}}]
-}

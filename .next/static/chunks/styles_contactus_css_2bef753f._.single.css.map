@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/styles/contactus.css"],"sourcesContent":[".contact-section{\n    background-color: #f0f0f0;\n}\n\n.regFrom .form-group {\n    display: flex;\n    \n}\n.regFrom {\n    width: calc(90% - 50px);\n    margin: auto;\n}\n\n.RadCaptcha {\n    width: 100%;\n}\n\n.Work_hours h6 {\n    color: #C00;\n    font-size: 17px;\n    margin-top: 20px;\n}\n[dir=\"rtl\"] .Work_hours h6 {\n    font-family: 'GE_SS_Medium', Arial !important;\n}\n\n.Work_hours > div {\n    color: #333;\n    padding: 0 20px;\n    font-family: 'GE_SS_Light' !important;\n    font-size: 10px;\n}\n[dir=\"rtl\"] .Work_hours > div{\n    font-family: 'Janna LT', DroidKufiRegular !important;\n    /* font-family: \"GE_SS_Medium\", Arial !important; */\n}\n#map-canvas {\n    height: 140px;\n    width: 100%;\n    border: 5px solid #fff;\n}\n\n/* .control-label{\n    color: #000;\n    font-family: Gill Sans MT, Arial;\n    text-align: left !important;\n\n} */"],"names":[],"mappings":"AAAA;;;;AAIA;;;;AAIA;;;;;AAKA;;;;AAIA;;;;;;AAKA;;;;AAIA;;;;;;;AAMA;;;;AAIA"}}]
-}
