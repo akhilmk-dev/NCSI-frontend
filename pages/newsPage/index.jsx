@@ -31,7 +31,7 @@ const NewsPage = () => {
             title="NCSI Receives an Iraqi Delegation to Strengthen Arab Statistical Cooperation"
             description="The National Centre for Statistics and Information (NCSI) received on Wednesday, 15 October 2025, a delegation from the General Authority for Statistics and Geographical Systems of the Republic of Iraq."
             date="2025/10/15"
-            image="/assets/images/gallery/news-img-2.jpg"
+            image="/assets/images/gallery/news-img-4.jpg"
             link="#"
           />
 
@@ -46,7 +46,7 @@ const NewsPage = () => {
             title="Oman's total refinery output rises by 1.6%"
             description="According to preliminary data from the National Centre for Statistics and Information (NCSI), gasoline and diesel posted notable gains."
             date="2025/09/21"
-            image="/assets/images/gallery/news-img-1.jpg"
+            image="/assets/images/gallery/news-img-2.jpg"
             link="#"
           />
         </div>

@@ -5,5 +5,7 @@
   "/_document": "pages/_document.js",
   "/events": "pages/events.js",
   "/hierarchy": "pages/hierarchy.js",
-  "/importantLinks": "pages/importantLinks.js"
+  "/importantLinks": "pages/importantLinks.js",
+  "/newsPage": "pages/newsPage.js",
+  "/populationClock": "pages/populationClock.js"
 }

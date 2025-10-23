@@ -1,7 +1,7 @@
 {
   "pages": {
     "/_app": [
-      "static/chunks/[root-of-the-server]__efd83cdb._.js",
+      "static/chunks/[root-of-the-server]__7bfbd0fe._.js",
       "static/chunks/node_modules_next_7ec02e2a._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
@@ -11,10 +11,10 @@
       "static/chunks/node_modules_react-icons_lib_75a63dfe._.js",
       "static/chunks/node_modules_lodash-es_c915315c._.js",
       "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_224fa321._.js",
+      "static/chunks/node_modules_efaeb75b._.js",
       "static/chunks/_64e04565._.css",
       "static/chunks/pages__app_5771e187._.js",
-      "static/chunks/pages__app_2cec9e40._.js"
+      "static/chunks/pages__app_8b3d9d0e._.js"
     ]
   },
   "devFiles": [],

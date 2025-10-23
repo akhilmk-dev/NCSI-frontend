@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
 const NewsCard = ({ title, date, description, image, link }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="w-full">
@@ -14,11 +14,11 @@ const NewsCard = ({ title, date, description, image, link }) => {
       >
         {/* Circular Arrow */}
         <div
-          className={`flex items-center justify-center h-8 w-8 rounded-full border border-gray-300 transition-transform duration-300 ${
+          className={`flex items-center justify-center h-8 w-8 rounded-full bg-[#E9EAEB] transition-transform duration-300 ${
             isOpen ? "rotate-90" : "rotate-0"
           }`}
         >
-          <ChevronRight className="text-[#f58220] w-5 h-5" />
+          <ChevronRight className="text-[#f58220]  w-5 h-5" />
         </div>
 
         <h2 className="text-[19px] md:text-[21px] font-semibold text-[#111] leading-snug">
@@ -48,21 +48,23 @@ const NewsCard = ({ title, date, description, image, link }) => {
 
           {/* Text Block */}
           <div className="flex-1 flex flex-col justify-start">
-            <p className="text-[#222] text-[16px] md:text-[17px] leading-relaxed mb-3">
+            <p className="text-[#222] font-semibold text-[16px] md:text-[16px] leading-relaxed mb-3">
               {description}
             </p>
 
             <div className="flex items-center justify-between text-[14px] md:text-[15px]">
-              <span className="text-[#222]">{date}</span>
+              <span className="text-[#222] font-bold">{date}</span>
               <a
                 href={link}
-                className="text-[#f58220] hover:text-[#d87414] transition-colors"
+                className="text-[#f58220] font-bold hover:text-[#d87414] transition-colors"
               >
                 Read More
               </a>
             </div>
           </div>
         </div>
+        
+
       </div>
     </div>
   );

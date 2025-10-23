@@ -67,28 +67,45 @@ const AwardsCarousel = () => {
       >
         {awards.map((award, index) => (
 <SwiperSlide key={index}>
-  <div className=" w-[230px] overflow-hidden shadow-md flex flex-col bg-[#666666] hover:shadow-lg transition-none">
+  <div className="group relative w-[230px] h-[320px] overflow-hidden cursor-pointer shadow-md ">
+    {/* Layer 1: Default card (title + image) */}
+    <div className="absolute inset-0 z-10 flex flex-col">
+      {/* Title area */}
+      <div className="flex items-center justify-center text-center bg-[#6d6e71] px-6 py-5 h-[160px]">
+        <p className="text-white text-[16px] font-normal leading-[1.4] tracking-wide text-center break-words max-w-[85%] mx-auto">
+          {award.title}
+        </p>
+      </div>
+      {/* Image area */}
+      <div className="flex items-center justify-center bg-[#666666] h-[160px]">
+        <Image
+          src={award.img}
+          alt={award.title}
+          width={260}
+          height={160}
+          className="object-cover w-full h-full"
+        />
+      </div>
+    </div>
 
-    {/* Text box */}
-    <div className="flex items-center justify-center text-center bg-[#6d6e71] px-6 py-5 h-[160px]">
-      <p className="text-white text-[17px] font-normal leading-relaxed tracking-wide">
-        {award.title}
+    {/* Layer 2: Hover overlay (orange) — same as your working HoverTextCard logic */}
+    <div className="absolute inset-0 z-30 hidden group-hover:flex items-center justify-center bg-[#f58220] px-6 py-5 text-center transition-opacity duration-300">
+      <p className="text-white text-[15px] font-normal leading-[1.6] tracking-wide text-center break-words max-w-[90%] mx-auto">
+        The National Centre for Statistics and Information (NCSI) won the Achievement Award
+        of the Spatial Applications Techniques during the World Conference for Users of
+        Geographic Information Systems held at San Diego City, USA, during 20–24/07/2015.
       </p>
     </div>
 
-    {/* Image box — smaller height, consistent width */}
-    <div className="flex items-center justify-center bg-[#666666]  h-[160px]">
-      <Image
-        src={award.img}
-        alt="Award"
-        width={260}
-        height={160}
-        className="object-cover w-full h-full"
-      />
-    </div>
-
+    {/* Optional: a base background to avoid any flicker */}
+    <div className="absolute inset-0 z-0 bg-white" />
   </div>
 </SwiperSlide>
+
+
+
+
+
 
 
 

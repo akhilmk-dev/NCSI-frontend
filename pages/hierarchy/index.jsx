@@ -77,34 +77,34 @@ const hierarchy = () => {
               {/* Decrees content */}
               <div className={`${styles['decrees-container']} grid grid-cols-1 md:grid-cols-2 gap-x-14`}>
                 <div>
-                  <p>
+                  <p className="font-semibold">
                     Royal Decree 104/2020 Amending Some Provisions of the Royal Decrees
                     Establishing the National Centre for Statistics and Information and
                     Promulgating its System
                   </p>
-                  <p>Royal Decree Promulgating the Statistics and Information Law</p>
-                  <p>Royal Decree on Conducting the Electronic Census 2020</p>
-                  <p>Royal Decree Amending Some Provisions of Royal Decree Establishing the Centre</p>
-                  <p>The executive regulation of the Statistics and Information Law.</p>
-                  <p>
+                  <p className="font-semibold">Royal Decree Promulgating the Statistics and Information Law</p>
+                  <p className="font-semibold">Royal Decree on Conducting the Electronic Census 2020</p>
+                  <p className="font-semibold">Royal Decree Amending Some Provisions of Royal Decree Establishing the Centre</p>
+                  <p className="font-semibold">The executive regulation of the Statistics and Information Law.</p>
+                  <p className="font-semibold">
                     Data quality assurance framework for the National Centre for Statistics and
                     Information
                   </p>
                 </div>
 
                 <div>
-                  <p>
+                  <p className="font-semibold">
                     Royal Decree Amending the Provisions of the Electronic Census Procedure
                   </p>
-                  <p>
+                  <p className="font-semibold">
                     Administrative and financial system for the electronic census project 2020
                   </p>
-                  <p>Royal Decree Promulgating the System of the Centre</p>
+                  <p className="font-semibold">Royal Decree Promulgating the System of the Centre</p>
                   <p className="font-semibold">
                     ISSUING THE NATIONAL DATA STRATEGY
                   </p>
-                  <p>General framework for information availability</p>
-                  <p>Royal Decree establishing NCSI</p>
+                  <p className="font-semibold">General framework for information availability</p>
+                  <p className="font-semibold">Royal Decree establishing NCSI</p>
                 </div>
               </div>
 

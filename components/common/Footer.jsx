@@ -1,5 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { useState } from "react";
+import SurveyModal from '@/pages/survey/surveyModal';
 
 export default function Footer() {
     const { t } = useTranslation('common');
@@ -7,7 +9,10 @@ export default function Footer() {
 
     const contactUsUrl = locale === 'ar' ? '/ar/contact-us' : '/contact-us';
     const surveyUrl = locale === 'ar' ? '/ar/survey' : '/survey';
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
+        <>
         <div class="footer-and-copyright">
             <div class="footer-main">
                 <div class="row home-footer color-white">
@@ -22,7 +27,18 @@ export default function Footer() {
                     <div class="col-6 col-sm-4 col-md-3  wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.5s">
                         <div class="footer-main">
                            <span><a href="#">{t('Guides_and_Classifications')}</a></span><br />
-                           <span><a href="#">{t('e_survey')}</a></span><br />
+                           <span>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsModalOpen(true);
+                    }}
+                    className="cursor-pointer"
+                  >
+                    {t("e_survey")}
+                  </a>
+                </span><br />
                            <span><a href={surveyUrl}>{t('request_permission_for_surveys')}</a></span><br />
                         </div>
                     </div>
@@ -50,5 +66,7 @@ export default function Footer() {
                 </div>
             </div>
         </div>
+        <SurveyModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            </>
   );
 }
