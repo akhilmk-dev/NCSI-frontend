@@ -3,9 +3,7 @@
   "/404": "pages/404.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/event-details/[id]": "pages/event-details/[id].js",
   "/events": "pages/events.js",
   "/hierarchy": "pages/hierarchy.js",
-  "/importantLinks": "pages/importantLinks.js",
-  "/populationClock": "pages/populationClock.js"
+  "/importantLinks": "pages/importantLinks.js"
 }
