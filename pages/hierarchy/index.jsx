@@ -41,7 +41,7 @@ const hierarchy = () => {
                 CEO Message
               </h2>
 
-              <p className="text-justify text-[14px]">
+              <p className="text-justify text-[14px] text-[#3a372a] text-sm/7">
                 Based on the highly appreciated instructions of His Majesty, Sultan of
                 the Country, may Allah protect him, directed to all governmental
                 institutions to make haste in boosting their performance & facilitating

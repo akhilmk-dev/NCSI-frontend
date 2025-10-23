@@ -42,17 +42,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages__app_5771e187._.js",
       "static/chunks/pages__app_8b3d9d0e._.js"
     ],
-    "/events": [
-      "static/chunks/node_modules_next_4fbf031d._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__14be90fd._.js",
-      "static/chunks/pages_events_index_jsx_5771e187._.js",
-      "static/chunks/pages_events_index_jsx_dde221d5._.js"
-    ],
     "/hierarchy": [
       "static/chunks/node_modules_next_313f74a4._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
@@ -74,28 +63,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/[root-of-the-server]__55a0f88c._.js",
       "static/chunks/pages_importantLinks_index_jsx_5771e187._.js",
       "static/chunks/pages_importantLinks_index_jsx_a46f2ae9._.js"
-    ],
-    "/newsPage": [
-      "static/chunks/node_modules_next_313f74a4._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_e10f7ae3._.js",
-      "static/chunks/[root-of-the-server]__a43029b7._.js",
-      "static/chunks/pages_newsPage_index_jsx_5771e187._.js",
-      "static/chunks/pages_newsPage_index_jsx_f5b29e7b._.js"
-    ],
-    "/populationClock": [
-      "static/chunks/node_modules_next_68846bca._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_@mui_system_esm_049b2b92._.js",
-      "static/chunks/node_modules_@mui_material_esm_78cae0bb._.js",
-      "static/chunks/node_modules_a03d1d61._.js",
-      "static/chunks/[root-of-the-server]__41426df1._.js",
-      "static/chunks/pages_populationClock_index_jsx_5771e187._.js",
-      "static/chunks/pages_populationClock_index_jsx_5c1cc8b5._.js"
     ]
   },
   "devFiles": [],
