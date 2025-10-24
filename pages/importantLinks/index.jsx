@@ -8,22 +8,22 @@ const ImportantLinks = () => {
 
   // Pass only translation KEYS (not translated text)
   const externalLinks = [
-    { key: "ITU", href: "#" },
-    { key: "UN_data", href: "#" },
-    { key: "UNESCO_Statistics_Institute", href: "#" },
-    { key: "Central_Bank_of_Oman", href: "#" },
-    { key: "unicef", href: "#" },
-    { key: "United_Nations_Statistical_Commission", href: "#" },
-    { key: "WHO", href: "#" },
-    { key: "GCC_STAT", href: "#" },
-    { key: "General_Authority_for_Statistics,_Kingdom_of_Saudi_Arabia", href: "#" },
-    { key: "Information_&_eGovernment_Authority__Kingdom_of_Bahrain", href: "#" },
-    { key: "Official_data_portal_of_the_UAE_Government", href: "#" },
-    { key: "Kuwait_Central_Statistical_Bureau", href: "#" },
-    { key: "Planning_and_Statistics_Authority_Qatar", href: "#" },
-    { key: "SESRIC", href: "#" },
-    { key: "Arab_Institute_for_Training_&_Research_in_Statics", href: "#" },
-    { key: "National_Open_Data_Portal", href: "#" },
+    { key: "ITU", href: "https://www.itu.int/en/Pages/default.aspx" },
+    { key: "UN_data", href: "https://www.one.org/" },
+    { key: "UNESCO_Statistics_Institute", href: "https://www.uis.unesco.org/Pages/default.aspx" },
+    { key: "Central_Bank_of_Oman", href: "https://cbo.gov.om/ar" },
+    { key: "unicef", href: "https://www.unicef.org/" },
+    { key: "United_Nations_Statistical_Commission", href: "https://unstats.un.org/UNSDWebsite/" },
+    { key: "WHO", href: "https://www.who.int/en/" },
+    { key: "GCC_STAT", href: "https://gccstat.org/ar/" },
+    { key: "General_Authority_for_Statistics,_Kingdom_of_Saudi_Arabia", href: "https://www.stats.gov.sa/" },
+    { key: "Information_&_eGovernment_Authority__Kingdom_of_Bahrain", href: "https://www.iga.gov.bh/" },
+    { key: "Official_data_portal_of_the_UAE_Government", href: "https://bayanat.ae/en" },
+    { key: "Kuwait_Central_Statistical_Bureau", href: "https://www.csb.gov.kw/" },
+    { key: "Planning_and_Statistics_Authority_Qatar", href: "https://www.npc.qa/Pages/redirect.aspx" },
+    { key: "SESRIC", href: "https://www.sesric.org/ar/" },
+    { key: "Arab_Institute_for_Training_&_Research_in_Statics", href: "https://www.aitrs.org/" },
+    { key: "National_Open_Data_Portal", href: "https://opendata.gov.om/en" },
   ];
 
   return (

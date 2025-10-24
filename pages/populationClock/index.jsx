@@ -42,8 +42,11 @@ const PopulationClock = () => {
         <title>{t("population_clock")}</title>
       </Head>
     <div style={{ backgroundColor: "#f0f0f0",height:"550px" }}>
-      <div className="container-population">
-        <div
+              <div class="_breadcrumb">
+          <p class="_breadcrumb-header">{t('Population Clock  ')}</p>
+        </div>
+      <div className="container-population py-4">
+        {/* <div
           style={{ paddingTop: "8px !important" }}
           id="ctl00_g_b915632e_61c3_4200_8685_4dee870ed921"
           __markuptype="vsattributemarkup"
@@ -64,10 +67,13 @@ const PopulationClock = () => {
               <span>{t("population_clock")}</span>
             </span>
           </div>
-        </div>
+        </div> */}
+        
         <div data-name="ContentPlaceHolderMain">
           <span id="DeltaPlaceHolderMain">
-            <div
+            
+
+            {/* <div
               class={`row TITPage Header_2 ${isRTL ? "bg-ar" : "bg-en"}`}
               style={{
                 backgroundSize: "cover",
@@ -79,7 +85,7 @@ const PopulationClock = () => {
               >
                 <span>{t("population_clock")}</span>
               </p>
-            </div>
+            </div> */}
 
             <div class="clr"></div>
             <div id="Div2" class="rs_skip rsbtn rs_preserve SPtalk ">

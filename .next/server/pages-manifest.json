@@ -3,6 +3,10 @@
   "/404": "pages/404.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/hierarchy": "pages/hierarchy.js",
-  "/importantLinks": "pages/importantLinks.js"
+  "/_error": "pages/_error.js",
+  "/guidesAndClassifications": "pages/guidesAndClassifications.js",
+  "/importantLinks": "pages/importantLinks.js",
+  "/newsPage": "pages/newsPage.js",
+  "/populationClock": "pages/populationClock.js",
+  "/publications": "pages/publications.js"
 }

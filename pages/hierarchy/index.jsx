@@ -7,7 +7,6 @@ import React from 'react'
 import { useRouter } from "next/router";
 import styles from "./hierarchy.module.css";
 import HoverCard from "@/components/cards/hoverCard";
-import OrganizationChart from "./Organization-img";
 import Image from "next/image";
 import PersonCard from "./PersonCard";
 import HoverTextCard from "./hoverTextCard";
