@@ -6,7 +6,7 @@ const GuidesAndClassificationTable = ({ data = [] }) => {
 
   return (
     <div className="overflow-x-auto py-5">
-      <table className="min-w-full border-t border-b border-gray-200 divide-y divide-gray-200 text-[10.50px] text-gray-800">
+      <table className="min-w-full border-t border-b border-gray-300 divide-y divide-gray-200 text-[10.5px] text-gray-800">
         <thead>
           <tr className="bg-[#00a895] text-white text-center">
             <th className="py-3 px-3 font-semibold whitespace-nowrap">
@@ -27,7 +27,7 @@ const GuidesAndClassificationTable = ({ data = [] }) => {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="divide-y divide-gray-200 ">
           {data.length > 0 ? (
             data.map((item, index) => (
               <tr

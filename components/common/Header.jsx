@@ -10,12 +10,18 @@ import { IoLogoAndroid } from "react-icons/io";
 const icons = [FaStar, FaHeart, FaBell, FaUser, FaCog, FaSearch];
 
 const Header = ({ onOpenModal }) => {
+   const router = useRouter();
 
    const { t } = useTranslation('common');
 
 
    const SearchTextEnterClick = (event) => {
       if (event.key === 'Enter') {
+         const query = event.target.value.trim();
+         if (query) {
+      
+      router.push(`/advancedSearch?q=${encodeURIComponent(query)}`);
+    }
         console.log( 'Enter pressed');
          // your search logic here
       }
@@ -95,6 +101,7 @@ const Header = ({ onOpenModal }) => {
                                        id="Searchtxt"
                                        onKeyPress={SearchTextEnterClick}
                                        placeholder={t('keyword_search')}
+                                       
                                     />
                                  </div>
                               </div>
