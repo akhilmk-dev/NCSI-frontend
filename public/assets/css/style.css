@@ -953,3 +953,29 @@ direction:ltr
 }
 
 
+.image-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.line-height p {
+  line-height: 1.5rem;
+}
+
+.read-more {
+  color: #f58220;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+ 
+}
+
+.read-more:hover {
+ color: #f58220; 
+  text-decoration: underline !important;
+  text-decoration-color: #f58220;
+}

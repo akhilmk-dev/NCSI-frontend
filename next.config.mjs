@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-// next.config.mjs
 import i18n from './next-i18next.config.js';
 
 const nextConfig = {
@@ -8,6 +7,7 @@ const nextConfig = {
     locales: ['en', 'ar'],
     defaultLocale: 'en',
   },
+
   async rewrites() {
     return [
       {
@@ -16,7 +16,35 @@ const nextConfig = {
       },
     ];
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ncsiapi.smsoman.com',
+        port: '',
+        pathname: '/uploads/newsimgs/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ncsiapi.smsoman.com',
+        port: '',
+        pathname: '/uploads/achimgs/**', 
+      },
+      {
+        protocol: 'https',
+        hostname: 'ncsiapi.smsoman.com',
+        port: '',
+        pathname: '/uploads/orgimgs/**', 
+      },
+      {
+        protocol: 'https',
+        hostname: 'ncsiapi.smsoman.com',
+        port: '',
+        pathname: '/uploads/mediapdfs/**', 
+      },
+    ],
+  },
 };
 
 export default nextConfig;
-

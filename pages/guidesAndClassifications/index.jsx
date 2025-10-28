@@ -83,7 +83,7 @@ const GuidesAndClassifications = () => {
 
           {/* Dynamic Main Content */}
           <div className="col-lg-9 d-flex flex-column">
-            {/* 🔍 Search Bar (like Publications page) */}
+            {/* 🔍 Search Bar */}
             <div
               className="d-flex justify-content-end mb-3"
               style={{ marginTop: "10px", marginRight: "10px" }}

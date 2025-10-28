@@ -250,7 +250,16 @@
   "Planning_and_Statistics_Authority_Qatar":"جهـاز التخطيــط والإحصاء _ قطر",
   "SESRIC":"مركز الأبحاث الإحصائية والاقتصادية والاجتماعية والتدريب للدول الإسلامية",
   "Arab_Institute_for_Training_&_Research_in_Statics":"المعهد العربي للتدريب والبحوث الاحصائية",
-  "National_Open_Data_Portal":"البوابة الوطنية للبيانات المفتوحة"
+  "National_Open_Data_Portal":"البوابة الوطنية للبيانات المفتوحة",
+
+  "Details":"تفاصيل",
+  "Top_News":"أهم الأخبار",
+  "Read_more":"اقرأ المزيد",
+  "Who_are_we":"من نحن",
+  "Advanced_search":"البحث المتقدم",
+  "Sections":"الاقسام",
+  "Theme":"الموضوع",
+  "Save_Search":"حفظ البحث"
 
 
 }

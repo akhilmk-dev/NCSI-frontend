@@ -4,8 +4,8 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/advancedSearch": "pages/advancedSearch.js",
-  "/guidesAndClassifications": "pages/guidesAndClassifications.js",
-  "/importantLinks": "pages/importantLinks.js",
-  "/publications": "pages/publications.js"
+  "/events": "pages/events.js",
+  "/hierarchy": "pages/hierarchy.js",
+  "/newsPage": "pages/newsPage.js",
+  "/newsPage/newsDetail": "pages/newsPage/newsDetail.js"
 }

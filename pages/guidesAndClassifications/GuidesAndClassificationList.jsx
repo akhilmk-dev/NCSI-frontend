@@ -18,14 +18,29 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
         <h6 id="Classification">{t("Guides_and_Classifications")}</h6>
       </div>
 
-      <div className="ClassificationScroll">
+      {/* ✅ Compact list container */}
+      <div
+        className="ClassificationScroll"
+        style={{
+          maxHeight: "20vh", // removes forced tall height
+          overflowY: "visible",
+          paddingBottom: "0.5rem",
+        }}
+      >
         <ul id="NCSITheme" className="list-group">
           {dummyData.map(({ id, name, name_ar }) => (
             <li
               key={id}
               data-key={id}
-              className={`publ-group-item indicators-desc ${selectedId === id ? "selected" : ""}`}
-              style={{ paddingTop: "14px", cursor: "pointer" }}
+              className={`publ-group-item indicators-desc ${
+                selectedId === id ? "selected" : ""
+              }`}
+              style={{
+                paddingTop: "10px",
+                paddingBottom: "10px",
+                cursor: "pointer",
+                fontSize: "14px",
+              }}
               onClick={() => onSelect(id)}
             >
               {isRTL ? name_ar : name}

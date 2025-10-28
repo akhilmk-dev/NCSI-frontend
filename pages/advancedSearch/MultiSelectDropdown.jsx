@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const MultiSelectDropdown = ({ options = [], placeholder = "Select..." }) => {
+const MultiSelectDropdown = ({ options = [], placeholder, showCaret = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const dropdownRef = useRef(null);
 
-  // close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -20,7 +19,6 @@ const MultiSelectDropdown = ({ options = [], placeholder = "Select..." }) => {
 
   const handleCheckboxChange = (option) => {
     if (option === "[All]") {
-      // toggle all
       if (selectedItems.length === options.length - 1) {
         setSelectedItems([]);
       } else {
@@ -28,27 +26,34 @@ const MultiSelectDropdown = ({ options = [], placeholder = "Select..." }) => {
       }
       return;
     }
-
-    setSelectedItems((prev) =>
-      prev.includes(option)
-        ? prev.filter((item) => item !== option)
-        : [...prev, option]
-    );
+    if (selectedItems.includes(option)) {
+      setSelectedItems(selectedItems.filter((item) => item !== option));
+    } else {
+      setSelectedItems([...selectedItems, option]);
+    }
   };
 
   return (
-    <div className="relative w-[260px]" ref={dropdownRef}>
-      {/* main box */}
+    <div className="relative w-[250px]" ref={dropdownRef}>
       <div
         onClick={toggleDropdown}
-        className="border border-gray-300 rounded-sm px-3 py-1.5 text-sm bg-white cursor-pointer focus:ring-1 focus:ring-[#009e99]"
+        className="border border-gray-300 rounded-sm px-3 py-1.5 text-sm bg-white cursor-pointer flex justify-between items-center focus:ring-1 focus:ring-[#009e99]"
       >
-        {selectedItems.length > 0
-          ? selectedItems.join(", ")
-          : placeholder}
+        <span className="truncate">
+          {selectedItems.length > 0
+            ? selectedItems.join(", ")
+            : placeholder || "Select"}
+        </span>
+
+        {showCaret && (
+          <i
+            className={`fa-solid fa-caret-down text-gray-500 text-xs ml-2 transition-transform ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          ></i>
+        )}
       </div>
 
-      {/* dropdown */}
       {isOpen && (
         <div className="absolute left-0 mt-1 w-full bg-white border border-gray-300 rounded-sm shadow-md z-10 max-h-52 overflow-y-auto">
           {options.map((option) => (
@@ -74,7 +79,5 @@ const MultiSelectDropdown = ({ options = [], placeholder = "Select..." }) => {
     </div>
   );
 };
-
-
 
 export default MultiSelectDropdown;

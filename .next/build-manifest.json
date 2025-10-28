@@ -52,47 +52,58 @@
       "static/chunks/pages__error_5771e187._.js",
       "static/chunks/pages__error_cd480063._.js"
     ],
-    "/advancedSearch": [
-      "static/chunks/node_modules_next_c688a888._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_17996f94._.js",
-      "static/chunks/[root-of-the-server]__ff07fb69._.js",
-      "static/chunks/pages_advancedSearch_index_jsx_5771e187._.js",
-      "static/chunks/pages_advancedSearch_index_jsx_401fbedf._.js"
-    ],
-    "/guidesAndClassifications": [
-      "static/chunks/node_modules_next_ab436f86._.js",
+    "/events": [
+      "static/chunks/node_modules_next_4fbf031d._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
       "static/chunks/node_modules_axios_lib_9aa2336a._.js",
       "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__9d7581c0._.js",
-      "static/chunks/pages_guidesAndClassifications_index_jsx_5771e187._.js",
-      "static/chunks/pages_guidesAndClassifications_index_jsx_ebe43d8e._.js"
+      "static/chunks/[root-of-the-server]__14be90fd._.js",
+      "static/chunks/pages_events_index_jsx_5771e187._.js",
+      "static/chunks/pages_events_index_jsx_dde221d5._.js"
     ],
-    "/importantLinks": [
-      "static/chunks/node_modules_next_c25357dd._.js",
+    "/hierarchy": [
+      "static/chunks/node_modules_next_5a81a999._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__55a0f88c._.js",
-      "static/chunks/pages_importantLinks_index_jsx_5771e187._.js",
-      "static/chunks/pages_importantLinks_index_jsx_a46f2ae9._.js"
+      "static/chunks/node_modules_swiper_7b66dc55._.js",
+      "static/chunks/node_modules_8150ce09._.js",
+      "static/chunks/[root-of-the-server]__e92f050d._.js",
+      "static/chunks/_2cea41ee._.css",
+      "static/chunks/pages_hierarchy_index_jsx_5771e187._.js",
+      "static/chunks/pages_hierarchy_index_jsx_99ae5ea9._.js"
     ],
-    "/publications": [
-      "static/chunks/[root-of-the-server]__871829d6._.js",
-      "static/chunks/node_modules_next_ab436f86._.js",
+    "/newsPage": [
+      "static/chunks/node_modules_next_dist_compiled_2d271c52._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_96f89e32._.js",
+      "static/chunks/node_modules_next_dist_client_10992084._.js",
+      "static/chunks/node_modules_next_dist_f42e3743._.js",
+      "static/chunks/node_modules_next_96f7b5d6._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
       "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_8789b5ac._.js",
-      "static/chunks/pages_publications_index_jsx_5771e187._.js",
-      "static/chunks/pages_publications_index_jsx_6ebc4a42._.js"
+      "static/chunks/node_modules_e10f7ae3._.js",
+      "static/chunks/[root-of-the-server]__04022d46._.js",
+      "static/chunks/pages_newsPage_index_jsx_5771e187._.js",
+      "static/chunks/pages_newsPage_index_jsx_27bc44c3._.js"
+    ],
+    "/newsPage/newsDetail": [
+      "static/chunks/node_modules_next_dist_compiled_2d271c52._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_96f89e32._.js",
+      "static/chunks/node_modules_next_dist_client_10992084._.js",
+      "static/chunks/node_modules_next_dist_f42e3743._.js",
+      "static/chunks/node_modules_next_bee64347._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
+      "static/chunks/node_modules_db9ffc7b._.js",
+      "static/chunks/[root-of-the-server]__c01161d0._.js",
+      "static/chunks/pages_newsPage_newsDetail_jsx_5771e187._.js",
+      "static/chunks/pages_newsPage_newsDetail_jsx_26fa3615._.js"
     ]
   },
   "devFiles": [],
