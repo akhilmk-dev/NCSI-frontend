@@ -11,10 +11,11 @@ const AwardsCarousel = ({ achievements = [], baseUrl = "" }) => {
   const { locale } = useRouter();
 
   return (
-    <div className="relative w-full bg-white py-10">
+    <div className="relative w-full bg-white py-1">
       {/* === Carousel === */}
       <Swiper
-        dir={locale === "ar" ? "rtl" : "ltr"}
+       key="awards-swiper"
+        dir="ltr"
         modules={[Navigation, Autoplay]}
         navigation={{
           nextEl: ".swiper-button-next",
@@ -25,7 +26,7 @@ const AwardsCarousel = ({ achievements = [], baseUrl = "" }) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="w-[95%] md:w-[90%] mx-auto"
+        className="w-[95%] md:w-[90%] mx-auto" 
         breakpoints={{
           320: { slidesPerView: 1.1, spaceBetween: 14 },   // phones
           480: { slidesPerView: 1.5, spaceBetween: 18 },   // small phones
@@ -38,15 +39,26 @@ const AwardsCarousel = ({ achievements = [], baseUrl = "" }) => {
         {achievements.length > 0 ? (
           achievements.map((award, index) => (
             <SwiperSlide key={index}>
-              <div className="group relative w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px] h-[300px] sm:h-[320px] overflow-hidden cursor-pointer shadow-md bg-white mx-auto">
+              <div className="group relative w-full max-w-[230px] sm:max-w-[230px] md:max-w-[230px] h-[300px] sm:h-[320px] overflow-hidden cursor-pointer shadow-md bg-white mx-auto">
                 {/* === Default Layer === */}
                 <div className="absolute inset-0 z-10 flex flex-col">
                   {/* Title */}
-                  <div className="flex items-center justify-center text-center bg-[#6d6e71] px-4 py-4 min-h-[140px] sm:min-h-[150px]">
-                    <p className="text-white text-[14px] sm:text-[15px] md:text-[16px] leading-snug break-words max-w-[90%] mx-auto">
-                      {locale === "ar" ? award.title_ar : award.title_en}
-                    </p>
-                  </div>
+<div className="flex items-center justify-center bg-[#6d6e71] px-4 py-4 min-h-[140px] sm:min-h-[150px]">
+  <p
+    className="text-white text-[14px] sm:text-[15px] md:text-[16px] leading-snug break-words max-w-[90%] mx-auto"
+    style={{
+      textAlign: locale === "ar" ? "justify" : "center",
+      textJustify: "inter-word",
+      wordSpacing: "normal",
+      letterSpacing: "normal",
+      hyphens: "auto",
+      wordBreak: "break-word",
+    }}
+  >
+    {locale === "ar" ? award.title_ar : award.title_en}
+  </p>
+</div>
+
 
                   {/* Image */}
                   <div className="flex items-center justify-center bg-[#666666] flex-1">
@@ -65,6 +77,10 @@ const AwardsCarousel = ({ achievements = [], baseUrl = "" }) => {
                   <div
                     className="overflow-y-auto max-h-[280px] pr-2 text-[14px] sm:text-[15px] leading-relaxed text-white w-full"
                     style={{
+                      textAlign:"justify",
+                      textJustify:"inter-word",
+                       hyphens: "auto",
+                      wordBreak: "break-word",
                       scrollbarWidth: "none",
                       msOverflowStyle: "none",
                     }}

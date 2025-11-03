@@ -16,6 +16,12 @@ const NewsDetail = () => {
   const [newsData, setNewsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // ✅ dynamic font based on locale
+  const fontFamilyStyle =
+    locale?.startsWith("ar")
+      ? { fontFamily: '"GE_SS_Medium", Arial, sans-serif' }
+      : { fontFamily: '"Gill Sans MT", Arial, sans-serif' };
+
   useEffect(() => {
     if (!id) return;
 
@@ -33,29 +39,30 @@ const NewsDetail = () => {
     fetchNewsDetails();
   }, [id]);
 
-if (loading)
-  return (
-    <>
-      <Head>
-        <title>{t("Details")}</title>
-      </Head>
+  if (loading)
+    return (
+      <>
+        <Head>
+          <title>{t("Details")}</title>
+        </Head>
 
-      <div className="_breadcrumb bg-[#f4f4f4] py-6 px-6 sm:px-12 md:px-20">
-        <p className="_breadcrumb-header text-[22px] font-semibold text-[#222] mb-2">
-          {t("Details")}
-        </p>
-      </div>
+        <div className="_breadcrumb bg-[#f4f4f4] py-6 px-6 sm:px-12 md:px-20">
+          <p className="_breadcrumb-header text-[22px] font-semibold text-[#222] mb-2">
+            {t("Details")}
+          </p>
+        </div>
 
-      <section className="flex items-center justify-center min-h-[70vh] bg-[#f9f9f9]">
-        <p className="text-center text-gray-600 text-lg">{t("Loading...")}</p>
-      </section>
-    </>
-  );
-
+        <section className="flex items-center justify-center min-h-[70vh] bg-[#f9f9f9]">
+          <p className="text-center text-gray-600 text-lg">{t("Loading...")}</p>
+        </section>
+      </>
+    );
 
   if (!newsData)
     return (
-      <p className="text-center text-gray-600 text-lg mt-20">{t("No News Found")}</p>
+      <p className="text-center text-gray-600 text-lg mt-20">
+        {t("No News Found")}
+      </p>
     );
 
   return (
@@ -71,26 +78,38 @@ if (loading)
         </p>
       </div>
 
-
-
       {/* === News Detail Section === */}
       <section className="px-6 sm:px-10 md:px-16 lg:px-24 xl:px-36 py-1 bg-[#f9f9f9]">
-              {/* === Breadcrumb Navigation === */}
-              <div className="lg:p-4 p-6 sm:p-8 md:p-10 ">
-      <nav className="text-[13px] md:text-[14px] text-gray-600  lg:p-2 shadow-sm ">
-        <Link href="/" className="text-gray-600 font-semibold  hover:text-[#b30000] transition-colors">
-          {t("Home")}
-        </Link>
-        <span className="mx-1">{">"}</span>
-        <Link href="/newsPage" className="text-gray-600 font-semibold hover:text-[#b30000] transition-colors">
-          {t("News")}
-        </Link>
-        <span className="mx-1">{">"}</span>
-        <span className="text-[#b30000] text-[12px] md:text-[12px] font-bold">
-          {locale === "ar" ? newsData.title_ar : newsData.title_en}
-        </span>
-      </nav>
-              </div>
+        {/* === Breadcrumb Navigation === */}
+        <div className="lg:p-4 p-6 sm:p-8 md:p-10 ">
+          <nav
+            className="text-[13px] md:text-[12px] text-gray-600 lg:p-2 shadow-sm"
+            style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+          >
+            <Link
+              href="/"
+              className="text-[#666666]  hover:text-decoration-line:underline; transition-colors"
+              style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+            >
+              {t("Home")}
+            </Link>
+            <span className="mx-1">{">"}</span>
+            <Link
+              href="/newsPage"
+              className="text-[#666666] transition-colors"
+              style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+            >
+              {t("News")}
+            </Link>
+            <span className="mx-1">{">"}</span>
+            <span
+              className="text-[#b30000] text-[12px] md:text-[12px]"
+              style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+            >
+              {locale === "ar" ? newsData.title_ar : newsData.title_en}
+            </span>
+          </nav>
+        </div>
 
         <div className=" py-2 p-6 sm:p-8 md:p-10 lg:p-4">
           {/* === Header Section: Title + Date + Floated Image === */}
@@ -112,22 +131,37 @@ if (loading)
             )}
 
             {/* Title and Date — aligned with image top */}
-            <h2 className="text-[#b30000] text-[15px] md:text-[15px] font-bold leading-tight mb-2">
+            <h2
+              className="text-[#CC0000] text-[15px] md:text-[16px] leading-tight mb-2"
+              style={fontFamilyStyle}
+            >
               {locale === "ar" ? newsData.title_ar : newsData.title_en}
             </h2>
-            <p className="text-[#3A372A] text-sm md:text-xs font-bold mb-4">
+
+            <p
+              className="text-[#666666] text-sm md:text-xs mb-2"
+              style={fontFamilyStyle}
+            >
               {new Date(newsData.created_at).toLocaleDateString("en-GB")}
             </p>
           </div>
 
           {/* === Text Content (wraps beside & under image) === */}
           <div
-  className="text-[#3A372A] text-sm md:text-xs font-bold leading-1 mt-2"
-  dangerouslySetInnerHTML={{
-    __html:
-      locale === "ar" ? newsData.content_ar : newsData.content_en,
-  }}
-/>
+            className={`mt-2 news-content s  ${locale?.startsWith("ar") ? "arabic" : ""}`}
+            style={{
+              color: "#666666",
+             fontSize: locale?.startsWith("ar") ? "14px" : "12px",
+              ...fontFamilyStyle,
+            }}
+            dangerouslySetInnerHTML={{
+              __html:
+                locale === "ar"
+                  ? newsData.content_ar
+                  : newsData.content_en,
+            }}
+          />
+
           {/* === Clear float === */}
           <div className="clear-both"></div>
         </div>

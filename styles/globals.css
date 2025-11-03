@@ -83,6 +83,16 @@ p._breadcrumb-header {
   margin: 5px 0 !important;
 }
 
+.news-content {
+  line-height: 1.5 !important;
+}
+.news-content p {
+  margin-bottom:0 !important;
+}
+.news-content.arabic p {
+  font-size: 14px !important;
+}
+
 .Froms input[type="password"],
 .Froms input[type="email"],
 .Froms input[type="text"],
@@ -395,6 +405,22 @@ p._breadcrumb-header {
     padding-left: 15px;
   }
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
 
 
 /* population page */

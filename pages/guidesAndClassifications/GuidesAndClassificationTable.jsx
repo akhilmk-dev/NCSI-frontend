@@ -5,14 +5,14 @@ const GuidesAndClassificationTable = ({ data = [] }) => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="overflow-x-auto py-5">
-      <table className="min-w-full border-t border-b border-gray-300 divide-y divide-gray-200 text-[10.5px] text-gray-800">
+    <div className="overflow-x-auto md:py-1">
+      <table className="min-w-full border border-gray-200 text-[11.5px] text-gray-800">
         <thead>
-          <tr className="bg-[#00a895] text-white text-center">
+          <tr className="bg-[#00a895] text-white ">
             <th className="py-3 px-3 font-semibold whitespace-nowrap">
               ID
             </th>
-            <th className="py-2 px-3 font-semibold whitespace-nowrap">
+            <th className="py-2 px-3 font-semibold whitespace-nowrap ">
               {t("المؤشر")}
             </th>
             <th className="py-2 px-3 font-semibold whitespace-nowrap">
@@ -27,28 +27,38 @@ const GuidesAndClassificationTable = ({ data = [] }) => {
           </tr>
         </thead>
 
-        <tbody className="divide-y divide-gray-200 ">
+        <tbody className="divide-y divide-gray-300 text-start bg-[white]">
           {data.length > 0 ? (
             data.map((item, index) => (
               <tr
                 key={index}
-                className={`text-center ${
-                  index % 2 === 0 ? "bg-white" : "bg-gray-50"
-                } hover:bg-gray-100 transition-colors`}
+                className=""
               >
-                <td className="py-2 px-3 font-medium whitespace-nowrap">
+                <td className="py-2 px-3  max-w-[180px] font-semibold border-b ">
                   {item.id}
                 </td>
-                <td className="py-2 px-3 whitespace-nowrap">
+                <td
+                  className="py-2 px-3 max-w-[180px] truncate  border-b"
+                  title={item.indicator_ar}
+                >
                   {item.indicator_ar}
                 </td>
-                <td className="py-2 px-3 whitespace-nowrap">
+                <td
+                  className="py-2 px-3 max-w-[180px] truncate border-b"
+                  title={item.indicator_en}
+                >
                   {item.indicator_en}
                 </td>
-                <td className="py-2 px-3 whitespace-nowrap">
+                <td
+                  className="py-2 px-3 max-w-[200px] truncate border-b"
+                  title={item.description_ar}
+                >
                   {item.description_ar}
                 </td>
-                <td className="py-2 px-3 whitespace-nowrap">
+                <td
+                  className="py-2 px-3 max-w-[200px] truncate border-b"
+                  title={item.description_en}
+                >
                   {item.description_en}
                 </td>
               </tr>
@@ -57,7 +67,7 @@ const GuidesAndClassificationTable = ({ data = [] }) => {
             <tr>
               <td
                 colSpan={5}
-                className="text-center py-4 text-gray-500"
+                className="text-center py-4 text-gray-500 align-middle"
               >
                 {t("No Data Found")}
               </td>

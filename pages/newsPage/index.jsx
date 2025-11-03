@@ -22,22 +22,38 @@ const NewsPage = ({ initialNews }) => {
     return plain.length > 200 ? plain.slice(0, 200) + "..." : plain;
   };
 
-  const onLoadMore = async () => {
-    try {
-      setLoadingMore(true);
-      const nextPage = page + 1;
-      const newItems = await getNews(nextPage, PAGE_SIZE);
+const onLoadMore = async () => {
+  try {
+    setLoadingMore(true);
+    const nextPage = page + 1;
 
-      if (newItems.length < PAGE_SIZE) setHasMore(false);
+    // Calculate the number of items to fetch (3, then 6, then 9…)
+    const limit = PAGE_SIZE * nextPage;
 
-      setNewsList((prev) => [...prev, ...newItems]);
-      setPage(nextPage);
-    } catch (err) {
-      console.error("Error loading more news:", err);
-    } finally {
-      setLoadingMore(false);
-    }
-  };
+    // Fetch total data up to that limit
+    const allItems = await getNews(1, limit);
+
+    // Slice only the "new" chunk (exclude previous ones)
+    const startIndex = PAGE_SIZE * (page - 1);
+    const endIndex = PAGE_SIZE * nextPage;
+    const newChunk = allItems.slice(startIndex, endIndex);
+
+    // If fewer than expected → no more items left
+    if (newChunk.length < PAGE_SIZE) setHasMore(false);
+
+    // Replace with only the current chunk
+    setNewsList(newChunk);
+    setPage(nextPage);
+  } catch (err) {
+    console.error("Error loading more news:", err);
+  } finally {
+    setLoadingMore(false);
+  }
+};
+
+
+
+
 
   return (
     <>
@@ -55,46 +71,52 @@ const NewsPage = ({ initialNews }) => {
       </section>
 
       {/* News List */}
-      <section className="bg-[#e5e5e5] py-6 px-8 sm:px-10 md:px-20 lg:px-28 xl:px-32">
-        {newsList.length === 0 ? (
-          <p className="text-center text-gray-600 text-lg">
-            {t("No News Found")}
-          </p>
-        ) : (
-          <>
-            <div className="flex flex-col gap-2">
-              {newsList.map((item) => (
-                <NewsCard
-                  key={item.id}
-                  id={item.id}
-                  title={locale === "ar" ? item.title_ar : item.title_en}
-                  description={
-                    locale === "ar"
-                      ? formatDesc(item.content_ar)
-                      : formatDesc(item.content_en)
-                  }
-                  date={new Date(item.created_at).toLocaleDateString("en-GB")} // ✅ "27/10/2025"
-                  image={item.img_url}
-                  link={`/newsPage/newsDetail?id=${item.id}`}
-                />
-              ))}
-            </div>
+<section className="bg-[#e5e5e5] py-6 px-8 sm:px-10 md:px-20 lg:px-28 xl:px-32">
+  {newsList.length === 0 ? (
+    <p className="text-center text-gray-600 text-lg">{t("No News Found")}</p>
+  ) : (
+    <>
+      <div className="flex flex-col gap-2">
+        {newsList.map((item, index) => (
+          <div
+            key={item.id}
+            className="animate-fadeInUp transition-all duration-700 ease-in-out"
+            style={{
+              animationDelay: `${index * 100}ms`,
+              animationFillMode: "both",
+            }}
+          >
+            <NewsCard
+              id={item.id}
+              title={locale === "ar" ? item.title_ar : item.title_en}
+              description={
+                locale === "ar"
+                  ? formatDesc(item.content_ar)
+                  : formatDesc(item.content_en)
+              }
+              date={new Date(item.created_at).toLocaleDateString("en-GB")}
+              image={item.img_url}
+              link={`/newsPage/newsDetail?id=${item.id}`}
+            />
+          </div>
+        ))}
+      </div>
 
-            {/* Load More */}
-            {hasMore && (
-              <div className="mt-10 flex justify-center">
-                <button
-                  onClick={onLoadMore}
-                  disabled={loadingMore}
-                  className="text-[#f58220] font-extrabold text-lg md:text-[16px] disabled:opacity-60"
-                >
-                  {loadingMore ? t("Loading...") : t("Load More News")}
-                </button>
-              </div>
-            )}
-          </>
-        )}
-      </section>
+      {hasMore && (
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={onLoadMore}
+            disabled={loadingMore}
+            className="text-[#f58220] font-extrabold text-lg md:text-[16px] disabled:opacity-60"
+          >
+            {loadingMore ? t("Loading...") : t("Load More News")}
+          </button>
+        </div>
+      )}
+    </>
+  )}
+</section>
+
     </>
   );
 };

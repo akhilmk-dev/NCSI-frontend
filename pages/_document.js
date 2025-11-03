@@ -72,6 +72,13 @@ export default function Document() {
         {/* <script src="assets/jssocials/jssocials.js"></script> */}
         {/* <script src="assets/theme/js/script.js" type="text/javascript"></script> */}
         <script src="/assets/scripts/particles.min.js"></script>
+          
+
+          {/* === Mind Rockets Accessibility Scripts === */}
+         <script src="https://cdn.mindrocketsapis.com/client/Latest/jquery-3.7.1.js"></script>
+        <script src="https://cdn.mindrocketsapis.com/client/Latest/toolkit.js"></script>
+        <script src="https://cdn.mindrocketsapis.com/client/Latest/mrmegapack.bundle.js"></script>
+        <script src="https://cdn.mindrocketsapis.com/client/MRUAP/ncsi/integrator-uap.js"></script>
       </body>
     </Html>
   );

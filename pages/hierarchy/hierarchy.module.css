@@ -31,12 +31,36 @@
   line-height: 1.6;
   max-width: 78rem; 
   margin: 0 auto;
+ 
 }
+.decrees-container a {
+  text-decoration: none;
+  color: #6d6e71;
+  font-weight: 600;
+  line-height: 1.6;
+  font-size: 15px;
+  display: block;       
+}
+.decrees-container a:hover {
+  text-decoration: underline;
+}
+
+/* keep hover for non-link items too */
+.decrees-container p:hover {
+  text-decoration: underline;
+}
+
+/* fix the class selector (remove the space) */
+/* .text-underline:hover {
+  text-decoration: underline !important;
+} */
 
 .decrees-container p {
   margin-bottom: 0.75rem ; /* 12px vertical spacing */ 
    font-size:medium;
 }
+
+
 
 /* .hover-card-text {
   color: white ;

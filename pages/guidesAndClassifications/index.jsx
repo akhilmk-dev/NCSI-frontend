@@ -7,8 +7,18 @@ import Head from "next/head";
 import GuidesAndClassificationList from "./GuidesAndClassificationList";
 import GuidesAndClassificationCard from "./GuidesAndClassificationCard";
 import GuidesAndClassificationTable from "./GuidesAndClassificationTable";
+import { getGlossary } from "../../services/glossaryService";
+import { getMethodologies } from "../../services/methodologyService";
+import { getGuidesClassifications } from "@/services/guideclassificationsService";
 
-const GuidesAndClassifications = () => {
+const GuidesAndClassifications = ({
+  glossaryDataSSR = [],
+  totalGlossarySSR = 0,
+  methodologyDataSSR = [],
+  totalMethodologiesSSR = 0,
+  guidesClassificationDataSSR = [],
+  totalGuidesClassificationsSSR = 0,
+}) => {
   const { t } = useTranslation("common");
   const router = useRouter();
 
@@ -16,47 +26,71 @@ const GuidesAndClassifications = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchString, setSearchString] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const [glossaryData, setGlossaryData] = useState(glossaryDataSSR);
+  const [totalGlossary, setTotalGlossary] = useState(totalGlossarySSR);
+
+  const [methodologyData, setMethodologyData] = useState(methodologyDataSSR);
+  const [totalMethodologies, setTotalMethodologies] = useState(totalMethodologiesSSR);
+
+  const [guidesClassificationData, setGuidesClassificationData] = useState(guidesClassificationDataSSR);
+  const [totalGuidesClassifications, setTotalGuidesClassifications] = useState(totalGuidesClassificationsSSR);
+
   const itemsPerPage = 8;
 
-  // Dummy data
-  const dummyCards = Array(16)
-    .fill({
-      title: "Statistical Methodology Overview",
-      imageSrc: "/assets/images/1.jpg",
-      link: "#",
-    })
-    .map((card, i) => ({ ...card, title: `${card.title} ${i + 1}` }));
+  //  Pagination logic
+  const totalPages =
+    selectedSection === "glossary"
+      ? Math.ceil(totalGlossary / itemsPerPage)
+      : selectedSection === "methodologies"
+      ? Math.ceil(totalMethodologies / itemsPerPage)
+      : Math.ceil(totalGuidesClassifications / itemsPerPage);
 
-  const glossaryData = Array(25)
-    .fill({
-      id: 2234456,
-      indicator_en: "Quantity of Propylene Produced",
-      indicator_ar: "الكمية المنتجة من البروبيلين",
-      description_en: "Quantity produced from propylene, which is a compound",
-      description_ar: "الكمية المنتجة من البروبيلين والذي هو عبارة عن مركب يحمل",
-    })
-    .map((item, i) => ({ ...item, id: item.id + i }));
+  // 🔁 Handle page change
+  const handlePageChange = async (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      setLoading(true);
 
-  // Pagination logic
-  const totalData =
-    selectedSection === "glossary" ? glossaryData : dummyCards;
-  const totalPages = Math.ceil(totalData.length / itemsPerPage);
-  const paginatedData = totalData.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+      if (selectedSection === "glossary") {
+        const { statistics, total } = await getGlossary(page, itemsPerPage, searchString);
+        setGlossaryData(statistics);
+        setTotalGlossary(total);
+      } else if (selectedSection === "methodologies") {
+        const { methodologies, total } = await getMethodologies(page, itemsPerPage, searchString);
+        setMethodologyData(methodologies);
+        setTotalMethodologies(total);
+      } else if (selectedSection === "classifications") {
+        const { classifications, total } = await getGuidesClassifications(page, itemsPerPage, searchString);
+        setGuidesClassificationData(classifications);
+        setTotalGuidesClassifications(total);
+      }
 
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= totalPages) setCurrentPage(page);
+      setLoading(false);
+    }
   };
 
+  // 🔍 Handle search
   const handleSearch = async () => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setCurrentPage(1);
-    }, 500);
+    if (selectedSection === "glossary") {
+      const { statistics, total } = await getGlossary(1, itemsPerPage, searchString);
+      setGlossaryData(statistics);
+      setTotalGlossary(total);
+    } else if (selectedSection === "methodologies") {
+      const { methodologies, total } = await getMethodologies(1, itemsPerPage, searchString);
+      setMethodologyData(methodologies);
+      setTotalMethodologies(total);
+    } else if (selectedSection === "classifications") {
+      const { classifications, total } = await getGuidesClassifications(1, itemsPerPage, searchString);
+      setGuidesClassificationData(classifications);
+      setTotalGuidesClassifications(total);
+    }
+    setCurrentPage(1);
+    setLoading(false);
   };
+
+ 
 
   return (
     <>
@@ -70,30 +104,52 @@ const GuidesAndClassifications = () => {
         </div>
 
         <div className="row publication-body">
-          {/* Sidebar List */}
-          <div className="col-lg-3" style={{ marginTop: "13px" }}>
+          {/* Sidebar */}
+          <div className="col-lg-2" style={{ marginTop: "13px" }}>
             <GuidesAndClassificationList
               selectedId={selectedSection}
               onSelect={(id) => {
                 setSelectedSection(id);
-                setCurrentPage(1); // reset page on section change
+                setCurrentPage(1);
               }}
             />
           </div>
 
-          {/* Dynamic Main Content */}
-          <div className="col-lg-9 d-flex flex-column">
-            {/* 🔍 Search Bar */}
+          {/* Main Content */}
+          <div className="col-lg-10 d-flex flex-column">
+            {/* Search Bar */}
             <div
-              className="d-flex justify-content-end mb-3"
+              className="d-flex justify-content-end mb-0 d-none d-sm-flex"
               style={{ marginTop: "10px", marginRight: "10px" }}
             >
-              <div className="top-search-box" style={{ width: "250px" }}>
+              <div className="top-search-box" style={{ width: "240px" }}>
                 <input
                   type="text"
                   id="searchBox"
                   value={searchString}
-                  onChange={(e) => setSearchString(e.target.value)}
+                  onChange={async (e) => {
+                    const value = e.target.value;
+                    setSearchString(value);
+
+                    if (value.trim() === "") {
+                      setLoading(true);
+                      if (selectedSection === "glossary") {
+                        const { statistics, total } = await getGlossary(1, itemsPerPage, "");
+                        setGlossaryData(statistics);
+                        setTotalGlossary(total);
+                      } else if (selectedSection === "methodologies") {
+                        const { methodologies, total } = await getMethodologies(1, itemsPerPage, "");
+                        setMethodologyData(methodologies);
+                        setTotalMethodologies(total);
+                      } else if (selectedSection === "classifications") {
+                        const { classifications, total } = await getGuidesClassifications(1, itemsPerPage, "");
+                        setGuidesClassificationData(classifications);
+                        setTotalGuidesClassifications(total);
+                      }
+                      setCurrentPage(1);
+                      setLoading(false);
+                    }
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") handleSearch();
                   }}
@@ -118,31 +174,46 @@ const GuidesAndClassifications = () => {
                 />
               </div>
             ) : selectedSection === "glossary" ? (
-              <GuidesAndClassificationTable data={paginatedData} />
-            ) : (
-              <div className="row g-4">
-                {paginatedData.map((card, index) => (
-                  <div key={index} className="col-12 col-sm-6 col-lg-3 d-flex">
-                    <GuidesAndClassificationCard {...card} />
+              <GuidesAndClassificationTable data={glossaryData} />
+            ) : selectedSection === "methodologies" ? (
+              <div
+                className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-center"
+                style={{ minHeight: "340px" }}
+              >
+                {methodologyData.map((m, index) => (
+                  <div key={index} className="col d-flex justify-content-center">
+                    <GuidesAndClassificationCard
+                      id={m.id}
+                      title={router.locale === "ar" ? m.title_ar : m.title_en}
+                      imageSrc={m.cover_image_url}
+                      link={router.locale === "ar" ? m.pdf_file_url_ar : m.pdf_file_url}
+                    />
                   </div>
                 ))}
               </div>
-            )}
+            ) : selectedSection === "classifications" ? (
+              <div
+                className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-center"
+                style={{ minHeight: "340px" }}
+              >
+                {guidesClassificationData.map((g, index) => (
+                  <div key={index} className="col d-flex justify-content-center">
+                    <GuidesAndClassificationCard
+                      id={g.id}
+                      title={router.locale === "ar" ? g.title_ar : g.title_en}
+                      imageSrc={g.cover_image_url}
+                      link={router.locale === "ar" ? g.pdf_file_url_ar : g.pdf_file_url}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
 
-            {/* Pagination Section */}
+            {/* Pagination */}
             <div
               id="pagination"
               className="pagination d-flex justify-content-center flex-wrap mt-4"
             >
-              {currentPage > 1 && (
-                <button
-                  className="page-button"
-                  onClick={() => handlePageChange(1)}
-                >
-                  <i className="fas fa-step-backward text-white"></i>
-                </button>
-              )}
-
               {currentPage > 1 && (
                 <button
                   className="page-button"
@@ -151,39 +222,21 @@ const GuidesAndClassifications = () => {
                   <i className="fas fa-caret-left text-white"></i>
                 </button>
               )}
-
-              {Array.from({ length: totalPages }, (_, i) => i + 1)
-                .slice(
-                  Math.max(0, currentPage - 2),
-                  Math.min(totalPages, currentPage + 1)
-                )
-                .map((page) => (
-                  <button
-                    key={page}
-                    className={`page-button ${
-                      page === currentPage ? "active" : ""
-                    }`}
-                    onClick={() => handlePageChange(page)}
-                  >
-                    {page}
-                  </button>
-                ))}
-
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  className={`page-button ${page === currentPage ? "active" : ""}`}
+                  onClick={() => handlePageChange(page)}
+                >
+                  {page}
+                </button>
+              ))}
               {currentPage < totalPages && (
                 <button
                   className="page-button"
                   onClick={() => handlePageChange(currentPage + 1)}
                 >
                   <i className="fas fa-caret-right text-white"></i>
-                </button>
-              )}
-
-              {currentPage < totalPages && (
-                <button
-                  className="page-button"
-                  onClick={() => handlePageChange(totalPages)}
-                >
-                  <i className="fas fa-step-forward text-white"></i>
                 </button>
               )}
             </div>
@@ -195,11 +248,38 @@ const GuidesAndClassifications = () => {
 };
 
 export async function getServerSideProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
+  try {
+    const [glossaryResponse, methodologyResponse, classificationsResponse] = await Promise.all([
+      getGlossary(1, 8, ""),
+      getMethodologies(1, 8, ""),
+      getGuidesClassifications(1, 8, ""),
+    ]);
+
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+        glossaryDataSSR: glossaryResponse.statistics || [],
+        totalGlossarySSR: glossaryResponse.total || 0,
+        methodologyDataSSR: methodologyResponse.methodologies || [],
+        totalMethodologiesSSR: methodologyResponse.total || 0,
+        guidesClassificationDataSSR: classificationsResponse.classifications || [],
+        totalGuidesClassificationsSSR: classificationsResponse.total || 0,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+        glossaryDataSSR: [],
+        totalGlossarySSR: 0,
+        methodologyDataSSR: [],
+        totalMethodologiesSSR: 0,
+        guidesClassificationDataSSR: [],
+        totalGuidesClassificationsSSR: 0,
+      },
+    };
+  }
 }
 
 export default GuidesAndClassifications;

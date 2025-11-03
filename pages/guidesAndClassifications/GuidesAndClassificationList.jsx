@@ -15,7 +15,7 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
   return (
     <div className="col-lg-12 p-0">
       <div className="rounded-box">
-        <h6 id="Classification">{t("Guides_and_Classifications")}</h6>
+        <h6 className="text-sm"  id="Classification">{t("Guides_and_Classifications")}</h6>
       </div>
 
       {/* ✅ Compact list container */}

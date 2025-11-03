@@ -13,6 +13,11 @@ const SurveyModal = ({ isOpen, onClose }) => {
     router.push("/survey/searchResult"); 
   };
 
+  const handleSurveyCLick =()=>{
+    onClose();
+    router.push("/survey")
+  }
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 ">
       <div className="bg-white rounded-xl shadow-xl w-[90%] max-w-md h-[250px] p-6 relative">
@@ -39,7 +44,9 @@ const SurveyModal = ({ isOpen, onClose }) => {
             <span className="text-lg font-light">→</span>
           </button>
 
-          <button className="flex items-center justify-between bg-[#00A896] hover:bg-[#00907f] text-white rounded-lg py-3 px-2 transition-all duration-200">
+          <button className="flex items-center justify-between bg-[#00A896] hover:bg-[#00907f] text-white rounded-lg py-3 px-2 transition-all duration-200"
+          onClick={handleSurveyCLick}
+          >
             <div className="flex items-center gap-3">
               <ClipboardList size={18} className="text-white" />
               <span className="text-sm font-medium">Survey</span>

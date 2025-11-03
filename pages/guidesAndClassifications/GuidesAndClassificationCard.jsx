@@ -62,15 +62,17 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
   };
 
   return (
-    <div
-      className="card w-100"
-      style={{
-        height: "300px",
-        marginBottom: "20px",
-        border: "none",
-        background: "transparent",
-      }}
-    >
+<div
+  className="card"
+  style={{
+    height: "300px",
+    width:"600px",
+    marginBottom: "20px",
+    border: "none",
+    background: "transparent",
+  }}
+>
+
       <div className="card-content">
         <div className="item" style={{ marginTop: "30px" }}>
           <div className="flip-card">
@@ -92,7 +94,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                     </div>
                   </a>
 
-                  <div className="hoverimage img-section">
+                  <div className="hoverimage img-section " style={{height:"150px"}}>
                     <a target="_blank" rel="noopener noreferrer" href={link}>
                       <img
                         className="img-responsive attachment_ID"
@@ -100,8 +102,8 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                         alt={title}
                         style={{
                           width: "100%",
-                          height: "200px",
-                          objectFit: "cover",
+                          
+                          objectFit: "contain",
                           borderRadius: "5px",
                         }}
                       />
