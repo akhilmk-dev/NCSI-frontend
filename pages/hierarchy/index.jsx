@@ -60,14 +60,18 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                     </p>
 
                     {/* Toggle button */}
-                    <div className="text-right mt-3">
-                      <button
-                        onClick={() => setIsExpanded(!isExpanded)}
-                        className="text-gray-500 hover:text-gray-700 font-medium transition-colors"
-                      >
-                        {isExpanded ? t("Read_more") : t("Read_less")}
-                      </button>
-                    </div>
+<div
+  className={`mt-3 ${locale === "ar" ? "text-left" : "text-right"}`}
+  dir={locale === "ar" ? "rtl" : "ltr"}
+>
+  <button
+    onClick={() => setIsExpanded(!isExpanded)}
+    className="text-gray-500 hover:text-gray-700 font-medium transition-colors"
+  >
+    {isExpanded ? t("Read_less") : t("Read_more")}
+  </button>
+</div>
+
                   </>
                 );
               })()}
@@ -114,7 +118,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                               rel="noopener noreferrer"
                               className="font-semibold block leading-snug tracking-normal hover:!underline transition-all duration-150"
                               style={{
-                                fontSize: "15px",
+                                fontSize: "16px",
                                 lineHeight: "1.6",
                                 color: "#6d6e71",
                               }}
@@ -158,7 +162,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                               rel="noopener noreferrer"
                               className="font-semibold block leading-snug tracking-normal hover:!underline transition-all duration-150"
                               style={{
-                                fontSize: "15px",
+                                fontSize: "16px",
                                 lineHeight: "1.6",
                                 color: "#6d6e71",
                               }}

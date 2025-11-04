@@ -38,7 +38,7 @@ const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
         {/* Title (default view) */}
         {!isHovered && (
           <div className="absolute inset-0 flex items-center justify-center px-4">
-            <h3 className="text-[#00a895] font-bold text-[25px] uppercase leading-snug text-center">
+            <h3 className="text-[#00a895] font-bold text-[24px] uppercase leading-snug text-center">
               {title}
             </h3>
           </div>

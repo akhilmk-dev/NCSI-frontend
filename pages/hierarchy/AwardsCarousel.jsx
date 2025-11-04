@@ -15,7 +15,7 @@ const AwardsCarousel = ({ achievements = [], baseUrl = "" }) => {
       {/* === Carousel === */}
       <Swiper
        key="awards-swiper"
-        dir="ltr"
+        dir="rtl"
         modules={[Navigation, Autoplay]}
         navigation={{
           nextEl: ".swiper-button-next",

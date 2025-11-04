@@ -74,12 +74,12 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
 >
 
       <div className="card-content">
-        <div className="item" style={{ marginTop: "30px" }}>
+        <div className="item" style={{ marginTop: "0px" }}>
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <div className="handouts-section">
-                  <a href="#" style={{ cursor: "default" }}>
+                  <a  style={{ cursor: "default" }}>
                     <div className="_title">
                       <h5
                         style={{

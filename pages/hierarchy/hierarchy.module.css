@@ -18,8 +18,8 @@
   
 @media (max-width: 768px) {
   .home-body-hierarchy {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 }
 

@@ -22,7 +22,9 @@ export const getGuidesClassifications = async (
         field: "created_at",
         direction: "asc",
       },
-      filter: {},
+        "filter": {
+      "status":1
+  }
     };
 
     const response = await api.post("/V1/guideclassifications/list", body);

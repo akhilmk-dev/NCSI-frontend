@@ -534,6 +534,10 @@ img, video {
   height: 2rem !important;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-36 {
   height: 9rem;
 }
@@ -690,14 +694,6 @@ img, video {
   width: 100%;
 }
 
-.min-w-\[110px\] {
-  min-width: 110px;
-}
-
-.min-w-\[130px\] {
-  min-width: 130px;
-}
-
 .min-w-\[350px\] {
   min-width: 350px;
 }
@@ -710,8 +706,8 @@ img, video {
   min-width: 100%;
 }
 
-.max-w-5xl {
-  max-width: 64rem;
+.max-w-6xl {
+  max-width: 72rem;
 }
 
 .max-w-7xl {
@@ -1097,11 +1093,6 @@ img, video {
   background-color: rgb(0 168 150 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#00A99D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 169 157 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#00a895\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 168 149 / var(--tw-bg-opacity));
@@ -1279,11 +1270,6 @@ img, video {
   padding-right: 2rem;
 }
 
-.px-\[12px\] {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
 .py-0 {
   padding-top: 0;
   padding-bottom: 0;
@@ -1357,11 +1343,6 @@ img, video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-\[12px\] {
-  padding-top: 12px;
-  padding-bottom: 12px;
 }
 
 .pb-2 {
@@ -1465,8 +1446,8 @@ img, video {
   font-size: 22px;
 }
 
-.text-\[25px\] {
-  font-size: 25px;
+.text-\[24px\] {
+  font-size: 24px;
 }
 
 .text-\[28px\] {
@@ -1600,6 +1581,11 @@ img, video {
 .text-\[\#133c8b\] {
   --tw-text-opacity: 1;
   color: rgb(19 60 139 / var(--tw-text-opacity));
+}
+
+.text-\[\#149DCC\] {
+  --tw-text-opacity: 1;
+  color: rgb(20 157 204 / var(--tw-text-opacity));
 }
 
 .text-\[\#222\] {
@@ -1854,7 +1840,7 @@ a {
 
 ._breadcrumb {
   background-color: #133c8b;
-  padding: 18px;
+  padding: 25px;
 }
 
 p._breadcrumb-header {
@@ -2234,11 +2220,6 @@ p._breadcrumb-header {
   background-color: rgb(0 122 111 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#008b87\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 139 135 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-\[\#00907f\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 144 127 / var(--tw-bg-opacity));
@@ -2257,11 +2238,6 @@ p._breadcrumb-header {
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-green-700:hover {
@@ -2555,11 +2531,6 @@ p._breadcrumb-header {
   .md\:px-40 {
     padding-left: 10rem;
     padding-right: 10rem;
-  }
-
-  .md\:py-1 {
-    padding-top: .25rem;
-    padding-bottom: .25rem;
   }
 
   .md\:py-2 {

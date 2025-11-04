@@ -22,7 +22,7 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
       <div
         className="ClassificationScroll"
         style={{
-          maxHeight: "20vh", // removes forced tall height
+          maxHeight: "20vh", 
           overflowY: "visible",
           paddingBottom: "0.5rem",
         }}

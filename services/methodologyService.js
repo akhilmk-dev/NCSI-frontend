@@ -10,7 +10,9 @@ export const getMethodologies = async (page = 1, pagesize = 10, searchstring = "
       field: "created_at",
       direction: "asc", 
     },
-    filter: {},
+     "filter": {
+      "status":1
+  }
   };
 
   const response = await api.post("/V1/methodologies/list", body);

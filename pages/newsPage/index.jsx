@@ -107,7 +107,7 @@ const onLoadMore = async () => {
           <button
             onClick={onLoadMore}
             disabled={loadingMore}
-            className="text-[#f58220] font-extrabold text-lg md:text-[16px] disabled:opacity-60"
+            className="text-[#f58220] font-extrabold text-lg md:text-[16px] disabled:opacity-60 hover:underline"
           >
             {loadingMore ? t("Loading...") : t("Load More News")}
           </button>

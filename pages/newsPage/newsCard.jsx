@@ -75,21 +75,31 @@ const NewsCard = ({ id, title, date, description, image }) => {
             </p>
 
             {/* Footer — only Arabic: pinned to bottom, and swapped order */}
-            <div
-              className={`flex items-center justify-between text-[14px] md:text-[15px] ${
-                locale === "ar" ? "mt-auto flex-row-reverse" : ""
-              }`}
-            >
-              {/* Switched: Read more first, date second */}
-              <Link
-                href={`/newsPage/newsDetail?id=${id}`}
-                className="read-more"
-              >
-                {t("Read_more")}
-              </Link>
+<div
+  className={`flex items-center justify-between text-[14px] md:text-[15px] ${
+    locale === "ar" ? "mt-auto flex-row-reverse" : ""
+  }`}
+>
+  {locale === "ar" ? (
+    <>
+      {/* 🔁 Arabic — swapped order */}
+      <Link href={`/newsPage/newsDetail?id=${id}`} className="read-more">
+        {t("Read_more")}
+      </Link>
+      <span className="text-[#3A372A] font-bold">{date}</span>
+    </>
+  ) : (
+    <>
+      {/* 🇬🇧 English — default order */}
+      <span className="text-[#3A372A] font-bold">{date}</span>
+      <Link href={`/newsPage/newsDetail?id=${id}`} className="read-more">
+        {t("Read_more")}
+      </Link>
+    </>
+  )}
+</div>
 
-              <span className="text-[#3A372A] font-bold">{date}</span>
-            </div>
+
           </div>
         </div>
       </div>

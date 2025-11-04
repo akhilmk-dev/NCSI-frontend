@@ -5,7 +5,7 @@ const GuidesAndClassificationTable = ({ data = [] }) => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="overflow-x-auto md:py-1">
+    <div className="overflow-x-auto md:py-6">
       <table className="min-w-full border border-gray-200 text-[11.5px] text-gray-800">
         <thead>
           <tr className="bg-[#00a895] text-white ">

@@ -16,7 +16,7 @@ const NewsDetail = () => {
   const [newsData, setNewsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // ✅ dynamic font based on locale
+  //  dynamic font based on locale
   const fontFamilyStyle =
     locale?.startsWith("ar")
       ? { fontFamily: '"GE_SS_Medium", Arial, sans-serif' }
@@ -160,7 +160,7 @@ const NewsDetail = () => {
                   ? newsData.content_ar
                   : newsData.content_en,
             }}
-          />
+          />  
 
           {/* === Clear float === */}
           <div className="clear-both"></div>
@@ -179,3 +179,5 @@ export async function getServerSideProps({ locale }) {
 }
 
 export default NewsDetail;
+
+

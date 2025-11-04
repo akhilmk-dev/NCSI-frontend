@@ -59,7 +59,7 @@ const SearchFilterForm = () => {
         {/* === Left Column === */}
         <div className="flex flex-col gap-6 flex-1 min-w-[380px] max-w-[450px]">
           {/* Search */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between control-label">
             <label
               className="flex items-center whitespace-nowrap"
               style={{
@@ -69,7 +69,7 @@ const SearchFilterForm = () => {
                 padding: "7px 15px 0px 10px",
               }}
             >
-              <span className="border-l-2 border-[#e5b36a] h-5 mr-3"></span>
+              <span className="border-l-2 border-[#e5b36a] h-10 mr-3"></span>
               {t("search")}
             </label>
             <input
@@ -93,7 +93,7 @@ const SearchFilterForm = () => {
                 padding: "7px 15px 0px 10px",
               }}
             >
-              <span className="border-l-2 border-[#e5b36a] h-5 mr-3"></span>
+              <span className="border-l-2 border-[#e5b36a] h-10 mr-3"></span>
               {t("Sections")}
             </label>
             <MultiSelectDropdown
@@ -117,7 +117,7 @@ const SearchFilterForm = () => {
                 padding: "7px 15px 0px 10px",
               }}
             >
-              <span className="border-l-2 border-[#e5b36a] h-5 mr-3"></span>
+              <span className="border-l-2 border-[#e5b36a] h-10 mr-3"></span>
               {t("Theme")}
             </label>
             <MultiSelectDropdown
@@ -132,10 +132,8 @@ const SearchFilterForm = () => {
         <div className="w-full flex justify-end gap-3 mt-2 pr-4">
           <button
             type="submit"
-            className="text-white font-semibold text-[10px] rounded-[4px]
-              px-[12px] py-[12px] min-w-[110px]
-              bg-[#00A99D] hover:bg-[#008b87] shadow-sm transition-all text-center uppercase"
-            style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+            className="submitBtn"
+           
           >
             {t("search")}
           </button>
@@ -143,10 +141,7 @@ const SearchFilterForm = () => {
           <button
             type="button"
             onClick={handleSaveSearch}
-            className="text-white font-semibold text-[10px] rounded-[4px]
-              px-[12px] py-[12px] min-w-[130px]
-              bg-[#00A99D] hover:bg-[#008b87] shadow-sm transition-all text-center uppercase"
-            style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+            className="submitBtn  "
           >
             {t("Save_Search")}
           </button>

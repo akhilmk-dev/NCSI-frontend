@@ -5,6 +5,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+
+         {/* ✅ Favicon */}
+         <link rel="icon" href="/assets/images/favicon.ico" />
         {/* Local Styles */}
         {/* <link rel="stylesheet" href="/assets/fonts/fontawesome/css/fontawesome.css" /> */}
         {/* <link rel="stylesheet" href="/assets/fonts/droidKufi/DroidKufiRegular.css" />
