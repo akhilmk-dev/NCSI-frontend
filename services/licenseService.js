@@ -1,15 +1,12 @@
 import api from "../utils/axiosInstance";
 
-export const getLicences = async (page = 1, pagesize = 10, searchstring = "") => {
+export const getLicences = async (page = 1, pagesize = 10, searchstring = "", sortorder = { field: "created_at", direction: "asc" }) => {
   try {
     const body = {
       pagesize,
       currentpage: page,
       searchstring,
-      sortorder: {
-        field: "created_at",
-        direction: "asc",
-      },
+      sortorder,
       filter: {
         type: "",
         classification_id: "",

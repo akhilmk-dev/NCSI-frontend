@@ -19,7 +19,7 @@ export default function Footer() {
                     <div class="col-6 col-sm-4 col-md-3  wow fadeInLeft" data-wow-delay="0.5s" data-wow-duration="0.5s">
                         <div class="footer-main">
                             <span><a href="/hierarchy">{t('who_are_we')}</a></span><br />
-                            <span><a href="/newsPage">{t('news')}</a></span><br />
+                            <span><a href="/newsPage    ">{t('news')}</a></span><br />
                             <span><a href="/Gov. Service-Guide.pdf" target='_blank'>{t('service_directory')}</a></span><br />
                             {/* <span><a href="#">{t('methodologies')}</a></span><br /> */}
                         </div>
@@ -27,18 +27,9 @@ export default function Footer() {
                     <div class="col-6 col-sm-4 col-md-3  wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.5s">
                         <div class="footer-main">
                            <span><a href="/guidesAndClassifications">{t('Guides_and_Classifications')}</a></span><br />
-
+                                                                            
                             <span><a href="/E-survey">{t('e_survey')}</a></span><br />
-                           <span>                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsModalOpen(true);
-                    }}
-                    className="cursor-pointer"
-                  >
-                    {t("Licenses")}
-                  </a></span><br />
+                           <span> <a href="/Licenses">{t("Licenses")}</a></span><br />
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3  wow fadeInLeft" data-wow-delay="0.7s" data-wow-duration="0.5s">

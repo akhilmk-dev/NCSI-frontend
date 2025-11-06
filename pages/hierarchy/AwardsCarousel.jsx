@@ -23,7 +23,7 @@ const AwardsCarousel = ({ achievements = [], baseUrl = "" }) => {
         }}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 1000,
           disableOnInteraction: false,
         }}
         className="w-[95%] md:w-[90%] mx-auto" 

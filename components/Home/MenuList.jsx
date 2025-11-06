@@ -13,7 +13,7 @@ const MenuList = () => {
     { labelKey: 'e_census_portal', href: 'https://portal.ecensus.gov.om' },
     { labelKey: 'data_portal', href: 'https://data.gov.om' },
     { labelKey: 'sdg', href: 'https://sdg.ncsi.gov.om/' },
-    { labelKey: 'national_statistics', href: '#' },
+    { labelKey: 'national_statistics', href: '/NationalStatistics' },
     { labelKey: 'oman_nsdi', href: 'https://nsdig2gapps.ncsi.gov.om/nsdiportal/' },
     {
       labelKey: 'women_in_oman',
@@ -31,7 +31,7 @@ const MenuList = () => {
           <div className="row">
             <div className="col-2 text-center wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.5s">
               <i className="customeIconHome-menu section-head-icon vertical-middle main-menu-icon"></i>
-            </div>
+            </div>    
             {locale !== "ar" && <div className="col wow fadeInLeft" style={{
              "marginLeft": "-15px"
             }}

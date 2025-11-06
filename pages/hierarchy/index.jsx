@@ -60,17 +60,17 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                     </p>
 
                     {/* Toggle button */}
-<div
-  className={`mt-3 ${locale === "ar" ? "text-left" : "text-right"}`}
-  dir={locale === "ar" ? "rtl" : "ltr"}
->
-  <button
-    onClick={() => setIsExpanded(!isExpanded)}
-    className="text-gray-500 hover:text-gray-700 font-medium transition-colors"
-  >
-    {isExpanded ? t("Read_less") : t("Read_more")}
-  </button>
-</div>
+                    <div
+                      className={`mt-3 ${locale === "ar" ? "text-left" : "text-right"}`}
+                      dir={locale === "ar" ? "rtl" : "ltr"}
+                    >
+                      <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="text-gray-500 hover:text-gray-700 font-medium transition-colors"
+                      >
+                        {isExpanded ? t("Read_less") : t("Read_more")}
+                      </button>
+                    </div>
 
                   </>
                 );
@@ -190,14 +190,90 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                   {t("Roadmap")}
                 </h2>
               </div>
+<div
+  className={`grid gap-6 py-8 ${
+    locale === "ar"
+      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" // 3 per row for Arabic
+      : "grid-cols-1 md:grid-cols-2" // 2 per row for English
+  }`}
+  dir={locale === "ar" ? "rtl" : "ltr"}
+  // style={{
+  //   fontFamily: locale === "ar"
+  //     ? '"Janna LT", DroidKufiRegular'
+  //     : '"Gill Sans MT", Arial, sans-serif',
+  // }}
+>
+  {locale === "ar" ? (
+    <>
+      {/* === Row 1 === */}
+      <HoverCard
+        title="رؤيتنا"
+        color="#FF851B"
+        description={data.vision_ar}
+      />
+
+      <HoverCard
+        title="مهمتنا"
+        color="#FF851B"
+        description={data.mission_ar}
+      />
+
+      <HoverCard
+        title="السياسة العامة للمركز الوطني للإحصاء والمعلومات"
+        color="#FF851B"
+        description={data.arabic_2}
+      />
+
+      {/* === Row 2 === */}
+      <HoverCard
+        title="سياسة الجودة"
+        color="#FF851B"
+        description={data.arabic_1}
+      />
+
+      <HoverCard
+        title="الأهداف الإستراتيجية للمركز الوطني للإحصاء والمعلومات"
+        color="#FF851B"
+        description={data.goals_ar}
+      />
+
+      <HoverCard
+        title="قيمنا"
+        color="#FF851B"
+        description={data.values_ar}
+      />
+    </>
+  ) : (
+    <>
+      <HoverCard
+        title="Our Vision"
+        color="#FF851B"
+        description={data.vision_en}
+      />
+
+      <HoverCard
+        title="Our Mission"
+        color="#FF851B"
+        description={data.mission_en}
+      />
+
+      <HoverCard
+        title="The Strategic Goals of NCSI"
+        color="#FF851B"
+        description={data.goals_en}
+      />
+
+      <HoverCard
+        title="Our Values"
+        color="#FF851B"
+        description={data.values_en}
+      />
+    </>
+  )}
+</div>
 
 
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8"> 
-                  <HoverCard title="Our Vision" color="#FF851B" description={locale === "ar" ? data.vision_ar : data.vision_en}  /> 
-                  <HoverCard title="Our Mission" color="#FF851B"description={locale === "ar" ? data.mission_ar : data.mission_en} /> 
-                  <HoverCard title="The Strategic Goals of NCSI" color="#FF851B" description={locale === "ar" ? data.goals_ar : data.goals_en}  />
-                     <HoverCard title="Our Values" color="#FF851B" description={locale === "ar" ? data.values_ar : data.values_en} /> 
-                      </div>
+
 
               {/* === ORGANIZATION CHART === */}
               <div className="bg-[#00a895] flex items-center justify-center mt-6 py-1 md:py-2"> <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center"> {t("Organization_Chart")} </h2> </div>
@@ -276,3 +352,4 @@ export async function getServerSideProps({ locale }) {
 }
 
 export default Hierarchy;
+

@@ -8,7 +8,7 @@ import { getNews } from "../../services/newsService";
 
 const PAGE_SIZE = 3;
 
-const NewsPage = ({ initialNews }) => {
+const News = ({ initialNews }) => {
   const { t } = useTranslation("common");
   const { locale } = useRouter();
 
@@ -38,10 +38,10 @@ const onLoadMore = async () => {
     const endIndex = PAGE_SIZE * nextPage;
     const newChunk = allItems.slice(startIndex, endIndex);
 
-    // If fewer than expected → no more items left
+   
     if (newChunk.length < PAGE_SIZE) setHasMore(false);
 
-    // Replace with only the current chunk
+   
     setNewsList(newChunk);
     setPage(nextPage);
   } catch (err) {
@@ -51,14 +51,10 @@ const onLoadMore = async () => {
   }
 };
 
-
-
-
-
   return (
     <>
       <Head>
-        <title>{t("Top_News")}</title>
+        <title>{t("Home-NCSI PORTAL")}</title>
       </Head>
 
       {/* Top News Header */}
@@ -109,7 +105,7 @@ const onLoadMore = async () => {
             disabled={loadingMore}
             className="text-[#f58220] font-extrabold text-lg md:text-[16px] disabled:opacity-60 hover:underline"
           >
-            {loadingMore ? t("Loading...") : t("Load More News")}
+            {loadingMore ? t("Loading...") : t("load_more_news")}
           </button>
         </div>
       )}
@@ -121,7 +117,7 @@ const onLoadMore = async () => {
   );
 };
 
-// ✅ Server-Side Fetch
+//  Server-Side Fetch
 export async function getServerSideProps({ locale }) {
   const initialNews = await getNews(1, PAGE_SIZE);
 
@@ -133,4 +129,4 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-export default NewsPage;
+export default News;

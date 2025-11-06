@@ -1,15 +1,13 @@
 {
   "/": "pages/index.js",
   "/404": "pages/404.js",
-  "/E-survey": "pages/E-survey.js",
-  "/TermsAndConditions": "pages/TermsAndConditions.js",
+  "/Disclaimer": "pages/Disclaimer.js",
+  "/Licenses": "pages/Licenses.js",
+  "/NationalStatistics": "pages/NationalStatistics.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/contact-us": "pages/contact-us.js",
   "/guidesAndClassifications": "pages/guidesAndClassifications.js",
   "/hierarchy": "pages/hierarchy.js",
   "/importantLinks": "pages/importantLinks.js",
-  "/newsPage": "pages/newsPage.js",
-  "/survey/searchResult": "pages/survey/searchResult.js",
-  "/women-in-oman": "pages/women-in-oman.js"
+  "/newsPage": "pages/newsPage.js"
 }

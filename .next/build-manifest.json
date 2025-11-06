@@ -26,25 +26,36 @@
       "static/chunks/pages_404_5771e187._.js",
       "static/chunks/pages_404_a0ffd575._.js"
     ],
-    "/E-survey": [
-      "static/chunks/node_modules_next_6ead517c._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_17996f94._.js",
-      "static/chunks/[root-of-the-server]__5832c2d0._.js",
-      "static/chunks/pages_E-survey_index_5771e187.js",
-      "static/chunks/pages_E-survey_index_bd61277f.js"
-    ],
-    "/TermsAndConditions": [
+    "/Disclaimer": [
       "static/chunks/node_modules_next_c25357dd._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
       "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__f2466889._.js",
-      "static/chunks/pages_TermsAndConditions_index_5771e187.js",
-      "static/chunks/pages_TermsAndConditions_index_2e1711e9.js"
+      "static/chunks/[root-of-the-server]__1b272fbd._.js",
+      "static/chunks/pages_Disclaimer_index_5771e187.js",
+      "static/chunks/pages_Disclaimer_index_d3011d9f.js"
+    ],
+    "/Licenses": [
+      "static/chunks/[root-of-the-server]__5cdaf13c._.js",
+      "static/chunks/node_modules_next_6df6d002._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
+      "static/chunks/node_modules_e3639cc0._.js",
+      "static/chunks/pages_Licenses_index_5771e187.js",
+      "static/chunks/pages_Licenses_index_9f203e0d.js"
+    ],
+    "/NationalStatistics": [
+      "static/chunks/node_modules_next_c688a888._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_db9ffc7b._.js",
+      "static/chunks/[root-of-the-server]__b22d68f0._.js",
+      "static/chunks/pages_NationalStatistics_index_5771e187.js",
+      "static/chunks/pages_NationalStatistics_index_13afb50f.js"
     ],
     "/_app": [
       "static/chunks/[root-of-the-server]__7bfbd0fe._.js",
@@ -61,18 +72,6 @@
       "static/chunks/_64e04565._.css",
       "static/chunks/pages__app_5771e187._.js",
       "static/chunks/pages__app_8b3d9d0e._.js"
-    ],
-    "/contact-us": [
-      "static/chunks/node_modules_next_c25357dd._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_lodash-es_c915315c._.js",
-      "static/chunks/node_modules_@react-google-maps_api_dist_esm_661116f9.js",
-      "static/chunks/node_modules_f432a3f8._.js",
-      "static/chunks/[root-of-the-server]__c11ce8d4._.js",
-      "static/chunks/pages_contact-us_index_jsx_5771e187._.js",
-      "static/chunks/pages_contact-us_index_jsx_01b58222._.js"
     ],
     "/guidesAndClassifications": [
       "static/chunks/node_modules_next_ab436f86._.js",
@@ -121,27 +120,6 @@
       "static/chunks/[root-of-the-server]__04022d46._.js",
       "static/chunks/pages_newsPage_index_jsx_5771e187._.js",
       "static/chunks/pages_newsPage_index_jsx_27bc44c3._.js"
-    ],
-    "/survey/searchResult": [
-      "static/chunks/node_modules_next_6df6d002._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_7e600bcc._.js",
-      "static/chunks/[root-of-the-server]__8943ff51._.js",
-      "static/chunks/pages_survey_searchResult_jsx_5771e187._.js",
-      "static/chunks/pages_survey_searchResult_jsx_1d39a5f8._.js"
-    ],
-    "/women-in-oman": [
-      "static/chunks/node_modules_next_99292ce0._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__c8a4bfca._.js",
-      "static/chunks/pages_women-in-oman_index_jsx_5771e187._.js",
-      "static/chunks/pages_women-in-oman_index_jsx_4dd92376._.js"
     ]
   },
   "devFiles": [],

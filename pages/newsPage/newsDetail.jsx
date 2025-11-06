@@ -68,7 +68,7 @@ const NewsDetail = () => {
   return (
     <>
       <Head>
-        <title>{t("Details")}</title>
+        <title>{locale === "ar" ? newsData.title_ar : newsData.title_en}</title>
       </Head>
 
       {/* === Breadcrumb Header === */}
@@ -84,27 +84,27 @@ const NewsDetail = () => {
         <div className="lg:p-4 p-6 sm:p-8 md:p-10 ">
           <nav
             className="text-[13px] md:text-[12px] text-gray-600 lg:p-2 shadow-sm"
-            style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+              style={fontFamilyStyle}
           >
             <Link
               href="/"
               className="text-[#666666]  hover:text-decoration-line:underline; transition-colors"
-              style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+               style={fontFamilyStyle}
             >
-              {t("Home")}
+              {t("home")}
             </Link>
             <span className="mx-1">{">"}</span>
             <Link
-              href="/newsPage"
+              href="/news"
               className="text-[#666666] transition-colors"
-              style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+               style={fontFamilyStyle}
             >
-              {t("News")}
+              {t("news")}
             </Link>
             <span className="mx-1">{">"}</span>
             <span
               className="text-[#b30000] text-[12px] md:text-[12px]"
-              style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
+                style={fontFamilyStyle}
             >
               {locale === "ar" ? newsData.title_ar : newsData.title_en}
             </span>

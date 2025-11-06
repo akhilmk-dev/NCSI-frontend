@@ -44,22 +44,22 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // ✅ Handle Rating Submission
-  const handleRate = async (rating) => {
-    setIsSubmitting(true);
-    try {
-      const res = await axios.post(`${baseUrl}V1/guides/rate`, {
-        guide_id: id,
-        rating,
-      });
-      if (res.data && typeof res.data.data.rating === "number") {
-        setLocalAvgRating(res.data.data.rating);
-      }
-      setLocalUserRating(Number(rating));
-    } catch (error) {
-      console.error("Rating failed:", error);
-    }
-    setIsSubmitting(false);
-  };
+  // const handleRate = async (rating) => {
+  //   setIsSubmitting(true);
+  //   try {
+  //     const res = await axios.post(`${baseUrl}V1/guides/rate`, {
+  //       guide_id: id,
+  //       rating,
+  //     });
+  //     if (res.data && typeof res.data.data.rating === "number") {
+  //       setLocalAvgRating(res.data.data.rating);
+  //     }
+  //     setLocalUserRating(Number(rating));
+  //   } catch (error) {
+  //     console.error("Rating failed:", error);
+  //   }
+  //   setIsSubmitting(false);
+  // };
 
   return (
 <div
@@ -110,7 +110,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                     </a>
 
                     {/* ⭐ Rating Icon */}
-                    <i
+                    {/* <i
                       className="fa fa-star"
                       style={{
                         fontSize: "18px",
@@ -123,7 +123,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                         cursor: "pointer",
                       }}
                       onClick={() => setShowRatingModal(true)}
-                    ></i>
+                    ></i> */}
                   </div>
                 </div>
               </div>

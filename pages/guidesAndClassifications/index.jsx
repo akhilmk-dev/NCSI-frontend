@@ -108,7 +108,7 @@ const GuidesAndClassifications = ({
 
       <section className="contact-section">
         <div className="_breadcrumb">
-          <p className="_breadcrumb-header">{t("Guides And Classifications")}</p>
+          <p className="_breadcrumb-header">{t("Guides_and_Classifications")}</p>
         </div>
 
         <div className="row publication-body">

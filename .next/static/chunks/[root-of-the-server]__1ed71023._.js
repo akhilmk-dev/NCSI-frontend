@@ -990,7 +990,7 @@ const MenuList = ()=>{
                 },
                 {
                     labelKey: 'national_statistics',
-                    href: '#'
+                    href: '/NationalStatistics'
                 },
                 {
                     labelKey: 'oman_nsdi',
