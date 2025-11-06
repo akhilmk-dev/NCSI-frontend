@@ -26,15 +26,15 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages_404_5771e187._.js",
       "static/chunks/pages_404_a0ffd575._.js"
     ],
-    "/Disclaimer": [
-      "static/chunks/node_modules_next_c25357dd._.js",
+    "/E-survey": [
+      "static/chunks/node_modules_next_c2fc53d0._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__1b272fbd._.js",
-      "static/chunks/pages_Disclaimer_index_5771e187.js",
-      "static/chunks/pages_Disclaimer_index_d3011d9f.js"
+      "static/chunks/node_modules_17996f94._.js",
+      "static/chunks/[root-of-the-server]__5832c2d0._.js",
+      "static/chunks/pages_E-survey_index_5771e187.js",
+      "static/chunks/pages_E-survey_index_e667c3b0.js"
     ],
     "/Licenses": [
       "static/chunks/[root-of-the-server]__5cdaf13c._.js",
@@ -83,28 +83,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/[root-of-the-server]__e1055dac._.js",
       "static/chunks/pages_guidesAndClassifications_index_jsx_5771e187._.js",
       "static/chunks/pages_guidesAndClassifications_index_jsx_b703965e._.js"
-    ],
-    "/hierarchy": [
-      "static/chunks/node_modules_next_5a81a999._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_swiper_7b66dc55._.js",
-      "static/chunks/node_modules_8150ce09._.js",
-      "static/chunks/[root-of-the-server]__6196999d._.js",
-      "static/chunks/_2cea41ee._.css",
-      "static/chunks/pages_hierarchy_index_jsx_5771e187._.js",
-      "static/chunks/pages_hierarchy_index_jsx_55d6b34d._.js"
-    ],
-    "/importantLinks": [
-      "static/chunks/node_modules_next_c25357dd._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_db9ffc7b._.js",
-      "static/chunks/[root-of-the-server]__55a0f88c._.js",
-      "static/chunks/pages_importantLinks_index_jsx_5771e187._.js",
-      "static/chunks/pages_importantLinks_index_jsx_a46f2ae9._.js"
     ],
     "/newsPage": [
       "static/chunks/node_modules_next_dist_compiled_2d271c52._.js",

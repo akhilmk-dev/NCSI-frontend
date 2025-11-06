@@ -20,7 +20,6 @@ const SearchResult = () => {
   const itemsPerPage = 3;
   const totalPages = Math.ceil(total / itemsPerPage);
 
-  // ✅ Default sort: Created At (ascending)
   const [sortOrder, setSortOrder] = useState({
     field: "created_at",
     direction: "asc",
@@ -49,13 +48,18 @@ const SearchResult = () => {
     fetchLicences(currentPage, searchString, sortOrder);
   }, [currentPage, sortOrder]);
 
-  // ✅ Handle search
+  // ✅ Refetch when search cleared
+  useEffect(() => {
+    if (searchString.trim() === "") {
+      fetchLicences(1, "", sortOrder);
+    }
+  }, [searchString]);
+
   const handleSearch = () => {
     setCurrentPage(1);
     fetchLicences(1, searchString, sortOrder);
   };
 
-  // ✅ Handle sorting (toggle asc/desc)
   const handleSort = (field) => {
     setSortOrder((prev) => ({
       field,
@@ -64,14 +68,15 @@ const SearchResult = () => {
     }));
   };
 
-  // 🧭 Table columns
+  // ✅ New table columns
   const columns = [
-    { key: "id", label: "ID" },
-    { key: "licensenumber", label: "License Number" },
-    { key: "title", label: "Title" },
-    { key: "agency", label: "Agency" },
-    { key: "sponsor", label: "Sponsor" },
-    { key: "created_at", label: "Created At" },
+    { key: "id", label: t("No") },
+    { key: "licensenumber", label: t("License Number") },
+    { key: "title", label: t("Survey/Study Title") },
+    { key: "agency", label: t("Implementing Entity") },
+    { key: "implementation_period_from", label: t("License Period From") },
+    { key: "implementation_period_to", label: t("License Period To") },
+    { key: "survey_status", label: t("License Status") },
   ];
 
   return (
@@ -137,8 +142,6 @@ const SearchResult = () => {
                             ) : (
                               <ChevronDown size={14} />
                             )
-                          ) : key === "created_at" ? (
-                            <ChevronUp size={14} className="opacity-40" />
                           ) : null}
                         </div>
                       </th>
@@ -153,14 +156,24 @@ const SearchResult = () => {
                         index % 2 === 0 ? "bg-white" : "bg-[#f4f4f4]"
                       } hover:bg-gray-200 transition`}
                     >
-                      <td className="px-4 py-3">{row.id}</td>
+                     <td className="px-4 py-3">
+  {(currentPage - 1) * itemsPerPage + (index + 1)}
+</td>
+
                       <td className="px-4 py-3">{row.licensenumber}</td>
                       <td className="px-4 py-3">{row.title}</td>
                       <td className="px-4 py-3">{row.agency}</td>
-                      <td className="px-4 py-3">{row.sponsor}</td>
                       <td className="px-4 py-3">
-                        {new Date(row.created_at).toLocaleDateString()}
+                        {row.implementation_period_from
+                          ? new Date(row.implementation_period_from).toLocaleDateString()
+                          : "-"}
                       </td>
+                      <td className="px-4 py-3">
+                        {row.implementation_period_to
+                          ? new Date(row.implementation_period_to).toLocaleDateString()
+                          : "-"}
+                      </td>
+                      <td className="px-4 py-3">{row.survey_status || "-"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -168,7 +181,7 @@ const SearchResult = () => {
             )}
           </div>
 
-          {/* === Pagination (Same as Guides & Classifications) === */}
+          {/* === Pagination === */}
           {totalPages > 1 && (
             <div
               id="pagination"
@@ -210,3 +223,6 @@ const SearchResult = () => {
 };
 
 export default SearchResult;
+
+
+

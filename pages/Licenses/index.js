@@ -63,7 +63,7 @@ const Licenses = () => {
                 }`}
                 // style={fontStyle}
               >
-                {t("survey_request")}
+                {t("Submit a new application")}
               </button>
 
               <button
@@ -75,7 +75,7 @@ const Licenses = () => {
                 }`}
                 style={fontStyle}
               >
-                {t("Search Licenses")}
+                {t("Verify License")}
               </button>
             </div>
           </div>

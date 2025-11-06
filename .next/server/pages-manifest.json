@@ -1,13 +1,11 @@
 {
   "/": "pages/index.js",
   "/404": "pages/404.js",
-  "/Disclaimer": "pages/Disclaimer.js",
+  "/E-survey": "pages/E-survey.js",
   "/Licenses": "pages/Licenses.js",
   "/NationalStatistics": "pages/NationalStatistics.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/guidesAndClassifications": "pages/guidesAndClassifications.js",
-  "/hierarchy": "pages/hierarchy.js",
-  "/importantLinks": "pages/importantLinks.js",
   "/newsPage": "pages/newsPage.js"
 }
