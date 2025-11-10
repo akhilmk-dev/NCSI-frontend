@@ -90,6 +90,7 @@ const Header = ({ onOpenModal }) => {
                      <div className="row margin-top-on-small-screen" >
                         <div className="col col-6 middle-col-small-device" style={{ width: '100%' }}>
                            <div className="header-middle-buttons me-1" >
+
                               <div className="row wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.5s" style={{ width: '100%',minWidth:"215px" }}>
                                  <div className="col-sm-4 header-middle-buttons-first-col text-center">
                                     {t('search')}
@@ -123,13 +124,19 @@ const Header = ({ onOpenModal }) => {
                   </div>
                </div>
                <div className="col-sm-12 col-md-12 col-lg-4 align-self-center header-row-col header-row-col-social">
-                  <div className="row header-icons-grid">
-                     <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.7s" data-wow-duration="0.5s" id="sideMenu">
+                  <div className="row header-icons-grid"
+                   style={{
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    textAlign: 'center',
+  }}>
+                     {/* <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.7s" data-wow-duration="0.5s" id="sideMenu">
                         <i className="fas fa-wheelchair header-icons icon-accessibility bg-theme"></i>
+
 
                         <div id="VSidemenu">
                            <a href="#" className="IAplus" id="IAplus"></a>
-                           {/* <input id="qty" value="0"/> */}
+                           <input id="qty" value="0"/>
                            <a href="#" className="IAMin DActivatehref" id="IAMin"></a>
                            <div id="S4Home" style={{ display: 'block' }}>
                               <hr className="Line" />
@@ -143,7 +150,7 @@ const Header = ({ onOpenModal }) => {
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div> */}
                      <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.6s" data-wow-duration="0.5s">
                         <a href="https://apps.apple.com/eg/developer/national-center-for-statistics-and-information-oman/id721507459" target="_blank">
                            <i className="fab fa-apple header-icons icon-apple"></i>
@@ -160,9 +167,14 @@ const Header = ({ onOpenModal }) => {
                            <i className="fab fa-at header-icons icon-windows"></i>
                         </a>
                      </div>
-                     <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.3s" data-wow-duration="0.5s">
+                     <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.3s" data-wow-duration="0.5s" style={{display:'none'}}>
                         <a href="#">
                            <i className="fas fa-rss header-icons icon-rss"></i>
+                        </a>
+                     </div>
+                                          <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.8s" data-wow-duration="0.5s">
+                        <a href="https://www.facebook.com/OmanNCSI?ref=hl" target="_blank">
+                           <i className="fab fa-facebook-f header-icons icon-facebook"></i>
                         </a>
                      </div>
                      <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="0.5s">
@@ -171,7 +183,12 @@ const Header = ({ onOpenModal }) => {
                         </a>
                      </div>
                   </div>
-                  <div className="row header-icons-grid margin-top-on-small-screen">
+                  <div className="row header-icons-grid margin-top-on-small-screen"
+                    style={{
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    textAlign: 'center',
+  }}>
                      <div className="col col-2 text-center wow fadeInDown" data-wow-delay="1.3s" data-wow-duration="0.5s">
                         {/* <a href="#" onclick={toggleLanguage}>
                      <i className="icons-custom-AR header-icons icon-en-ar bg-orange"></i>
@@ -179,6 +196,7 @@ const Header = ({ onOpenModal }) => {
                         <LanguageSwitcher />
                      </div>
                      <div className="col col-2 text-center wow fadeInDown" data-wow-delay="1.2s" data-wow-duration="0.5s">
+
                         <a href="https://api.whatsapp.com/send?phone=96891459145&text=I%20Would%20like%20to%20get%20more%20informations" target="_blank">
                            <i className="fab fa-whatsapp header-icons icon-whatsapp"></i>
                         </a>
@@ -198,11 +216,7 @@ const Header = ({ onOpenModal }) => {
                            <i className="fab fa-instagram header-icons icon-instagram"></i>
                         </a>
                      </div>
-                     <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.8s" data-wow-duration="0.5s">
-                        <a href="https://www.facebook.com/OmanNCSI?ref=hl" target="_blank">
-                           <i className="fab fa-facebook-f header-icons icon-facebook"></i>
-                        </a>
-                     </div>
+
                   </div>
                </div>
             </div>
@@ -224,4 +238,3 @@ const Header = ({ onOpenModal }) => {
       },
    };
 }
-

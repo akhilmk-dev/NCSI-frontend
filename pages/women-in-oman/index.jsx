@@ -10,10 +10,10 @@ const WomenInOman = () => {
      const { locale } = useRouter();
 
     const iframeUrl = locale === 'ar'
-      ? 'https://app.powerbi.com/view?r=eyJrIjoiZWY4MDBiNGUtNTk2YS00N2IxLTljYTItYTEyYzBiYzg0ZWVlIiwidCI6ImUxNjhmYTA0LTVkNGUtNDI4MS1iZGM0LTBjYzM0NjQ0NDVlYSIsImMiOjl9'
-      : 'https://app.powerbi.com/view?r=eyJrIjoiY2I2ODE4MzQtNWQ1Ny00MmU5LWJjMGEtNzU0MzgwZmZiMzhmIiwidCI6ImUxNjhmYTA0LTVkNGUtNDI4MS1iZGM0LTBjYzM0NjQ0NDVlYSIsImMiOjl9';
+      ? 'https://app.powerbi.com/view?r=eyJrIjoiNTY0ZjYzMWQtYWQ2NS00MmQwLTliNTQtZjkwNjY0NzA3MzgwIiwidCI6ImUxNjhmYTA0LTVkNGUtNDI4MS1iZGM0LTBjYzM0NjQ0NDVlYSIsImMiOjl9'
+      : 'https://app.powerbi.com/view?r=eyJrIjoiYzQ0MjVlZWYtMTAwNS00NjI4LTk4MzgtZGQ2MzdhMmI5MTBhIiwidCI6ImUxNjhmYTA0LTVkNGUtNDI4MS1iZGM0LTBjYzM0NjQ0NDVlYSIsImMiOjl9';
 
-
+  
   return (
     <>
      <Head>

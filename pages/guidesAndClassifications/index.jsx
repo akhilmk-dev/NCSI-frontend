@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -39,7 +39,9 @@ const GuidesAndClassifications = ({
   const [guidesClassificationData, setGuidesClassificationData] = useState(guidesClassificationDataSSR);
   const [totalGuidesClassifications, setTotalGuidesClassifications] = useState(totalGuidesClassificationsSSR);
 
-  const itemsPerPage = 8;
+  const itemsPerPage = 10;
+  const debounceTimer = useRef(null);
+
 
   // Sync section when user refreshes
   useEffect(() => {
@@ -82,6 +84,8 @@ const GuidesAndClassifications = ({
   // Search handler
   const handleSearch = async () => {
     setLoading(true);
+
+    
     let res;
     if (selectedSection === "glossary") {
       res = await getGlossary(1, itemsPerPage, searchString);
@@ -100,10 +104,51 @@ const GuidesAndClassifications = ({
     setLoading(false);
   };
 
+useEffect(() => {
+  if (debounceTimer.current) clearTimeout(debounceTimer.current);
+
+  debounceTimer.current = setTimeout(() => {
+    // If the search box is empty → reset to default data
+    if (searchString.trim() === "") {
+      const fetchDefaultData = async () => {
+        setLoading(true);
+        let res;
+
+        if (selectedSection === "glossary") {
+          res = await getGlossary(1, itemsPerPage, "");
+          setGlossaryData(res.statistics);
+          setTotalGlossary(res.total);
+        } else if (selectedSection === "methodologies") {
+          res = await getMethodologies(1, itemsPerPage, "");
+          setMethodologyData(res.methodologies);
+          setTotalMethodologies(res.total);
+        } else {
+          res = await getGuidesClassifications(1, itemsPerPage, "");
+          setGuidesClassificationData(res.classifications);
+          setTotalGuidesClassifications(res.total);
+        }
+
+        setCurrentPage(1);
+        setLoading(false);
+      };
+      fetchDefaultData();
+    } else {
+      handleSearch(); // normal search flow when user types
+    }
+  }, 500);
+
+  return () => clearTimeout(debounceTimer.current);
+}, [searchString]);
+
+
+
+
   return (
     <>
       <Head>
-        <title>Guides & Classifications - NCSI Portal</title>
+       <title>Home - NCSI PORTAL</title>
+        <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
       </Head>
 
       <section className="contact-section">
@@ -113,7 +158,7 @@ const GuidesAndClassifications = ({
 
         <div className="row publication-body">
           {/* Sidebar */}
-          <div className="col-lg-2" style={{ marginTop: "40px" }}>
+          <div className="col-lg-3" style={{ marginTop: "40px" }}>
             <GuidesAndClassificationList
               selectedId={selectedSection}
               onSelect={(id) => {
@@ -133,7 +178,7 @@ const GuidesAndClassifications = ({
           </div>
 
           {/* Main Content */}
-          <div className="col-lg-10 d-flex flex-column">
+          <div className="col-lg-9 d-flex flex-column">
             {/* Search Bar */}
             <div
               className="d-flex justify-content-end mb-0 d-none d-sm-flex"
@@ -141,7 +186,7 @@ const GuidesAndClassifications = ({
             >
               <div className="top-search-box" style={{ width: "240px" }}>
                 <input
-                  type="text"
+                  type="text" 
                   id="searchBox"
                   value={searchString}
                   onChange={(e) => setSearchString(e.target.value)}
@@ -165,7 +210,9 @@ const GuidesAndClassifications = ({
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <GuidesAndClassificationTable data={glossaryData} />
+                <GuidesAndClassificationTable data={glossaryData}
+                 currentPage={currentPage} 
+  itemsPerPage={itemsPerPage}  />
               )
             ) : selectedSection === "methodologies" ? (
               methodologyData.length === 0 ? (
@@ -214,15 +261,42 @@ const GuidesAndClassifications = ({
                   <i className="fas fa-caret-left text-white"></i>
                 </button>
               )}
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  className={`page-button ${page === currentPage ? "active" : ""}`}
-                  onClick={() => handlePageChange(page)}
-                >
-                  {page}
-                </button>
-              ))}
+{(() => {
+  const pages = [];
+  const maxVisible = 5; // how many to show around current page
+
+  if (totalPages <= 10) {
+    // few pages → show all
+    for (let i = 1; i <= totalPages; i++) pages.push(i);
+  } else {
+    // many pages → compact mode
+    const startPage = Math.max(1, currentPage - 2);
+    const endPage = Math.min(totalPages, currentPage + 2);
+
+    if (startPage > 2) pages.push(1, "...");
+    else for (let i = 1; i < startPage; i++) pages.push(i);
+
+    for (let i = startPage; i <= endPage; i++) pages.push(i);
+
+    if (endPage < totalPages - 1) pages.push("...", totalPages);
+    else for (let i = endPage + 1; i <= totalPages; i++) pages.push(i);
+  }
+
+  return pages.map((page, index) =>
+    page === "..." ? (
+      <span key={`dots-${index}`} className="page-dots">...</span>
+    ) : (
+      <button
+        key={page}
+        className={`page-button ${page === currentPage ? "active" : ""}`}
+        onClick={() => handlePageChange(page)}
+      >
+        {page}
+      </button>
+    )
+  );
+})()}
+
               {currentPage < totalPages && (
                 <button className="page-button" onClick={() => handlePageChange(currentPage + 1)}>
                   <i className="fas fa-caret-right text-white"></i>

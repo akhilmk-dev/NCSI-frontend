@@ -69,7 +69,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
     width:"600px",
     marginBottom: "20px",
     border: "none",
-    background: "transparent",
+    background: "transparent",  
   }}
 >
 

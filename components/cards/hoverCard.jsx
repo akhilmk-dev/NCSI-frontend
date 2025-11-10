@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
+    const { t } = useTranslation("common");
+
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isLongText, setIsLongText] = useState(false);
@@ -56,7 +59,7 @@ const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
                 onClick={() => setShowModal(true)}
                 className="text-[#133c8b] font-medium hover:underline self-start"
               >
-                Show More
+               {t("show_more")}
               </button>
             )}
           </div>
@@ -104,3 +107,5 @@ const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
 };  
 
 export default HoverCard;
+
+

@@ -144,6 +144,9 @@ const ContactUs = (props) => {
     <>
       <Head>
         <title>{t("contact_us")}</title>
+        <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
+
       </Head>
       <section
         className="contact-section"

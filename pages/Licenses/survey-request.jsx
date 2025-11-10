@@ -153,7 +153,7 @@ const Survey = () => {
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 btnsWrapper">
-                                        <a id="ctl00_ctl41_g_582b3796_6aa3_4d31_b5e3_f69be0e2388e_ctl00_btnSave" title="Save" class="submitBtn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl41$g_582b3796_6aa3_4d31_b5e3_f69be0e2388e$ctl00$btnSave&quot;, &quot;&quot;, true, &quot;vgService&quot;, &quot;&quot;, false, true))">Save</a>
+                                            
                                         <a onclick="return Cancel();" id="ctl00_ctl41_g_582b3796_6aa3_4d31_b5e3_f69be0e2388e_ctl00_btnCancel" title="Cancel" class="cancelBtn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl41$g_582b3796_6aa3_4d31_b5e3_f69be0e2388e$ctl00$btnCancel&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Cancel</a>
                                     </div>
                                 </div>

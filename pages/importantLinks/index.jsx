@@ -30,6 +30,9 @@ const ImportantLinks = () => {
     <>
       <Head>
         <title>{t("important_links")}</title>
+        <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
+
       </Head>
 
       <section className="events-section px-0 md:px-12 lg:px-20 bg-[#f4f4f4]">

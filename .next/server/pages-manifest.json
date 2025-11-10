@@ -1,11 +1,10 @@
 {
   "/": "pages/index.js",
   "/404": "pages/404.js",
-  "/E-survey": "pages/E-survey.js",
-  "/Licenses": "pages/Licenses.js",
   "/NationalStatistics": "pages/NationalStatistics.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
   "/guidesAndClassifications": "pages/guidesAndClassifications.js",
-  "/newsPage": "pages/newsPage.js"
+  "/publications": "pages/publications.js"
 }

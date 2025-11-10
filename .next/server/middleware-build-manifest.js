@@ -26,36 +26,15 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages_404_5771e187._.js",
       "static/chunks/pages_404_a0ffd575._.js"
     ],
-    "/E-survey": [
-      "static/chunks/node_modules_next_c2fc53d0._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_17996f94._.js",
-      "static/chunks/[root-of-the-server]__5832c2d0._.js",
-      "static/chunks/pages_E-survey_index_5771e187.js",
-      "static/chunks/pages_E-survey_index_e667c3b0.js"
-    ],
-    "/Licenses": [
-      "static/chunks/[root-of-the-server]__5cdaf13c._.js",
-      "static/chunks/node_modules_next_6df6d002._.js",
-      "static/chunks/node_modules_react_1cad9b0b._.js",
-      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
-      "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_e3639cc0._.js",
-      "static/chunks/pages_Licenses_index_5771e187.js",
-      "static/chunks/pages_Licenses_index_9f203e0d.js"
-    ],
     "/NationalStatistics": [
-      "static/chunks/node_modules_next_c688a888._.js",
+      "static/chunks/node_modules_next_313f74a4._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
       "static/chunks/node_modules_db9ffc7b._.js",
       "static/chunks/[root-of-the-server]__b22d68f0._.js",
       "static/chunks/pages_NationalStatistics_index_5771e187.js",
-      "static/chunks/pages_NationalStatistics_index_13afb50f.js"
+      "static/chunks/pages_NationalStatistics_index_66e77630.js"
     ],
     "/_app": [
       "static/chunks/[root-of-the-server]__7bfbd0fe._.js",
@@ -73,6 +52,16 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages__app_5771e187._.js",
       "static/chunks/pages__app_8b3d9d0e._.js"
     ],
+    "/_error": [
+      "static/chunks/[root-of-the-server]__d8380e25._.js",
+      "static/chunks/node_modules_react_b2385d85._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_3bfdc6a4._.js",
+      "static/chunks/[root-of-the-server]__923cb372._.js",
+      "static/chunks/pages__error_5771e187._.js",
+      "static/chunks/pages__error_cd480063._.js"
+    ],
     "/guidesAndClassifications": [
       "static/chunks/node_modules_next_ab436f86._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
@@ -84,20 +73,16 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages_guidesAndClassifications_index_jsx_5771e187._.js",
       "static/chunks/pages_guidesAndClassifications_index_jsx_b703965e._.js"
     ],
-    "/newsPage": [
-      "static/chunks/node_modules_next_dist_compiled_2d271c52._.js",
-      "static/chunks/node_modules_next_dist_shared_lib_96f89e32._.js",
-      "static/chunks/node_modules_next_dist_client_10992084._.js",
-      "static/chunks/node_modules_next_dist_f42e3743._.js",
-      "static/chunks/node_modules_next_96f7b5d6._.js",
+    "/publications": [
+      "static/chunks/[root-of-the-server]__871829d6._.js",
+      "static/chunks/node_modules_next_ab436f86._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
       "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_e10f7ae3._.js",
-      "static/chunks/[root-of-the-server]__04022d46._.js",
-      "static/chunks/pages_newsPage_index_jsx_5771e187._.js",
-      "static/chunks/pages_newsPage_index_jsx_27bc44c3._.js"
+      "static/chunks/node_modules_8789b5ac._.js",
+      "static/chunks/pages_publications_index_jsx_5771e187._.js",
+      "static/chunks/pages_publications_index_jsx_6ebc4a42._.js"
     ]
   },
   "devFiles": [],

@@ -284,7 +284,63 @@
   "Producer_Price_Index_Survey":"مسح أسعار المنتجين",
   "Foreign_Investment_Survey":"مسح الإستثمار الأجنبي",
 
-  "load_more_news":"للمزيد من الأخبار"
+  "load_more_news":"للمزيد من الأخبار",
+
+  
+"National_Summary_Data_Page_(NSDP)_-Oman":"صفحة بيانات الملخص الوطني - عمان",
+"national_summary_data_title":" البيانات المرتبطه من هذه الصفحة تتوافق مع البيانات الموضحه في بيانات الملخص الوطني الخاصه بصندوق النقد الدولي. للحصول على شرح بيانات الملخص الوطني ونظام النشر المعزز العام الذي تشارك فيه الدوله",
+"please_visit_the":"يرجى زيارة صفحة",
+"dsbb_home_page":"بيانات الملخص الوطني",
+"Macroeconomic_and_Financial_Data":"بيانات المالية وبيانات الاقتصاد الكلي",
+"National Accounts_(GDP)":" الناتج المحلي الإجمالي (GDP)",
+"browse_data":"تصفحالبيانات",
+"download_in_sdmx":"SDMX  تحميل بصيغة  ",
+"dsbb_metadata":"البيانات الوصفية",
+"Consumer_Price_Index":"الرقم القياسي لأسعار المستهلك",
+"General_Government_Operations":"مالية الحكومة العامة",
+"Central_Government_Operations":"مالية الحكومة المركزية",
+"Central_Government_Gross_Debt":"الدين العام للحكومة المركزية",
+"Depository_Corporations_Survey"  :"مسح شركات الايداع",
+"Central_Bank_Survey":"مسح البنك المركزي",
+"Interest_Rates":"أسعار الفائدة",
+"stock_market":"سوق الأوراق المالية",
+"Balance_of_Payments":"ميزان المدفوعات",
+"External_Debt":"مالية الحكومة العامة",
+"official_reserve_assets":"الأصول الاحتياطية الرسمية",
+"Merchandise_Trade":"تجارة السلع",
+"International_Investment_Position_(IIP)":"وضع الاستثمار الدولي",
+"Exchange_Rates":"أسعار الصرف",
+"Macroeconomic_and_Financial_Data_Encouraged_Data":"البيانات المالية وبيانات الاقتصاد الكلي مؤشرات مختارة",
+"Production_Index":"الأرقام القياسية للإنتاج الصناعي",
+"Labour_Market":"سوق العمل",
+"Producer_Price_Index":"مؤشر أسعار المنتجين",
+"Financial_Soundness_Indicators_(FSIs)":"(FSIS)مؤشرات السلامة المالية",
+"Demographic_and_Selected_Socio-Economic_Indicators":"المؤشرات الديموغرافية ومؤشرات اجتماعية اقتصادية مختارة",
+"Population":"تعداد السكان",
+"Socio-Demographic Indicators":"المؤشرات الاجتماعية الديموغرافية",
+"Additional_Datasets":"مجموعات البيانات الإضافية",
+"Oil_production":"مسح الوصول المالي",
+"Depository_Corporations_Survey_(detailed presentation)":"ميزان المدفوعات عرض تفصيلي",
+"Financial_Access_Survey":"اتجاه التجارة",
+"Balance_of_Payments_(detailed presentation)":"إنتاج النفط",
+"Direction_of_Trade":"مسح مؤسسات الايداع عرض تفصيلي",
+
+"licences":"تراخيص",
+"verify_licence":"يؤكد تراخيص",
+"licence_number":"رقم الترخيص",
+"survey/study_title":"  العنواالاستبيانات ",
+"implementing_entity":"الجهة",
+"Licence_Period_From":"فترة التنفيذ (من)",
+"Licence_Period_To":"فترة التنفيذ (إلى)",
+"Licence_Status":"ةحالة تراخيص",
+"submit_a_new_application":"تقديم طلب جديد",
+"show_more":"للمزيد...",
+"For_more_Country_data_and_information,_please_go":"لمزيد من بيانات ومعلومات الدوله يرجى النقر ",
+"here":"هنا"
+
+
+
+
 
 
 

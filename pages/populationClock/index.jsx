@@ -40,6 +40,8 @@ const PopulationClock = () => {
     <>
      <Head>
         <title>{t("population_clock")}</title>
+         <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
       </Head>
     <div style={{ backgroundColor: "#f0f0f0",height:"auto" }}>
               <div class="_breadcrumb">
@@ -154,7 +156,7 @@ const PopulationClock = () => {
                       marginTop: "20px",
                       marginBottom: "10px",
                       fontWeight: "normal",
-                      fontFamily: "GillSansMT, Arial",
+                      fontFamily: isRTL ? '"GE_SS_Medium", Arial, sans-serif' : '"Gill Sans MT", Arial, sans-serif !important',
                       fontSize: "30px",
                     }}
                   >
@@ -170,7 +172,7 @@ const PopulationClock = () => {
                       color: "#00485B",
                       marginTop: "20px",
                       marginBottom: "10px",
-                      fontFamily: "GillSansMT, Arial",
+                     fontFamily: isRTL ? '"GE_SS_Medium", Arial, sans-serif' : '"Gill Sans MT", Arial, sans-serif !important',
                       fontWeight: "normal",
                       fontSize: "30px",
                     }}

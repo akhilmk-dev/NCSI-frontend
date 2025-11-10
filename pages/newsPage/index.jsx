@@ -27,22 +27,17 @@ const onLoadMore = async () => {
     setLoadingMore(true);
     const nextPage = page + 1;
 
-    // Calculate the number of items to fetch (3, then 6, then 9…)
-    const limit = PAGE_SIZE * nextPage;
+    // Fetch next page only
+    const newItems = await getNews(nextPage, PAGE_SIZE);
 
-    // Fetch total data up to that limit
-    const allItems = await getNews(1, limit);
+    // Append new items to the existing list
+    setNewsList((prev) => [...prev, ...newItems]);
 
-    // Slice only the "new" chunk (exclude previous ones)
-    const startIndex = PAGE_SIZE * (page - 1);
-    const endIndex = PAGE_SIZE * nextPage;
-    const newChunk = allItems.slice(startIndex, endIndex);
+    // If fewer than PAGE_SIZE items returned, we reached the end
+    if (newItems.length < PAGE_SIZE) {
+      setHasMore(false);
+    }
 
-   
-    if (newChunk.length < PAGE_SIZE) setHasMore(false);
-
-   
-    setNewsList(newChunk);
     setPage(nextPage);
   } catch (err) {
     console.error("Error loading more news:", err);
@@ -51,10 +46,13 @@ const onLoadMore = async () => {
   }
 };
 
+
   return (
     <>
       <Head>
         <title>{t("Home-NCSI PORTAL")}</title>
+        <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
       </Head>
 
       {/* Top News Header */}

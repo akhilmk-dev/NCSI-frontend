@@ -11,7 +11,7 @@ import CalendarIndicator from "@/components/Home/CalenderIndicator";
 import IndicatorSlider from "@/components/Home/IndicatorSlider ";
 import EventAccordion from "@/components/Home/EventAccordion";
 import PopulationClock from "@/components/Home/PopulationClock";
-// import { getEventList, getPopulationList, getSliderList, getIndicatorList, getPublicationList } from "@/services/indexServices";
+  import { getEventList, getPopulationList, getSliderList, getIndicatorList, getPublicationList } from "@/services/indexServices";
 import { getHomePageData, rgetHomePageData } from "@/services/indexServices";
 export default function Home({ populationData, sliderData, eventData, indicatorData, publicationData }) {
 
@@ -21,7 +21,7 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
   const [nextReleaseDateList, setNextReleaseDateList] = useState([]);
   const [clickedReleaseDate, setClickedReleaseDate] = useState("");
   const { t } = useTranslation("common");
-  //  console.log(indicatorData)
+   console.log("indicatordataaa:",indicatorData)
   return (
     <>
       <Head>
@@ -80,7 +80,7 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
           <PublicationSlider publicationData={publicationData} />
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 home-event-calendar home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
-          <div className="row py-16 py-md-0">
+          <div className="row py-24 py-md-0">
             <div className="col-md-12">
               <CalendarIndicator
                 indicatorData = {indicatorData}
@@ -113,7 +113,7 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
 export async function getServerSideProps({ locale }) {
   try {
     const homeData = await getHomePageData();
-    console.log(homeData)
+    // console.log("homedataaaa:",homeData)
     return {
       props: {
         ...(await serverSideTranslations(locale, ['common'])),
@@ -128,7 +128,8 @@ export async function getServerSideProps({ locale }) {
         },
         indicatorData: {
           items: homeData.key_indicators.items || [],
-          baseUrl: homeData.key_indicators.base_url
+          baseUrl: homeData.key_indicators.base_url,
+          baseUrlPub: homeData.key_indicators.base_url_pub,
         },
         publicationData: {
           items: homeData.publications.items || [],

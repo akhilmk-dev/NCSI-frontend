@@ -116,7 +116,9 @@ const IndicatorSlider = ({
   
   const indicatorList = indicatorData.items;
   const baseUrl = indicatorData.baseUrl;
+  const baseUrlPub = indicatorData.baseUrlPub;
   
+
   const indicators = indicatorList?.map((item) => ({
     value: item.indicator_value,
     percent: isRTL
@@ -127,6 +129,8 @@ const IndicatorSlider = ({
     indicator_date: item.indicator_date,
     indicator_next_release_date: item.indicator_next_release_date,
     file: item.file,
+    pub_file: item.pub_file, 
+    
     release_type:item?.release_type,
     month_of_quarter:item?.month_of_quarter,
     bgClass: "bg-white", // optional - or from item.bg_class
@@ -208,6 +212,7 @@ const IndicatorSlider = ({
     }
   }, [clickedReleaseDate, indicatorList]);
 
+
   return (
     <center className="indicator-container">
       <div
@@ -225,8 +230,13 @@ const IndicatorSlider = ({
                 key={index}
                 
               >
-                {item.file ? (
-                  <a href={`${baseUrl}/${item.file}`} target="_blank" onMouseEnter={() =>{
+{item.file || item.pub_file ? (
+  <a
+    href={
+      item.file
+        ? `${baseUrl}/${item.file}`           // normal indicator file
+        : `${baseUrlPub}/${item.pub_file}` // publication file
+    }target="_blank" onMouseEnter={() =>{
                     onIndicatorHover(
                       item.indicator_date,
                       indicatorList[index]?.indicator_title_en, // pass both titles
@@ -300,6 +310,7 @@ const IndicatorSlider = ({
                     </span>
                     <div
                       className="indicators-desc"
+
                       style={{ height: "80px", fontSize: "15px" }}
                     >
                       <span className="text-bold SubTitleIndi">

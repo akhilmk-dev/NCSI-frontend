@@ -1739,6 +1739,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
     }
     const indicatorList = indicatorData.items;
     const baseUrl = indicatorData.baseUrl;
+    const baseUrlPub = indicatorData.baseUrlPub;
     const indicators = indicatorList?.map((item)=>({
             value: item.indicator_value,
             percent: isRTL ? item.indicator_value_unit_ar : item.indicator_value_unit_en,
@@ -1747,6 +1748,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
             indicator_date: item.indicator_date,
             indicator_next_release_date: item.indicator_next_release_date,
             file: item.file,
+            pub_file: item.pub_file,
             release_type: item?.release_type,
             month_of_quarter: item?.month_of_quarter,
             bgClass: "bg-white"
@@ -1803,8 +1805,10 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                         className: "swiper-wrapper",
                         children: indicators?.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 className: "swiper-slide",
-                                children: item.file ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
-                                    href: `${baseUrl}/${item.file}`,
+                                children: item.file || item.pub_file ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                                    href: item.file ? `${baseUrl}/${item.file}` // normal indicator file
+                                     : `${baseUrlPub}/${item.pub_file}` // publication file
+                                    ,
                                     target: "_blank",
                                     onMouseEnter: ()=>{
                                         onIndicatorHover(item.indicator_date, indicatorList[index]?.indicator_title_en, indicatorList[index]?.indicator_title_ar, getNextReleaseDate(item.indicator_date, item?.indicator_next_release_date, item?.release_type, item?.month_of_quarter));
@@ -1821,7 +1825,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                 alt: ""
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                lineNumber: 255,
+                                                lineNumber: 265,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -1829,7 +1833,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                 children: item.value
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                lineNumber: 256,
+                                                lineNumber: 266,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1844,44 +1848,44 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                         children: item.percent
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 263,
+                                                        lineNumber: 273,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                         children: item.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 266,
+                                                        lineNumber: 276,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 267,
+                                                        lineNumber: 277,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                         children: item.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 268,
+                                                        lineNumber: 278,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                lineNumber: 259,
+                                                lineNumber: 269,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                        lineNumber: 238,
+                                        lineNumber: 248,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                    lineNumber: 229,
-                                    columnNumber: 19
+                                    lineNumber: 234,
+                                    columnNumber: 3
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                     className: `indicator-sub ${formatDateDDMMYYYY(item.indicator_next_release_date) === formatDateDDMMYYYY(clickedReleaseDate) ? "ind-highlight-text" : ""}`,
                                     style: {
@@ -1897,7 +1901,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                             alt: ""
                                         }, void 0, false, {
                                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                            lineNumber: 297,
+                                            lineNumber: 307,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -1905,7 +1909,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                             children: item.value
                                         }, void 0, false, {
                                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                            lineNumber: 298,
+                                            lineNumber: 308,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1920,53 +1924,53 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                     children: item.percent
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 305,
+                                                    lineNumber: 316,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                     children: item.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 319,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 320,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                     children: item?.date
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 310,
+                                                    lineNumber: 321,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                            lineNumber: 301,
+                                            lineNumber: 311,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                    lineNumber: 273,
+                                    lineNumber: 283,
                                     columnNumber: 19
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                lineNumber: 223,
+                                lineNumber: 228,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                        lineNumber: 221,
+                        lineNumber: 226,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                    lineNumber: 217,
+                    lineNumber: 222,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -1982,17 +1986,17 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                             d: "M15.5 0.932L11.2 5.312 25.7 19.912 11.2 34.412 15.5 38.812 30.1 24.212 34.5 19.912 30.1 15.512 15.5 0.932Z"
                         }, void 0, false, {
                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                            lineNumber: 333,
+                            lineNumber: 344,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                        lineNumber: 327,
+                        lineNumber: 338,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                    lineNumber: 322,
+                    lineNumber: 333,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -2011,28 +2015,28 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                             d: "M15.5 0.932L11.2 5.312 25.7 19.912 11.2 34.412 15.5 38.812 30.1 24.212 34.5 19.912 30.1 15.512 15.5 0.932Z"
                         }, void 0, false, {
                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                            lineNumber: 349,
+                            lineNumber: 360,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                        lineNumber: 342,
+                        lineNumber: 353,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                    lineNumber: 337,
+                    lineNumber: 348,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-            lineNumber: 213,
+            lineNumber: 218,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-        lineNumber: 212,
+        lineNumber: 217,
         columnNumber: 5
     }, this);
 };
@@ -3043,7 +3047,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$Calend
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$IndicatorSlider__$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Home/IndicatorSlider .jsx [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$EventAccordion$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Home/EventAccordion.jsx [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$PopulationClock$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Home/PopulationClock.jsx [ssr] (ecmascript)");
-// import { getEventList, getPopulationList, getSliderList, getIndicatorList, getPublicationList } from "@/services/indexServices";
 var __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$indexServices$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/services/indexServices.js [ssr] (ecmascript)");
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$PublicationSlider$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__,
@@ -3051,6 +3054,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$indexServices$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__
 ]);
 ([__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$PublicationSlider$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$IndicatorSlider__$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$indexServices$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
+;
 ;
 ;
 ;
@@ -3074,7 +3078,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
     const [nextReleaseDateList, setNextReleaseDateList] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])([]);
     const [clickedReleaseDate, setClickedReleaseDate] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])("");
     const { t } = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$next$2d$i18next__$5b$external$5d$__$28$next$2d$i18next$2c$__cjs$29$__["useTranslation"])("common");
-    //  console.log(indicatorData)
+    console.log("indicatordataaa:", indicatorData);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3238,7 +3242,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                         "data-wow-delay": "0.2s",
                         "data-wow-duration": "0.5s",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                            className: "row py-16 py-md-0",
+                            className: "row py-24 py-md-0",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                     className: "col-md-12",
@@ -3298,7 +3302,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
 async function getServerSideProps({ locale }) {
     try {
         const homeData = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$indexServices$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getHomePageData"])();
-        console.log(homeData);
+        // console.log("homedataaaa:",homeData)
         return {
             props: {
                 ...await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$next$2d$i18next$2f$serverSideTranslations$2e$js__$5b$external$5d$__$28$next$2d$i18next$2f$serverSideTranslations$2e$js$2c$__cjs$29$__["serverSideTranslations"])(locale, [
@@ -3315,7 +3319,8 @@ async function getServerSideProps({ locale }) {
                 },
                 indicatorData: {
                     items: homeData.key_indicators.items || [],
-                    baseUrl: homeData.key_indicators.base_url
+                    baseUrl: homeData.key_indicators.base_url,
+                    baseUrlPub: homeData.key_indicators.base_url_pub
                 },
                 publicationData: {
                     items: homeData.publications.items || [],

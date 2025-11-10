@@ -14,12 +14,17 @@ import HoverCard from "@/components/cards/hoverCard";
 const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBaseUrl }) => {
   const { t } = useTranslation("common");
   const { locale } = useRouter();
+  const [isExpanded, setIsExpanded] = useState(false);
   const data = hierarchyData?.content?.items?.data || {};
+ 
 
   return (
     <>
       <Head>
-        <title>{t("Hierarchy")}</title>
+        <title  key="title">{t("Hierarchy")}</title>
+        <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
+
       </Head>
 
       <section className="events-section px-0 md:px-12 lg:px-20">
@@ -39,7 +44,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
 
               {/* State to toggle expand/collapse */}
               {(() => {
-                const [isExpanded, setIsExpanded] = useState(false);
+                
 
                 const message =
                   locale === "ar"
@@ -271,9 +276,6 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
     </>
   )}
 </div>
-
-
-
 
               {/* === ORGANIZATION CHART === */}
               <div className="bg-[#00a895] flex items-center justify-center mt-6 py-1 md:py-2"> <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center"> {t("Organization_Chart")} </h2> </div>

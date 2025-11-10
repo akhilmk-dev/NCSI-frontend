@@ -45,6 +45,7 @@ const NewsCard = ({ id, title, date, description, image }) => {
       >
         <div className="py-2 flex flex-col md:flex-row gap-6 md:gap-10">
           {/* Image */}
+          {image ? (
           <div className="w-full md:w-[400px] lg:w-[440px] flex-shrink-0">
             <div className="relative w-full h-[260px] md:h-[280px]">
               <Image
@@ -56,6 +57,7 @@ const NewsCard = ({ id, title, date, description, image }) => {
               />
             </div>
           </div>
+          ) : null}
 
           {/* Text Block */}
           <div

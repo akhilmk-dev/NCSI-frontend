@@ -289,7 +289,60 @@
 "Producer_Price_Index_Survey":"Producer Price Index Survey",
 "Foreign_Investment_Survey" :"Foreign Investment Survey",
 
-"load_more_news":"Load More News"
+"load_more_news":"Load More News",
+
+"National_Summary_Data_Page_(NSDP)_-Oman":"National Summary Data Page (NSDP)-Oman",
+"national_summary_data_title":"Data linked from this page correspond to data described in the International Monetary Fund’s DSBB. For a fuller explanation of the DSBB and the enhanced General Data Dissemination System in which Country participates,",
+"please_visit_the":" please visit the",
+"dsbb_home_page" :"DSBB home page",
+"Macroeconomic_and_Financial_Data":"Macroeconomic and Financial Data",
+"National Accounts_(GDP)":"National Accounts (GDP)",
+"browse_data":"Browse Data",
+"download_in_sdmx":"Download in SDMX",
+"dsbb_metadata":"DSBB Metadata",
+"Consumer_Price_Index":"Consumer Price Index",
+"General_Government_Operations":"General Government Operations",
+"Central_Government_Operations":"Central Government Operations",
+"Central_Government_Gross_Debt":"Central Government Gross Debt",
+"Depository_Corporations_Survey":"Depository Corporations Survey",
+"Central_Bank_Survey":"Central Bank Survey",
+"Interest_Rates":"Interest Rates",
+"stock_market":"Stock Market",
+"Balance_of_Payments":"Balance of Payments",
+"External_Debt":"External Debt",
+"official_reserve_assets":"Official Reserve Assets",
+"Merchandise_Trade":"Merchandise Trade",
+"International_Investment_Position_(IIP)":"International Investment Position (IIP)",
+"Exchange_Rates":"Exchange Rates",
+"Macroeconomic_and_Financial_Data_Encouraged_Data":"Macroeconomic and Financial Data: Encouraged Data",
+"Production_Index":"Production Index",
+"Labour_Market":"Labour Market",
+"Producer_Price_Index":"Producer Price Index",
+"Financial_Soundness_Indicators_(FSIs)":"Financial Soundness Indicators (FSIs)",
+"Demographic_and_Selected_Socio-Economic_Indicators":"Demographic and Selected Socio-Economic Indicators",
+"Population":"Population",
+"Additional_Datasets":"Additional Datasets",
+"Oil_production":"Oil production",
+"Depository_Corporations_Survey_(detailed presentation)":"Depository Corporations Survey (detailed presentation)",
+"Balance_of_Payments_(detailed presentation)":"Balance of Payments (detailed presentation)",
+"Direction_of_Trade":"Direction of Trade",
+
+"licences":"Licences",
+"verify_licence":"Verify Licence",
+"licence_number":"Licence Number",
+"survey/study_title":"Survey/Study Title",
+"implementing_entity":"Implementing Entity",
+"Licence_Period_From":"Licence Period From",
+"Licence_Period_To":"Licence Period To",
+"Licence_Status":"Licence Status",
+"submit_a_new_application":"Submit a new application",
+"show_more":"Show More",
+"For_more_Country_data_and_information,_please_go":"For more Country data and information, please go",
+"here":"here",
+"Financial_Access_Survey":"Financial Access Survey"
+
+
+
 
 
 

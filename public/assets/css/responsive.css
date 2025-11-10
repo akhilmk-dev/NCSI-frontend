@@ -425,7 +425,7 @@ text-align: center !important;
 }
  @media (max-width: 767px) {
   .indicator-container{
-    margin-top: 20px;
+    margin-top: 50px;
   }
   
 }

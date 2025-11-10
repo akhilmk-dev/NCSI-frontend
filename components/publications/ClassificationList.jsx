@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next';
 
 const ClassificationList = ({ classifications, isRTL, onSelect, selectedId }) => {
   const { t } = useTranslation('common');
-  console.log(selectedId, '🟢----selectedId')
+  console.log(selectedId, '----selectedId')
 
   return (
      <div className="col-lg-12" style={{padding:'0'}}>

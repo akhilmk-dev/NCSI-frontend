@@ -12,7 +12,7 @@ const Licenses = () => {
   const { locale } = useRouter();
   const isRTL = locale?.startsWith("ar");
 
-  const [activeTab, setActiveTab] = useState("survey-request"); // default tab
+  const [activeTab, setActiveTab] = useState("survey-request"); 
 
   // ✅ Dynamic font
   const fontStyle = {
@@ -25,12 +25,15 @@ const Licenses = () => {
   const breadcrumbTitle =
     activeTab === "survey-request"
       ? t("survey_request")
-      : t("Search Licenses");
+      : t("licences");
 
   return (
     <>
       <Head>
-        <title>{t("Licenses")}</title>
+        <title>Licences</title>
+      <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
+        <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>  
+
       </Head>
 
       {/* === Breadcrumb === */}
@@ -63,19 +66,19 @@ const Licenses = () => {
                 }`}
                 // style={fontStyle}
               >
-                {t("Submit a new application")}
+                {t("submit_a_new_application")}
               </button>
 
               <button
-                onClick={() => setActiveTab("search-licenses")}
+                onClick={() => setActiveTab("search-licences")}
                 className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
-                  activeTab === "search-licenses"
+                  activeTab === "search-licences"
                     ? "bg-[#00A895] text-white"
                     : "bg-white border border-[#00A895] text-[#00A895]"
                 }`}
                 style={fontStyle}
               >
-                {t("Verify License")}
+                {t("verify_licence")}
               </button>
             </div>
           </div>

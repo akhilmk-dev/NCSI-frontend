@@ -1361,7 +1361,7 @@ const SurveyRequest = ({surveycode}) => {
                 {t("submit")}
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 className="submitBtn"
                 id="btn_Save"
@@ -1369,9 +1369,9 @@ const SurveyRequest = ({surveycode}) => {
                 onClick={handleSave}
               >
                 {t("save")}
-              </button>
+              </button> */}
 
-              <button
+              {/* <button
                 type="button"
                 className="cancelBtn"
                 id="btn_Cancel"
@@ -1379,7 +1379,7 @@ const SurveyRequest = ({surveycode}) => {
                 onClick={handleCancel}
               >
                 {t("cancel")}
-              </button>
+              </button> */}
               <button
                 type="button"
                 className="submitBtn"
@@ -1403,7 +1403,7 @@ const SurveyRequest = ({surveycode}) => {
       </div>
       {showModal && (
         <SuccessModal
-          message={`Your survey request send successfully! please save the survey code ${successCode}`}
+          message={`Your survey request sent successfully! please save the survey code ${successCode}`}
           onClose={() => setShowModal(false)}
         />
       )}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Search, ChevronUp, ChevronDown } from "lucide-react";
@@ -16,6 +16,7 @@ const SearchResult = () => {
   const [searchString, setSearchString] = useState("");
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const itemsPerPage = 3;
   const totalPages = Math.ceil(total / itemsPerPage);
@@ -25,7 +26,28 @@ const SearchResult = () => {
     direction: "asc",
   });
 
-  // ✅ Fetch data from backend
+  const debounceTimer = useRef(null);
+
+  //  Debounced search handler
+  useEffect(() => {
+    if (!searchString.trim()) {
+      // clear results if empty search
+      setLicences([]);
+      setTotal(0);
+      setHasSearched(false);
+      return;
+    }
+
+    // debounce search
+    clearTimeout(debounceTimer.current);
+    debounceTimer.current = setTimeout(() => {
+      fetchLicences(1, searchString, sortOrder);
+    }, 500); 
+
+    return () => clearTimeout(debounceTimer.current);
+  }, [searchString, sortOrder]);
+
+  //  Fetch data from backend
   const fetchLicences = async (
     page = 1,
     search = searchString,
@@ -37,30 +59,22 @@ const SearchResult = () => {
       setLicences(licences);
       setTotal(total);
       setCurrentPage(page);
+      setHasSearched(true);
     } catch (error) {
       console.error("Error fetching licences:", error);
     }
     setLoading(false);
   };
 
-  // ✅ Load data initially and whenever sort or page changes
+  //  Manual pagination click
   useEffect(() => {
-    fetchLicences(currentPage, searchString, sortOrder);
-  }, [currentPage, sortOrder]);
-
-  // ✅ Refetch when search cleared
-  useEffect(() => {
-    if (searchString.trim() === "") {
-      fetchLicences(1, "", sortOrder);
+    if (hasSearched && searchString.trim()) {
+      fetchLicences(currentPage, searchString, sortOrder);
     }
-  }, [searchString]);
-
-  const handleSearch = () => {
-    setCurrentPage(1);
-    fetchLicences(1, searchString, sortOrder);
-  };
+  }, [currentPage]);
 
   const handleSort = (field) => {
+    if (field === "survey_status") return;
     setSortOrder((prev) => ({
       field,
       direction:
@@ -68,21 +82,20 @@ const SearchResult = () => {
     }));
   };
 
-  // ✅ New table columns
   const columns = [
     { key: "id", label: t("No") },
-    { key: "licensenumber", label: t("License Number") },
-    { key: "title", label: t("Survey/Study Title") },
-    { key: "agency", label: t("Implementing Entity") },
-    { key: "implementation_period_from", label: t("License Period From") },
-    { key: "implementation_period_to", label: t("License Period To") },
-    { key: "survey_status", label: t("License Status") },
+    { key: "licensenumber", label: t("licence_number") },
+    { key: "title", label: t("survey/study_title") },
+    { key: "agency", label: t("implementing_entity") },
+    { key: "implementation_period_from", label: t("Licence_Period_From") },
+    { key: "implementation_period_to", label: t("Licence_Period_To") },
+    { key: "survey_status", label: t("Licence_Status") },
   ];
 
   return (
     <>
       <Head>
-        <title>{t("Search Result")}</title>
+        <title>{t("verify_licence")}</title>
       </Head>
 
       <section
@@ -99,14 +112,19 @@ const SearchResult = () => {
                   type="text"
                   value={searchString}
                   onChange={(e) => setSearchString(e.target.value)}
-                  placeholder={t("License number / survey address / implementing agency")}
+                  placeholder={`${t("licence_number")} / ${t(
+                    "survey/study_title"
+                  )} / ${t("implementing_entity")}`}
                   className="w-full h-full bg-transparent outline-none text-[14px] text-gray-700 placeholder:text-gray-500 text-center"
-                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 />
               </div>
               <button
                 type="button"
-                onClick={handleSearch}
+                onClick={() => {
+                  if (searchString.trim()) {
+                    fetchLicences(1, searchString, sortOrder);
+                  }
+                }}
                 className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-[#009C8C] hover:bg-[#007a6f] grid place-items-center shadow-md transition"
               >
                 <Search size={16} className="text-white" />
@@ -114,107 +132,112 @@ const SearchResult = () => {
             </div>
           </div>
 
-          {/* === Table === */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-x-auto">
-            {loading ? (
-              <div className="flex justify-center items-center py-12 text-gray-500">
-                {t("Loading...")}
+          {/* === Results Section (show only after search) === */}
+          {hasSearched && (
+            <>
+              <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-x-auto">
+                {loading ? (
+                  <div className="flex justify-center items-center py-12 text-gray-500">
+                    {t("Loading...")}
+                  </div>
+                ) : licences.length === 0 ? (
+                  <div className="flex justify-center items-center py-12 text-gray-500">
+                    {t("No Data Found")}
+                  </div>
+                ) : (
+                  <table className="min-w-full text-sm text-gray-700 border-collapse">
+                    <thead>
+                      <tr className="bg-[#e5e5e5] text-gray-800 font-semibold border-b border-gray-200">
+                        {columns.map(({ key, label }) => (
+                          <th
+                            key={key}
+                            onClick={() => handleSort(key)}
+                            className="px-4 py-3 text-left cursor-pointer select-none whitespace-nowrap"
+                          >
+                            <div className="flex items-center gap-1">
+                              {label}
+                              {sortOrder.field === key ? (
+                                sortOrder.direction === "asc" ? (
+                                  <ChevronUp size={14} />
+                                ) : (
+                                  <ChevronDown size={14} />
+                                )
+                              ) : null}
+                            </div>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {licences.map((row, index) => (
+                        <tr
+                          key={row.id}
+                          className={`${
+                            index % 2 === 0 ? "bg-white" : "bg-[#f4f4f4]"
+                          } hover:bg-gray-200 transition`}
+                        >
+                          <td className="px-4 py-3">
+                            {(currentPage - 1) * itemsPerPage + (index + 1)}
+                          </td>
+                          <td className="px-4 py-3">{row.licensenumber}</td>
+                          <td className="px-4 py-3">{row.title}</td>
+                          <td className="px-4 py-3">{row.agency}</td>
+                          <td className="px-4 py-3">
+                            {row.implementation_period_from
+                              ? new Date(row.implementation_period_from).toLocaleDateString()
+                              : "-"}
+                          </td>
+                          <td className="px-4 py-3">
+                            {row.implementation_period_to
+                              ? new Date(row.implementation_period_to).toLocaleDateString()
+                              : "-"}
+                          </td>
+                          <td className="px-4 py-3">{row.survey_status || "-"}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
               </div>
-            ) : licences.length === 0 ? (
-              <div className="flex justify-center items-center py-12 text-gray-500">
-                {t("No Data Found")}
-              </div>
-            ) : (
-              <table className="min-w-full text-sm text-gray-700 border-collapse">
-                <thead>
-                  <tr className="bg-[#e5e5e5] text-gray-800 font-semibold border-b border-gray-200">
-                    {columns.map(({ key, label }) => (
-                      <th
-                        key={key}
-                        onClick={() => handleSort(key)}
-                        className="px-4 py-3 text-left cursor-pointer select-none whitespace-nowrap"
-                      >
-                        <div className="flex items-center gap-1">
-                          {label}
-                          {sortOrder.field === key ? (
-                            sortOrder.direction === "asc" ? (
-                              <ChevronUp size={14} />
-                            ) : (
-                              <ChevronDown size={14} />
-                            )
-                          ) : null}
-                        </div>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {licences.map((row, index) => (
-                    <tr
-                      key={row.id}
-                      className={`${
-                        index % 2 === 0 ? "bg-white" : "bg-[#f4f4f4]"
-                      } hover:bg-gray-200 transition`}
+
+              {/* === Pagination === */}
+              {totalPages > 1 && (
+                <div
+                  id="pagination"
+                  className="pagination d-flex justify-content-center flex-wrap mt-6 gap-2"
+                >
+                  {currentPage > 1 && (
+                    <button
+                      className="page-button"
+                      onClick={() => setCurrentPage(currentPage - 1)}
                     >
-                     <td className="px-4 py-3">
-  {(currentPage - 1) * itemsPerPage + (index + 1)}
-</td>
+                      <i className="fas fa-caret-left text-white"></i>
+                    </button>
+                  )}
 
-                      <td className="px-4 py-3">{row.licensenumber}</td>
-                      <td className="px-4 py-3">{row.title}</td>
-                      <td className="px-4 py-3">{row.agency}</td>
-                      <td className="px-4 py-3">
-                        {row.implementation_period_from
-                          ? new Date(row.implementation_period_from).toLocaleDateString()
-                          : "-"}
-                      </td>
-                      <td className="px-4 py-3">
-                        {row.implementation_period_to
-                          ? new Date(row.implementation_period_to).toLocaleDateString()
-                          : "-"}
-                      </td>
-                      <td className="px-4 py-3">{row.survey_status || "-"}</td>
-                    </tr>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      className={`page-button ${
+                        page === currentPage ? "active" : ""
+                      }`}
+                      onClick={() => setCurrentPage(page)}
+                    >
+                      {page}
+                    </button>
                   ))}
-                </tbody>
-              </table>
-            )}
-          </div>
 
-          {/* === Pagination === */}
-          {totalPages > 1 && (
-            <div
-              id="pagination"
-              className="pagination d-flex justify-content-center flex-wrap mt-6 gap-2"
-            >
-              {currentPage > 1 && (
-                <button
-                  className="page-button"
-                  onClick={() => setCurrentPage(currentPage - 1)}
-                >
-                  <i className="fas fa-caret-left text-white"></i>
-                </button>
+                  {currentPage < totalPages && (
+                    <button
+                      className="page-button"
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                    >
+                      <i className="fas fa-caret-right text-white"></i>
+                    </button>
+                  )}
+                </div>
               )}
-
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  className={`page-button ${page === currentPage ? "active" : ""}`}
-                  onClick={() => setCurrentPage(page)}
-                >
-                  {page}
-                </button>
-              ))}
-
-              {currentPage < totalPages && (
-                <button
-                  className="page-button"
-                  onClick={() => setCurrentPage(currentPage + 1)}
-                >
-                  <i className="fas fa-caret-right text-white"></i>
-                </button>
-              )}
-            </div>
+            </>
           )}
         </div>
       </section>
@@ -223,6 +246,3 @@ const SearchResult = () => {
 };
 
 export default SearchResult;
-
-
-
