@@ -326,7 +326,7 @@
 "Direction_of_Trade":"مسح مؤسسات الايداع عرض تفصيلي",
 
 "licences":"تراخيص",
-"verify_licence":"يؤكد تراخيص",
+"verify_licence":"التحقق من ترخيص",
 "licence_number":"رقم الترخيص",
 "survey/study_title":"  العنواالاستبيانات ",
 "implementing_entity":"الجهة",
@@ -336,7 +336,8 @@
 "submit_a_new_application":"تقديم طلب جديد",
 "show_more":"للمزيد...",
 "For_more_Country_data_and_information,_please_go":"لمزيد من بيانات ومعلومات الدوله يرجى النقر ",
-"here":"هنا"
+"here":"هنا",
+"No":"م"
 
 
 

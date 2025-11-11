@@ -14,14 +14,14 @@ const Licenses = () => {
 
   const [activeTab, setActiveTab] = useState("survey-request"); 
 
-  // ✅ Dynamic font
+  //  Dynamic font
   const fontStyle = {
     fontFamily: locale?.startsWith("ar")
       ? '"Janna LT", DroidKufiRegular'
       : '"Gill Sans MT", Arial, sans-serif',
   };
 
-  // ✅ Dynamic breadcrumb
+  //  Dynamic breadcrumb
   const breadcrumbTitle =
     activeTab === "survey-request"
       ? t("survey_request")
@@ -53,7 +53,7 @@ const Licenses = () => {
         <div className="w-full max-w-6xl">
           <div
             className={`flex mb-10 ${
-              isRTL ? "justify-end px-4" : "justify-start px-4"
+              "justify-start px-4"
             }`}
           >
             <div className="flex items-center gap-4">

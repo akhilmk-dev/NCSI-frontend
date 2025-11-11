@@ -2220,17 +2220,39 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
             }
             return tentativeDate.toLocaleDateString("en-GB"); // dd/mm/yyyy
         }
-        // For Quarterly
+        // monthOfQuarter: 1..12 (e.g., 8 for August)
+        // nextReleaseDay: 1..31
+        function getNextQuarterlyReleaseDate({ monthOfQuarter, nextReleaseDay }, now = new Date()) {
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // midnight local
+            const baseMonth0 = Number(monthOfQuarter) - 1;
+            const day = Number(nextReleaseDay);
+            // helper to safely create valid date
+            const safeDate = (y, m0, d)=>{
+                const lastDay = new Date(y, m0 + 1, 0).getDate();
+                return new Date(y, m0, Math.min(d, lastDay));
+            };
+            // start from this year's base
+            let candidate = safeDate(today.getFullYear(), baseMonth0, day);
+            // if that date is after today → go one year back
+            if (candidate > today) {
+                candidate = safeDate(today.getFullYear() - 1, baseMonth0, day);
+            }
+            // step forward quarterly until next one is ahead of today
+            while(candidate <= today){
+                candidate = safeDate(candidate.getFullYear(), candidate.getMonth() + 3, day);
+            }
+            // return manually formatted date (avoid timezone bugs)
+            const dd = String(candidate.getDate()).padStart(2, "0");
+            const mm = String(candidate.getMonth() + 1).padStart(2, "0");
+            const yyyy = candidate.getFullYear();
+            return `${dd}/${mm}/${yyyy}`;
+        }
+        // Usage:
         if (releaseType === "Quarterly") {
-            const indicatorDate = new Date(indicatorDateStr);
-            if (isNaN(indicatorDate)) return null;
-            let indicatorYear = indicatorDate.getFullYear();
-            let indicatorMonth = indicatorDate.getMonth(); // 0-based
-            let releaseMonth = monthOfQuarter - 1; // convert to 0-based month
-            // If indicator month is after or equal to the release month, use next year
-            let releaseYear = indicatorMonth >= releaseMonth ? indicatorYear + 1 : indicatorYear;
-            const nextReleaseDate = new Date(releaseYear, releaseMonth, nextReleaseDay);
-            return nextReleaseDate.toLocaleDateString("en-GB"); // dd/mm/yyyy
+            return getNextQuarterlyReleaseDate({
+                monthOfQuarter,
+                nextReleaseDay
+            });
         }
         return null;
     }
@@ -2366,7 +2388,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                 alt: ""
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                lineNumber: 265,
+                                                lineNumber: 291,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2374,7 +2396,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                 children: item.value
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                lineNumber: 266,
+                                                lineNumber: 292,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2389,43 +2411,43 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                         children: item.percent
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 299,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: item.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 276,
+                                                        lineNumber: 302,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 277,
+                                                        lineNumber: 303,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: item.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                        lineNumber: 278,
+                                                        lineNumber: 304,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                lineNumber: 269,
+                                                lineNumber: 295,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                        lineNumber: 248,
+                                        lineNumber: 274,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                    lineNumber: 234,
+                                    lineNumber: 260,
                                     columnNumber: 3
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: `indicator-sub ${formatDateDDMMYYYY(item.indicator_next_release_date) === formatDateDDMMYYYY(clickedReleaseDate) ? "ind-highlight-text" : ""}`,
@@ -2442,7 +2464,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                             alt: ""
                                         }, void 0, false, {
                                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                            lineNumber: 307,
+                                            lineNumber: 333,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2450,7 +2472,7 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                             children: item.value
                                         }, void 0, false, {
                                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                            lineNumber: 308,
+                                            lineNumber: 334,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2465,53 +2487,53 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                                                     children: item.percent
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 316,
+                                                    lineNumber: 342,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: item.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 319,
+                                                    lineNumber: 345,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 320,
+                                                    lineNumber: 346,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: item?.date
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                                    lineNumber: 321,
+                                                    lineNumber: 347,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                            lineNumber: 311,
+                                            lineNumber: 337,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                    lineNumber: 283,
+                                    lineNumber: 309,
                                     columnNumber: 19
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                                lineNumber: 228,
+                                lineNumber: 254,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                        lineNumber: 226,
+                        lineNumber: 252,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                    lineNumber: 222,
+                    lineNumber: 248,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2527,17 +2549,17 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                             d: "M15.5 0.932L11.2 5.312 25.7 19.912 11.2 34.412 15.5 38.812 30.1 24.212 34.5 19.912 30.1 15.512 15.5 0.932Z"
                         }, void 0, false, {
                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                            lineNumber: 344,
+                            lineNumber: 370,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                        lineNumber: 338,
+                        lineNumber: 364,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                    lineNumber: 333,
+                    lineNumber: 359,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2556,28 +2578,28 @@ const IndicatorSlider = ({ indicatorData, onIndicatorHover, onNextReleaseDatesRe
                             d: "M15.5 0.932L11.2 5.312 25.7 19.912 11.2 34.412 15.5 38.812 30.1 24.212 34.5 19.912 30.1 15.512 15.5 0.932Z"
                         }, void 0, false, {
                             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                            lineNumber: 360,
+                            lineNumber: 386,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                        lineNumber: 353,
+                        lineNumber: 379,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Home/IndicatorSlider .jsx",
-                    lineNumber: 348,
+                    lineNumber: 374,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/Home/IndicatorSlider .jsx",
-            lineNumber: 218,
+            lineNumber: 244,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/Home/IndicatorSlider .jsx",
-        lineNumber: 217,
+        lineNumber: 243,
         columnNumber: 5
     }, this);
 };

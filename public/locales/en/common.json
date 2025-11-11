@@ -10,7 +10,7 @@
   "population_clock": "Population Clock",
   "total_population": "Total Population",
   "Current_Rating": "Current Rating",
-  "main_menu": "Main Menu",
+  "main_menu": "Main Portals",
   "e_census_portal": "E- Census Portal",
   "data_portal": "Data Portal",
   "sdg": "SDG",
@@ -339,7 +339,8 @@
 "show_more":"Show More",
 "For_more_Country_data_and_information,_please_go":"For more Country data and information, please go",
 "here":"here",
-"Financial_Access_Survey":"Financial Access Survey"
+"Financial_Access_Survey":"Financial Access Survey",
+"No":"No"
 
 
 

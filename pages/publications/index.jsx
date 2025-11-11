@@ -43,6 +43,8 @@ const Publications = ({
 
   const [sessionId, setSessionId] = useState(null);
 
+  const debounceTimer = useRef(null);
+
   useEffect(() => {
     const id = getBrowserSessionId();
     setSessionId(id);
@@ -87,6 +89,52 @@ const Publications = ({
     type,
     sortOrder, // Removed `searchString`
   ]);
+
+  // ✅ Debounced search effect
+useEffect(() => {
+  // clear any existing timer
+  if (debounceTimer.current) clearTimeout(debounceTimer.current);
+
+  // when search box is empty → reset to default list
+  if (searchString.trim() === "") {
+    const fetchDefault = async () => {
+      setLoading(true);
+      try {
+        const payload = {
+          currentpage: 1,
+          pagesize: itemsPerPage,
+          searchstring: "",
+          sortorder: sortOrder,
+          is_frontend: true,
+          filter: {
+            type,
+            classification_id: classificationId,
+            status: 1,
+          },
+        };
+        const res = await getPublications(payload);
+        setPublicationList(res?.publications || []);
+        setTotalCount(res?.total || 0);
+        setCurrentPage(1);
+      } catch (err) {
+        console.error("Error fetching default publications:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    debounceTimer.current = setTimeout(fetchDefault, 300);
+    return;
+  }
+
+  // debounce search (500ms delay)
+  debounceTimer.current = setTimeout(() => {
+    handleSearch();
+  }, 500);
+
+  // cleanup old timer
+  return () => clearTimeout(debounceTimer.current);
+}, [searchString]);
+
 
   const handleSearch = async () => {
   // Optional: reset URL to ?page=1 to be accurate

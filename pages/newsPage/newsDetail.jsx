@@ -95,7 +95,7 @@ const NewsDetail = () => {
             </Link>
             <span className="mx-1">{">"}</span>
             <Link
-              href="/news"
+              href="/newsPage"
               className="text-[#666666] transition-colors"
                style={fontFamilyStyle}
             >

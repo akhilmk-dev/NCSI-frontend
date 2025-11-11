@@ -91,25 +91,50 @@ const IndicatorSlider = ({
         tentativeDate = new Date(year, month, nextReleaseDay);
       }
   
-      return tentativeDate.toLocaleDateString("en-GB"); // dd/mm/yyyy
+      return tentativeDate.toLocaleDateString("en-GB"); 
     }
   
-    // For Quarterly
-    if (releaseType === "Quarterly") {
-      const indicatorDate = new Date(indicatorDateStr);
-      if (isNaN(indicatorDate)) return null;
-  
-      let indicatorYear = indicatorDate.getFullYear();
-      let indicatorMonth = indicatorDate.getMonth(); // 0-based
-  
-      let releaseMonth = monthOfQuarter - 1; // convert to 0-based month
-  
-      // If indicator month is after or equal to the release month, use next year
-      let releaseYear = indicatorMonth >= releaseMonth ? indicatorYear + 1 : indicatorYear;
-  
-      const nextReleaseDate = new Date(releaseYear, releaseMonth, nextReleaseDay);
-      return nextReleaseDate.toLocaleDateString("en-GB"); // dd/mm/yyyy
-    }
+
+function getNextQuarterlyReleaseDate({ monthOfQuarter, nextReleaseDay }, now = new Date()) {
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // midnight local
+  const baseMonth0 = Number(monthOfQuarter) - 1;
+  const day = Number(nextReleaseDay);
+
+  // helper to safely create valid date
+  const safeDate = (y, m0, d) => {
+    const lastDay = new Date(y, m0 + 1, 0).getDate();
+    return new Date(y, m0, Math.min(d, lastDay));
+  };
+
+  // start from this year's base
+  let candidate = safeDate(today.getFullYear(), baseMonth0, day);
+
+  // if that date is after today → go one year back
+  if (candidate > today) {
+    candidate = safeDate(today.getFullYear() - 1, baseMonth0, day);
+  }
+
+  // step forward quarterly until next one is ahead of today
+  while (candidate <= today) {
+    candidate = safeDate(candidate.getFullYear(), candidate.getMonth() + 3, day);
+  }
+
+  // return manually formatted date (avoid timezone bugs)
+  const dd = String(candidate.getDate()).padStart(2, "0");
+  const mm = String(candidate.getMonth() + 1).padStart(2, "0");
+  const yyyy = candidate.getFullYear();
+
+  return `${dd}/${mm}/${yyyy}`;
+}
+
+
+
+if (releaseType === "Quarterly") {
+  return getNextQuarterlyReleaseDate({
+    monthOfQuarter,
+    nextReleaseDay,
+  });
+}
   
     return null;
   }

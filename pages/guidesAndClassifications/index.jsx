@@ -181,7 +181,7 @@ useEffect(() => {
           <div className="col-lg-9 d-flex flex-column">
             {/* Search Bar */}
             <div
-              className="d-flex justify-content-end mb-0 d-none d-sm-flex"
+              className="d-flex justify-center md:justify-end mb-0  d-sm-flex"
               style={{ marginTop: "0px", marginRight: "10px" }}
             >
               <div className="top-search-box" style={{ width: "240px" }}>
@@ -201,7 +201,7 @@ useEffect(() => {
 
             {/* Content Section */}
             {loading ? (
-              <div className="flex justify-center items-center bg-[#f1f2f3]" style={{ minHeight: "200px" }}>
+              <div className="flex justify-center items-center  bg-[#f1f2f3]" style={{ minHeight: "200px" }}>
                 <img className="loading_img" src="/assets/images/loader.gif" alt="Loading..." style={{ width: "100px" }} />
               </div>
             ) : selectedSection === "glossary" ? (
@@ -220,7 +220,7 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-start" style={{ minHeight: "340px" }}>
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2 md:g-4  justify-content-start" style={{ minHeight: "340px" }}>
                   {methodologyData.map((m, index) => (
                     <div key={index} className="col d-flex justify-content-center">
                       <GuidesAndClassificationCard
@@ -239,7 +239,7 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-start" style={{ minHeight: "340px" }}>
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2 md:g-4 justify-content-start" style={{ minHeight: "340px" }}>
                   {guidesClassificationData.map((g, index) => (
                     <div key={index} className="col d-flex justify-content-center">
                       <GuidesAndClassificationCard

@@ -105,9 +105,9 @@ const SearchResult = () => {
       >
         <div className="w-full max-w-6xl">
           {/* === Search Bar === */}
-          <div className={`flex mb-6 ${isRTL ? "justify-end" : "justify-start"}`}>
+          <div className="flex mb-6  justify-center md:justify-start">
             <div className="flex items-center gap-2">
-              <div className="h-9 md:h-10 w-[350px] max-w-[90vw] bg-white border-2 border-[#0056A3] rounded-lg shadow-sm px-4 flex items-center">
+              <div className="h-9 md:h-10 max-w-md md:max-w-lg lg:max-w-xl bg-white border-2 border-[#0056A3] rounded-lg shadow-sm px-4 flex items-center">
                 <input
                   type="text"
                   value={searchString}
@@ -115,7 +115,7 @@ const SearchResult = () => {
                   placeholder={`${t("licence_number")} / ${t(
                     "survey/study_title"
                   )} / ${t("implementing_entity")}`}
-                  className="w-full h-full bg-transparent outline-none text-[14px] text-gray-700 placeholder:text-gray-500 text-center"
+                  className="w-full h-full bg-transparent outline-none text-[14px] text-gray-700 placeholder:text-gray-500 text-start"
                 />
               </div>
               <button
@@ -201,42 +201,67 @@ const SearchResult = () => {
               </div>
 
               {/* === Pagination === */}
-              {totalPages > 1 && (
-                <div
-                  id="pagination"
-                  className="pagination d-flex justify-content-center flex-wrap mt-6 gap-2"
-                >
-                  {currentPage > 1 && (
-                    <button
-                      className="page-button"
-                      onClick={() => setCurrentPage(currentPage - 1)}
-                    >
-                      <i className="fas fa-caret-left text-white"></i>
-                    </button>
-                  )}
+{totalPages > 1 && licences.length > 0 && (
+  <div
+    id="pagination"
+    className="pagination d-flex justify-content-center flex-wrap mt-6 gap-2"
+  >
+    {/* Previous Button */}
+    {currentPage > 1 && (
+      <button
+        className="page-button"
+        onClick={() => setCurrentPage(currentPage - 1)}
+      >
+        <i className="fas fa-caret-left text-white"></i>
+      </button>
+    )}
 
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <button
-                      key={page}
-                      className={`page-button ${
-                        page === currentPage ? "active" : ""
-                      }`}
-                      onClick={() => setCurrentPage(page)}
-                    >
-                      {page}
-                    </button>
-                  ))}
+    {/* Page Numbers (Compact Display) */}
+    {(() => {
+      const visiblePages = [];
+      const maxVisible = 5; // how many pages to show around current page
 
-                  {currentPage < totalPages && (
-                    <button
-                      className="page-button"
-                      onClick={() => setCurrentPage(currentPage + 1)}
-                    >
-                      <i className="fas fa-caret-right text-white"></i>
-                    </button>
-                  )}
-                </div>
-              )}
+      if (totalPages <= maxVisible) {
+        // show all pages if small number
+        for (let i = 1; i <= totalPages; i++) visiblePages.push(i);
+      } else {
+        // show a few pages around current
+        const start = Math.max(1, currentPage - 2);
+        const end = Math.min(totalPages, currentPage + 2);
+
+        if (start > 2) visiblePages.push(1, "...");
+        for (let i = start; i <= end; i++) visiblePages.push(i);
+        if (end < totalPages - 1) visiblePages.push("...", totalPages);
+      }
+
+      return visiblePages.map((page, index) =>
+        page === "..." ? (
+          <span key={`dots-${index}`} className="page-dots text-gray-500">
+            ...
+          </span>
+        ) : (
+          <button
+            key={page}
+            className={`page-button ${page === currentPage ? "active" : ""}`}
+            onClick={() => setCurrentPage(page)}
+          >
+            {page}
+          </button>
+        )
+      );
+    })()}
+
+    {/* Next Button */}
+    {currentPage < totalPages && (
+      <button
+        className="page-button"
+        onClick={() => setCurrentPage(currentPage + 1)}
+      >
+        <i className="fas fa-caret-right text-white"></i>
+      </button>
+    )}
+  </div>
+)}
             </>
           )}
         </div>

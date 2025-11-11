@@ -416,7 +416,7 @@ const SurveyRequest = ({surveycode}) => {
     </Head>
     <section className="contact-section" style={{ backgroundColor: "#ffffff" }}>
       <div class="_breadcrumb">
-        <p class="_breadcrumb-header">
+        <p class="_breadcrumb-header leading-snug">
           {t("request_for_approval_for_survey_poll")}
         </p>
       </div>
