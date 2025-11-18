@@ -72,6 +72,7 @@ const Events = ({ initialEvents }) => {
                             {isRTL ? event.title_ar : event.title_en}
                           </h4>
                         </li>
+                        {event.pdf_url && (
                         <li>
                           <a
                             href={event.pdf_url}
@@ -85,6 +86,7 @@ const Events = ({ initialEvents }) => {
                             />
                           </a>
                         </li>
+                        )}
                       </ul>
                       <p className="_sub-text">
                         {isRTL

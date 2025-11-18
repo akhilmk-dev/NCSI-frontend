@@ -106,8 +106,12 @@ const SearchResult = () => {
         <div className="w-full max-w-6xl">
           {/* === Search Bar === */}
           <div className="flex mb-6  justify-center md:justify-start">
-            <div className="flex items-center gap-2">
-              <div className="h-9 md:h-10 max-w-md md:max-w-lg lg:max-w-xl bg-white border-2 border-[#0056A3] rounded-lg shadow-sm px-4 flex items-center">
+            <div className="flex items-center gap-2 w-full">
+              <div className="h-9 md:h-10 
+     w-full 
+     max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl 
+     bg-white border-2 border-[#0056A3] rounded-lg shadow-sm 
+     px-4 flex items-center">
                 <input
                   type="text"
                   value={searchString}

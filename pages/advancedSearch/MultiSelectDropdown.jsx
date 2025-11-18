@@ -1,10 +1,25 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const MultiSelectDropdown = ({ options = [], placeholder, showCaret = false }) => {
+const labelMap = {
+  Achievements: "About Us",
+  GuidesClassifications: "Guides & Classifications",
+  All: "All",
+  Events: "Events",
+  Publications: "Publications",
+  News: "News",
+};
+
+const MultiSelectDropdown = ({
+  options = [],
+  placeholder,
+  showCaret = false,
+  selected = [], // controlled selected values from parent
+  onChange,      // callback to parent
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItems, setSelectedItems] = useState([]);
   const dropdownRef = useRef(null);
 
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -17,43 +32,75 @@ const MultiSelectDropdown = ({ options = [], placeholder, showCaret = false }) =
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
+  // Update parent with selected values
   const handleCheckboxChange = (option) => {
-    if (option === "[All]") {
-      if (selectedItems.length === options.length - 1) {
-        setSelectedItems([]);
-      } else {
-        setSelectedItems(options.filter((item) => item !== "[All]"));
-      }
-      return;
-    }
-    if (selectedItems.includes(option)) {
-      setSelectedItems(selectedItems.filter((item) => item !== option));
+    let updatedSelected;
+
+    if (option === "All") {
+      updatedSelected = ["All"]; // Only All stays selected
     } else {
-      setSelectedItems([...selectedItems, option]);
+      updatedSelected = selected.filter((i) => i !== "All");
+
+      if (selected.includes(option)) {
+        updatedSelected = updatedSelected.filter((i) => i !== option);
+      } else {
+        updatedSelected = [...updatedSelected, option];
+      }
     }
+
+    onChange?.(updatedSelected);
+  };
+
+  // 🔥 Updated selected text (display label instead of backend value)
+  const getDisplayText = () => {
+    if (selected.length === 0) return "";
+
+    if (selected.length === 1) {
+      return labelMap[selected[0]] || selected[0];
+    }
+
+    return `${selected.length} selected`;
   };
 
   return (
     <div className="relative w-[250px]" ref={dropdownRef}>
+      {/* === Dropdown trigger === */}
       <div
         onClick={toggleDropdown}
-        className="border border-gray-300 rounded-sm px-3 py-1.5 text-sm bg-white cursor-pointer flex justify-between items-center focus:ring-1 focus:ring-[#009e99]"
+        className="border border-gray-300 rounded-sm px-3 bg-white cursor-pointer flex justify-between items-center w-[240px] sm:w-[260px] h-[40px] focus:ring-1 focus:ring-[#009e99]"
       >
-        <span className="truncate">
-          {selectedItems.length > 0
-            ? selectedItems.join(", ")
-            : placeholder || "Select"}
+        <span className="truncate text-gray-800">
+          {getDisplayText()}
         </span>
 
-        {showCaret && (
-          <i
-            className={`fa-solid fa-caret-down text-gray-500 text-xs ml-2 transition-transform ${
-              isOpen ? "rotate-180" : ""
-            }`}
-          ></i>
-        )}
+        {/* RIGHT SIDE OF BAR */}
+        <div className="flex items-center gap-2">
+
+          {/* CLEAR BUTTON */}
+          {selected.length > 0 && (
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                onChange?.([]);
+              }}
+              className="text-[11px] text-gray-500 hover:text-red-600 cursor-pointer"
+            >
+              Clear
+            </span>
+          )}
+
+          {/* Caret Icon */}
+          {showCaret && (
+            <i
+              className={`fa-solid fa-caret-down text-gray-500 text-xs transition-transform duration-200 ${
+                isOpen ? "rotate-180" : ""
+              }`}
+            ></i>
+          )}
+        </div>
       </div>
 
+      {/* === Dropdown list === */}
       {isOpen && (
         <div className="absolute left-0 mt-1 w-full bg-white border border-gray-300 rounded-sm shadow-md z-10 max-h-52 overflow-y-auto">
           {options.map((option) => (
@@ -63,15 +110,15 @@ const MultiSelectDropdown = ({ options = [], placeholder, showCaret = false }) =
             >
               <input
                 type="checkbox"
-                checked={
-                  option === "[All]"
-                    ? selectedItems.length === options.length - 1
-                    : selectedItems.includes(option)
-                }
+                checked={selected.includes(option)}
                 onChange={() => handleCheckboxChange(option)}
                 className="accent-[#009e99] w-4 h-4"
               />
-              <span>{option}</span>
+
+              {/* 🔥 Show mapped label instead of backend value */}
+              <span className="text-gray-700">
+                {labelMap[option] || option}
+              </span>
             </label>
           ))}
         </div>

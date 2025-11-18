@@ -299,28 +299,24 @@ const EventDetails = ({ event }) => {
                   {t('subscription')}
                 </button>
 
-                <div className="location">
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      marginBottom: "0px",
-                      fontFamily: isRTL ? "GE_SS_Medium, Arial" : "Gill Sans MT, Arial",
-                      color: "#333333",
-                    }}
-                  >
-                   {t('event_location')}
-                  </p>
-                  <div className="map">
-                    
-                    <iframe
-                      src={eventItem.location_map}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
+{(eventItem.location_map || eventItem.location_en || eventItem.location_ar) && (
+  <div className="location">
+    <p>{t("event_location")}</p>
+
+    {eventItem.location_map && (
+      <div className="map">
+        <iframe
+          src={eventItem.location_map}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+        ></iframe>
+      </div>
+    )}
+  </div>
+)}
+
 
                 <div className="soicalmediacontent">
                   <a

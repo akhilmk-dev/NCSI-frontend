@@ -179,25 +179,22 @@ useEffect(() => {
 
           {/* Main Content */}
           <div className="col-lg-9 d-flex flex-column">
-            {/* Search Bar */}
-            <div
-              className="d-flex justify-center md:justify-end mb-0  d-sm-flex"
-              style={{ marginTop: "0px", marginRight: "10px" }}
-            >
-              <div className="top-search-box" style={{ width: "240px" }}>
-                <input
-                  type="text" 
-                  id="searchBox"
-                  value={searchString}
-                  onChange={(e) => setSearchString(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleSearch();
-                  }}
-                  placeholder={t("search")}
-                  className="topSearchInput"
-                />
-              </div>
-            </div>
+           
+{/* === Search Bar === */}
+<div className="flex justify-center md:justify-end mt-6 mb-3 px-3 md:px-0">
+  <div className="w-full sm:w-[320px] md:w-[240px]">
+    <input
+      type="text"
+      id="searchBox"
+      value={searchString}
+      onChange={(e) => setSearchString(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+      placeholder={t("search")}
+      className="w-full border border-gray-300 rounded-full py-2 px-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[#00a895] transition-colors duration-150"
+    />
+  </div>
+</div>
+
 
             {/* Content Section */}
             {loading ? (
@@ -220,7 +217,7 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2 md:g-4  justify-content-start" style={{ minHeight: "340px" }}>
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 md:g-4 justify-content-start" style={{ minHeight: "340px" }}>
                   {methodologyData.map((m, index) => (
                     <div key={index} className="col d-flex justify-content-center">
                       <GuidesAndClassificationCard
@@ -239,7 +236,7 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2 md:g-4 justify-content-start" style={{ minHeight: "340px" }}>
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 md:g-4 justify-content-start" style={{ minHeight: "340px" }}>
                   {guidesClassificationData.map((g, index) => (
                     <div key={index} className="col d-flex justify-content-center">
                       <GuidesAndClassificationCard

@@ -66,10 +66,9 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
   className="card"
   style={{
     height: "300px",
-    width:"600px",
-    marginBottom: "20px",
+    width: "100%",
     border: "none",
-    background: "transparent",  
+    background: "transparent",
   }}
 >
 
@@ -95,6 +94,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                   </a>
 
                   <div className="hoverimage img-section " style={{height:"150px"}}>
+                    {imageSrc ? (
                     <a target="_blank" rel="noopener noreferrer" href={link}>
                       <img
                         className="img-responsive attachment_ID"
@@ -108,6 +108,20 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                         }}
                       />
                     </a>
+                    ) : (
+  <div
+    className="no-image flex items-center justify-center bg-[#d9d9d9]"
+    style={{
+      height: "160px",
+      width: "100%",
+      fontSize: "14px",
+      color: "#555",
+      textAlign: "center",
+    }}
+  >
+    {t("no_image_available")}
+  </div>
+)}
 
                     {/* ⭐ Rating Icon */}
                     {/* <i

@@ -99,6 +99,7 @@
   "cancel": "Cancel",
   "save": "Save",
   "submit": "Submit",
+  "no_image_available":"No image available",
 
   "invalid_email": "Invalid email address, please enter a valid email address.",
   "invalid_phone_number":"Invalid phone number",
@@ -263,7 +264,7 @@
 "Decrees_Laws_And_Decisions":"Decrees Laws And Decisions",
 "Roadmap":"Roadmap",
 "Organization_Chart":"Organization Chart",
-"Achievements":"Achievements",
+"achievements":"Achievements",
 "ceo_message":"CEO Message",
 "terms_of_use_paragraph1":"-The data available in this site is open, and no license is required to use/re-use it.",
 "terms_of_use_paragraph2":"-When you come across to some statistics that may interfere privacy of others, kindly cooperate with the Centre to protect that privacy and inform the Centre about it.",
@@ -340,7 +341,16 @@
 "For_more_Country_data_and_information,_please_go":"For more Country data and information, please go",
 "here":"here",
 "Financial_Access_Survey":"Financial Access Survey",
-"No":"No"
+"No":"No",
+
+"Sort_by_Relevance":"Sort by Relevence",
+"Sort_by_Date":"Sort by Date",
+"Sort_by_Title":"Sort by Title",
+"Minimum_3_letters_required":"Minimum 3 letters required",
+"Loading":"Loading",
+"No_data_found":"No matches found",
+
+"Date":"Date"
 
 
 

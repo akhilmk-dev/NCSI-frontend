@@ -465,3 +465,36 @@ p._breadcrumb-header {
   text-decoration: none;
   color: #666;
 } */
+
+
+.rich-line-clamp-3 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.hovercard-description {
+  color: white;                /* same as text-white */
+  font-size: 15px;             /* same as text-[15px] */
+  line-height: 1.75;           /* same as leading-relaxed */
+  margin-bottom: 0.5rem;       /* same as mb-2 */
+  display: -webkit-box;        /* to support line clamp */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+@media (min-width: 768px) {
+  .hovercard-description {
+    font-size: 16px;           /* md:text-[16px] */
+  }
+}
+
+.pagination-btn-first:disabled {
+  color: #fff !important;
+  border-color: inherit !important;
+}

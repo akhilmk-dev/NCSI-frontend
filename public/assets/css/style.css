@@ -979,3 +979,65 @@ direction:ltr
   text-decoration: underline !important;
   text-decoration-color: #f58220;
 }
+
+
+.hovercard-description p,
+.hovercard-description span {
+  color: white;                /* same as text-white */
+  font-size: 15px;             /* same as text-[15px] */
+  line-height: 1.75;           /* same as leading-relaxed */
+  margin-bottom: 0.5rem;       /* same as mb-2 */
+  display: -webkit-box;        /* to support line clamp */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hovercard-description p,
+  .hovercard-description span {
+    font-size: 16px;           /* md:text-[16px] */
+  }
+}
+
+/* Modal styles */
+.richtext-modal p,
+.richtext-modal span,
+.richtext-modal ul,
+.richtext-modal li {
+  color: #555;                 /* text-[#555] */
+  font-size: 16px;             /* text-[16px] */
+  line-height: 1.75;           /* leading-relaxed */
+  text-align: justify;         /* text-justify */
+  white-space: pre-line;       /* whitespace-pre-line */
+}
+
+
+.ceo-message {
+  color: #3a372a;              /* text-[#3a372a] */
+  font-size: 14px;             /* text-[14px] */
+  line-height: 1.75;           /* similar to leading-relaxed */
+  text-align: justify;         /* text-justify */
+  display: -webkit-box;        /* to support line-clamp */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Expanded view: remove clamp */
+.ceo-message.expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* Make sure inner HTML inherits styles */
+.ceo-message p,
+.ceo-message span,
+.ceo-message ul,
+.ceo-message li {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}

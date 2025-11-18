@@ -37,56 +37,52 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
 
             {/* === CEO MESSAGE === */}
 
-            <section className="text-[#333]">
-              <h2 className="text-[16px] font-semibold text-[#003366] mb-2">
-                {t("ceo_message")}
-              </h2>
+<section className="text-[#333]">
+  <h2 className="text-[16px] font-semibold text-[#003366] mb-2">
+    {t("ceo_message")}
+  </h2>
 
-              {/* State to toggle expand/collapse */}
-              {(() => {
-                
+  {(() => {
+    const message =
+      locale === "ar"
+        ? hierarchyData?.content?.items?.data?.ceo_message_ar?.trim()
+        : hierarchyData?.content?.items?.data?.ceo_message_en?.trim();
 
-                const message =
-                  locale === "ar"
-                    ? hierarchyData?.content?.items?.data?.ceo_message_ar?.trim()
-                    : hierarchyData?.content?.items?.data?.ceo_message_en?.trim();
+    if (!message) return null;
 
-                // If no message, don't render
-                if (!message) return null;
+    return (
+      <>
+        {/* === Message content === */}
+<div
+  className={`ceo-message ${isExpanded ? "expanded" : ""}`}
+  dir={locale === "ar" ? "rtl" : "ltr"}
+  dangerouslySetInnerHTML={{ __html: message }}
+/>
 
-                return (
-                  <>
-                    {/* Text with 3-line clamp when collapsed */}
-                    <p
-                      className={`text-justify text-[14px] text-[#3a372a] text-sm/7 ${!isExpanded ? "line-clamp-3" : ""
-                        }`}
-                    >
-                      {message}
-                    </p>
 
-                    {/* Toggle button */}
-                    <div
-                      className={`mt-3 ${locale === "ar" ? "text-left" : "text-right"}`}
-                      dir={locale === "ar" ? "rtl" : "ltr"}
-                    >
-                      <button
-                        onClick={() => setIsExpanded(!isExpanded)}
-                        className="text-gray-500 hover:text-gray-700 font-medium transition-colors"
-                      >
-                        {isExpanded ? t("Read_less") : t("Read_more")}
-                      </button>
-                    </div>
+        {/* === Read more / less toggle === */}
+        <div
+          className={`mt-3 ${locale === "ar" ? "text-left" : "text-right"}`}
+          dir={locale === "ar" ? "rtl" : "ltr"}
+        >
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-gray-500 hover:text-gray-700 font-medium transition-colors"
+          >
+            {isExpanded ? t("Read_less") : t("Read_more")}
+          </button>
+        </div>
+      </>
+    );
+  })()}
 
-                  </>
-                );
-              })()}
+  <div className="bg-[#00a895] flex items-center justify-center mt-6 py-1 md:py-2">
+    <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center">
+      {t("Decrees_Laws_And_Decisions")}
+    </h2>
+  </div>
+</section>
 
-              <div className="bg-[#00a895] flex items-center justify-center mt-6 py-1 md:py-2">
-                <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center">
-                  {t("Decrees_Laws_And_Decisions")}
-                </h2>
-              </div>
-            </section>
 
 
 
@@ -133,7 +129,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                           ) : (
                             <p
                               key={index}
-                              className="font-semibold text-[#333] leading-snug tracking-normal hover:!underline transition-all duration-150"
+                              className="font-semibold leading-snug tracking-normal hover:!underline transition-all duration-150"
                               style={{ fontSize: "15px", lineHeight: "1.6" }}
                             >
                               {title}
@@ -177,7 +173,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                           ) : (
                             <p
                               key={index}
-                              className="font-semibold text-[#333] leading-snug tracking-normal hover:!underline transition-all duration-150"
+                              className="font-semibold  leading-snug tracking-normal hover:!underline transition-all duration-150"
                               style={{ fontSize: "15px", lineHeight: "1.6" }}
                             >
                               {title}
@@ -227,6 +223,8 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
         title="السياسة العامة للمركز الوطني للإحصاء والمعلومات"
         color="#FF851B"
         description={data.arabic_2}
+        
+
       />
 
       {/* === Row 2 === */}
@@ -240,6 +238,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
         title="الأهداف الإستراتيجية للمركز الوطني للإحصاء والمعلومات"
         color="#FF851B"
         description={data.goals_ar}
+        
       />
 
       <HoverCard
@@ -319,7 +318,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
                 <>
                   <div className="bg-[#00a895] flex items-center justify-center mt-6 py-1 md:py-2">
                     <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center">
-                      {t("Achievements")}
+                      {t("achievements")}
                     </h2>
                   </div>
 

@@ -45,7 +45,7 @@ const PopulationClock = () => {
       </Head>
     <div style={{ backgroundColor: "#f0f0f0",height:"auto" }}>
               <div class="_breadcrumb">
-          <p class="_breadcrumb-header">{t('Population Clock  ')}</p>
+          <p class="_breadcrumb-header">{t('population_clock')}</p>
         </div>
       <div className="container-population py-4">
         {/* <div

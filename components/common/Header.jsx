@@ -76,14 +76,25 @@ const Header = ({ onOpenModal }) => {
                      </div> */}
                      <div className="col col-6 middle-col-small-device" style={{ width: '100%' }}>
                         <div className="header-middle-buttons me-1" id="contact-ceo" >
-                           <div className="row wow fadeInLeft" onClick={onOpenModal} data-wow-delay="0.4s" data-wow-duration="0.5s" style={{ width: '100%',minWidth: locale === "ar" ? "215px" : "218px", }}>
-                              <div className="col-sm-4 header-middle-buttons-first-col text-center">
-                                 <span >{t('contact')}</span>
-                              </div>
-                              <div className="col-sm-8 header-middle-buttons-second-col cursor-pointer">
-                                 {t('contact_ceo')}
-                               </div>  
-                              </div>
+<div
+  onClick={onOpenModal}
+  data-wow-delay="0.4s"
+  data-wow-duration="0.5s"
+  className={`row wow fadeInLeft w-full ${
+    locale === "ar"
+      ? "min-w-[215px] md:min-w-[215px]"
+      : "min-w-[225px] md:min-w-[215px]"
+  }`}
+>
+  <div className="col-sm-4 header-middle-buttons-first-col text-center">
+    <span>{t("contact")}</span>
+  </div>
+
+  <div className="col-sm-8 header-middle-buttons-second-col cursor-pointer">
+    {t("contact_ceo")}
+  </div>
+</div>
+
                            </div>
                         </div>
                      </div>

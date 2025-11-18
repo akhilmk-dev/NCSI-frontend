@@ -52,7 +52,7 @@ const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) =
   const handleImageClick = async () => {
     // console.log(`Image clicked for ID: ${id}`);
     try {
-      await axios.put(`${baseUrl}V1/publications/views/${id}`);
+      await axios.post(`${baseUrl}V1/publications/views/${id}`);
       // console.log(`View recorded for ID: ${id}`);
     } catch (error) {
       console.error(`Failed to record view for ID: ${id}`, error);
@@ -107,15 +107,31 @@ const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) =
                         aria-hidden="true"
                       ></i>
                     </a>
-                    <a target="_blank" rel="noopener noreferrer" href={pdfUrl}>
-                      <img
-                        className="img-responsive attachment_ID"
-                        id={`attachment_${id}`}
-                        src={imageSrc}
-                        alt={title}
-                        onClick={handleImageClick}
-                      />
-                    </a>
+{imageSrc ? (
+  <a target="_blank" rel="noopener noreferrer" href={pdfUrl}>
+    <img
+      className="img-responsive attachment_ID"
+      id={`attachment_${id}`}
+      src={imageSrc}
+      alt={title}
+      onClick={handleImageClick}
+    />
+  </a>
+) : (
+  <div
+    className="no-image flex items-center justify-center bg-[#d9d9d9]"
+    style={{
+      height: "160px",
+      width: "100%",
+      fontSize: "14px",
+      color: "#555",
+      textAlign: "center",
+    }}
+  >
+    {t("no_image_available")}
+  </div>
+)}
+
                     <i
                       className="fa fa-star"
                       style={{

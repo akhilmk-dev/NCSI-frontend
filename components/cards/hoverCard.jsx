@@ -3,28 +3,19 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
 const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
-    const { t } = useTranslation("common");
-
+  const { t } = useTranslation("common");
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isLongText, setIsLongText] = useState(false);
 
-  // Detect if description is long
   useEffect(() => {
-    if (description && description.length > 120) {
-      setIsLongText(true);
-    } else {
-      setIsLongText(false);
-    }
+    const plainText = description?.replace(/<[^>]+>/g, "") || "";
+    setIsLongText(plainText.length > 120);
   }, [description]);
 
-  // Handle scroll blocking for modal
   useEffect(() => {
-    if (showModal) {
-      document.body.classList.add("modal-open");
-    } else {
-      document.body.classList.remove("modal-open");
-    }
+    if (showModal) document.body.classList.add("modal-open");
+    else document.body.classList.remove("modal-open");
   }, [showModal]);
 
   return (
@@ -33,10 +24,8 @@ const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative h-[125px] flex items-center justify-center text-center cursor-pointer overflow-hidden"
-        style={{
-          backgroundColor: isHovered ? color : "#d6d6d6",
-        }}
+        className="relative h-[125px] flex items-center justify-center text-center cursor-pointer overflow-hidden transition-all duration-300"
+        style={{ backgroundColor: isHovered ? color : "#d6d6d6" }}
       >
         {/* Title (default view) */}
         {!isHovered && (
@@ -50,16 +39,16 @@ const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
         {/* Hover Content */}
         {isHovered && (
           <div className="absolute inset-0 flex flex-col justify-center text-left px-6">
-            <p className="text-[15px] md:text-[16px] leading-relaxed mb-2 text-white line-clamp-3">
-              {description}
-            </p>
-
+            <div
+              className="hovercard-description"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
             {isLongText && (
               <button
                 onClick={() => setShowModal(true)}
                 className="text-[#133c8b] font-medium hover:underline self-start"
               >
-               {t("show_more")}
+                {t("show_more")}
               </button>
             )}
           </div>
@@ -94,18 +83,17 @@ const HoverCard = ({ title, color = "#FF851B", description = "" }) => {
                 {title}
               </h2>
 
-              {/* Full Text */}
-              <p className="text-[#555] text-[16px] leading-relaxed text-justify whitespace-pre-line">
-                {description}
-              </p>
+             
+              <div
+                className="richtext-modal"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
             </div>
           </div>
         </>
       )}
     </>
   );
-};  
+};
 
 export default HoverCard;
-
-
