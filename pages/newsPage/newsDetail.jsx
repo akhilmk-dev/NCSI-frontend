@@ -53,7 +53,7 @@ const NewsDetail = () => {
         </div>
 
         <section className="flex items-center justify-center min-h-[70vh] bg-[#f9f9f9]">
-          <p className="text-center text-gray-600 text-lg">{t("Loading...")}</p>
+          <p className="text-center text-gray-600 text-lg">{t("Loading")}</p>
         </section>
       </>
     );

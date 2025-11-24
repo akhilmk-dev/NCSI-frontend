@@ -276,42 +276,80 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
   )}
 </div>
 
-              {/* === ORGANIZATION CHART === */}
-              <div className="bg-[#00a895] flex items-center justify-center mt-6 py-1 md:py-2"> <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center"> {t("Organization_Chart")} </h2> </div>
-              {orgMembers?.length > 0 && (
-                <section className="bg-[#f4f4f4] py-10">
-                  <div className="flex flex-col items-center space-y-12">
-                    {/* Chief Executive */}
-                    {(() => {
-                      const chief = orgMembers[0];
-                      const imgUrl = chief.photo ? `${orgBaseUrl}/${chief.photo}` : null;
-                      return (
-                        <PersonCard
-                          key={chief.id}
-                          image={imgUrl}
-                          title={locale === "ar" ? chief.designation_ar : chief.designation_en}
-                          hoverTitle={locale === "ar" ? chief.title_ar : chief.title_en}
-                        />
-                      );
-                    })()}
+{/* === ORGANIZATION CHART (NEW TREE STRUCTURE) === */}
+{orgMembers?.length > 0 && (() => {
 
-                    {/* Directors — 3 per row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 justify-items-center max-w-[85rem]">
-                      {orgMembers.slice(1).map((member) => {
-                        const imgUrl = member.photo ? `${orgBaseUrl}/${member.photo}` : null;
-                        return (
-                          <PersonCard
-                            key={member.id}
-                            image={imgUrl}
-                            title={locale === "ar" ? member.designation_ar : member.designation_en}
-                            hoverTitle={locale === "ar" ? member.title_ar : member.title_en}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
-                </section>
-              )}
+  // GROUPING LOGIC
+  const sorted = [...orgMembers].sort((a,b)=>a.sort_order-b.sort_order);
+
+  // First (center)
+  const topCenter = sorted[0];
+
+  // Next 3 parents
+  const nextThree = sorted.slice(1,4);
+
+  // Children map
+  const childrenMap = {};
+  sorted.forEach(item => {
+    if (item.parent_id) {
+      if (!childrenMap[item.parent_id]) childrenMap[item.parent_id] = [];
+      childrenMap[item.parent_id].push(item);
+    }
+  });
+
+  const renderCard = (item) => {
+    const imgUrl = item.photo ? `${orgBaseUrl}/${item.photo}` : null;
+
+    return (
+      <div className="flex flex-col items-center">
+        <PersonCard
+          key={item.id}
+          image={imgUrl}
+          title={locale === "ar" ? item.designation_ar : item.designation_en}
+          hoverTitle={locale === "ar" ? item.title_ar : item.title_en}
+        />
+
+        {/* Line to children */}
+        {childrenMap[item.id] && (
+          <div className=" h-6 my-2" />
+        )}
+
+        {/* Children (stacked) */}
+        <div className="flex flex-col gap-4">
+          {childrenMap[item.id]?.map(child => renderCard(child))}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="bg-[#f4f4f4] py-10 mt-6">
+      {/* Title */}
+      <div className="bg-[#00a895] flex items-center justify-center py-1 md:py-2 mb-10">
+        <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center">
+          {t("Organization_Chart")}
+        </h2>
+      </div>
+
+      {/* === MAIN CHART === */}
+      <div className="flex flex-col items-center space-y-16">
+
+        {/* 1️⃣ Top Center */}
+        <div className="flex justify-center">
+          {renderCard(topCenter)}
+        </div>
+
+        {/* 2️⃣ Next Three Parents (3 columns) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16">
+          {nextThree.map(parent => renderCard(parent))}
+        </div>
+
+      </div>
+    </section>
+  );
+
+})()}
+
 
               {/* === ACHIEVEMENTS === */}
               {achievements?.length > 0 && (

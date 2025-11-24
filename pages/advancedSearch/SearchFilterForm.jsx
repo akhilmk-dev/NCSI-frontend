@@ -5,16 +5,25 @@ import { useTranslation } from "next-i18next";
 import { getNcsiSearchResults } from "@/services/searchService";
 import Image from "next/image";
 
-const sectionLabelMap = {
-  methodologies: "Guides & Classifications",
-  classifications: "Guides & Classifications",
-  achievements: "About Us",
-};
+
+
 
 const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
   const { t } = useTranslation("common");
   const router = useRouter();
-  const { q, locale } = router;
+  const { q } = router;
+  const locale = router.locale;
+
+
+  const sectionLabelMap = {
+  methodologies: t("Guides_and_Classifications"),
+  classifications: t("Guides_and_Classifications"),
+  achievements: t("About_Us"),
+  events: t("events"),
+  publications: t("publications"),
+  news: t("news")
+};
+
 
   // ---------------- STATE ----------------
   const [formData, setFormData] = useState({
@@ -194,24 +203,28 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
 
   // ---------------- RENDER ----------------
   return (
-    <div className="bg-white w-full rounded-md p-8 md:p-10">
+    <div className="bg-white w-full rounded-md p-6 sm:p-8 md:p-10">
       {/* ========== SEARCH FORM ========== */}
       <form
         onSubmit={handleSubmit}
         className="bg-[#f9f9f9] rounded-md py-8 px-6 flex flex-col gap-4"
       >
-        <div className="flex flex-row flex-wrap items-center justify-between gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
           {/* Search Input */}
-          <div className="flex items-center gap-3">
+          <div className="grid grid-cols-12">
+             <span className={`h-10 w-[3px] bg-[#e7d4bd] col-span-1 ${locale =="ar"?"col-span-1 md:col-span-3":"col-span-1"}`}></span>
             <label
-              className="flex items-center whitespace-nowrap"
+              className={` h-10 flex items-center whitespace-nowrap ${locale === "ar" ? "col-span-3 md:col-span-1 pl-3" : "col-span-3 pl-2"
+                }`}
               style={{
                 color: "#000000",
                 fontSize: "14px",
+                // borderLeft: locale === "ar" ? "none" : "3px solid #e7d4bd",
+                // borderRight: locale === "ar" ? "3px solid #e7d4bd" : "none",
                 fontFamily: '"Gill Sans MT", Arial, sans-serif',
               }}
             >
-              <span className="border-l-4 border-[#e7d4bd] h-10 mx-3"></span>
+
               {t("search")}
             </label>
 
@@ -221,27 +234,35 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
               value={formData.search}
               onChange={handleChange}
               placeholder={t("keyword_search")}
-              className="border border-gray-700  rounded-sm px-3 text-[14px] w-[240px] sm:w-[260px] h-[40px] text-[#000] font-[500] focus:outline-none focus:ring-1 focus:ring-[#00A99D]"
+              style={{ borderBottom: "2px solid #97a4a7 !important" }}
+              className={`border border-gray-700 ${locale === "ar" ? 'col-span-8 max-w-[280px] ' : 'col-span-8'}  rounded-sm px-3 text-[14px]  h-[40px] text-[#000] font-[500] focus:outline-none focus:ring-1 focus:ring-[#00A99D]`}
             />
+           
           </div>
 
           {/* Sections Dropdown */}
-          <div className="flex items-center gap-3">
+          <div className="grid grid-cols-12">
+           <span className={`h-10 w-[3px] bg-[#e7d4bd] ${locale =="ar"?"col-span-1 md:col-span-3":"col-span-1"}`}></span>
             <label
-              className="flex items-center whitespace-nowrap"
+              className={` h-10 flex items-center whitespace-nowrap ${locale === "ar" ? "col-span-3 md:col-span-1 " : "col-span-3 pl-2"
+                }`}
               style={{
                 color: "#000000",
                 fontSize: "14px",
+                // borderLeft: locale === "ar" ? "none" : "3px solid #e7d4bd",
+                // borderRight: locale === "ar" ? "3px solid #e7d4bd" : "none",
                 fontFamily: '"Gill Sans MT", Arial, sans-serif',
               }}
             >
-              <span className="border-l-4 border-[#e7d4bd] h-10 mx-3"></span>
+
               {t("Sections")}
             </label>
+
 
             <MultiSelectDropdown
               options={sectionOptions}
               selected={formData.modules}
+              locale={locale}
               onChange={(selected) => {
                 let finalSelected = [...selected];
 
@@ -283,13 +304,12 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
             setSortDir("desc");
           }}
           style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
-          className={`rounded-[4px] px-3 sm:px-4 py-1.5 shadow-sm text-[13px] flex items-center gap-1 ${
-            sortBy === "date" && sortDir === "desc"
-              ? "bg-[#009e99] text-white"
-              : "text-[#f58220] hover:underline"
-          }`}
+          className={`rounded-[4px] px-3 sm:px-4 py-1.5 shadow-sm text-[13px] flex items-center gap-1 ${sortBy === "date" && sortDir === "desc"
+            ? "bg-[#009e99] text-white"
+            : "text-[#f58220] hover:underline"
+            }`}
         >
-          {t("Latest")} {sortBy === "date" && sortDir === "desc" && <span></span>}
+          {t("latest")} {sortBy === "date" && sortDir === "desc" && <span></span>}
         </button>
 
         <button
@@ -299,13 +319,12 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
             setSortDir("asc");
           }}
           style={{ fontFamily: '"Gill Sans MT", Arial, sans-serif' }}
-          className={`rounded-[4px] px-3 sm:px-4 py-1.5 shadow-sm text-[13px] flex items-center gap-1 ${
-            sortBy === "date" && sortDir === "asc"
-              ? "bg-[#009e99] text-white"
-              : "text-[#f58220] hover:underline"
-          }`}
+          className={`rounded-[4px] px-3 sm:px-4 py-1.5 shadow-sm text-[13px] flex items-center gap-1 ${sortBy === "date" && sortDir === "asc"
+            ? "bg-[#009e99] text-white"
+            : "text-[#f58220] hover:underline"
+            }`}
         >
-          {t("Oldest")} {sortBy === "date" && sortDir === "asc" && <span></span>}
+          {t("oldest")} {sortBy === "date" && sortDir === "asc" && <span></span>}
         </button>
       </div>
 
@@ -360,21 +379,19 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
 
                         if (url) window.open(url, "_blank");
                       }}
-                      className={`text-[#009e99] text-[13px] sm:text-[13px] font-bold uppercase pl-0 leading-snug ${
-                        pdfUrl && item.module !== "events"
-                          ? "cursor-default"
-                          : "cursor-pointer hover:underline"
-                      }`}
-                    style={{
-                      fontFamily: '"Gill Sans MT", Arial, sans-serif'
-                    }}>
+                      className={`text-[#009e99] text-[13px] sm:text-[13px] font-bold uppercase pl-0 leading-snug ${pdfUrl && item.module !== "events"
+                        ? "cursor-default"
+                        : "cursor-pointer hover:underline"
+                        }`}
+                      style={{
+                        fontFamily: '"Gill Sans MT", Arial, sans-serif'
+                      }}>
                       {title}
                     </h5>
 
                     <p
-                      className={`text-gray-600 text-[12px] sm:text-[13px] mt-1 leading-snug text-justify ${
-                        isExpanded ? "" : "line-clamp-3"
-                      } cursor-pointer`}
+                      className={`text-gray-600 text-[12px] sm:text-[13px] mt-1 leading-snug text-justify ${isExpanded ? "" : "line-clamp-3"
+                        } cursor-pointer`}
                       onClick={() =>
                         setExpandedItems((prev) => ({
                           ...prev,
@@ -399,42 +416,42 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
 
                     <div className="flex flex-wrap items-center gap-x-8 gap-y-3 mt-3 text-[13px] sm:text-[14px]">
 
-                                          <div className="mt-2">
-                      {pdfUrl && (
-                        <a
-                          href={pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center hover:text-[#b30000]"
-                        >
-                          <Image
-      src="/assets/images/file-iconn.png"
-      alt="PDF Icon"
-      width={20}
-      height={24}
-      className="object-contain"
-    />
-                        </a>
-                      )}
-                    </div>
+                      <div className="mt-2">
+                        {pdfUrl && (
+                          <a
+                            href={pdfUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center hover:text-[#b30000]"
+                          >
+                            <Image
+                              src="/assets/images/file-iconn.png"
+                              alt="PDF Icon"
+                              width={20}
+                              height={24}
+                              className="object-contain"
+                            />
+                          </a>
+                        )}
+                      </div>
                       {item.created_date && (
                         <div>
                           <span className="font-semibold text-[#ff9900] mr-1"
-                                      style={{
-                color: "#ff9900",
-                fontSize: "14px",
-                fontFamily: '"Gill Sans MT", Arial, sans-serif',
-              }}
-                          
+                            style={{
+                              color: "#ff9900",
+                              fontSize: "14px",
+                              fontFamily: '"Gill Sans MT", Arial, sans-serif',
+                            }}
+
                           >
                             {t("Date")}:
                           </span>
                           <span className="text-gray-700"
-                                                                style={{
-                color: "#6D6E71",
-                fontSize: "14px",
-                fontFamily: '"Gill Sans MT", Arial, sans-serif',
-              }}>
+                            style={{
+                              color: "#6D6E71",
+                              fontSize: "14px",
+                              fontFamily: '"Gill Sans MT", Arial, sans-serif',
+                            }}>
                             {item.created_date?.split(" ")[0]}
                           </span>
                         </div>
@@ -442,19 +459,19 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
 
                       <div>
                         <span className="font-semibold text-[#f58220] mr-1"
-                                                              style={{
-                color: "#ff9900",
-                fontSize: "14px",
-                fontFamily: '"Gill Sans MT", Arial, sans-serif',
-              }}>
+                          style={{
+                            color: "#ff9900",
+                            fontSize: "14px",
+                            fontFamily: '"Gill Sans MT", Arial, sans-serif',
+                          }}>
                           {t("Sections")}:
                         </span>
                         <span className="text-gray-700 capitalize
                         "          style={{
-                color: "#6D6E71",
-                fontSize: "14px",
-                fontFamily: '"Gill Sans MT", Arial, sans-serif',
-              }}>
+                            color: "#6D6E71",
+                            fontSize: "14px",
+                            fontFamily: '"Gill Sans MT", Arial, sans-serif',
+                          }}>
                           {sectionLabelMap[item.module?.toLowerCase()] || t(item.module)}
                         </span>
                       </div>
@@ -467,27 +484,25 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
             {/* Pagination */}
             <div className="flex justify-center items-center flex-wrap gap-1 mt-4">
               <button
-                className={`pagination-btn-first px-2 py-2 text-[10px] rounded-sm ${
-                  currentPage === 1
-                    ? "bg-[#b4e1f4] !text-white"
-                    : "bg-[#0099cc] text-white hover:opacity-90"
-                }`}
+                className={`pagination-btn-first px-2 py-2 text-[10px] rounded-sm ${currentPage === 1
+                  ? "bg-[#b4e1f4] !text-white"
+                  : "bg-[#0099cc] text-white hover:opacity-90"
+                  }`}
                 onClick={() => currentPage !== 1 && handlePageChange(1)}
                 disabled={currentPage === 1}
               >
-                FIRST
+                {t("FIRST")}
               </button>
 
               <button
-                className={`pagination-btn-first px-2 py-2 text-[10px] rounded-sm ${
-                  currentPage === 1
-                    ? "bg-[#b4e1f4]  !text-white"
-                    : "bg-[#0099cc] text-white hover:opacity-90"
-                }`}
+                className={`pagination-btn-first px-2 py-2 text-[10px] rounded-sm ${currentPage === 1
+                  ? "bg-[#b4e1f4]  !text-white"
+                  : "bg-[#0099cc] text-white hover:opacity-90"
+                  }`}
                 onClick={() => currentPage !== 1 && handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
               >
-                PREVIOUS
+                {t("PREVIOUS")}
               </button>
 
               {(() => {
@@ -503,11 +518,10 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
                 return pages.map((page) => (
                   <button
                     key={page}
-                    className={`px-3 py-2 text-[10px]  rounded-sm ${
-                      currentPage === page
-                        ? "bg-[#4d4d4d] text-white"
-                        : "bg-[#0090d4] text-white hover:bg-[#b8e5ff]"
-                    }`}
+                    className={`px-3 py-2 text-[10px]  rounded-sm ${currentPage === page
+                      ? "bg-[#4d4d4d] text-white"
+                      : "bg-[#0090d4] text-white hover:bg-[#b8e5ff]"
+                      }`}
                     onClick={() => handlePageChange(page)}
                   >
                     {page}
@@ -516,27 +530,25 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
               })()}
 
               <button
-                className={`pagination-btn-first px-2 py-2 text-[10px] rounded-sm ${
-                  currentPage === totalPages
-                    ? "bg-[#b4e1f4] text-white"
-                    : "bg-[#0090d4] text-white hover:opacity-90"
-                }`}
+                className={`pagination-btn-first px-2 py-2 text-[10px] rounded-sm ${currentPage === totalPages
+                  ? "bg-[#b4e1f4] text-white"
+                  : "bg-[#0090d4] text-white hover:opacity-90"
+                  }`}
                 onClick={() => currentPage !== totalPages && handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
-                NEXT
+                {t("NEXT")}
               </button>
 
               <button
-                className={`pagination-btn-first px-3 py-2 text-[10px] rounded-sm ${
-                  currentPage === totalPages
-                    ? "bg-[#b4e1f4] text-white"
-                    : "bg-[#0090d4] text-white hover:opacity-90"
-                }`}
+                className={`pagination-btn-first px-3 py-2 text-[10px] rounded-sm ${currentPage === totalPages
+                  ? "bg-[#b4e1f4] text-white"
+                  : "bg-[#0090d4] text-white hover:opacity-90"
+                  }`}
                 onClick={() => currentPage !== totalPages && handlePageChange(totalPages)}
                 disabled={currentPage === totalPages}
               >
-                LAST
+                {t("LAST")}
               </button>
             </div>
           </>

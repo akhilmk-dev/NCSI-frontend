@@ -1,13 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "next-i18next";
 
-const labelMap = {
-  Achievements: "About Us",
-  GuidesClassifications: "Guides & Classifications",
-  All: "All",
-  Events: "Events",
-  Publications: "Publications",
-  News: "News",
-};
+  // const { locale } = useRouter();
+
 
 const MultiSelectDropdown = ({
   options = [],
@@ -15,7 +10,19 @@ const MultiSelectDropdown = ({
   showCaret = false,
   selected = [], // controlled selected values from parent
   onChange,      // callback to parent
+  locale
 }) => {
+
+      const { t } = useTranslation("common");
+  const labelMap = {
+  Achievements: t("About_Us"),
+  GuidesClassifications: t("Guides_and_Classifications"),
+  All: t("all"),
+  Events: t("events"),
+  Publications:t("publications"),
+  News: t("news"),
+};
+
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -51,7 +58,7 @@ const MultiSelectDropdown = ({
     onChange?.(updatedSelected);
   };
 
-  // 🔥 Updated selected text (display label instead of backend value)
+  // Updated selected text (display label instead of backend value)
   const getDisplayText = () => {
     if (selected.length === 0) return "";
 
@@ -63,11 +70,12 @@ const MultiSelectDropdown = ({
   };
 
   return (
-    <div className="relative w-[250px]" ref={dropdownRef}>
+    <div className=" col-span-8  relative"  ref={dropdownRef}>
       {/* === Dropdown trigger === */}
       <div
         onClick={toggleDropdown}
-        className="border border-gray-300 rounded-sm px-3 bg-white cursor-pointer flex justify-between items-center w-[240px] sm:w-[260px] h-[40px] focus:ring-1 focus:ring-[#009e99]"
+        style={{borderBottom:"2px solid #97a4a7 !important"}}
+        className={`border border-gray-300  ${locale === "ar" ? 'col-span-8 max-w-[280px]' : 'col-span-8'} rounded-sm px-3 bg-white cursor-pointer flex justify-between items-center   h-[40px] focus:ring-1 focus:ring-[#009e99]`}
       >
         <span className="truncate text-gray-800">
           {getDisplayText()}
@@ -85,7 +93,7 @@ const MultiSelectDropdown = ({
               }}
               className="text-[11px] text-gray-500 hover:text-red-600 cursor-pointer"
             >
-              Clear
+              {t("clear")}   
             </span>
           )}
 
@@ -102,7 +110,7 @@ const MultiSelectDropdown = ({
 
       {/* === Dropdown list === */}
       {isOpen && (
-        <div className="absolute left-0 mt-1 w-full bg-white border border-gray-300 rounded-sm shadow-md z-10 max-h-52 overflow-y-auto">
+        <div className="absolute left-0 mt-1 w-full bg-white border border-gray-300 rounded-sm shadow-md z-10 max-h-52 overflow-y-auto"  >
           {options.map((option) => (
             <label
               key={option}
@@ -115,7 +123,7 @@ const MultiSelectDropdown = ({
                 className="accent-[#009e99] w-4 h-4"
               />
 
-              {/* 🔥 Show mapped label instead of backend value */}
+              {/*  Show mapped label instead of backend value */}
               <span className="text-gray-700">
                 {labelMap[option] || option}
               </span>

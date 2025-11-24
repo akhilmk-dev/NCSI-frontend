@@ -3,9 +3,5 @@
   "/404": "pages/404.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
-  "/advancedSearch": "pages/advancedSearch.js",
-  "/hierarchy": "pages/hierarchy.js",
-  "/newsPage": "pages/newsPage.js",
-  "/newsPage/newsDetail": "pages/newsPage/newsDetail.js"
+  "/hierarchy": "pages/hierarchy.js"
 }
