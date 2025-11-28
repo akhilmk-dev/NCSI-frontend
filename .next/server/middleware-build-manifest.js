@@ -16,15 +16,26 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages_index_5771e187._.js",
       "static/chunks/pages_index_fb9a6da8._.js"
     ],
-    "/404": [
-      "static/chunks/node_modules_next_6e2bdad9._.js",
+    "/Licenses": [
+      "static/chunks/[root-of-the-server]__5cdaf13c._.js",
+      "static/chunks/node_modules_next_6df6d002._.js",
       "static/chunks/node_modules_react_1cad9b0b._.js",
       "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
       "static/chunks/node_modules_react-dom_f14d0471._.js",
-      "static/chunks/node_modules_9475a867._.js",
-      "static/chunks/[root-of-the-server]__7517798b._.js",
-      "static/chunks/pages_404_5771e187._.js",
-      "static/chunks/pages_404_a0ffd575._.js"
+      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
+      "static/chunks/node_modules_e3639cc0._.js",
+      "static/chunks/pages_Licenses_index_5771e187.js",
+      "static/chunks/pages_Licenses_index_9f203e0d.js"
+    ],
+    "/TermsAndConditions": [
+      "static/chunks/node_modules_next_c25357dd._.js",
+      "static/chunks/node_modules_react_1cad9b0b._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_ab7e073c.js",
+      "static/chunks/node_modules_react-dom_f14d0471._.js",
+      "static/chunks/node_modules_db9ffc7b._.js",
+      "static/chunks/[root-of-the-server]__f2466889._.js",
+      "static/chunks/pages_TermsAndConditions_index_5771e187.js",
+      "static/chunks/pages_TermsAndConditions_index_2e1711e9.js"
     ],
     "/_app": [
       "static/chunks/[root-of-the-server]__7bfbd0fe._.js",

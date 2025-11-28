@@ -79,12 +79,12 @@ const TermsAndConditions = () => {
 
               {/* Lucida Console paragraph */}
               <p
-                className="m-0 mt-1 mb-1"
-                style={{
-                  fontFamily: '"Lucida Console", Monaco, sans-serif',
-                  fontSize: "13pt",
-                  lineHeight: "1.60",
-                }}
+                className="text-[17px] md:text-[17px] leading-[1.90] mb-1"
+                // style={{
+                //   fontFamily: '"Lucida Console", Monaco, sans-serif',
+                //   fontSize: "13pt",
+                //   lineHeight: "1.60",
+                // }}
               >
                 {t("terms_of_use_paragraph4")}
               </p>

@@ -276,27 +276,36 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
   )}
 </div>
 
-{/* === ORGANIZATION CHART (NEW TREE STRUCTURE) === */}
+{/* === ORGANIZATION CHART (AUTO ROW 2) === */}
 {orgMembers?.length > 0 && (() => {
 
-  // GROUPING LOGIC
-  const sorted = [...orgMembers].sort((a,b)=>a.sort_order-b.sort_order);
+  const sorted = [...orgMembers].sort((a,b)=>a.sort_order - b.sort_order);
 
-  // First (center)
+  // 1️⃣ Row 1 – The topCenter
   const topCenter = sorted[0];
 
-  // Next 3 parents
-  const nextThree = sorted.slice(1,4);
+  // 2️⃣ Row 2 – ALL whose parent_id = topCenter.id
+  const rowTwoParents = sorted.filter(
+    (item) => item.parent_id === topCenter.id
+  );
 
-  // Children map
+  // Store their IDs
+  const rowTwoIds = rowTwoParents.map(p => p.id);
+  console.log(sorted,"sorted")
+  console.log(rowTwoIds,"rowTwoIds")
+
+  // 3️⃣ Build children map for all deeper children
   const childrenMap = {};
   sorted.forEach(item => {
-    if (item.parent_id) {
+    if (item.parent_id && !rowTwoIds.includes(item.id)) {
       if (!childrenMap[item.parent_id]) childrenMap[item.parent_id] = [];
       childrenMap[item.parent_id].push(item);
     }
   });
 
+  console.log(childrenMap,"childrensmap")
+
+  // Card component
   const renderCard = (item) => {
     const imgUrl = item.photo ? `${orgBaseUrl}/${item.photo}` : null;
 
@@ -309,15 +318,16 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
           hoverTitle={locale === "ar" ? item.title_ar : item.title_en}
         />
 
-        {/* Line to children */}
+        {/* If children exist */}
         {childrenMap[item.id] && (
-          <div className=" h-6 my-2" />
+          <div className="w-[2px] h-6  my-2"></div>
         )}
 
-        {/* Children (stacked) */}
-        <div className="flex flex-col gap-4">
+        {
+          item?.id && <div className="flex flex-col gap-4">
           {childrenMap[item.id]?.map(child => renderCard(child))}
         </div>
+        }
       </div>
     );
   };
@@ -326,29 +336,51 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
     <section className="bg-[#f4f4f4] py-10 mt-6">
       {/* Title */}
       <div className="bg-[#00a895] flex items-center justify-center py-1 md:py-2 mb-10">
-        <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold leading-tight text-center">
+        <h2 className="text-white text-base sm:text-lg md:text-lg font-semibold">
           {t("Organization_Chart")}
         </h2>
       </div>
 
-      {/* === MAIN CHART === */}
       <div className="flex flex-col items-center space-y-16">
 
-        {/* 1️⃣ Top Center */}
+        {/* 1️⃣ Row 1 */}
         <div className="flex justify-center">
           {renderCard(topCenter)}
         </div>
 
-        {/* 2️⃣ Next Three Parents (3 columns) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16">
-          {nextThree.map(parent => renderCard(parent))}
-        </div>
+{/* 2️⃣ Row 2 — All parents of topCenter */}
+<div
+  className="
+    grid 
+    gap-x-10 gap-y-10
+    grid-cols-1            /* Mobile */
+    sm:grid-cols-2         /* Tablet */
+    lg:grid-cols-[AUTO]    /* Laptop (custom dynamic) */
+  "
+  style={{
+    gridTemplateColumns: `repeat(${rowTwoParents.length}, minmax(0, 1fr))`,
+  }}
+>
+  {rowTwoParents.map((parent) => (
+    <div key={parent.id} className="flex flex-col items-center">
+      
+      {/* Parent Card */}
+      {renderCard(parent)}
+      {/* Children below parent */}
+      
+    </div>
+  ))}
+</div>
+
+
 
       </div>
     </section>
   );
 
 })()}
+
+
 
 
               {/* === ACHIEVEMENTS === */}

@@ -40,10 +40,10 @@ const Survey = () => {
                                     <p> {t('under_the_statistics_and')}
 
 
-                                        <a href="#">  {t('web_link_for_stat')}</a>
+                                        <a href="/assets/Web link for Statistics and Information Law.pdf" target="blank">  {t('web_link_for_stat')}</a>
 
                                         ،
-                                        <a href="#">  {t('executive_regulations')}</a>
+                                        <a href="/assets/Executive Regulations.pdf" target="blank">  {t('executive_regulations')}</a>
                                     </p>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 ListPage">

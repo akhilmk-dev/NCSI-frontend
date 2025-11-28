@@ -175,7 +175,7 @@
   "news": "News",
   "press_release": "Press Release",
   
-  "service_directory": "Service Directory",
+  "service_directory": "Government Services Guide",
   "glossary_of_statistics": "Glossary of Statistics",
   "e_survey": "E-Survey",
   "mobile_applications": "Mobile applications",
@@ -332,6 +332,7 @@
 "verify_licence":"Verify Licence",
 "licence_number":"Licence Number",
 "survey/study_title":"Survey/Study Title",
+"survey/study_title_header":"Survey/Study Title",
 "implementing_entity":"Implementing Entity",
 "Licence_Period_From":"Licence Period From",
 "Licence_Period_To":"Licence Period To",
@@ -354,7 +355,11 @@
 "About_Us":"About Us",
 "clear":"clear",
 "oldest":"Oldest",
-"latest":"Latest"
+"latest":"Latest",
+"Licences":"Licences",
+
+"in_progress":"In Progress",
+"expired":"Expired"
 
 
 

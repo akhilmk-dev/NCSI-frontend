@@ -25,7 +25,7 @@ const Licenses = () => {
   const breadcrumbTitle =
     activeTab === "survey-request"
       ? t("survey_request")
-      : t("licences");
+      : t("Licences");
 
   return (
     <>

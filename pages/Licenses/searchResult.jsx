@@ -85,12 +85,17 @@ const SearchResult = () => {
   const columns = [
     { key: "id", label: t("No") },
     { key: "licensenumber", label: t("licence_number") },
-    { key: "title", label: t("survey/study_title") },
+    { key: "title", label: t("survey/study_title_header") },
     { key: "agency", label: t("implementing_entity") },
     { key: "implementation_period_from", label: t("Licence_Period_From") },
     { key: "implementation_period_to", label: t("Licence_Period_To") },
     { key: "survey_status", label: t("Licence_Status") },
   ];
+
+  const statusMap = {
+  "In Progress": "in_progress",
+  "Expired": "expired",
+};
 
   return (
     <>
@@ -142,7 +147,7 @@ const SearchResult = () => {
               <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-x-auto">
                 {loading ? (
                   <div className="flex justify-center items-center py-12 text-gray-500">
-                    {t("Loading...")}
+                    {t("Loading")}
                   </div>
                 ) : licences.length === 0 ? (
                   <div className="flex justify-center items-center py-12 text-gray-500">
@@ -196,7 +201,12 @@ const SearchResult = () => {
                               ? new Date(row.implementation_period_to).toLocaleDateString()
                               : "-"}
                           </td>
-                          <td className="px-4 py-3">{row.survey_status || "-"}</td>
+                         <td className="px-4 py-3">
+  {row.survey_status
+    ? t(statusMap[row.survey_status] || row.survey_status)
+    : "-"}
+</td>
+
                         </tr>
                       ))}
                     </tbody>
