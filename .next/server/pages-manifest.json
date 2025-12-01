@@ -1,8 +1,5 @@
 {
-  "/": "pages/index.js",
   "/Licenses": "pages/Licenses.js",
-  "/TermsAndConditions": "pages/TermsAndConditions.js",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/hierarchy": "pages/hierarchy.js"
+  "/_document": "pages/_document.js"
 }
