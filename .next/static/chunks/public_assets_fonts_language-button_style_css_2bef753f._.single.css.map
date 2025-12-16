@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/public/assets/fonts/language-button/style.css"],"sourcesContent":["@font-face {\r\n  font-family: 'icomoon';\r\n  src:  url('fonts/icomoon.eot?7qxgjm');\r\n  src:  url('fonts/icomoon.eot?7qxgjm#iefix') format('embedded-opentype'),\r\n    url('fonts/icomoon.ttf?7qxgjm') format('truetype'),\r\n    url('fonts/icomoon.woff?7qxgjm') format('woff'),\r\n    url('fonts/icomoon.svg?7qxgjm#icomoon') format('svg');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n\r\n[class^=\"icons-custom-\"], [class*=\" icons-custom-\"] {\r\n  /* use !important to prevent issues with browser extensions that change fonts */\r\n  font-family: 'icomoon' !important;\r\n  -webkit-font-smoothing: antialiased;\r\n    display: inline-block;\r\n    font-style: normal;\r\n    font-variant: normal;\r\n    text-rendering: auto;\r\n    line-height: 1;\r\n\r\n}\r\n\r\n.icons-custom-AR:before {\r\n  content: \"\\e900\";\r\n}\r\n.icons-custom-EN:before {\r\n  content: \"\\e901\";\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;;;AAWA;;;;;;;;;;AAYA;;;;AAGA"}}]
-}

@@ -28,22 +28,19 @@ const MenuList = () => {
     <div className="row home-menu text-bold">
       <div className="col">
         <div className="population-clock-header bg-theme color-white text-bold">
-          <div className="row">
-            <div className="col-2 text-center wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.5s">
+          <div className="" style={{display:'flex'}}>
+            <div className=" text-center wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.5s" style={{display:"flex",justifyContent:"end",gap:"3px"}}>
               <i className="customeIconHome-menu section-head-icon vertical-middle main-menu-icon"></i>
-            </div>    
-            {locale !== "ar" && <div className="col wow fadeInLeft" style={{
-             "marginLeft": "-15px"
-            }}
+               
+            {locale !== "ar" && <div className=" wow fadeInLeft" 
               data-wow-delay="0.3s" data-wow-duration="0.5s">
               <span className="section-head vertical-middle">{t('main_menu')}</span>
             </div>}
-            {locale == "ar" && <div className="col wow fadeInLeft" style={{
-             "marginRight": "-28px"
-            }}
+            {locale == "ar" && <div className=" wow fadeInLeft" 
               data-wow-delay="0.3s" data-wow-duration="0.5s">
               <span className="section-head vertical-middle">{t('main_menu')}</span>
             </div>}
+            </div> 
           </div>
         </div>
 

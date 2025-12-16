@@ -435,7 +435,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"5px"}} >
                   <input
                     type="text"
                     maxLength={255}
@@ -448,7 +448,7 @@ const SurveyRequest = ({surveycode}) => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.code && formik.errors.code ? (
-                    <span className="RequiredAstr" style={{ color: "red" }}>
+                    <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                       {formik.errors.code}
                     </span>
                   ) : null}
@@ -462,7 +462,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table>
                     <tbody>
                       <tr>
@@ -487,7 +487,7 @@ const SurveyRequest = ({surveycode}) => {
                   </table>
                   {formik.touched.subjectOfSurvey &&
                     formik.errors.subjectOfSurvey && (
-                      <span className="RequiredAstr font-janna">
+                      <span className="RequiredAstr font-janna" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.subjectOfSurvey)}
                       </span>
                     )}
@@ -501,7 +501,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table>
                     <tbody>
                       <tr>
@@ -541,7 +541,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="text"
                     maxLength={255}
@@ -553,7 +553,7 @@ const SurveyRequest = ({surveycode}) => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.institute && formik.errors.institute && (
-                    <span className="RequiredAstr">
+                    <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                       {t(formik.errors.institute)}
                     </span>
                   )}
@@ -567,7 +567,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="text"
                     maxLength={255}
@@ -580,7 +580,7 @@ const SurveyRequest = ({surveycode}) => {
                   />
                   {formik.touched.contactPerson &&
                     formik.errors.contactPerson && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.contactPerson)}
                       </span>
                     )}
@@ -594,7 +594,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="text"
                     maxLength={255}
@@ -606,7 +606,7 @@ const SurveyRequest = ({surveycode}) => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.email && formik.errors.email && (
-                    <span className="RequiredAstr">
+                    <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                       {t(formik.errors.email)}
                     </span>
                   )}
@@ -620,7 +620,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="text"
                     maxLength={255}
@@ -632,7 +632,7 @@ const SurveyRequest = ({surveycode}) => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.telephone && formik.errors.telephone && (
-                    <span className="RequiredAstr">
+                    <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                       {t(formik.errors.telephone)}
                     </span>
                   )}
@@ -646,7 +646,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <textarea
                     rows={2}
                     cols={20}
@@ -669,7 +669,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   {formik.touched.titleOfSurvey &&
                     formik.errors.titleOfSurvey && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.titleOfSurvey)}
                       </span>
                     )}
@@ -695,7 +695,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="date"
                     maxLength={255}
@@ -708,13 +708,13 @@ const SurveyRequest = ({surveycode}) => {
                   />
                   {formik.touched.durationFrom &&
                     formik.errors.durationFrom && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.durationFrom)}
                       </span>
                     )}
                   <span
                     className="RequiredAstr"
-                    style={{ color: "red", display: "none" }}
+                    style={{ color: "red", whiteSpace:"nowrap", display: "none" }}
                   >
                     Invalid Email
                   </span>
@@ -729,7 +729,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="date"
                     maxLength={255}
@@ -741,7 +741,7 @@ const SurveyRequest = ({surveycode}) => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.durationTo && formik.errors.durationTo && (
-                    <span className="RequiredAstr">
+                    <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                       {t(formik.errors.durationTo)}
                     </span>
                   )}
@@ -793,7 +793,7 @@ const SurveyRequest = ({surveycode}) => {
 
                   {formik.touched.targetPopulation &&
                     formik.errors.targetPopulation && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.targetPopulation)}
                       </span>
                     )}
@@ -811,7 +811,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table id="rBtn_Coverage">
                     <tbody>
                       <tr>
@@ -876,14 +876,14 @@ const SurveyRequest = ({surveycode}) => {
                     disabled={formik.values.coverage !== "Sample"}
                   />
                   {formik.touched.coverage && formik.errors.coverage && (
-                    <span className="RequiredAstr">
+                    <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                       {t(formik.errors.coverage)}
                     </span>
                   )}
                   {formik.values.coverage === "Sample" &&
                     formik.touched.sampleSize &&
                     formik.errors.sampleSize && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.sampleSize)}
                       </span>
                     )}
@@ -900,7 +900,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="text"
                     maxLength={255}
@@ -913,7 +913,7 @@ const SurveyRequest = ({surveycode}) => {
                   />
                   {formik.touched.sourceOfSample &&
                     formik.errors.sourceOfSample && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr" style={{whiteSpace:"nowrap"}}>
                         {t(formik.errors.sourceOfSample)}
                       </span>
                     )}
@@ -931,7 +931,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table id="sampleRepresentationTable">
                     <tbody>
                       <tr>
@@ -972,7 +972,7 @@ const SurveyRequest = ({surveycode}) => {
                   </table>
                   {formik.touched.sampleRepresentation &&
                     formik.errors.sampleRepresentation && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.sampleRepresentation)}
                       </span>
                     )}
@@ -990,7 +990,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table id="rBtn_DataCollectionMethod">
                     <tbody>
                       {[
@@ -1027,7 +1027,7 @@ const SurveyRequest = ({surveycode}) => {
 
                   {formik.touched.dataCollectionMethod &&
                     typeof formik.errors.dataCollectionMethod === "string" && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.dataCollectionMethod)}
                       </span>
                     )}
@@ -1052,7 +1052,7 @@ const SurveyRequest = ({surveycode}) => {
                   {formik.values.dataCollectionMethod.other &&
                     formik.touched.otherSpecify &&
                     formik.errors.otherSpecify && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.otherSpecify)}
                       </span>
                     )}
@@ -1070,7 +1070,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table id="dataAvailabilityTable">
                     <tbody>
                       <tr>
@@ -1112,7 +1112,7 @@ const SurveyRequest = ({surveycode}) => {
 
                   {formik.touched.dataAvailability &&
                     formik.errors.dataAvailability && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.dataAvailability)}
                       </span>
                     )}
@@ -1130,7 +1130,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <label className="Astr">*</label>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     ref={officialLetterRef}
                     type="file"
@@ -1156,7 +1156,7 @@ const SurveyRequest = ({surveycode}) => {
 
                   {formik.touched.officialLetter &&
                     formik.errors.officialLetter && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.officialLetter)}
                       </span>
                     )}
@@ -1168,7 +1168,7 @@ const SurveyRequest = ({surveycode}) => {
                 <div className="col-sm-4 control-label">
                   <span className="lbl">{t("objective_of_the_study")}</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     ref={objectiveStudy}
                     type="file"
@@ -1186,7 +1186,7 @@ const SurveyRequest = ({surveycode}) => {
                     <span
                       id="rfv_OfficialLetter"
                       className="RequiredAstr"
-                      style={{ display: "block", color: "red" }}
+                      style={{ display: "block", color: "red", whiteSpace:"nowrap" }}
                     >
                       {officialLetterError}
                     </span>
@@ -1202,7 +1202,7 @@ const SurveyRequest = ({surveycode}) => {
                   <span className="lbl">{t("questionnaire")}</span>
                   <label className="Astr">*</label>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     type="file"
                     ref={questionnaireRef}
@@ -1217,7 +1217,7 @@ const SurveyRequest = ({surveycode}) => {
 
                   {formik.touched.questionnaire &&
                     formik.errors.questionnaire && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.questionnaire)}
                       </span>
                     )}
@@ -1229,7 +1229,7 @@ const SurveyRequest = ({surveycode}) => {
                 <div className="col-sm-4 control-label">
                   <span className="lbl">{t("financial_sponsors")}</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     ref={financialSponsors}
                     type="file"
@@ -1257,7 +1257,7 @@ const SurveyRequest = ({surveycode}) => {
                 <div className="col-sm-4 control-label">
                   <span className="lbl">{t("list_of_beneficiaries")}</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     ref={listOfBenef}
                     type="file"
@@ -1275,7 +1275,7 @@ const SurveyRequest = ({surveycode}) => {
                     <span
                       id="rfv_OfficialLetter"
                       className="RequiredAstr"
-                      style={{ display: "block", color: "red" }}
+                      style={{ display: "block", color: "red", whiteSpace:"nowrap" }}
                     >
                       {officialLetterError}
                     </span>
@@ -1288,7 +1288,7 @@ const SurveyRequest = ({surveycode}) => {
                 <div className="col-sm-4 control-label">
                   <span className="lbl">{t("other_attachments")}</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <input
                     ref={otherAttachments}
                     type="file"
@@ -1315,7 +1315,7 @@ const SurveyRequest = ({surveycode}) => {
                   </span>
                   <span className="Astr">*</span>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-sm-8" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                   <table>
                     <tbody>
                       <tr>
@@ -1341,7 +1341,7 @@ const SurveyRequest = ({surveycode}) => {
 
                   {formik.touched.notificationPreference &&
                     formik.errors.notificationPreference && (
-                      <span className="RequiredAstr" style={{ color: "red" }}>
+                      <span className="RequiredAstr" style={{ color: "red", whiteSpace:"nowrap" }}>
                         {t(formik.errors.notificationPreference)}
                       </span>
                   )}

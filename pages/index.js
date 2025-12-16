@@ -81,7 +81,7 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
         <div class="col-sm-12 col-md-6 col-lg-4 publisher-slide text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
           <PublicationSlider publicationData={publicationData} />
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 home-event-calendar home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
+        <div class="col-sm-12 col-md-12 col-lg-4 home-event-calendar home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s" style={{margin:0,padding:0}}>
           <div className="row py-24 py-md-0">
             <div className="col-md-12">
               <CalendarIndicator

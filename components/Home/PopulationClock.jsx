@@ -16,18 +16,18 @@ const PopulationClock = ({ populationData }) => {
     (a, b) => new Date(b.date) - new Date(a.date)
   );
   // const populationList = populationData || [];
-  
+
   // console.log(populationList, "pop list----------")
-  
+
   const getValidPopulation = (date) => {
     const formatted = date.toISOString().split("T")[0]; // 'YYYY-MM-DD'
     return populationList.find((p) => p.date.startsWith(formatted));
   };
 
-const [selectedDate, setSelectedDate] = useState(() => {
-  const latest = populationList?.[0]; // First item is latest after descending sort
-  return latest ? new Date(latest.date) : new Date();
-});
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const latest = populationList?.[0]; // First item is latest after descending sort
+    return latest ? new Date(latest.date) : new Date();
+  });
 
   const [filteredPopulation, setFilteredPopulation] = useState(() =>
     getValidPopulation(selectedDate)
@@ -105,19 +105,19 @@ const [selectedDate, setSelectedDate] = useState(() => {
     <div className="row population-clock-main-row">
       <div className="col">
         <div className="population-clock-header bg-theme color-white text-bold">
-          <div className="row align-items-center ">
-            <div className="col-2 " >
+          <div className="" style={{display:"flex"}}>
+            <div className=""style={{display:"flex",justifyContent:"end",gap:"5px"}} >
               <i className="customeIconHome-clock section-head-icon"></i>
-            </div>
-            <div className="col-10 px-0" style={{marginLeft:"-17px",marginRight:"-18px"}}>
-              <a
-                href={populationUrl}
-                className="clock-head text-decoration-none "
-              >
-                <span id="hdPopulationClock" className="section-head">
-                  {t("population_clock")}
-                </span>
-              </a>
+              <div className="px-0" >
+                <a
+                  href={populationUrl}
+                  className="clock-head text-decoration-none "
+                >
+                  <span id="hdPopulationClock" className="section-head">
+                    {t("population_clock")}
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const [selectedDate, setSelectedDate] = useState(() => {
           <OdoMeter value={total.toLocaleString()} />
 
           <div className="row text-center padding-15">
-            <div id="hdTotalPopulation" className="col text-25 text-bold" style={{zIndex:'2'}}>
+            <div id="hdTotalPopulation" className="col text-25 text-bold" style={{ zIndex: '2' }}>
               {t("total_population")}
             </div>
           </div>
@@ -136,7 +136,7 @@ const [selectedDate, setSelectedDate] = useState(() => {
           <DonutChart data={data} />
 
           <div className={`deemed ${noData ? "visible" : ""}`}>
-           {t('no_data_found')}
+            {t('no_data_found')}
           </div>
 
           <div className="PopulationBL" id="PopulationBL">

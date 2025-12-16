@@ -151,9 +151,12 @@ const ContactCeoModal = ({ isOpen, onClose }) => {
     <div
       className="modal fade show"
       style={{
-        display: "block",
+        display: "flex",
         backgroundColor: "rgba(0,0,0,0.5)",
         zIndex: "100",
+        justifyContent:'center',
+        paddingLeft: "10px",
+    paddingRight: "10px",
       }}
     >
       <form onSubmit={formik.handleSubmit}>
