@@ -2374,6 +2374,12 @@ p._breadcrumb-header {
   border-color: inherit !important;
 }
 
+.is-disabled {
+  opacity: .3;
+  pointer-events: none;
+  cursor: default;
+}
+
 .placeholder\:text-gray-500::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -2956,8 +2962,8 @@ p._breadcrumb-header {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-\[AUTO\] {
-    grid-template-columns: auto;
+  .lg\:grid-cols-\[repeat\(var\(--cols\)\,minmax\(220px\,1fr\)\)\] {
+    grid-template-columns: repeat(var(--cols), minmax(220px, 1fr));
   }
 
   .lg\:flex-row {

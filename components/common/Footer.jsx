@@ -44,7 +44,7 @@ export default function Footer() {
                     <div class="col-6 col-sm-4 col-md-3  wow fadeInLeft" data-wow-delay="0.9s" data-wow-duration="0.5s">
                         <div class="footer-main">
                             
-                            <span><a href="https://tajawob.om/p/" target='_blank'>{t('tajawob')}</a></span><br />
+                            <span><a href="https://tajawob.om/p/home" target='_blank'>{t('tajawob')}</a></span><br />
                              <span><a href={contactUsUrl}>{t('contact_us')}</a></span><br />
                         </div>
                     </div>

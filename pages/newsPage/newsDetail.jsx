@@ -142,7 +142,10 @@ const NewsDetail = () => {
               className="text-[#666666] text-sm md:text-xs mb-2"
               style={fontFamilyStyle}
             >
-              {new Date(newsData.created_at).toLocaleDateString("en-GB")}
+             {newsData.news_date
+  ? new Date(newsData.news_date).toLocaleDateString("en-GB")
+  : ""}
+
             </p>
           </div>
 

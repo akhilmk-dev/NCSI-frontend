@@ -41,6 +41,9 @@ const GuidesAndClassifications = ({
 
   const itemsPerPage = 10;
   const debounceTimer = useRef(null);
+const isFirstRender = useRef(true);
+const isSectionChange = useRef(false);
+
 
 
   // Sync section when user refreshes
@@ -48,6 +51,9 @@ const GuidesAndClassifications = ({
     const sectionFromUrl = router.query.section || "methodologies";
     setSelectedSection(sectionFromUrl);
   }, [router.query.section]);
+
+
+
 
   // Calculate total pages based on section
   const totalPages =
@@ -105,40 +111,44 @@ const GuidesAndClassifications = ({
   };
 
 useEffect(() => {
+  // ✅ Do not override SSR data on first render
+  if (isFirstRender.current) {
+    isFirstRender.current = false;
+    return;
+  }
+
   if (debounceTimer.current) clearTimeout(debounceTimer.current);
 
-  debounceTimer.current = setTimeout(() => {
-    // If the search box is empty → reset to default data
-    if (searchString.trim() === "") {
-      const fetchDefaultData = async () => {
-        setLoading(true);
-        let res;
+  debounceTimer.current = setTimeout(async () => {
+    if (!isSectionChange.current) {
+    setLoading(true);
+  }
 
-        if (selectedSection === "glossary") {
-          res = await getGlossary(1, itemsPerPage, "");
-          setGlossaryData(res.statistics);
-          setTotalGlossary(res.total);
-        } else if (selectedSection === "methodologies") {
-          res = await getMethodologies(1, itemsPerPage, "");
-          setMethodologyData(res.methodologies);
-          setTotalMethodologies(res.total);
-        } else {
-          res = await getGuidesClassifications(1, itemsPerPage, "");
-          setGuidesClassificationData(res.classifications);
-          setTotalGuidesClassifications(res.total);
-        }
+    let res;
 
-        setCurrentPage(1);
-        setLoading(false);
-      };
-      fetchDefaultData();
+    if (selectedSection === "glossary") {
+      res = await getGlossary(1, itemsPerPage, searchString);
+      setGlossaryData(res.statistics);
+      setTotalGlossary(res.total);
+    } else if (selectedSection === "methodologies") {
+      res = await getMethodologies(1, itemsPerPage, searchString);
+      setMethodologyData(res.methodologies);
+      setTotalMethodologies(res.total);
     } else {
-      handleSearch(); // normal search flow when user types
+      res = await getGuidesClassifications(1, itemsPerPage, searchString);
+      setGuidesClassificationData(res.classifications);
+      setTotalGuidesClassifications(res.total);
     }
+
+    setCurrentPage(1);
+    setLoading(false);
+    isSectionChange.current = false;
   }, 500);
 
   return () => clearTimeout(debounceTimer.current);
-}, [searchString]);
+}, [searchString, selectedSection]);
+
+
 
 
 
@@ -162,6 +172,7 @@ useEffect(() => {
             <GuidesAndClassificationList
               selectedId={selectedSection}
               onSelect={(id) => {
+                isSectionChange.current = true;
                 setSelectedSection(id);
                 setCurrentPage(1);
 
@@ -310,40 +321,31 @@ useEffect(() => {
 export async function getServerSideProps({ locale, query }) {
   const section = query.section || "methodologies";
 
-  try {
-    const [glossaryResponse, methodologyResponse, classificationsResponse] = await Promise.all([
-      getGlossary(1, 8, ""),
-      getMethodologies(1, 8, ""),
-      getGuidesClassifications(1, 8, ""),
-    ]);
+  let glossaryResponse = { statistics: [], total: 0 };
+  let methodologyResponse = { methodologies: [], total: 0 };
+  let classificationsResponse = { classifications: [], total: 0 };
 
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, ["common"])),
-        glossaryDataSSR: glossaryResponse.statistics || [],
-        totalGlossarySSR: glossaryResponse.total || 0,
-        methodologyDataSSR: methodologyResponse.methodologies || [],
-        totalMethodologiesSSR: methodologyResponse.total || 0,
-        guidesClassificationDataSSR: classificationsResponse.classifications || [],
-        totalGuidesClassificationsSSR: classificationsResponse.total || 0,
-        initialSection: section,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, ["common"])),
-        glossaryDataSSR: [],
-        totalGlossarySSR: 0,
-        methodologyDataSSR: [],
-        totalMethodologiesSSR: 0,
-        guidesClassificationDataSSR: [],
-        totalGuidesClassificationsSSR: 0,
-        initialSection: section,
-      },
-    };
+  if (section === "glossary") {
+    glossaryResponse = await getGlossary(1, 8, "");
+  } else if (section === "methodologies") {
+    methodologyResponse = await getMethodologies(1, 8, "");
+  } else if (section === "classifications") {
+    classificationsResponse = await getGuidesClassifications(1, 8, "");
   }
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+      glossaryDataSSR: glossaryResponse.statistics,
+      totalGlossarySSR: glossaryResponse.total,
+      methodologyDataSSR: methodologyResponse.methodologies,
+      totalMethodologiesSSR: methodologyResponse.total,
+      guidesClassificationDataSSR: classificationsResponse.classifications,
+      totalGuidesClassificationsSSR: classificationsResponse.total,
+      initialSection: section,
+    },
+  };
 }
+
 
 export default GuidesAndClassifications;

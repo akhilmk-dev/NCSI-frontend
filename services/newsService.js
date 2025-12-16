@@ -10,7 +10,7 @@ export const getNews = async (page = 1, pagesize = 3) => {
       pagesize,
       currentpage: page,
       sortorder: {
-        field: 'created_at',
+        field: 'news_date',
         direction: 'desc',
       },
       searchstring: '',

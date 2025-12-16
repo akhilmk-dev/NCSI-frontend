@@ -1,5 +1,10 @@
 {
+  "/": "pages/index.js",
+  "/404": "pages/404.js",
+  "/E-survey": "pages/E-survey.js",
   "/Licenses": "pages/Licenses.js",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/events": "pages/events.js",
+  "/survey-request": "pages/survey-request.js"
 }

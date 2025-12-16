@@ -351,26 +351,23 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
 {/* 2️⃣ Row 2 — All parents of topCenter */}
 <div
   className="
-    grid 
+    grid
     gap-x-10 gap-y-10
-    grid-cols-1            /* Mobile */
-    sm:grid-cols-2         /* Tablet */
-    lg:grid-cols-[AUTO]    /* Laptop (custom dynamic) */
+    grid-cols-1
+    sm:grid-cols-2
+    lg:grid-cols-[repeat(var(--cols),minmax(220px,1fr))]
   "
   style={{
-    gridTemplateColumns: `repeat(${rowTwoParents.length}, minmax(0, 1fr))`,
+    "--cols": rowTwoParents.length,
   }}
 >
   {rowTwoParents.map((parent) => (
     <div key={parent.id} className="flex flex-col items-center">
-      
-      {/* Parent Card */}
       {renderCard(parent)}
-      {/* Children below parent */}
-      
     </div>
   ))}
 </div>
+
 
 
 

@@ -750,11 +750,55 @@ const PublicationSlider = ({ publicationData = [] })=>{
     const baseUrlPdf = publicationData.baseUrlPdf;
     const publicationUrl = locale === 'ar' ? '/ar/publications' : '/publications';
     const isRTL = locale === "ar";
+    // State to hold the Swiper API instance
+    const [swiperRef, setSwiperRef] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(null);
+    // Revert to reliable Swiper boundary state booleans
+    const [isBeginning, setIsBeginning] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(true);
+    const [isEnd, setIsEnd] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
+    // --- Custom Navigation Logic with Click Guard ---
+    // Function for the physical NEXT button
+    const handleNextClick = ()=>{
+        // LTR: Disabled at Beginning. RTL: Disabled at End.
+        const isClickDisabled = !isRTL ? isBeginning : isEnd;
+        if (swiperRef && !isClickDisabled) {
+            if (!isRTL) {
+                // LTR: Next button slides content backward (slidePrev)
+                swiperRef.slidePrev();
+            } else {
+                // RTL: Next button slides content forward (slideNext)
+                swiperRef.slideNext();
+            }
+        }
+    };
+    // Function for the physical PREV button
+    const handlePrevClick = ()=>{
+        // LTR: Disabled at End. RTL: Disabled at Beginning.
+        const isClickDisabled = !isRTL ? isEnd : isBeginning;
+        if (swiperRef && !isClickDisabled) {
+            if (!isRTL) {
+                // LTR: Prev button slides content forward (slideNext)
+                swiperRef.slideNext();
+            } else {
+                // RTL: Prev button slides content backward (slidePrev)
+                swiperRef.slidePrev();
+            }
+        }
+    };
+    // Handler for Swiper events to update the boundary state
+    const handleSlideChange = (swiper)=>{
+        setIsBeginning(swiper.isBeginning);
+        setIsEnd(swiper.isEnd);
+    };
+    // Custom helper function to generate the disabled class
+    const getButtonClass = (isDisabled)=>isDisabled ? ' is-disabled' : '';
+    // Logic to apply the visual class (based on the direction checks above)
+    const getNextDisabled = !isRTL ? isBeginning : isEnd;
+    const getPrevDisabled = !isRTL ? isEnd : isBeginning;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "publisher-slide-main",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "text-bold text-25 wow fadeInLeft  ",
+                className: "text-bold text-25 wow fadeInLeft  ",
                 "data-wow-delay": "0.4s",
                 style: {
                     display: 'flex',
@@ -770,12 +814,12 @@ const PublicationSlider = ({ publicationData = [] })=>{
                     children: t("publications")
                 }, void 0, false, {
                     fileName: "[project]/components/Home/PublicationSlider.jsx",
-                    lineNumber: 27,
-                    columnNumber: 10
+                    lineNumber: 83,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Home/PublicationSlider.jsx",
-                lineNumber: 22,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -785,10 +829,15 @@ const PublicationSlider = ({ publicationData = [] })=>{
                     modules: [
                         __TURBOPACK__imported__module__$5b$externals$5d2f$swiper$2f$modules__$5b$external$5d$__$28$swiper$2f$modules$2c$__esm_import$29$__["Navigation"]
                     ],
-                    navigation: {
-                        nextEl: isRTL ? ".pub-btn-next" : ".pub-btn-prev",
-                        prevEl: isRTL ? ".pub-btn-prev" : ".pub-btn-next"
+                    // CAPTURE THE SWIPER INSTANCE AND SET INITIAL STATE
+                    onInit: (swiper)=>{
+                        setSwiperRef(swiper);
+                        // Initialize the state based on the loaded slider
+                        setIsBeginning(swiper.isBeginning);
+                        setIsEnd(swiper.isEnd);
                     },
+                    // Monitor slide changes to update boundary state
+                    onSlideChange: handleSlideChange,
                     loop: false,
                     direction: "horizontal",
                     slidesPerView: 1,
@@ -827,12 +876,12 @@ const PublicationSlider = ({ publicationData = [] })=>{
                                             alt: "publication"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                            lineNumber: 64,
+                                            lineNumber: 128,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                        lineNumber: 51,
+                                        lineNumber: 115,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
                                         href: `${baseUrlPdf}/${item.pdf_file ? item.pdf_file : item.pdf_file_ar}`,
@@ -851,12 +900,12 @@ const PublicationSlider = ({ publicationData = [] })=>{
                                             alt: "publication"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                            lineNumber: 80,
+                                            lineNumber: 144,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                        lineNumber: 67,
+                                        lineNumber: 131,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -866,12 +915,12 @@ const PublicationSlider = ({ publicationData = [] })=>{
                                                 children: router.locale === "ar" ? item.title_ar : item.title_en
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                                lineNumber: 84,
+                                                lineNumber: 148,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                                lineNumber: 87,
+                                                lineNumber: 151,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -882,54 +931,58 @@ const PublicationSlider = ({ publicationData = [] })=>{
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                                lineNumber: 88,
+                                                lineNumber: 152,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                        lineNumber: 83,
+                                        lineNumber: 147,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/Home/PublicationSlider.jsx",
-                                lineNumber: 49,
+                                lineNumber: 113,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                            className: "pub-btn-prev customeIconHome-arrow-circle wow fadeInLeft",
+                            className: `pub-btn-prev customeIconHome-arrow-circle wow fadeInLeft ${getButtonClass(getPrevDisabled)}`,
+                            onClick: handlePrevClick,
                             "data-wow-delay": "0.5s",
-                            "data-wow-duration": "0.5s"
+                            "data-wow-duration": "0.5s",
+                            "aria-disabled": getPrevDisabled
                         }, void 0, false, {
                             fileName: "[project]/components/Home/PublicationSlider.jsx",
-                            lineNumber: 98,
+                            lineNumber: 164,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                            className: "pub-btn-next customeIconHome-arrow-left wow fadeInLeft",
+                            className: `pub-btn-next customeIconHome-arrow-left wow fadeInLeft ${getButtonClass(getNextDisabled)}`,
+                            onClick: handleNextClick,
                             "data-wow-delay": "0.5s",
-                            "data-wow-duration": "0.5s"
+                            "data-wow-duration": "0.5s",
+                            "aria-disabled": getNextDisabled
                         }, void 0, false, {
                             fileName: "[project]/components/Home/PublicationSlider.jsx",
-                            lineNumber: 103,
+                            lineNumber: 171,
                             columnNumber: 11
                         }, this)
                     ]
-                }, isRTL, true, {
+                }, isRTL ? 'rtl' : 'ltr', true, {
                     fileName: "[project]/components/Home/PublicationSlider.jsx",
-                    lineNumber: 30,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Home/PublicationSlider.jsx",
-                lineNumber: 29,
+                lineNumber: 85,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Home/PublicationSlider.jsx",
-        lineNumber: 20,
+        lineNumber: 76,
         columnNumber: 5
     }, this);
 };
@@ -3097,7 +3150,8 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
     const [nextReleaseDateList, setNextReleaseDateList] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])([]);
     const [clickedReleaseDate, setClickedReleaseDate] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])("");
     const { t } = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$next$2d$i18next__$5b$external$5d$__$28$next$2d$i18next$2c$__cjs$29$__["useTranslation"])("common");
-    console.log("indicatordataaa:", indicatorData);
+    //  console.log("indicatordataaa:",indicatorData)
+    console.log("publicationData:", publicationData);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3106,7 +3160,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                         children: "Home - NCSI PORTAL"
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 28,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
@@ -3115,7 +3169,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                         content: t('meta_des_publications')
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 29,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
@@ -3124,7 +3178,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                         content: "NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("script", {
@@ -3146,13 +3200,13 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                         }
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 31,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 27,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -3166,12 +3220,12 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                                 populationData: populationData
                             }, void 0, false, {
                                 fileName: "[project]/pages/index.js",
-                                lineNumber: 53,
+                                lineNumber: 55,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/pages/index.js",
-                            lineNumber: 52,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -3181,7 +3235,7 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                                     sliderData: sliderData
                                 }, void 0, false, {
                                     fileName: "[project]/pages/index.js",
-                                    lineNumber: 56,
+                                    lineNumber: 58,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$IndicatorSlider__$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3200,24 +3254,24 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                                     clickedReleaseDate: clickedReleaseDate
                                 }, void 0, false, {
                                     fileName: "[project]/pages/index.js",
-                                    lineNumber: 57,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/index.js",
-                            lineNumber: 55,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/pages/index.js",
-                    lineNumber: 51,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 50,
+                lineNumber: 52,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -3232,12 +3286,12 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                         "data-wow-duration": "0.5s",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Home$2f$MenuList$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/pages/index.js",
-                            lineNumber: 77,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 76,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -3248,12 +3302,12 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                             publicationData: publicationData
                         }, void 0, false, {
                             fileName: "[project]/pages/index.js",
-                            lineNumber: 80,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 79,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -3276,12 +3330,12 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                                         setNextReleaseDate: setNextReleaseDate
                                     }, void 0, false, {
                                         fileName: "[project]/pages/index.js",
-                                        lineNumber: 85,
+                                        lineNumber: 87,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/pages/index.js",
-                                    lineNumber: 84,
+                                    lineNumber: 86,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -3290,29 +3344,29 @@ function Home({ populationData, sliderData, eventData, indicatorData, publicatio
                                         eventData: eventData
                                     }, void 0, false, {
                                         fileName: "[project]/pages/index.js",
-                                        lineNumber: 104,
+                                        lineNumber: 106,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/pages/index.js",
-                                    lineNumber: 103,
+                                    lineNumber: 105,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/index.js",
-                            lineNumber: 83,
+                            lineNumber: 85,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 82,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 75,
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
@@ -3322,6 +3376,20 @@ async function getServerSideProps({ locale }) {
     try {
         const homeData = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$indexServices$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getHomePageData"])();
         // console.log("homedataaaa:",homeData)
+        const sortedSliders = [
+            ...homeData.sliders.items
+        ].sort((a, b)=>{
+            const dateA = a.created_at ? new Date(a.created_at) : 0;
+            const dateB = b.created_at ? new Date(b.created_at) : 0;
+            return dateB - dateA; // latest first
+        });
+        const sortedPublications = [
+            ...homeData.publications.items
+        ].sort((a, b)=>{
+            const dateA = a.created_at ? new Date(a.created_at) : 0;
+            const dateB = b.created_at ? new Date(b.created_at) : 0;
+            return dateB - dateA; // latest first
+        });
         return {
             props: {
                 ...await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$next$2d$i18next$2f$serverSideTranslations$2e$js__$5b$external$5d$__$28$next$2d$i18next$2f$serverSideTranslations$2e$js$2c$__cjs$29$__["serverSideTranslations"])(locale, [
@@ -3329,7 +3397,7 @@ async function getServerSideProps({ locale }) {
                 ]),
                 populationData: homeData.population_clock || [],
                 sliderData: {
-                    items: homeData.sliders.items || [],
+                    items: sortedSliders || [],
                     baseUrl: homeData.sliders.base_url
                 },
                 eventData: {
@@ -3342,7 +3410,7 @@ async function getServerSideProps({ locale }) {
                     baseUrlPub: homeData.key_indicators.base_url_pub
                 },
                 publicationData: {
-                    items: homeData.publications.items || [],
+                    items: sortedPublications || [],
                     baseUrlCover: homeData.publications.base_url_cover_img,
                     baseUrlPdf: homeData.publications.base_url_pdf
                 }

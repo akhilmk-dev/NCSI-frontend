@@ -498,3 +498,9 @@ p._breadcrumb-header {
   color: #fff !important;
   border-color: inherit !important;
 }
+
+.is-disabled {
+  opacity: 0.3; /* Visually dim the button */
+  pointer-events: none; /* Prevents the cursor from showing as a clickable link/pointer */
+  cursor: default;
+}

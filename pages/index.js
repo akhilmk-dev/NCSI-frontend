@@ -21,7 +21,9 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
   const [nextReleaseDateList, setNextReleaseDateList] = useState([]);
   const [clickedReleaseDate, setClickedReleaseDate] = useState("");
   const { t } = useTranslation("common");
-   console.log("indicatordataaa:",indicatorData)
+  //  console.log("indicatordataaa:",indicatorData)
+   console.log("publicationData:",publicationData)
+   
   return (
     <>
       <Head>
@@ -114,12 +116,27 @@ export async function getServerSideProps({ locale }) {
   try {
     const homeData = await getHomePageData();
     // console.log("homedataaaa:",homeData)
+
+    const sortedSliders = [...homeData.sliders.items].sort((a, b) => {
+  const dateA = a.created_at ? new Date(a.created_at) : 0;
+  const dateB = b.created_at ? new Date(b.created_at) : 0;
+
+  return dateB - dateA; // latest first
+  });
+
+  const sortedPublications = [...homeData.publications.items].sort((a, b) => {
+  const dateA = a.created_at ? new Date(a.created_at) : 0;
+  const dateB = b.created_at ? new Date(b.created_at) : 0;
+  return dateB - dateA; // latest first
+
+});
+
     return {
       props: {
         ...(await serverSideTranslations(locale, ['common'])),
         populationData: homeData.population_clock || [],
         sliderData: {
-          items: homeData.sliders.items || [],
+          items: sortedSliders || [],
           baseUrl: homeData.sliders.base_url
         },
         eventData: {
@@ -132,7 +149,7 @@ export async function getServerSideProps({ locale }) {
           baseUrlPub: homeData.key_indicators.base_url_pub,
         },
         publicationData: {
-          items: homeData.publications.items || [],
+          items:sortedPublications || [],
           baseUrlCover: homeData.publications.base_url_cover_img,
           baseUrlPdf: homeData.publications.base_url_pdf
         }

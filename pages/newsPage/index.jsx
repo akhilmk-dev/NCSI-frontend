@@ -88,7 +88,12 @@ const onLoadMore = async () => {
                   ? formatDesc(item.content_ar)
                   : formatDesc(item.content_en)
               }
-              date={new Date(item.created_at).toLocaleDateString("en-GB")}
+            date={
+  item.news_date
+    ? new Date(item.news_date).toLocaleDateString("en-GB")
+    : ""
+}
+
               image={item.img_url}
               link={`/newsPage/newsDetail?id=${item.id}`}
             />
@@ -103,7 +108,7 @@ const onLoadMore = async () => {
             disabled={loadingMore}
             className="text-[#f58220] font-extrabold text-lg md:text-[16px] disabled:opacity-60 hover:underline"
           >
-            {loadingMore ? t("Loading...") : t("load_more_news")}
+            {loadingMore ? t("loading") : t("load_more_news")}
           </button>
         </div>
       )}

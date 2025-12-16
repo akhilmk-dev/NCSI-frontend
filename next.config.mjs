@@ -43,6 +43,11 @@ const nextConfig = {
         port: '',
         pathname: '/uploads/mediapdfs/**', 
       },
+      {
+      protocol: 'https',
+      hostname: 'api.ncsi.gov.om',
+      pathname: '/uploads/**',
+    },
     ],
   },
 };

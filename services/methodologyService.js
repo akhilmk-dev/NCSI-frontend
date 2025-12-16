@@ -16,6 +16,7 @@ export const getMethodologies = async (page = 1, pagesize = 10, searchstring = "
   };
 
   const response = await api.post("/V1/methodologies/list", body);
+  console.log("Methodologies:", response.data)
 
   return {
     methodologies: response.data.data?.methodolgies || [], 
