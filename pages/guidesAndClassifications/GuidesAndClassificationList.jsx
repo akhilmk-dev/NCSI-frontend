@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
   const { t } = useTranslation("common");
@@ -10,7 +11,8 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
     { id: "glossary", name: "Glossary of Statistics", name_ar: "قاموس الإحصاءات" },
   ];
 
-  const isRTL = typeof window !== "undefined" && document?.dir === "rtl";
+ const router = useRouter();
+const isRTL = router.locale === "ar";
 
   return (
     <div className="col-lg-12 p-0">
@@ -18,7 +20,7 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
         <h6 className="text-sm"  id="Classification">{t("Guides_and_Classifications")}</h6>
       </div>
 
-      {/* ✅ Compact list container */}
+      {/*  Compact list container */}
       <div
         className="ClassificationScroll"
         style={{

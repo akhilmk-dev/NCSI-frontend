@@ -266,9 +266,9 @@
 "Organization_Chart":"Organization Chart",
 "achievements":"Achievements",
 "ceo_message":"CEO Message",
-"terms_of_use_paragraph1":"-The data available in this site is open, and no license is required to use/re-use it.",
-"terms_of_use_paragraph2":"-When you come across to some statistics that may interfere privacy of others, kindly cooperate with the Centre to protect that privacy and inform the Centre about it.",
-"terms_of_use_paragraph3":"-The data should not be used illegally either where you are, or where we are.",
+"terms_of_use_paragraph1":"The data available in this site is open, and no license is required to use/re-use it.",
+"terms_of_use_paragraph2":"When you come across to some statistics that may interfere privacy of others, kindly cooperate with the Centre to protect that privacy and inform the Centre about it.",
+"terms_of_use_paragraph3":"The data should not be used illegally either where you are, or where we are.",
 "terms_of_use_paragraph4":"We provide web-services through API to exchange data and metadata to be embedded into your application. All these services are certain to failure. We might improve them from time to -time, so you may experience some of your services not working. We may also stop providing any service, or block access to our services to anyone for any reason.",
 
 "privacy_policy_list1_li":"  This site has been designed, developed and maintained by the",

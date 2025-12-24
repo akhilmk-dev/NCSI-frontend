@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
           <div className="w-full">
             {/* Red Heading */}
 <h2
-  className={`text-[#b30000] text-[15px] md:text-[15.5px] mb-1 ${
+  className={`text-[#b30000] text-[15px] md:text-[15.5px] fw-bold mb-1 ${
     locale?.startsWith("ar") ? "" : "px-5"
   }`}
 >

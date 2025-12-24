@@ -20,7 +20,7 @@ const MenuList = () => {
       href: locale === 'ar' ? '/ar/women-in-oman' : '/women-in-oman'
     },
     { labelKey: 'manafeth_international_trade', href: 'https://manafeth.ncsi.gov.om' },
-    { labelKey: 'big_data_pilot_project', href: 'https://mpd.ncsi.gov.om' },
+    // { labelKey: 'big_data_pilot_project', href: 'https://mpd.ncsi.gov.om' },
   ], [locale]);
 
   const { t } = useTranslation('common');

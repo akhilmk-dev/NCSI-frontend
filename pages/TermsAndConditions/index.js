@@ -14,9 +14,9 @@ const TermsAndConditions = () => {
         fontSize: "17.3px",
         color: "#666666",
       }
-    : {
-        fontFamily: "Gill Sans MT, Arial, sans-serif",
-      };
+    : { fontFamily: "Cambria, serif",
+      fontSize:"14px"
+     };
 
   return (
     <>
@@ -43,12 +43,14 @@ const TermsAndConditions = () => {
             sm:px-6
             md:px-10        
             lg:px-[6.5rem]
+            
           "
+          style={{minHeight:"80vh"}}
         >
           <div className="w-full">
             {/* Red Heading */}
             <h2
-              className="text-[#cc0000]  text-[16px] md:text-[16px] mb-3"
+              className="text-[#cc0000]  text-[16px] md:text-[16px] mb-3 fw-bold"
               style={
                 locale?.startsWith("ar")
                   ? {
@@ -65,27 +67,61 @@ const TermsAndConditions = () => {
             
             <div className="text-[#3A372A] " style={contentFontStyle}>
 
-              <p className="text-[17px] md:text-[17px] leading-[1] mb-3">
+              
+
+              <p className="flex items-start gap-2 text-[17px] md:text-[14px] leading-[2] mb-3">
+                    {!locale?.startsWith("ar") && (
+      <span
+        className="inline-block w-[18px] mr-2 text-center"
+        style={{ fontFamily: '"Wingdings", "Arial Unicode MS", sans-serif' }}
+      >
+        ✓
+      </span>
+    )}
                 {t("terms_of_use_paragraph1")}
               </p>
 
-              <p className="text-[17px] md:text-[17px] leading-[1] mb-3">
+              <p className="flex items-start gap-2 text-[17px] md:text-[14px] leading-[2] mb-3">
+                    {!locale?.startsWith("ar") && (
+      <span
+        className="inline-block w-[18px] mr-2 text-center"
+        style={{ fontFamily: '"Wingdings", "Arial Unicode MS", sans-serif' }}
+      >
+        ✓
+      </span>
+    )}
                 {t("terms_of_use_paragraph2")}
               </p>
 
-              <p className="text-[17px] md:text-[17px] leading-[1.90] mb-1">
+              <p className=" flex items-start gap-2 text-[17px] md:text-[14px] leading-[2] mb-3">
+                    {!locale?.startsWith("ar") && (
+      <span
+        className="inline-block w-[18px] mr-2 text-center"
+        style={{ fontFamily: '"Wingdings", "Arial Unicode MS", sans-serif' }}
+      >
+        ✓
+      </span>
+    )}
                 {t("terms_of_use_paragraph3")}
               </p>
 
               {/* Lucida Console paragraph */}
               <p
-                className="text-[17px] md:text-[17px] leading-[1.90] mb-1"
+                className="flex items-start gap-2  text-[17px] md:text-[14px] leading-[2] mb-1"
                 // style={{
                 //   fontFamily: '"Lucida Console", Monaco, sans-serif',
                 //   fontSize: "13pt",
                 //   lineHeight: "1.60",
                 // }}
               >
+                    {!locale?.startsWith("ar") && (
+      <span
+        className="inline-block w-[18px] mr-2 text-center"
+        style={{ fontFamily: '"Wingdings", "Arial Unicode MS", sans-serif' }}
+      >
+        ✓
+      </span>
+    )}
                 {t("terms_of_use_paragraph4")}
               </p>
             </div>

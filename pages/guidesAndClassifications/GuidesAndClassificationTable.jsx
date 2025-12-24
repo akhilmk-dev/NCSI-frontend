@@ -8,7 +8,7 @@ const GuidesAndClassificationTable = ({ data = [], currentPage = 1, itemsPerPage
   const isRTL = router.locale === "ar";
 
   return (
-    <div className="overflow-x-auto md:py-6">
+   <div className="overflow-x-auto pt-[0.7rem] pb-6">
       <table className="min-w-full border border-gray-200 text-[11.5px] text-gray-800 table-fixed">
         <thead>
           <tr className="bg-[#00a895] text-white">

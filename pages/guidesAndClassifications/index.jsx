@@ -111,7 +111,7 @@ const isSectionChange = useRef(false);
   };
 
 useEffect(() => {
-  // ✅ Do not override SSR data on first render
+  //  Do not override SSR data on first render
   if (isFirstRender.current) {
     isFirstRender.current = false;
     return;
@@ -189,10 +189,11 @@ useEffect(() => {
           </div>
 
           {/* Main Content */}
-          <div className="col-lg-9 d-flex flex-column">
+          <div className="col-lg-9 d-flex flex-column"
+           style={{ minHeight: "100vh" }}>
            
 {/* === Search Bar === */}
-<div className="flex justify-center md:justify-end mt-6 mb-3 px-3 md:px-0">
+<div className="flex justify-center md:justify-end md:mt-6 mb-3 px-3 md:px-0">
   <div className="w-full sm:w-[320px] md:w-[240px]">
     <input
       type="text"
@@ -243,7 +244,7 @@ useEffect(() => {
               )
             ) : selectedSection === "classifications" ? (
               guidesClassificationData.length === 0 ? (
-                <div className="no-data-message d-flex justify-content-center align-items-center w-100" style={{ minHeight: "200px" }}>
+                <div className="no-data-message d-flex justify-content-center align-items-center w-100" style={{ minHeight: "340px" }}>
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
