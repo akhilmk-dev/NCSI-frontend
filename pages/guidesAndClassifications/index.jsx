@@ -163,7 +163,7 @@ useEffect(() => {
 
       <section className="contact-section">
         <div className="_breadcrumb">
-          <p className="_breadcrumb-header">{t("Guides_and_Classifications")}</p>
+          <p className="_breadcrumb-header">{t("Guides_and_Methodologies")}</p>
         </div>
 
         <div className="row publication-body">
@@ -173,6 +173,8 @@ useEffect(() => {
               selectedId={selectedSection}
               onSelect={(id) => {
                 isSectionChange.current = true;
+                  setLoading(true);         
+                  setSearchString("");
                 setSelectedSection(id);
                 setCurrentPage(1);
 
@@ -189,7 +191,7 @@ useEffect(() => {
           </div>
 
           {/* Main Content */}
-          <div className="col-lg-9 d-flex flex-column"
+          <div className="col-lg-9 d-flex flex-column "
            style={{ minHeight: "100vh" }}>
            
 {/* === Search Bar === */}

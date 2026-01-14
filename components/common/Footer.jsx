@@ -28,7 +28,7 @@ export default function Footer() {
                         <div class="footer-main">
                            <span> <a href="/Licenses">{t("Licences")}</a></span><br />
                             <span><a href="/E-survey">{t('e_survey')}</a></span><br />
-                           <span><a href="/guidesAndClassifications">{t('Guides_and_Classifications')}</a></span><br />
+                           <span><a href="/guidesAndClassifications">{t('Guides_and_Methodologies')}</a></span><br />
                                                                             
                         </div>
                     </div>

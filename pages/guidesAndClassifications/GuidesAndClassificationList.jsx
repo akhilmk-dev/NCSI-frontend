@@ -7,7 +7,7 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
 
   const dummyData = [
     { id: "methodologies", name: "Methodologies", name_ar: "المنهجيات" },
-    { id: "classifications", name: "Classifications", name_ar: "التصانيف" },
+    { id: "classifications", name: "Classifications", name_ar: "الأدلة" },
     { id: "glossary", name: "Glossary of Statistics", name_ar: "قاموس الإحصاءات" },
   ];
 
@@ -17,7 +17,7 @@ const isRTL = router.locale === "ar";
   return (
     <div className="col-lg-12 p-0">
       <div className="rounded-box">
-        <h6 className="text-sm"  id="Classification">{t("Guides_and_Classifications")}</h6>
+        <h6 className="text-sm"  id="Classification">{t("Guides_and_Methodologies")}</h6>
       </div>
 
       {/*  Compact list container */}

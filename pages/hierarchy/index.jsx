@@ -222,7 +222,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
       <HoverCard
         title="السياسة العامة للمركز الوطني للإحصاء والمعلومات"
         color="#FF851B"
-        description={data.arabic_2}
+        description={data.general_policy_ar}
         
 
       />
@@ -231,7 +231,7 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
       <HoverCard
         title="سياسة الجودة"
         color="#FF851B"
-        description={data.arabic_1}
+        description={data.quality_policy_ar}
       />
 
       <HoverCard
@@ -271,6 +271,16 @@ const Hierarchy = ({ hierarchyData, achievements, achBaseUrl, orgMembers, orgBas
         title="Our Values"
         color="#FF851B"
         description={data.values_en}
+      />
+      <HoverCard
+        title="Quality Policy"
+        color="#FF851B"
+        description={data.quality_policy_en}
+      />
+      <HoverCard
+        title="The General Policy of the National Centre for Statistics and Information"
+        color="#FF851B"
+        description={data.general_policy_en}
       />
     </>
   )}

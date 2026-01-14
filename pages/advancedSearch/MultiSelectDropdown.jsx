@@ -16,7 +16,7 @@ const MultiSelectDropdown = ({
       const { t } = useTranslation("common");
   const labelMap = {
   Achievements: t("About_Us"),
-  GuidesClassifications: t("Guides_and_Classifications"),
+  GuidesClassifications: t("Guides_and_Methodologies"),
   All: t("all"),
   Events: t("events"),
   Publications:t("publications"),

@@ -46,7 +46,7 @@ const NationalStatistics = () => {
       ],
     },
     {
-      title: "Depository Corporations Survey",
+      title: "Depository_Corporations_Survey",
       buttons: ["browse_data", "download_in_sdmx", "dsbb_metadata"],
       links: [
         "https://nsdp.ncsi.gov.om/DepositoryCorporationsSurvey.xlsx",

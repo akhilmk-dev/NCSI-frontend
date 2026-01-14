@@ -16,8 +16,8 @@ const SearchFilterForm = ({ initialResults = [], initialQuery = "" }) => {
 
 
   const sectionLabelMap = {
-  methodologies: t("Guides_and_Classifications"),
-  classifications: t("Guides_and_Classifications"),
+  methodologies: t("Guides_and_Methodologies"),
+  classifications: t("Guides_and_Methodologies"),
   achievements: t("About_Us"),
   events: t("events"),
   publications: t("publications"),
