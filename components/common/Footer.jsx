@@ -27,7 +27,7 @@ export default function Footer() {
                     <div class="col-6 col-sm-4 col-md-3  wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.5s">
                         <div class="footer-main">
                            <span> <a href="/Licenses">{t("Licences")}</a></span><br />
-                            <span><a href="/E-survey">{t('e_survey')}</a></span><br />
+                            <span><a href="/sitemap">{t('sitemap')}</a></span><br />
                            <span><a href="/guidesAndClassifications">{t('Guides_and_Methodologies')}</a></span><br />
                                                                             
                         </div>
