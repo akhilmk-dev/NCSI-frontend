@@ -33,7 +33,7 @@ const AdvancedSearch = ({ initialResults, initialQuery }) => {
   );
 };
 
-// ✅ Server-side rendering
+
 export async function getServerSideProps({ query, locale }) {
   const q = query.q || "";
   let initialResults = [];
@@ -43,10 +43,10 @@ export async function getServerSideProps({ query, locale }) {
     try {
       const res = await getNcsiSearchResults({
         q,
-        modules: [],         // 🔥 show ALL modules by default in SSR
-        sort: "relevance",   // 🔥 default sorting
+        modules: [],
+        sort: "relevance",
         dir: "asc",
-        currentpage: 1       // 🔥 correct parameter
+        currentpage: 1
       });
 
       initialResults = res.items || [];

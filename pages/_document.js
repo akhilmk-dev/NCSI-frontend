@@ -1,6 +1,7 @@
 // pages/_document.js
 import { Html, Head, Main, NextScript } from 'next/document';
 
+
 export default function Document() {
   return (
     <Html lang="en">
@@ -43,6 +44,8 @@ export default function Document() {
         {/* Local jQuery */}
         <script src="/assets/scripts/jquery.min.js"></script>
 
+
+
       </Head>
       <body>
         <Main />
@@ -82,6 +85,8 @@ export default function Document() {
         <script src="https://cdn.mindrocketsapis.com/client/Latest/toolkit.js"></script>
         <script src="https://cdn.mindrocketsapis.com/client/Latest/mrmegapack.bundle.js"></script>
         <script src="https://cdn.mindrocketsapis.com/client/MRUAP/ncsi/integrator-uap.js"></script>
+
+        
       </body>
     </Html>
   );
