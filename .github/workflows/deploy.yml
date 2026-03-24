@@ -16,7 +16,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/ncsi.smsoman.com/app
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
             npm ci
-            npm run build
-            PM2_HOME=/root/.pm2 pm2 reload ncsi.smsoman.com --update-env
+            NODE_OPTIONS=--max_old_space_size=1536 npm run build
+            PM2_HOME=/root/.pm2 pm2 restart ncsi.smsoman.com --update-env
