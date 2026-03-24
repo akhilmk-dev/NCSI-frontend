@@ -6,6 +6,6 @@ export const getHomePageData = async () => {
 }
 
 export const getPortalLinks = async () => {
-  const response = await api.post('/V1/portallinks/list', {});
+  const response = await api.post('/V1/portallinks/list', { status: 1 });
   return response.data.data.portallinks;
 }
