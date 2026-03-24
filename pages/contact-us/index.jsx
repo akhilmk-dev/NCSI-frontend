@@ -35,7 +35,7 @@ const ContactUs = (props) => {
   }, [captchaText]);
 
   const fetchCaptcha = async () => {
-    const data =  Math.random().toString(36).substring(2, 7).toUpperCase();;
+    const data = Math.random().toString(36).substring(2, 7).toUpperCase();;
     setCaptchaText(data);
   };
 
@@ -72,7 +72,7 @@ const ContactUs = (props) => {
     lat: 23.571189,
     lng: 58.293642,
   };
- console.log(props.captchaData)
+  console.log(props.captchaData)
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -125,7 +125,7 @@ const ContactUs = (props) => {
         }
 
         setStatusMessage({
-          success: result.message ? t("Your request has been sent"): t("submission_success"),
+          success: result.message ? t("Your request has been sent") : t("submission_success"),
           error: "",
         });
         resetForm();
@@ -277,14 +277,14 @@ const ContactUs = (props) => {
                     <div className="RadCaptcha RadCaptcha_Default mb-3">
                       <div>
                         <img
-                        alt="captcha"
-                        src={props.captchaData?.image}
-                        style={{
-                          height: "50px",
-                          width: "180px",
-                          display: "block"
-                        }}
-                      />
+                          alt="captcha"
+                          src={props.captchaData?.image}
+                          style={{
+                            height: "50px",
+                            width: "180px",
+                            display: "block"
+                          }}
+                        />
                         {/* <div
                           style={{
                             height: "50px",
@@ -402,7 +402,7 @@ const ContactUs = (props) => {
                 <div className="mt-4">
                   <dl className="dl-horizontal flex">
                     <dt>{t("call_center")}</dt>
-                    <dd className="mb-0 ml-[14px]">80076274</dd>
+                    <dd className="mb-0 ml-[14px]">11111111111</dd>
                   </dl>
                   <hr class="spacer"></hr>
                 </div>
