@@ -433,7 +433,7 @@ const ContactUs = (props) => {
                 <div className="mt-4">
                   <dl className="dl-horizontal flex">
                     <dt>{t("call_center")}</dt>
-                    <dd className="mb-0 ml-[14px]">11111111111</dd>
+                    <dd className="mb-0 ml-[14px]">111</dd>
                   </dl>
                   <hr class="spacer"></hr>
                 </div>
