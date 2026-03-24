@@ -1,7 +1,8 @@
 // components/publications/PublicationCard.js
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from 'axios';
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const StarRating = ({ rating, onRate, disabled }) => {
   const [hovered, setHovered] = useState(null);
@@ -31,14 +32,21 @@ const StarRating = ({ rating, onRate, disabled }) => {
   return <span>{stars}</span>;
 };
 
-const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) => {
+const PublicationCard = ({ sessionId, title, imageSrc, pdfUrl, xlUrl, id, avg_rating }) => {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   const { t } = useTranslation("common");
+  const router = useRouter();
+  const isRTL = router.locale === "ar";
+  const imgBase = isRTL ? "/ar/assets/images" : "/assets/images";
   // --- Rating modal state ---
   const [showRatingModal, setShowRatingModal] = useState(false);
   const [localAvgRating, setLocalAvgRating] = useState(Number(avg_rating) || 0);
   const [localUserRating, setLocalUserRating] = useState(null); // user's last rating
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // --- Download overlay state ---
+  const [showDownloadOverlay, setShowDownloadOverlay] = useState(false);
+  const overlayRef = useRef(null);
 
   const handleBookmarkClick = (e) => {
     e.preventDefault();
@@ -65,7 +73,7 @@ const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) =
     try {
       const res = await axios.post(`${baseUrl}V1/publication/rate`, {
         publication_id: id,
-        session_id:sessionId,
+        session_id: sessionId,
         rating,
       });
       // Assume response contains new average rating
@@ -81,6 +89,19 @@ const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) =
 
   const closeModal = () => setShowRatingModal(false);
 
+  // Close overlay when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (overlayRef.current && !overlayRef.current.contains(e.target)) {
+        setShowDownloadOverlay(false);
+      }
+    };
+    if (showDownloadOverlay) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showDownloadOverlay]);
+
   return (
     <div className="card col-md-4">
       <div className="card-content">
@@ -94,7 +115,7 @@ const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) =
                       <h5 style={{ color: "white" }}>{title}</h5>
                     </div>
                   </a>
-                  <div className="hoverimage img-section">
+                  <div className="hoverimage img-section" style={{ position: "relative" }}>
                     <a
                       href="#"
                       className="handleBookmark"
@@ -107,6 +128,143 @@ const PublicationCard = ({sessionId, title, imageSrc, pdfUrl, id,avg_rating }) =
                         aria-hidden="true"
                       ></i>
                     </a>
+
+                    {/* Download icon – bare image, bottom-left */}
+                    <span
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowDownloadOverlay((prev) => !prev);
+                      }}
+                      style={{
+                        position: "absolute",
+                        bottom: "6px",
+                        left: "6px",
+                        zIndex: 20,
+                        cursor: "pointer",
+                        lineHeight: 0,
+                      }}
+                      title="Download"
+                    >
+                      <img
+                        src={`${imgBase}/fa-solid_download.png`}
+                        alt="Download"
+                        style={{ width: "18px", height: "18px", objectFit: "contain" }}
+                      />
+                    </span>
+
+                    {/* PDF / Excel overlay – shown on download icon click */}
+                    {showDownloadOverlay && (
+                      <div
+                        ref={overlayRef}
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          backgroundColor: "rgba(160,160,160,0.82)",
+                          zIndex: 15,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "16px",
+                        }}
+                      >
+                        {/* PDF icon */}
+                        {pdfUrl ? (
+                          <a
+                            href={pdfUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Download PDF"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              backgroundColor: "white",
+                              borderRadius: "10px",
+                              padding: "10px",
+                              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                              width: "62px",
+                              height: "62px",
+                            }}
+                          >
+                            <img
+                              src={`${imgBase}/—Pngtree—pdf file icon png vector_7965915.png`}
+                              alt="PDF"
+                              style={{ width: "38px", height: "auto", objectFit: "contain" }}
+                            />
+                          </a>
+                        ) : (
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              backgroundColor: "white",
+                              borderRadius: "10px",
+                              padding: "10px",
+                              width: "62px",
+                              height: "62px",
+                              opacity: 0.45,
+                              cursor: "not-allowed",
+                            }}
+                          >
+                            <img
+                              src={`${imgBase}/—Pngtree—pdf file icon png vector_7965915.png`}
+                              alt="PDF"
+                              style={{ width: "38px", height: "auto", objectFit: "contain" }}
+                            />
+                          </div>
+                        )}
+
+                        {/* Excel icon */}
+                        {xlUrl ? (
+                          <a
+                            href={xlUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Download Excel"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              backgroundColor: "white",
+                              borderRadius: "10px",
+                              padding: "10px",
+                              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                              width: "62px",
+                              height: "62px",
+                            }}
+                          >
+                            <img
+                              src={`${imgBase}/—Pngtree—xls file document icon_4172435.png`}
+                              alt="Excel"
+                              style={{ width: "38px", height: "auto", objectFit: "contain" }}
+                            />
+                          </a>
+                        ) : (
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              backgroundColor: "white",
+                              borderRadius: "10px",
+                              padding: "10px",
+                              width: "62px",
+                              height: "62px",
+                              opacity: 0.45,
+                              cursor: "not-allowed",
+                            }}
+                          >
+                            <img
+                              src={`${imgBase}/—Pngtree—xls file document icon_4172435.png`}
+                              alt="Excel"
+                              style={{ width: "52px", height: "auto", objectFit: "contain" }}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+
 {imageSrc ? (
   <a target="_blank" rel="noopener noreferrer" href={pdfUrl}>
     <img

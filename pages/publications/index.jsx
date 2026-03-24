@@ -90,12 +90,12 @@ const Publications = ({
     sortOrder, // Removed `searchString`
   ]);
 
-  // ✅ Debounced search effect
+  // âœ… Debounced search effect
 useEffect(() => {
   // clear any existing timer
   if (debounceTimer.current) clearTimeout(debounceTimer.current);
 
-  // when search box is empty → reset to default list
+  // when search box is empty â†’ reset to default list
   if (searchString.trim() === "") {
     const fetchDefault = async () => {
       setLoading(true);
@@ -230,7 +230,7 @@ useEffect(() => {
     <Head>
       <title>Home - NCSI PORTAL</title>
       <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
-      <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
+      <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators Ø§Ù„Ø¥Ø­ØµØ§Ø¡ , Ø§Ù„Ù…Ø±ÙƒØ² Ø§Ù„ÙˆØ·Ù†Ù‰ Ù„Ù„Ø¥Ø­ØµØ§Ø¡ ÙˆØ§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª , Ø¹Ù…Ø§Ù†, Ù…Ø¤Ø´Ø±Ø§Øª,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
     </Head>
     <section className="contact-section">
       <div className="_breadcrumb">
@@ -286,7 +286,8 @@ useEffect(() => {
                   title={isRTL ? pub.title_ar : pub.title_en}
                   imageSrc={pub.cover_image_url}
                   pdfUrl={isRTL ? pub.pdf_file_url_ar : pub.pdf_file_url}
-                />
+                   xlUrl={isRTL ? pub.xls_file_url_ar : pub.xls_file_url}
+                 />
               ))
             )}
           </div>
@@ -435,7 +436,7 @@ export async function getServerSideProps({ locale, query }) {
       getPublications({ currentpage: currentPage, pagesize: itemsPerPage ,is_frontend:true}),
       getMostViewed(),
     ]);
-    // console.log(currentPage, "current page----🟢");
+    // console.log(currentPage, "current page----ðŸŸ¢");
 
     return {
       props: {
@@ -463,3 +464,4 @@ export async function getServerSideProps({ locale, query }) {
 }
 
 export default Publications;
+

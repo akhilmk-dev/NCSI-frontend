@@ -39,3 +39,21 @@ export const getGuidesClassifications = async (
     return { classifications: [], total: 0 };
   }
 };
+
+export const getMostViewedGuides = async () => {
+  try {
+    const response = await api.get("V1/guideclassifications/top");
+    return response.data.data;
+  } catch (error) {
+    console.error('Error fetching most viewed guides:', error);
+    return [];
+  }
+};
+
+export const recordGuideView = async (id) => {
+  try {
+    await api.post(`V1/guideclassifications/views/${id}`);
+  } catch (error) {
+    console.error(`Failed to record view for guide ID: ${id}`, error);
+  }
+};

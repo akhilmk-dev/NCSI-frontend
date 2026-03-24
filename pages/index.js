@@ -12,8 +12,8 @@ import IndicatorSlider from "@/components/Home/IndicatorSlider ";
 import EventAccordion from "@/components/Home/EventAccordion";
 import PopulationClock from "@/components/Home/PopulationClock";
   import { getEventList, getPopulationList, getSliderList, getIndicatorList, getPublicationList } from "@/services/indexServices";
-import { getHomePageData, rgetHomePageData } from "@/services/indexServices";
-export default function Home({ populationData, sliderData, eventData, indicatorData, publicationData }) {
+import { getHomePageData, rgetHomePageData, getPortalLinks } from "@/services/indexServices";
+export default function Home({ populationData, sliderData, eventData, indicatorData, publicationData, portalLinks }) {
 
   const [highlightDate, setHighlightDate] = useState("");
   const [indicatorTitle, setIndicatorTitle] = useState({ en: '', ar: '' });
@@ -74,18 +74,18 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
         </div>
 
       </div>
-      <div class="row home-body" style={{ paddingTop: '0px' }}>
-        <div class="col-sm-12 col-md-6 col-lg-4 home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
-          <MenuList />
+      <div className="row home-body" style={{ paddingTop: '0px' }}>
+        <div className="col-sm-12 col-md-6 col-lg-4 home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
+          <MenuList portalLinks={portalLinks} />
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 publisher-slide text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
+        <div className="col-sm-12 col-md-6 col-lg-4 publisher-slide text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
           <PublicationSlider publicationData={publicationData} />
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 home-event-calendar home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s" style={{margin:0,padding:0}}>
+        <div className="col-sm-12 col-md-12 col-lg-4 home-event-calendar home-body-col wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s" style={{ margin: 0, padding: 0 }}>
           <div className="row py-24 py-md-0">
             <div className="col-md-12">
               <CalendarIndicator
-                indicatorData = {indicatorData}
+                indicatorData={indicatorData}
                 highlightDate={highlightDate}
                 indicatorTitle={indicatorTitle}
                 nextReleaseDate={nextReleaseDate}
@@ -115,6 +115,7 @@ export default function Home({ populationData, sliderData, eventData, indicatorD
 export async function getServerSideProps({ locale }) {
   try {
     const homeData = await getHomePageData();
+    const portalLinks = await getPortalLinks();
     // console.log("homedataaaa:",homeData)
 
     const sortedSliders = [...homeData.sliders.items].sort((a, b) => {
@@ -152,7 +153,8 @@ export async function getServerSideProps({ locale }) {
           items:sortedPublications || [],
           baseUrlCover: homeData.publications.base_url_cover_img,
           baseUrlPdf: homeData.publications.base_url_pdf
-        }
+        },
+        portalLinks: portalLinks || []
       },
     };
   } catch (error) {
@@ -164,7 +166,8 @@ export async function getServerSideProps({ locale }) {
         sliderData: { items: [], baseUrl: "" },
         eventData: { items: [], baseUrl: "" },
         indicatorData: { items: [], baseUrl: "" },
-        publicationData: { items: [], baseUrlCover: "", baseUrlPdf: "" }
+        publicationData: { items: [], baseUrlCover: "", baseUrlPdf: "" },
+        portalLinks: []
       },
     };
   }

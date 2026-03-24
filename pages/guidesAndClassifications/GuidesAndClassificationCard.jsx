@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useTranslation } from "next-i18next";
+import { recordGuideView } from "@/services/guideclassificationsService";
 
 const StarRating = ({ rating, onRate, disabled }) => {
   const [hovered, setHovered] = useState(null);
@@ -42,6 +42,15 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
   const [localAvgRating, setLocalAvgRating] = useState(0);
   const [localUserRating, setLocalUserRating] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sessionId, setSessionId] = useState(null);
+
+  const handleImageClick = async () => {
+    try {
+      await recordGuideView(id);
+    } catch (error) {
+      console.error(`Failed to record view for guide ID: ${id}`, error);
+    }
+  };
 
   // ✅ Handle Rating Submission
   // const handleRate = async (rating) => {
@@ -63,17 +72,16 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
 
   return (
 <div
-  className="card"
+  className="card col-md-4"
   style={{
     height: "300px",
-    width: "100%",
     border: "none",
     background: "transparent",
   }}
 >
 
       <div className="card-content">
-        <div className="item" style={{ marginTop: "0px" }}>
+        <div className="item" style={{ marginTop: "30px" }}>
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
@@ -100,6 +108,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                         className="img-responsive attachment_ID"
                         src={imageSrc}
                         alt={title}
+                        onClick={handleImageClick}
                         style={{
                           width: "100%",
                           

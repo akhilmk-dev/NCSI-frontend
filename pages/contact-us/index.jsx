@@ -78,6 +78,7 @@ const ContactUs = (props) => {
       name: "",
       email: "",
       subject: "",
+      phone: "",
       message: "",
       captcha: "",
     },
@@ -87,6 +88,9 @@ const ContactUs = (props) => {
         .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "invalid_email_contactus")
         .required("mandatory_field"),
       subject: Yup.string().required("mandatory_field"),
+      phone: Yup.string()
+        .matches(/^[0-9+\s()-]+$/, "invalid_phone_number")
+        .required("mandatory_field"),
       message: Yup.string().required("mandatory_field"),
       captcha: Yup.string().required("mandatory_field"),
     }),
@@ -105,6 +109,7 @@ const ContactUs = (props) => {
           name: values.name,
           email: values.email,
           subject: values.subject,
+          phone: values.phone,
           message: values.message,
           captcha_id: props.captchaData?.id,
           answer: values?.captcha
@@ -153,7 +158,7 @@ const ContactUs = (props) => {
         style={{ backgroundColor: "#ffffff" }}
       >
         <div class="_breadcrumb">
-          <p class="_breadcrumb-header">{t("contact_us")}</p>
+          <p class="_breadcrumb-header">{t("contact_us_title")}</p>
         </div>
 
         <div
@@ -220,7 +225,7 @@ const ContactUs = (props) => {
                 <div className="form-group">
                   <div className="col-sm-4 control-label">
                     <span className="lbl" title="Subject">
-                      {t("subject")}
+                      {t("subject_placeholder")}
                     </span>
                     <span className="Astr">*</span>
                   </div>
@@ -245,8 +250,34 @@ const ContactUs = (props) => {
 
                 <div className="form-group">
                   <div className="col-sm-4 control-label">
+                    <span className="lbl" title="Phone">
+                      {t("phone_number")}
+                    </span>
+                    <span className="Astr">*</span>
+                  </div>
+                  <div className="col-sm-8">
+                    <input
+                      name="phone"
+                      type="text"
+                      maxLength={20}
+                      title="Phone"
+                      className="txtbox securinput"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.phone}
+                    />
+                    {formik.touched.phone && formik.errors.phone && (
+                      <span className="RequiredAstr">
+                        {t(formik.errors.phone)}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <div className="col-sm-4 control-label">
                     <span className="lbl" title="Message">
-                      {t("message")}
+                      {t("message_placeholder")}
                     </span>
                     <span className="Astr">*</span>
                   </div>

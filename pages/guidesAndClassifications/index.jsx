@@ -7,10 +7,11 @@ import Head from "next/head";
 import GuidesAndClassificationList from "./GuidesAndClassificationList";
 import GuidesAndClassificationCard from "./GuidesAndClassificationCard";
 import GuidesAndClassificationTable from "./GuidesAndClassificationTable";
+import MostViewedGuideSlider from "./MostViewedGuideSlider";
 
 import { getGlossary } from "../../services/glossaryService";
 import { getMethodologies } from "../../services/methodologyService";
-import { getGuidesClassifications } from "@/services/guideclassificationsService";
+import { getGuidesClassifications, getMostViewedGuides } from "@/services/guideclassificationsService";
 
 const GuidesAndClassifications = ({
   glossaryDataSSR = [],
@@ -19,6 +20,7 @@ const GuidesAndClassifications = ({
   totalMethodologiesSSR = 0,
   guidesClassificationDataSSR = [],
   totalGuidesClassificationsSSR = 0,
+  mostViewed = [],
   initialSection = "methodologies",
 }) => {
   const { t } = useTranslation("common");
@@ -167,7 +169,7 @@ useEffect(() => {
         </div>
 
         <div className="row publication-body">
-          {/* Sidebar */}
+          {/* Sidebar Left: Navigation List */}
           <div className="col-lg-3" style={{ marginTop: "40px" }}>
             <GuidesAndClassificationList
               selectedId={selectedSection}
@@ -190,26 +192,8 @@ useEffect(() => {
             />
           </div>
 
-          {/* Main Content */}
-          <div className="col-lg-9 d-flex flex-column "
-           style={{ minHeight: "100vh" }}>
-           
-{/* === Search Bar === */}
-<div className="flex justify-center md:justify-end md:mt-6 mb-3 px-3 md:px-0">
-  <div className="w-full sm:w-[320px] md:w-[240px]">
-    <input
-      type="text"
-      id="searchBox"
-      value={searchString}
-      onChange={(e) => setSearchString(e.target.value)}
-      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-      placeholder={t("search")}
-      className="w-full border border-gray-300 rounded-full py-2 px-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[#00a895] transition-colors duration-150"
-    />
-  </div>
-</div>
-
-
+          {/* Main Content: Display area */}
+          <div className="col-lg-6 d-flex flex-column" style={{ minHeight: "100vh", marginTop: "40px" }}>
             {/* Content Section */}
             {loading ? (
               <div className="flex justify-center items-center  bg-[#f1f2f3]" style={{ minHeight: "200px" }}>
@@ -221,9 +205,11 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <GuidesAndClassificationTable data={glossaryData}
-                 currentPage={currentPage} 
-  itemsPerPage={itemsPerPage}  />
+                <GuidesAndClassificationTable 
+                  data={glossaryData}
+                  currentPage={currentPage} 
+                  itemsPerPage={itemsPerPage}  
+                />
               )
             ) : selectedSection === "methodologies" ? (
               methodologyData.length === 0 ? (
@@ -231,16 +217,15 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 md:g-4 justify-content-start" style={{ minHeight: "340px" }}>
+                <div className="card-container row flex-grow-1" style={{ minHeight: "200px", position: "relative" }}>
                   {methodologyData.map((m, index) => (
-                    <div key={index} className="col d-flex justify-content-center">
-                      <GuidesAndClassificationCard
-                        id={m.id}
-                        title={router.locale === "ar" ? m.title_ar : m.title_en}
-                        imageSrc={m.cover_image_url}
-                        link={router.locale === "ar" ? m.pdf_file_url_ar : m.pdf_file_url}
-                      />
-                    </div>
+                    <GuidesAndClassificationCard
+                      key={index}
+                      id={m.id}
+                      title={router.locale === "ar" ? m.title_ar : m.title_en}
+                      imageSrc={m.cover_image_url}
+                      link={router.locale === "ar" ? m.pdf_file_url_ar : m.pdf_file_url}
+                    />
                   ))}
                 </div>
               )
@@ -250,16 +235,15 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1 md:g-4 justify-content-start" style={{ minHeight: "340px" }}>
+                <div className="card-container row flex-grow-1" style={{ minHeight: "200px", position: "relative" }}>
                   {guidesClassificationData.map((g, index) => (
-                    <div key={index} className="col d-flex justify-content-center">
-                      <GuidesAndClassificationCard
-                        id={g.id}
-                        title={router.locale === "ar" ? g.title_ar : g.title_en}
-                        imageSrc={g.cover_image_url}
-                        link={router.locale === "ar" ? g.pdf_file_url_ar : g.pdf_file_url}
-                      />
-                    </div>
+                    <GuidesAndClassificationCard
+                      key={index}
+                      id={g.id}
+                      title={router.locale === "ar" ? g.title_ar : g.title_en}
+                      imageSrc={g.cover_image_url}
+                      link={router.locale === "ar" ? g.pdf_file_url_ar : g.pdf_file_url}
+                    />
                   ))}
                 </div>
               )
@@ -315,6 +299,28 @@ useEffect(() => {
               )}
             </div>
           </div>
+
+          {/* Sidebar Right: Search and Most Viewed */}
+          <div className="col-lg-3" style={{ marginTop: "40px" }}>
+            <div className="row sidebarSlider">
+              <div className="col-lg-12" style={{ width: "250px" }}>
+                <div className="top-search-box">
+                  <input
+                    type="text"
+                    id="searchBox"
+                    value={searchString}
+                    onChange={(e) => setSearchString(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") handleSearch();
+                    }}
+                    placeholder={t("search")}
+                    className="topSearchInput"
+                  />
+                </div>
+                <MostViewedGuideSlider mostViewed={mostViewed} />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
@@ -327,13 +333,28 @@ export async function getServerSideProps({ locale, query }) {
   let glossaryResponse = { statistics: [], total: 0 };
   let methodologyResponse = { methodologies: [], total: 0 };
   let classificationsResponse = { classifications: [], total: 0 };
+  let mostViewedResponse = [];
 
-  if (section === "glossary") {
-    glossaryResponse = await getGlossary(1, 8, "");
-  } else if (section === "methodologies") {
-    methodologyResponse = await getMethodologies(1, 8, "");
-  } else if (section === "classifications") {
-    classificationsResponse = await getGuidesClassifications(1, 8, "");
+  try {
+    const promises = [];
+    if (section === "glossary") {
+      promises.push(getGlossary(1, 8, ""));
+    } else if (section === "methodologies") {
+      promises.push(getMethodologies(1, 8, ""));
+    } else if (section === "classifications") {
+      promises.push(getGuidesClassifications(1, 8, ""));
+    }
+    promises.push(getMostViewedGuides());
+
+    const results = await Promise.all(promises);
+
+    if (section === "glossary") glossaryResponse = results[0];
+    else if (section === "methodologies") methodologyResponse = results[0];
+    else if (section === "classifications") classificationsResponse = results[0];
+
+    mostViewedResponse = results[results.length - 1];
+  } catch (err) {
+    console.error("SSR Error fetching guides data:", err);
   }
 
   return {
@@ -345,6 +366,7 @@ export async function getServerSideProps({ locale, query }) {
       totalMethodologiesSSR: methodologyResponse.total,
       guidesClassificationDataSSR: classificationsResponse.classifications,
       totalGuidesClassificationsSSR: classificationsResponse.total,
+      mostViewed: mostViewedResponse,
       initialSection: section,
     },
   };
