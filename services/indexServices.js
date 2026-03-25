@@ -7,5 +7,6 @@ export const getHomePageData = async () => {
 
 export const getPortalLinks = async () => {
   const response = await api.post('/V1/portallinks/list', { status: 1 });
-  return response.data.data.portallinks;
+  const links = response.data.data.portallinks || [];
+  return links.filter(link => link.status === 1);
 }
