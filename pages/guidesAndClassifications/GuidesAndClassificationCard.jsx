@@ -71,14 +71,14 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
   // };
 
   return (
-<div
-  className="card col-md-4"
-  style={{
-    height: "300px",
-    border: "none",
-    background: "transparent",
-  }}
->
+    <div
+      className="card col-md-4"
+      style={{
+        height: "300px",
+        border: "none",
+        background: "transparent",
+      }}
+    >
 
       <div className="card-content">
         <div className="item" style={{ marginTop: "30px" }}>
@@ -86,7 +86,7 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <div className="handouts-section">
-                  <a  style={{ cursor: "default" }}>
+                  <a style={{ cursor: "default" }}>
                     <div className="_title">
                       <h5
                         style={{
@@ -101,36 +101,36 @@ const GuidesAndClassificationCard = ({ title, imageSrc, link, id }) => {
                     </div>
                   </a>
 
-                  <div className="hoverimage img-section " style={{height:"150px"}}>
+                  <div className="hoverimage img-section " style={{ minHeight: "150px" }}>
                     {imageSrc ? (
-                    <a target="_blank" rel="noopener noreferrer" href={link}>
-                      <img
-                        className="img-responsive attachment_ID"
-                        src={imageSrc}
-                        alt={title}
-                        onClick={handleImageClick}
-                        style={{
-                          width: "100%",
-                          
-                          objectFit: "contain",
-                          borderRadius: "5px",
-                        }}
-                      />
-                    </a>
+                      <a target="_blank" rel="noopener noreferrer" href={link}>
+                        <img
+                          className="img-responsive attachment_ID"
+                          src={imageSrc}
+                          alt={title}
+                          onClick={handleImageClick}
+                          style={{
+                            width: "100%",
+
+                            objectFit: "contain",
+                            borderRadius: "5px",
+                          }}
+                        />
+                      </a>
                     ) : (
-  <div
-    className="no-image flex items-center justify-center bg-[#d9d9d9]"
-    style={{
-      height: "160px",
-      width: "100%",
-      fontSize: "14px",
-      color: "#555",
-      textAlign: "center",
-    }}
-  >
-    {t("no_image_available")}
-  </div>
-)}
+                      <div
+                        className="no-image flex items-center justify-center bg-[#d9d9d9]"
+                        style={{
+                          height: "160px",
+                          width: "100%",
+                          fontSize: "14px",
+                          color: "#555",
+                          textAlign: "center",
+                        }}
+                      >
+                        {t("no_image_available")}
+                      </div>
+                    )}
 
                     {/* ⭐ Rating Icon */}
                     {/* <i

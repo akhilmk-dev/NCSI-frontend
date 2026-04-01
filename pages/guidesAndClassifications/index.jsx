@@ -43,8 +43,8 @@ const GuidesAndClassifications = ({
 
   const itemsPerPage = 10;
   const debounceTimer = useRef(null);
-const isFirstRender = useRef(true);
-const isSectionChange = useRef(false);
+  const isFirstRender = useRef(true);
+  const isSectionChange = useRef(false);
 
 
 
@@ -62,8 +62,8 @@ const isSectionChange = useRef(false);
     selectedSection === "glossary"
       ? Math.ceil(totalGlossary / itemsPerPage)
       : selectedSection === "methodologies"
-      ? Math.ceil(totalMethodologies / itemsPerPage)
-      : Math.ceil(totalGuidesClassifications / itemsPerPage);
+        ? Math.ceil(totalMethodologies / itemsPerPage)
+        : Math.ceil(totalGuidesClassifications / itemsPerPage);
 
   // Page change handler
   const handlePageChange = async (page) => {
@@ -93,7 +93,7 @@ const isSectionChange = useRef(false);
   const handleSearch = async () => {
     setLoading(true);
 
-    
+
     let res;
     if (selectedSection === "glossary") {
       res = await getGlossary(1, itemsPerPage, searchString);
@@ -112,43 +112,43 @@ const isSectionChange = useRef(false);
     setLoading(false);
   };
 
-useEffect(() => {
-  //  Do not override SSR data on first render
-  if (isFirstRender.current) {
-    isFirstRender.current = false;
-    return;
-  }
-
-  if (debounceTimer.current) clearTimeout(debounceTimer.current);
-
-  debounceTimer.current = setTimeout(async () => {
-    if (!isSectionChange.current) {
-    setLoading(true);
-  }
-
-    let res;
-
-    if (selectedSection === "glossary") {
-      res = await getGlossary(1, itemsPerPage, searchString);
-      setGlossaryData(res.statistics);
-      setTotalGlossary(res.total);
-    } else if (selectedSection === "methodologies") {
-      res = await getMethodologies(1, itemsPerPage, searchString);
-      setMethodologyData(res.methodologies);
-      setTotalMethodologies(res.total);
-    } else {
-      res = await getGuidesClassifications(1, itemsPerPage, searchString);
-      setGuidesClassificationData(res.classifications);
-      setTotalGuidesClassifications(res.total);
+  useEffect(() => {
+    //  Do not override SSR data on first render
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
     }
 
-    setCurrentPage(1);
-    setLoading(false);
-    isSectionChange.current = false;
-  }, 500);
+    if (debounceTimer.current) clearTimeout(debounceTimer.current);
 
-  return () => clearTimeout(debounceTimer.current);
-}, [searchString, selectedSection]);
+    debounceTimer.current = setTimeout(async () => {
+      if (!isSectionChange.current) {
+        setLoading(true);
+      }
+
+      let res;
+
+      if (selectedSection === "glossary") {
+        res = await getGlossary(1, itemsPerPage, searchString);
+        setGlossaryData(res.statistics);
+        setTotalGlossary(res.total);
+      } else if (selectedSection === "methodologies") {
+        res = await getMethodologies(1, itemsPerPage, searchString);
+        setMethodologyData(res.methodologies);
+        setTotalMethodologies(res.total);
+      } else {
+        res = await getGuidesClassifications(1, itemsPerPage, searchString);
+        setGuidesClassificationData(res.classifications);
+        setTotalGuidesClassifications(res.total);
+      }
+
+      setCurrentPage(1);
+      setLoading(false);
+      isSectionChange.current = false;
+    }, 500);
+
+    return () => clearTimeout(debounceTimer.current);
+  }, [searchString, selectedSection]);
 
 
 
@@ -158,7 +158,7 @@ useEffect(() => {
   return (
     <>
       <Head>
-       <title>Home - NCSI PORTAL</title>
+        <title>Home - NCSI PORTAL</title>
         <meta id="ctl00_ctl00_SEO_description" name="description" content={t('meta_des_publications')}></meta>
         <meta id="ctl00_ctl00_SEO_keyWords" name="keywords" content="NCSI,NCSI Oman,Oman Statistics,Oman Indicators الإحصاء , المركز الوطنى للإحصاء والمعلومات , عمان, مؤشرات,Heba Elaraby,Adel Elaraby ,Omar Yusuf,Mahmoud AbdelSabour,Mahmoud Roushdy,Amr Eladly,Eachawy,Maab Ashraf,Yasmeen AbdelSattar,National,Centre,for,Statistics,and,Information,-,"></meta>
       </Head>
@@ -175,8 +175,8 @@ useEffect(() => {
               selectedId={selectedSection}
               onSelect={(id) => {
                 isSectionChange.current = true;
-                  setLoading(true);         
-                  setSearchString("");
+                setLoading(true);
+                setSearchString("");
                 setSelectedSection(id);
                 setCurrentPage(1);
 
@@ -193,7 +193,7 @@ useEffect(() => {
           </div>
 
           {/* Main Content: Display area */}
-          <div className="col-lg-6 d-flex flex-column" style={{ minHeight: "100vh", marginTop: "40px" }}>
+          <div className="col-lg-6 d-flex flex-column min-h-[400px]  lg:min-h-[100vh]" style={{ marginTop: "40px" }}>
             {/* Content Section */}
             {loading ? (
               <div className="flex justify-center items-center  bg-[#f1f2f3]" style={{ minHeight: "200px" }}>
@@ -205,10 +205,10 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <GuidesAndClassificationTable 
+                <GuidesAndClassificationTable
                   data={glossaryData}
-                  currentPage={currentPage} 
-                  itemsPerPage={itemsPerPage}  
+                  currentPage={currentPage}
+                  itemsPerPage={itemsPerPage}
                 />
               )
             ) : selectedSection === "methodologies" ? (
@@ -217,7 +217,7 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="card-container row flex-grow-1" style={{ minHeight: "200px", position: "relative" }}>
+                <div className="card-container row " style={{ minHeight: "200px", position: "relative" }}>
                   {methodologyData.map((m, index) => (
                     <GuidesAndClassificationCard
                       key={index}
@@ -235,7 +235,7 @@ useEffect(() => {
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
-                <div className="card-container row flex-grow-1" style={{ minHeight: "200px", position: "relative" }}>
+                <div className="card-container row " style={{ minHeight: "200px", position: "relative" }}>
                   {guidesClassificationData.map((g, index) => (
                     <GuidesAndClassificationCard
                       key={index}
@@ -256,41 +256,41 @@ useEffect(() => {
                   <i className="fas fa-caret-left text-white"></i>
                 </button>
               )}
-{(() => {
-  const pages = [];
-  const maxVisible = 5; // how many to show around current page
+              {(() => {
+                const pages = [];
+                const maxVisible = 5; // how many to show around current page
 
-  if (totalPages <= 10) {
-    // few pages → show all
-    for (let i = 1; i <= totalPages; i++) pages.push(i);
-  } else {
-    // many pages → compact mode
-    const startPage = Math.max(1, currentPage - 2);
-    const endPage = Math.min(totalPages, currentPage + 2);
+                if (totalPages <= 10) {
+                  // few pages → show all
+                  for (let i = 1; i <= totalPages; i++) pages.push(i);
+                } else {
+                  // many pages → compact mode
+                  const startPage = Math.max(1, currentPage - 2);
+                  const endPage = Math.min(totalPages, currentPage + 2);
 
-    if (startPage > 2) pages.push(1, "...");
-    else for (let i = 1; i < startPage; i++) pages.push(i);
+                  if (startPage > 2) pages.push(1, "...");
+                  else for (let i = 1; i < startPage; i++) pages.push(i);
 
-    for (let i = startPage; i <= endPage; i++) pages.push(i);
+                  for (let i = startPage; i <= endPage; i++) pages.push(i);
 
-    if (endPage < totalPages - 1) pages.push("...", totalPages);
-    else for (let i = endPage + 1; i <= totalPages; i++) pages.push(i);
-  }
+                  if (endPage < totalPages - 1) pages.push("...", totalPages);
+                  else for (let i = endPage + 1; i <= totalPages; i++) pages.push(i);
+                }
 
-  return pages.map((page, index) =>
-    page === "..." ? (
-      <span key={`dots-${index}`} className="page-dots">...</span>
-    ) : (
-      <button
-        key={page}
-        className={`page-button ${page === currentPage ? "active" : ""}`}
-        onClick={() => handlePageChange(page)}
-      >
-        {page}
-      </button>
-    )
-  );
-})()}
+                return pages.map((page, index) =>
+                  page === "..." ? (
+                    <span key={`dots-${index}`} className="page-dots">...</span>
+                  ) : (
+                    <button
+                      key={page}
+                      className={`page-button ${page === currentPage ? "active" : ""}`}
+                      onClick={() => handlePageChange(page)}
+                    >
+                      {page}
+                    </button>
+                  )
+                );
+              })()}
 
               {currentPage < totalPages && (
                 <button className="page-button" onClick={() => handlePageChange(currentPage + 1)}>
@@ -301,7 +301,7 @@ useEffect(() => {
           </div>
 
           {/* Sidebar Right: Search and Most Viewed */}
-          <div className="col-lg-3" style={{ marginTop: "40px" }}>
+          <div className="col-12 flex justify-center align-center col-lg-3" style={{ marginTop: "40px" }}>
             <div className="row sidebarSlider">
               <div className="col-lg-12" style={{ width: "250px" }}>
                 <div className="top-search-box">

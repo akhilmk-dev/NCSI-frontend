@@ -11,20 +11,20 @@ const GuidesAndClassificationList = ({ onSelect, selectedId }) => {
     { id: "glossary", name: "Glossary of Statistics", name_ar: "قاموس الإحصاءات" },
   ];
 
- const router = useRouter();
-const isRTL = router.locale === "ar";
+  const router = useRouter();
+  const isRTL = router.locale === "ar";
 
   return (
     <div className="col-lg-12 p-0">
       <div className="rounded-box">
-        <h6 className="text-sm"  id="Classification">{t("Guides_and_Methodologies")}</h6>
+        <h6 className="text-sm" id="Classification">{t("Guides_and_Methodologies")}</h6>
       </div>
 
       {/*  Compact list container */}
       <div
         className="ClassificationScroll"
         style={{
-          maxHeight: "20vh", 
+          maxHeight: "10vh",
           overflowY: "visible",
           paddingBottom: "0.5rem",
         }}
@@ -34,9 +34,8 @@ const isRTL = router.locale === "ar";
             <li
               key={id}
               data-key={id}
-              className={`publ-group-item indicators-desc ${
-                selectedId === id ? "selected" : ""
-              }`}
+              className={`publ-group-item indicators-desc ${selectedId === id ? "selected" : ""
+                }`}
               style={{
                 paddingTop: "10px",
                 paddingBottom: "10px",
