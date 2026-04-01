@@ -400,8 +400,8 @@ useEffect(() => {
 
         <div className="col-lg-3">
           <div className="row sidebarSlider">
-            <div className="col-lg-12" style={{ width: "250px"}}>
-              <div className="top-search-box">
+            <div className="col-lg-12 d-flex flex-column align-items-center" style={{ width: "250px", margin: "0 auto" }}>
+              <div className="top-search-box w-100">
                 <input
                   type="text"
                   id="searchBox"

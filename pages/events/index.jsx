@@ -72,10 +72,10 @@ const Events = ({ initialEvents }) => {
                             {isRTL ? event.title_ar : event.title_en}
                           </h4>
                         </li>
-                        {event.pdf_url && (
+                        {(isRTL ? event.pdf_url_ar : event.pdf_url) && (
                         <li>
                           <a
-                            href={event.pdf_url}
+                            href={isRTL ? event.pdf_url_ar : event.pdf_url}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
