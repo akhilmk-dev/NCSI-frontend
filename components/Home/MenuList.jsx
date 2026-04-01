@@ -12,18 +12,18 @@ const MenuList = ({ portalLinks, hideHeader }) => {
   const menuItems = useMemo(() => {
     if (portalLinks && portalLinks.length > 0) {
       return portalLinks.map(link => ({
-        label: link.title,
+        label: locale === "ar" ? (link.title_ar || link.title) : link.title,
         href: link.link,
         isExternal: link.link.startsWith('http')
       }));
     }
     return [];
-  }, [portalLinks]);
+  }, [portalLinks, locale]);
 
   const { t } = useTranslation('common');
   return (
-    <div className={`row home-menu text-bold ${hideHeader ? 'mt-0' : ''}`}>
-      <div className="col">
+    <div className={`row home-menu text-bold h-100 ${hideHeader ? 'mt-0' : ''}`}>
+      <div className="col d-flex flex-column h-100">
         {!hideHeader && (
           <div className="population-clock-header bg-theme color-white text-bold">
             <div className="" style={{ display: 'flex' }}>
@@ -43,7 +43,7 @@ const MenuList = ({ portalLinks, hideHeader }) => {
           </div>
         )}
 
-        <div className="row mt-3">
+        <div className="row mt-3 flex-grow-1 m-0" style={{ backgroundColor: "#f5f4f4", alignContent: "flex-start", paddingBottom: "15px" }}>
           {menuItems?.map((item, index) => {
             const delay = 0.35 + index * 0.05;
             const isExternal = item.isExternal ?? item.href.startsWith('http');

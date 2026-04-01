@@ -141,6 +141,10 @@
 .deemed{
   bottom:80px;
 }
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+}
 }
 
 

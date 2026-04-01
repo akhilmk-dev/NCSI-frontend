@@ -61,7 +61,7 @@ const NewsDetail = () => {
   if (!newsData)
     return (
       <p className="text-center text-gray-600 text-lg mt-20">
-        {t("No News Found")}
+        {t("No Data Found")}
       </p>
     );
 
@@ -84,12 +84,12 @@ const NewsDetail = () => {
         <div className="lg:p-4 p-6 sm:p-8 md:p-10 ">
           <nav
             className="text-[13px] md:text-[12px] text-gray-600 lg:p-2 shadow-sm"
-              style={fontFamilyStyle}
+            style={fontFamilyStyle}
           >
             <Link
               href="/"
               className="text-[#666666]  hover:text-decoration-line:underline; transition-colors"
-               style={fontFamilyStyle}
+              style={fontFamilyStyle}
             >
               {t("home")}
             </Link>
@@ -97,14 +97,14 @@ const NewsDetail = () => {
             <Link
               href="/newsPage"
               className="text-[#666666] transition-colors"
-               style={fontFamilyStyle}
+              style={fontFamilyStyle}
             >
               {t("news")}
             </Link>
             <span className="mx-1">{">"}</span>
             <span
               className="text-[#b30000] text-[12px] md:text-[12px]"
-                style={fontFamilyStyle}
+              style={fontFamilyStyle}
             >
               {locale === "ar" ? newsData.title_ar : newsData.title_en}
             </span>
@@ -116,9 +116,8 @@ const NewsDetail = () => {
           <div className="relative">
             {newsData.img_url && (
               <div
-                className={`${
-                  locale === "ar" ? "float-left mr-6" : "float-right ml-6"
-                } mb-3 w-full sm:w-72 md:w-80 lg:w-96 relative`}
+                className={`${locale === "ar" ? "float-left mr-6" : "float-right ml-6"
+                  } mb-3 w-full sm:w-72 md:w-80 lg:w-96 relative`}
               >
                 <Image
                   src={newsData.img_url}
@@ -142,9 +141,9 @@ const NewsDetail = () => {
               className="text-[#666666] text-sm md:text-xs mb-2"
               style={fontFamilyStyle}
             >
-             {newsData.news_date
-  ? new Date(newsData.news_date).toLocaleDateString("en-GB")
-  : ""}
+              {newsData.news_date
+                ? new Date(newsData.news_date).toLocaleDateString("en-GB")
+                : ""}
 
             </p>
           </div>
@@ -154,7 +153,7 @@ const NewsDetail = () => {
             className={`mt-2 news-content s  ${locale?.startsWith("ar") ? "arabic" : ""}`}
             style={{
               color: "#666666",
-             fontSize: locale?.startsWith("ar") ? "14px" : "12px",
+              fontSize: locale?.startsWith("ar") ? "14px" : "12px",
               ...fontFamilyStyle,
             }}
             dangerouslySetInnerHTML={{
@@ -163,7 +162,7 @@ const NewsDetail = () => {
                   ? newsData.content_ar
                   : newsData.content_en,
             }}
-          />  
+          />
 
           {/* === Clear float === */}
           <div className="clear-both"></div>

@@ -193,7 +193,7 @@ const GuidesAndClassifications = ({
           </div>
 
           {/* Main Content: Display area */}
-          <div className="col-lg-6 d-flex flex-column min-h-[400px]  lg:min-h-[100vh]" style={{ marginTop: "40px" }}>
+          <div className="col-lg-6 d-flex flex-column" style={{ marginTop: "40px" }}>
             {/* Content Section */}
             {loading ? (
               <div className="flex justify-center items-center  bg-[#f1f2f3]" style={{ minHeight: "200px" }}>
@@ -231,7 +231,7 @@ const GuidesAndClassifications = ({
               )
             ) : selectedSection === "classifications" ? (
               guidesClassificationData.length === 0 ? (
-                <div className="no-data-message d-flex justify-content-center align-items-center w-100" style={{ minHeight: "340px" }}>
+                <div className="no-data-message d-flex justify-content-center align-items-center w-100" style={{ minHeight: "200px" }}>
                   <p className="text-[15px]">{t("No Data Found")}</p>
                 </div>
               ) : (
